@@ -1,15 +1,12 @@
 'use client';
 import React, { FunctionComponent } from 'react';
 import SectionHeading from './common/section-heading';
-import { Inter } from 'next/font/google';
 import classNames from 'classnames';
 import Stack from '@/_components/layouts/stack';
 import Row from '@/_components/layouts/row';
 import ContactForm from './form/contact-form';
 import useContactForm from '../_hooks/useContactForm';
 import { IPortfolio } from '../_contentful';
-
-const interFont = Inter({ subsets: ['latin'] });
 
 export type ContactSectionProps = {
   portfolio: IPortfolio;
@@ -39,8 +36,7 @@ const ContactSection: FunctionComponent<ContactSectionProps> = ({
             <SectionHeading>want to work with me?</SectionHeading>
             <h3
               className={classNames(
-                'uppercase font-black text-[60px] leading-[1] -ml-4 pr-5',
-                interFont.className
+                'uppercase tracking-wide font-black text-[70px] leading-[1] -ml-4 pr-5 font-anton'
               )}
             >
               CONTACT ME
