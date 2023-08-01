@@ -6,7 +6,7 @@ export type SectionHeadingProps = {
 
 const SectionHeading: FunctionComponent<SectionHeadingProps> = (props) => {
   return (
-    <h2 className='-ml-4 text-base text-slate-400'>
+    <h2 className='md:-ml-4 text-base text-slate-400'>
       {props.children}
     </h2>
   );
