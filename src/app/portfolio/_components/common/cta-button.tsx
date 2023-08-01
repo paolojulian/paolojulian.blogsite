@@ -53,8 +53,8 @@ const CTAButton: FunctionComponent<CTAButtonProps> = ({
           children
         )}
       </button>
-      <div className='absolute top-1/2 -translate-y-1/2 -right-1 w-6 border-b border-red-400 group-hover:right-1'></div>
       <div className='absolute bottom-0 right-0 w-5/6 h-5/6 border-b border-r border-slate-400 pointer-events-none'></div>
+      <div className='absolute top-1/2 -translate-y-1/2 -right-1 w-6 h-[2px] bg-red-400 group-hover:right-1 pointer-events-none'></div>
     </div>
   );
 };
