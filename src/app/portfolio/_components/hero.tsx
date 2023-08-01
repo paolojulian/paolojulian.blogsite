@@ -53,7 +53,7 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
 
       <Stack className='flex-1'>
         <Stack className='flex-1 justify-center'>
-          <p className='font-medium text-xl text-slate-500 -ml-4'>
+          <p className='text-xl text-slate-500 -ml-4'>
             hello, I am
           </p>
           <Stack>
@@ -69,7 +69,7 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
               </h1>
               <div className='absolute translate-y-2 top-1/2 -right-3 w-16 h-[3px] bg-red-400'></div>
             </div>
-            <p className='font-sans text-slate-600 text-base tracking-[5px] md:tracking-[22.5px] lg:tracking-[18.7px]'>
+            <p className='text-slate-600 text-base tracking-[5px] md:tracking-[15px] lg:tracking-[20px]'>
               SOFTWARE ENGINEER
             </p>
           </Stack>

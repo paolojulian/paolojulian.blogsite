@@ -8,10 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-montserrat)'],
-        manrope: ['var(--font-manrope)'],
+        anton: ['var(--font-anton)'],
         quicksand: ['var(--font-quicksand)'],
-        raleway: ['var(--font-raleway)'],
       },
       colors: {
         main: '#ECE8E1',
