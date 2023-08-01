@@ -55,16 +55,28 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
               believe that in app and system development, complexity should be
               avoided, and simplicity should be prioritized for better results.
             </p> */}
-            <Row className='space-x-8'>
+            <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8'>
               <Link href={'/portfolio#contact'}>
-                <CTAButton block={false}>let&lsquo;s talk</CTAButton>
+                <span className='hidden md:block'>
+                  <CTAButton block={false}>let&lsquo;s talk</CTAButton>
+                </span>
+                <span className='block md:hidden'>
+                  <CTAButton size='lg'>let&lsquo;s talk</CTAButton>
+                </span>
               </Link>
               <Link href={portfolio.resume.url} target='_blank'>
-                <CTAButton block={false} variant='secondary'>
-                  view cv
-                </CTAButton>
+                <span className='hidden md:block'>
+                  <CTAButton block={false} variant='secondary'>
+                    view cv
+                  </CTAButton>
+                </span>
+                <span className='block md:hidden'>
+                  <CTAButton size='lg' variant='secondary'>
+                    view cv
+                  </CTAButton>
+                </span>
               </Link>
-            </Row>
+            </div>
           </Stack>
         </Stack>
       </Stack>

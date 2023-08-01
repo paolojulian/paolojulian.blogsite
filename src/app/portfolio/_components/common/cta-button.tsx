@@ -3,10 +3,12 @@ import styles from './cta-button.module.css';
 import React, { ButtonHTMLAttributes, FunctionComponent } from 'react';
 
 type Variants = 'default' | 'secondary' | 'success';
+type Sizes = 'base' | 'lg';
 
 export type CTAButtonProps = {
   isLoading?: boolean;
   variant?: Variants;
+  size?: Sizes;
   block?: boolean;
   loadingText?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
@@ -19,9 +21,15 @@ const bgVariants: Record<Variants, string> = {
   success: 'bg-emerald-600',
 };
 
+const sizes: Record<Sizes, string> = {
+  base: 'py-3',
+  lg: 'py-4'
+}
+
 const CTAButton: FunctionComponent<CTAButtonProps> = ({
   loadingText = 'loading',
   variant = 'default',
+  size = 'base',
   block = true,
   isLoading = false,
   children,
@@ -40,7 +48,8 @@ const CTAButton: FunctionComponent<CTAButtonProps> = ({
       <button
         {...props}
         className={classNames(
-          'py-3 text-slate-50 transition-colors',
+          'text-slate-50 transition-colors',
+          sizes[size],
           block ? 'w-full px-5' : 'w-fit px-8 max-w-full',
           isLoading ? bgVariants['secondary'] : bgVariants[variant]
         )}
