@@ -42,7 +42,7 @@ const AppModal: FunctionComponent<AppModalProps> = ({
     <dialog
       className={classNames('max-w-screen-md w-full', styles['app-modal'])}
       ref={dialogRef}
-      style={{ maxWidth: '768px', height: '100%' }}
+      style={{ maxWidth: '1024px', height: '100%' }}
     >
       <Stack
         className={classNames('h-full transition-transform duration-1000')}
@@ -58,7 +58,9 @@ const AppModal: FunctionComponent<AppModalProps> = ({
             exit
           </button>
         </Row>
-        <div className='w-full h-full relative bg-main flex-1 shadow-md'>{children}</div>
+        <div className='w-full h-full relative bg-main flex-1 shadow-md'>
+          {children}
+        </div>
       </Stack>
     </dialog>
     // <div

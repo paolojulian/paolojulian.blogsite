@@ -6,6 +6,7 @@ export interface IPortfolioItem {
     url: string
   }
   tags: string[]
+  role?: string;
 }
 
 export interface IPortfolio {

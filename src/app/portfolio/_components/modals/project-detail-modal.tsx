@@ -1,11 +1,10 @@
 import Stack from '@/_components/layouts/stack';
 import React, { FunctionComponent, useEffect, useRef } from 'react';
-import ProjectImage from '../common/project-image';
 import AppModal, { AppModalProps } from '@/_components/common/app-modal';
 import classNames from 'classnames';
-import Row from '@/_components/layouts/row';
 import { useProjectItemContext } from '../common/project-item';
 import AppReactMarkdown from '@/_components/markdown/app-react-markdown';
+import styles from './project-detail-modal.module.css';
 
 export type ProjectDetailsModalProps = {
   // no props
@@ -38,7 +37,10 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
     <AppModal isOpen={isOpen} {...props}>
       <div
         ref={containerRef}
-        className='absolute inset-0 p-16 h-full overflow-y-scroll'
+        className={classNames(
+          'inset-0 p-16 h-full overflow-y-scroll',
+          styles.container
+        )}
       >
         <Stack className='space-y-16'>
           <Stack className='space-y-16'>
@@ -58,6 +60,12 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               />
             </Row> */}
           </Stack>
+          {project.role ? (
+            <Stack>
+              <h4>role</h4>
+              <p>{project.role}</p>
+            </Stack>
+          ) : null}
           <div>
             <AppReactMarkdown>{project.content}</AppReactMarkdown>
           </div>
