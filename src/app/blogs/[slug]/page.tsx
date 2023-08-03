@@ -84,9 +84,9 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
             <h3 className='font-anton text-6xl'>LATEST ARTICLES</h3>
             <Stack className='space-y-2'>
               <Row className='space-x-1'>
-                <button className='border border-slate-500 bg-red-500 w-14 h-4'></button>
-                <button className='border border-slate-500 hover:bg-red-500/20 w-14 h-4'></button>
-                <button className='border border-slate-500 hover:bg-red-500/20 w-14 h-4'></button>
+                <button className='border border-slate-500 bg-red-500 w-14 h-3'></button>
+                <button className='border border-slate-500 hover:bg-red-500/20 w-14 h-3'></button>
+                <button className='border border-slate-500 hover:bg-red-500/20 w-14 h-3'></button>
               </Row>
               <Stack className='space-y-8 w-full overflow-x-hidden relative'>
                 <Row className='space-x-4 overflow-auto md:overflow-hidden snap-x snap-mandatory'>

@@ -20,7 +20,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
   return (
     <footer className='bg-slate-900 w-full'>
       <div className='flex flex-col md:flex-row mx-auto max-w-screen-md relative'>
-        <Stack className='space-y-6 relative border-r border-slate-400 py-8 md:py-24'>
+        <Stack className='space-y-6 relative border-r border-slate-400 py-8 md:pb-24 md:pt-8'>
           {/* left divider */}
           <div className='hidden md:block h-5/6 absolute bottom-4 left-0 border-l border-slate-400 z-0'></div>
 

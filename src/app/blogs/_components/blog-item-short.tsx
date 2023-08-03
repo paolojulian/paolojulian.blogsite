@@ -1,11 +1,9 @@
 import AppDate from '@/_components/common/app-date';
-import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
-import classNames from 'classnames';
 import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
 import { IBlogPost } from '../_contentful';
-import RightArrowIcon from '@/_components/icons/right-arrow-icon';
+import Image from 'next/image';
 
 export type BlogItemShortProps = {
   blogPost: IBlogPost;
@@ -18,6 +16,13 @@ const BlogItemShort: FunctionComponent<BlogItemShortProps> = ({ blogPost }) => {
         <div className='w-2 h-2 bg-red-500 absolute bottom-0 left-0'></div>
         <div className='relative w-[270px] h-[200px] bg-slate-50 overflow-hidden'>
           {/* image */}
+          <Image
+            alt={`${blogPost.title} banner`}
+            src={blogPost.banner.url}
+            layout='fill'
+          />
+          {/* overlay */}
+          <div className='absolute inset-0 bg-red-500/50 transition-transform -translate-x-full group-hover:translate-x-0'></div>
         </div>
 
         <Stack className='flex-1 h-full p-3 relative space-y-2'>

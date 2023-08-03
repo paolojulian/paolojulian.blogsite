@@ -40,7 +40,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
 
   return (
     <>
-      <div className='bg-slate-900 sticky top-0 left-0 right-0 z-40'>
+      <div className='bg-slate-900 sticky top-0 left-0 right-0 z-30'>
         <Row className='mx-auto max-w-screen-xl px-4 md:px-8 py-4 justify-between items-center'>
           <div className='select-none'>
             <Link href='/'>
@@ -71,60 +71,70 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
           </nav>
         </Row>
       </div>
+
       <Stack
         className={classNames(
-          'fixed block md:hidden inset-0 bg-slate-900 z-50 overflow-hidden transition-transform',
-          isOpen
-            ? 'pointer-events-auto translate-x-0'
-            : 'pointer-events-none translate-x-full'
+          'block md:hidden fixed inset-0 z-40 pointer-events-none overflow-hidden'
         )}
       >
-        <Row className='justify-between items-center p-4'>
-          <Link href='/'>
+        <div
+          className={classNames(
+            'absolute inset-0 bg-slate-900/50 z-0',
+            isOpen
+              ? 'opacity-1 pointer-events-auto'
+              : 'pointer-events-none opacity-0'
+          )}
+        ></div>
+        <Stack
+          className={classNames(
+            'fixed top-0 bottom-0 right-0 w-4/6 bg-slate-900 overflow-hidden transition-transform z-10',
+            isOpen
+              ? 'pointer-events-auto translate-x-0'
+              : 'pointer-events-none translate-x-full'
+          )}
+        >
+          <Row className='justify-between items-center p-4'>
             <span
-              className={classNames(
-                'font-anton text-[24px] text-slate-400 transition-opacity duration-500',
-                isOpen ? 'opacity-1' : 'opacity-0'
-              )}
+              className={classNames('font-anton text-[24px] text-transparent')}
             >
               P
             </span>
-          </Link>
-          <button>
-            <CloseIcon onClick={handleToggleMenu} />
-          </button>
-        </Row>
-        <nav className='w-full text-right p-4 flex flex-col space-y-2'>
-          <ul className='flex-row space-x-8 text-slate-400'>
-            <li
-              className={classNames(
-                'py-2',
-                'text-red-400 border-b border-red-400'
-              )}
-              onClick={handleToggleMenu}
-            >
-              <Link href='/blogs'>blogs</Link>
-            </li>
-            <li
-              className={classNames(
-                'py-2',
-                'text-slate-400 border-b border-transparent'
-              )}
-              onClick={handleToggleMenu}
-            >
-              <Link href='/components'>components</Link>
-            </li>
-            <li
-              className={classNames(
-                'py-2',
-                'text-slate-400 border-b border-transparent'
-              )}
-              onClick={handleToggleMenu}
-            >
-              <Link href='/portfolio'>portfolio</Link>
-            </li>
-          </ul>
-        </nav>
+            <button>
+              <CloseIcon onClick={handleToggleMenu} />
+            </button>
+          </Row>
+          <nav className='w-full text-right p-4 flex flex-col space-y-2'>
+            <ul className='flex-row space-x-8 text-slate-400'>
+              <li
+                className={classNames(
+                  'py-2',
+                  'text-red-400 border-b border-red-400'
+                )}
+                onClick={handleToggleMenu}
+              >
+                <Link href='/blogs'>blogs</Link>
+              </li>
+              <li
+                className={classNames(
+                  'py-2',
+                  'text-slate-400 border-b border-transparent'
+                )}
+                onClick={handleToggleMenu}
+              >
+                <Link href='/components'>components</Link>
+              </li>
+              <li
+                className={classNames(
+                  'py-2',
+                  'text-slate-400 border-b border-transparent'
+                )}
+                onClick={handleToggleMenu}
+              >
+                <Link href='/portfolio'>portfolio</Link>
+              </li>
+            </ul>
+          </nav>
+        </Stack>
       </Stack>
     </>
   );

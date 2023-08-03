@@ -23,8 +23,9 @@ const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
             src={blogPost.banner.url}
             alt={`${blogPost.title} banner`}
           />
-          {/* line */}
+          {/* overlay */}
           <div className='absolute inset-0 bg-red-500/50 transition-transform -translate-x-full group-hover:translate-x-0'></div>
+          {/* line */}
           <div className='absolute border-t border-slate-400 top-0 -left-4 w-[200%]'></div>
         </div>
 
