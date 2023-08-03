@@ -20,8 +20,8 @@ const ProjectImage: FunctionComponent<ProjectImageProps> = ({
       className={classNames(
         'h-[200px] md:h-[400px] w-full md:w-[440px] z-0 relative group overflow-hidden',
         dummy ? 'border border-slate-400' : 'bg-slate-50',
+        'mix-blend-luminosity',
         hasEffects ? 'cursor-pointer' : '',
-        hasEffects ? 'mix-blend-luminosity' : ''
       )}
     >
       {src ? (

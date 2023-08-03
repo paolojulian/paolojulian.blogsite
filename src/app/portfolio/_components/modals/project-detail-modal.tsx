@@ -5,6 +5,8 @@ import classNames from 'classnames';
 import { useProjectItemContext } from '../common/project-item';
 import AppReactMarkdown from '@/_components/markdown/app-react-markdown';
 import styles from './project-detail-modal.module.css';
+import Row from '@/_components/layouts/row';
+import ProjectImage from '../common/project-image';
 
 export type ProjectDetailsModalProps = {
   // no props
@@ -16,6 +18,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const project = useProjectItemContext();
+  console.log({ project });
 
   const handleBackToTop = () => {
     containerRef.current?.scrollTo({
@@ -45,30 +48,62 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
         <Stack className='space-y-16'>
           <Stack className='space-y-16'>
             <Stack className='relative'>
-              <h2 className='text-slate-500 -ml-4'>project overview</h2>
-              <h3 className={classNames('font-bold text-2xl md:text-4xl text-slate-700')}>
+              <h2 className='text-slate-500'>project overview</h2>
+              <h3
+                className={classNames(
+                  'font-anton text-3xl md:text-6xl text-slate-700 uppercase'
+                )}
+              >
                 {project.name}
               </h3>
-              <div className='border-b border-slate-400 w-[70%] absolute -left-5 -bottom-2'></div>
-              <div className='border-b border-slate-400 w-[90%] absolute left-5 -bottom-4'></div>
+              {/* <div className='border-b border-slate-400 w-[70%] absolute -left-5 -bottom-2'></div>
+              <div className='border-b border-slate-400 w-[90%] absolute left-5 -bottom-4'></div> */}
             </Stack>
-            {/* <Row className='w-full justify-center bg-slate-50'>
-              <ProjectImage
-                alt={project.name}
-                src={project.image?.url}
-                hasEffects={false}
-              />
-            </Row> */}
           </Stack>
-          {project.role ? (
-            <Stack>
-              <h4>role</h4>
-              <p>{project.role}</p>
+          <Stack className='space-y-6 md:mx-16'>
+            <Stack className='items-center pb-8 space-y-1'>
+              <Row className='w-full justify-center bg-slate-50 mix-blend-luminosity'>
+                <ProjectImage
+                  alt={project.name}
+                  src={project.image?.url}
+                  hasEffects={false}
+                />
+              </Row>
+              <p className='text-slate-400 text-sm'>thumbnail</p>
             </Stack>
-          ) : null}
-          <div>
-            <AppReactMarkdown>{project.content}</AppReactMarkdown>
-          </div>
+            {project.role ? (
+              <Stack>
+                <h4 className='text-slate-500 text-sm font-medium'>role</h4>
+                <p className='text-slate-700 font-semibold'>{project.role}</p>
+              </Stack>
+            ) : null}
+            {project.tags ? (
+              <Stack>
+                <h4 className='text-slate-500 text-sm font-medium'>
+                  technologies
+                </h4>
+                <Row className='flex-wrap space-x-4'>
+                  {project.tags.map((tag, i) => (
+                    <span className='text-slate-700 font-semibold' key={i}>
+                      {`//${tag}`}
+                    </span>
+                  ))}
+                </Row>
+              </Stack>
+            ) : null}
+
+            <Stack className='space-y-2'>
+              <h4 className='text-slate-500 text-sm font-medium'>
+                description
+              </h4>
+              <p className='text-slate-700'>{project.description}</p>
+            </Stack>
+
+            <Stack className='space-y-2'>
+              <h4 className='text-slate-500 text-sm font-medium'>features</h4>
+              <AppReactMarkdown>{project.content}</AppReactMarkdown>
+            </Stack>
+          </Stack>
 
           <button onClick={handleBackToTop}>
             <span className='text-slate-500 text-sm'>back to top</span>

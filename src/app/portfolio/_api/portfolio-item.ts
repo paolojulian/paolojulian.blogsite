@@ -10,6 +10,7 @@ export async function getPortfolioItems() {
             name
             content
             description
+            role
             tags
             image {
               url
