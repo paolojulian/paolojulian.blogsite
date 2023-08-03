@@ -66,6 +66,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                   placeholder='name'
                   value={values.name}
                   isError={!!touched.name && !!errors.name}
+                  variant={dark ? 'default-dark' : 'default'}
                 />
               </FormControl>
               <FormControl
@@ -79,6 +80,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                   type='email'
                   value={values.email}
                   isError={!!touched.email && !!errors.email}
+                  variant={dark ? 'default-dark' : 'default'}
                 />
               </FormControl>
 
@@ -90,6 +92,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                   placeholder='tell me about it'
                   value={values.text}
                   isError={!!touched.text && !!errors.text}
+                  variant={dark ? 'default-dark' : 'default'}
                 />
               </FormControl>
             </Stack>

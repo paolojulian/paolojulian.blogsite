@@ -13,8 +13,8 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
 
   return (
     <>
-      <div className='p-4 md:p-8 py-12 md:py-24'>
-        <Stack className='space-y-12 md:space-y-24'>
+      <div className='p-4 md:p-8 py-12 md:py-16'>
+        <Stack className='space-y-12 md:space-y-16'>
           <Row className='justify-between'>
             <div className='relative'>
               <h1 className='text-slate-800 text-5xl md:text-8xl font-anton w-full'>
