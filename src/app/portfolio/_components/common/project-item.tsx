@@ -44,26 +44,29 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
   return (
     <ProjectItemContext.Provider value={project}>
       <div>
-        <Row
+        <div
           className={classNames(
-            variant === 'left-image' ? 'flex-row' : 'flex-row-reverse'
+            'flex flex-col space-y-5 md:space-y-0 md:flex-row',
+            variant === 'left-image' ? 'md:flex-row' : 'md:flex-row-reverse'
           )}
         >
-          <div className='relative p-3' onClick={handleOpenDetails}>
-            <div className='absolute top-0 left-0 w-5/6 h-2/6 border-t border-l border-slate-400 pointer-events-none'></div>
+          <div className='relative p-1 md:p-3' onClick={handleOpenDetails}>
+            <div className='absolute top-0 left-0 w-full md:w-5/6 h-2/6 md:h-1/6 border-t border-l border-r md:border-r-0 border-slate-400 pointer-events-none'></div>
             <ProjectImage alt={project.name} src={project.image?.url} />
-            <div className='absolute bottom-0 right-0 w-5/6 h-2/6 border-b border-r border-slate-400 pointer-events-none'></div>
+            <div className='absolute bottom-0 right-0 w-full md:w-5/6 h-2/6 md:h-1/6 border-b border-x md:border-l-0 border-r border-slate-400 pointer-events-none'></div>
           </div>
           <Stack
             className={classNames(
               'flex-1 justify-center space-y-4 z-10',
-              variant === 'left-image' ? 'ml-8' : 'mr-8 text-right'
+              variant === 'left-image' ? 'md:ml-8' : 'md:mr-8 md:text-right'
             )}
           >
             <div
               className={classNames(
                 // 'cursor-pointer',
-                variant === 'left-image' ? '-ml-16' : '-mr-16 text-right'
+                variant === 'left-image'
+                  ? 'md:-ml-16'
+                  : 'md:-mr-16 md:text-right'
               )}
               // onClick={handleOpenDetails}
             >
@@ -97,7 +100,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
               learn more...
             </span> */}
           </Stack>
-        </Row>
+        </div>
 
         <ProjectDetailsModal
           isOpen={openDetails}

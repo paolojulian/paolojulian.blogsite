@@ -15,7 +15,7 @@ export type CTAButtonProps = {
 
 const bgVariants: Record<Variants, string> = {
   default:
-    'bg-slate-700 md:hover:bg-red-400 md:active:bg-red-500 active:bg-red-600 active:scale-[0.98]',
+    'bg-slate-800 md:hover:bg-red-400 md:active:bg-red-500 active:bg-red-600 active:scale-[0.98]',
   secondary:
     'bg-transparent md:hover:bg-slate-500 md:active:bg-slate-400 active:bg-slate-400 :scale-[0.98] text-slate-700 md:hover:text-slate-50',
   success: 'bg-emerald-600',

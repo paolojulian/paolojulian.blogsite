@@ -23,25 +23,28 @@ const ContactSection: FunctionComponent<ContactSectionProps> = ({
 
   return (
     <section id='contact'>
-      <Row
+      <div
         className={classNames(
-          'relative w-full max-w-screen-lg mx-auto h-fit mb-24'
+          'flex flex-col md:flex-row relative w-full max-w-screen-lg mx-auto h-fit mb-24',
+          'border-l md:border-l-0 border-slate-400'
         )}
       >
         {/* top divider */}
-        <div className='absolute top-0 left-0 border-t border-slate-400 w-[105%]'></div>
+        <div className='block absolute top-0 left-0 border-t border-slate-400 w-[105%]'></div>
 
-        <Stack className='relative space-y-8 border-r border-slate-400 py-12 mr-12'>
-          <div className='z-10 bg-main'>
+        <Stack className='relative space-y-8 md:border-r border-slate-400 py-12 md:mr-12'>
+          <div className='z-10 bg-main px-8 md:px-0'>
             <SectionHeading>want to work with me?</SectionHeading>
             <h3
               className={classNames(
-                'uppercase tracking-wide font-black text-[70px] leading-[1] -ml-4 pr-5 font-anton'
+                'uppercase tracking-wide font-black text-[70px] leading-[1] md:-ml-4 pr-5 font-anton',
+                'text-slate-800'
               )}
             >
               CONTACT ME
             </h3>
           </div>
+
           <ContactForm
             onSubmit={handleSubmit}
             isLoading={isSubmittingContactForm}
@@ -49,12 +52,12 @@ const ContactSection: FunctionComponent<ContactSectionProps> = ({
           />
 
           {/* left divider */}
-          <div className='absolute left-0 top-0 border-l border-slate-400 h-full z-0'></div>
+          <div className='hidden md:block absolute left-0 top-0 border-l border-slate-400 h-full z-0'></div>
           {/* bottom divider */}
-          <div className='absolute bottom-12 -left-4 border-b border-slate-400 w-[108%]'></div>
+          <div className='hidden md:block absolute bottom-12 -left-4 border-b border-slate-400 w-[108%]'></div>
         </Stack>
 
-        <Stack className='relative h-full justify-center flex-1 space-y-16 ml-6 pl-6 border-l border-slate-400 py-12'>
+        <Stack className='relative h-full justify-center flex-1 space-y-16 md:ml-6 pl-8 md:pl-6 md:border-l border-slate-400 py-12'>
           <Stack className='space-y-6 flex-1'>
             <Stack className='text-slate-600'>
               <h4 className='text-sm font-medium text-slate-500/70 mb-1'>
@@ -89,7 +92,7 @@ const ContactSection: FunctionComponent<ContactSectionProps> = ({
             </p>
           </footer>
         </Stack>
-      </Row>
+      </div>
     </section>
   );
 };

@@ -48,7 +48,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
           }}
           className='relative px-8 pb-8'
         >
-          <Stack className='w-[330px] space-y-8'>
+          <Stack className='w-full md:w-[330px] space-y-8'>
             <Stack className='space-y-4'>
               <h4 className='text-sm font-medium text-slate-500'>
                 feel free to contact me and I will get back to you as soon as I
@@ -96,6 +96,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
               loadingText='sending'
               isLoading={isLoading}
               disabled={isLoading}
+              size='lg'
             >
               send
             </CTAButton>
