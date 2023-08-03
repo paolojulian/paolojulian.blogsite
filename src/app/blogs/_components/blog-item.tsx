@@ -6,6 +6,7 @@ import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
 import { IBlogPost } from '../_contentful';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';
+import Image from 'next/image';
 
 export type BlogItemProps = {
   blogPost: IBlogPost;
@@ -17,8 +18,13 @@ const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
       <div className='flex flex-col md:flex-row items-center group relative md:space-x-8'>
         <div className='relative w-full md:w-[400px] h-[200px] md:h-[300px] bg-slate-50 border-b border-l border-r border-slate-400 overflow-hidden'>
           {/* image */}
+          <Image
+            layout='fill'
+            src={blogPost.banner.url}
+            alt={`${blogPost.title} banner`}
+          />
           {/* line */}
-          <div className='absolute inset-0 bg-red-600/70 transition-transform -translate-x-full group-hover:translate-x-0'></div>
+          <div className='absolute inset-0 bg-red-500/50 transition-transform -translate-x-full group-hover:translate-x-0'></div>
           <div className='absolute border-t border-slate-400 top-0 -left-4 w-[200%]'></div>
         </div>
 

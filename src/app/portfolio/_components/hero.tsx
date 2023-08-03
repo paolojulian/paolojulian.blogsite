@@ -63,6 +63,7 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
             <NavLink name='about' href='/portfolio#about' />
             <NavLink name='projects' href='/portfolio#projects' />
             <NavLink name='contact' href='/portfolio#contact' />
+            <NavLink name='blogs' href='/blogs' />
           </ul>
         </nav>
       </Row>
