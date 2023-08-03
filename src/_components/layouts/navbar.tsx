@@ -41,6 +41,24 @@ const WebLink: FunctionComponent<
   );
 };
 
+const MobileLink: FunctionComponent<
+  React.ComponentProps<typeof Link> & { isActive: boolean; name: string }
+> = ({ isActive, name, ...props }) => {
+  return (
+    <li
+      className={classNames(
+        'py-2',
+        'border-b',
+        isActive
+          ? 'text-red-400 border-red-400'
+          : 'text-slate-400 border-transparent'
+      )}
+    >
+      <Link {...props}>{name}</Link>
+    </li>
+  );
+};
+
 const Navbar: FunctionComponent<NavbarProps> = ({ variant = 'default' }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -128,33 +146,24 @@ const Navbar: FunctionComponent<NavbarProps> = ({ variant = 'default' }) => {
           </Row>
           <nav className='w-full text-right p-4 flex flex-col space-y-2'>
             <ul className='flex-row space-x-8'>
-              <li
-                className={classNames(
-                  'py-2',
-                  'text-red-400 border-b border-red-400'
-                )}
+              <MobileLink
+                name='blogs'
+                href='/blogs'
+                isActive={pathname === '/blogs'}
                 onClick={handleToggleMenu}
-              >
-                <Link href='/blogs'>blogs</Link>
-              </li>
-              <li
-                className={classNames(
-                  'py-2',
-                  'text-slate-400 border-b border-transparent'
-                )}
+              />
+              <MobileLink
+                name='components'
+                href='/components'
+                isActive={pathname === '/components'}
                 onClick={handleToggleMenu}
-              >
-                <Link href='/components'>components</Link>
-              </li>
-              <li
-                className={classNames(
-                  'py-2',
-                  'text-slate-400 border-b border-transparent'
-                )}
+              />
+              <MobileLink
+                name='portfolio'
+                href='/portfolio'
+                isActive={pathname === '/portfolio'}
                 onClick={handleToggleMenu}
-              >
-                <Link href='/portfolio'>portfolio</Link>
-              </li>
+              />
             </ul>
           </nav>
         </Stack>
