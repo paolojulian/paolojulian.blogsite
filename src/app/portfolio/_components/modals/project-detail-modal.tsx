@@ -38,7 +38,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
       <div
         ref={containerRef}
         className={classNames(
-          'inset-0 p-16 h-full overflow-y-scroll',
+          'inset-0 p-8 md:p-16 h-full overflow-y-scroll',
           styles.container
         )}
       >
@@ -46,7 +46,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
           <Stack className='space-y-16'>
             <Stack className='relative'>
               <h2 className='text-slate-500 -ml-4'>project overview</h2>
-              <h3 className={classNames('font-bold text-4xl text-slate-700')}>
+              <h3 className={classNames('font-bold text-2xl md:text-4xl text-slate-700')}>
                 {project.name}
               </h3>
               <div className='border-b border-slate-400 w-[70%] absolute -left-5 -bottom-2'></div>

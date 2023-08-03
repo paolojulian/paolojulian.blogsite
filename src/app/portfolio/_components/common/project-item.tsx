@@ -57,7 +57,6 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
             <div className='absolute top-0 left-0 w-full md:w-5/6 h-2/6 md:h-1/6 border-t border-l border-r md:border-r-0 border-slate-400 pointer-events-none'></div>
             <ProjectImage alt={project.name} src={project.image?.url} />
             <div className='absolute bottom-0 right-0 w-full md:w-5/6 h-2/6 md:h-1/6 border-b border-x md:border-l-0 border-r border-slate-400 pointer-events-none'></div>
-            <div className='transition-transform -translate-x-full group-hover:translate-x-0 bg-slate-800/10 absolute inset-0'></div>
           </div>
           <Stack
             className={classNames(
@@ -76,12 +75,12 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
             >
               <ProjectTitle>{project.name}</ProjectTitle>
             </div>
-            <p className='text-base text-slate-500'>{project.description}</p>
+            <p className='text-base text-slate-500 line-clamp-4 md:line-clamp-none'>{project.description}</p>
 
             <button
               className={classNames(
                 'text-left text-sm font-medium text-red-500 italic flex flex-row items-center space-x-2',
-                variant === 'left-image' ? 'justify-start' : 'justify-end'
+                variant === 'left-image' ? 'justify-start' : 'md:justify-end'
               )}
             >
               <span>SEE MORE</span>

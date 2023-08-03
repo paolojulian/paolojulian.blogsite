@@ -4,8 +4,8 @@ import React, { FunctionComponent, HtmlHTMLAttributes } from 'react';
 type Sizes = 'base' | 'lg';
 
 const fontSizes: Record<Sizes, string> = {
-  base: 'text-3xl',
-  lg: 'text-5xl',
+  base: 'text-xl md:text-3xl',
+  lg: 'text-3xl md:text-5xl',
 };
 
 export type ProjectTitleProps = {

@@ -18,7 +18,7 @@ const ProjectImage: FunctionComponent<ProjectImageProps> = ({
   return (
     <div
       className={classNames(
-        'h-[400px] w-full md:w-[440px] z-0 relative group overflow-hidden',
+        'h-[200px] md:h-[400px] w-full md:w-[440px] z-0 relative group overflow-hidden',
         dummy ? 'border border-slate-400' : 'bg-slate-50',
         hasEffects ? 'cursor-pointer' : '',
         hasEffects ? 'mix-blend-luminosity' : ''
@@ -27,9 +27,9 @@ const ProjectImage: FunctionComponent<ProjectImageProps> = ({
       {src ? (
         <Image
           className={classNames(
-            'absolute inset-0 left-1/2 -translate-x-1/2',
+            'absolute inset-0 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2',
             hasEffects
-              ? 'transition md:group-hover:scale-[1.02] md:group-hover:-translate-y-[2px]'
+              ? 'transition md:group-hover:scale-105 md:group-hover:-translate-y-1/2'
               : ''
           )}
           alt={alt}
