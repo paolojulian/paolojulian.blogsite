@@ -22,6 +22,14 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
     <Stack className='relative'>
       <div className='p-4 md:p-8 z-10'>
         <Stack className='space-y-12 mb-24'>
+            <Link href='/blogs'>
+              <Row className='items-center space-x-2 text-red-400 font-semibold group'>
+                <span className='group-hover:-translate-x-2 transition-transform'>
+                  <LeftArrowIcon />
+                </span>
+                <p>go to article list</p>
+              </Row>
+            </Link>
           {/* header */}
           <Stack className='relative pb-8 space-y-2'>
             <Row className='space-x-2'>
@@ -102,7 +110,7 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
           </div>
         </Stack>
       </div>
-      <div className='absolute font-anton bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0 w-full overflow-clip'>
+      <div className='hidden md:block absolute font-anton bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0'>
         <p>IAM</p>
         <p>PAOLOJULIAN</p>
       </div>

@@ -84,6 +84,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
               ? 'opacity-1 pointer-events-auto'
               : 'pointer-events-none opacity-0'
           )}
+          onClick={handleToggleMenu}
         ></div>
         <Stack
           className={classNames(
