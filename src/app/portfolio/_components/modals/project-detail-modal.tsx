@@ -73,7 +73,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
             {project.role ? (
               <Stack className='space-y-1'>
                 <h4 className='text-slate-500 text-sm font-medium'>role</h4>
-                <p className='text-slate-700 font-semibold'>{project.role}</p>
+                <p className='text-slate-700 font-medium'>{project.role}</p>
               </Stack>
             ) : null}
             {project.tags ? (
@@ -83,7 +83,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
                 </h4>
                 <Row className='flex-wrap space-x-4'>
                   {project.tags.map((tag, i) => (
-                    <span className='text-slate-700 font-semibold' key={i}>
+                    <span className='text-slate-700 uppercase font-medium' key={i}>
                       {`//${tag}`}
                     </span>
                   ))}
