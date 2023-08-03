@@ -7,6 +7,7 @@ import Row from '@/_components/layouts/row';
 import ContactForm from '../../../_components/form/contact-form';
 import useContactForm from '../_hooks/useContactForm';
 import { IPortfolio } from '../_contentful';
+import AppCopyright from '@/_components/common/app-copyright';
 
 export type ContactSectionProps = {
   portfolio: IPortfolio;
@@ -85,9 +86,9 @@ const ContactSection: FunctionComponent<ContactSectionProps> = ({
             </Stack>
           </Stack>
           <footer>
-            <p className='text-sm text-slate-500'>
-              © 2017-2023 Paolo Vincent Julian
-            </p>
+            <span className='text-sm text-slate-500'>
+              <AppCopyright />
+            </span>
           </footer>
         </Stack>
       </div>

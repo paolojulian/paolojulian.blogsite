@@ -4,6 +4,7 @@ import React, { FunctionComponent } from 'react';
 import Stack from './stack';
 import Link from 'next/link';
 import ContactForm from '../form/contact-form';
+import AppCopyright from '../common/app-copyright';
 
 export type FooterProps = {
   // no props
@@ -19,12 +20,12 @@ const Footer: FunctionComponent<FooterProps> = () => {
   return (
     <footer className='bg-slate-900 w-full'>
       <div className='flex flex-col md:flex-row mx-auto max-w-screen-md relative'>
-        <Stack className='space-y-6 relative border-r border-slate-400 py-24'>
+        <Stack className='space-y-6 relative border-r border-slate-400 py-8 md:py-24'>
           {/* left divider */}
-          <div className='h-5/6 absolute bottom-4 left-0 border-l border-slate-400 z-0'></div>
+          <div className='hidden md:block h-5/6 absolute bottom-4 left-0 border-l border-slate-400 z-0'></div>
 
           <div className='bg-slate-900 z-10'>
-            <div className='md:-ml-4'>
+            <div className='md:-ml-4 px-8 md:px-0'>
               <p className='text-slate-400'>want to work with me?</p>
               <p className='uppercase text-slate-50 font-anton text-6xl'>
                 CONTACT ME
@@ -39,11 +40,11 @@ const Footer: FunctionComponent<FooterProps> = () => {
               dark
             />
             {/* bottom divider */}
-            <div className='w-[115%] absolute bottom-0 -left-4 right-0 border-b border-slate-400 z-0'></div>
+            <div className='hidden md:block w-[115%] absolute bottom-0 -left-4 right-0 border-b border-slate-400 z-0'></div>
           </div>
         </Stack>
 
-        <Stack className='relative h-full justify-center flex-1 space-y-16 md:ml-24 pl-8 md:pl-6 md:border-l border-slate-400 py-12'>
+        <Stack className='relative h-full justify-center flex-1 space-y-16 pt-0 md:pt-12 md:ml-24 pl-8 md:pl-6 md:border-l border-slate-400 py-12'>
           <Stack className='space-y-6 flex-1'>
             <Stack className='text-slate-400'>
               <h4 className='text-sm font-medium text-slate-500/70 mb-1'>
@@ -82,9 +83,9 @@ const Footer: FunctionComponent<FooterProps> = () => {
             </Stack>
           </Stack>
           <footer>
-            <p className='text-sm text-slate-500'>
-              © 2017-2023 Paolo Vincent Julian
-            </p>
+            <span className='text-sm text-slate-500'>
+              <AppCopyright />
+            </span>
           </footer>
         </Stack>
       </div>

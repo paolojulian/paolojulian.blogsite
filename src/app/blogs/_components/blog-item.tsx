@@ -14,8 +14,8 @@ export type BlogItemProps = {
 const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
   return (
     <Link href={`/blogs/${blogPost.slug}`}>
-      <Row className='items-center group relative'>
-        <div className='relative w-[400px] h-[300px] bg-slate-50 border-b border-l border-r border-slate-400 overflow-hidden'>
+      <div className='flex flex-col md:flex-row items-center group relative'>
+        <div className='relative w-full md:w-[400px] h-[200px] md:h-[300px] bg-slate-50 border-b border-l border-r border-slate-400 overflow-hidden'>
           {/* image */}
           {/* line */}
           <div className='absolute inset-0 bg-red-600/70 transition-transform -translate-x-full group-hover:translate-x-0'></div>
@@ -49,7 +49,7 @@ const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
             'transition'
           )}
         ></div>
-      </Row>
+      </div>
     </Link>
   );
 };

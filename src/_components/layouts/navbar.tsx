@@ -8,8 +8,8 @@ export type NavbarProps = {
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
-    <div className='bg-slate-900'>
-      <Row className='mx-auto max-w-screen-xl px-8 py-4 justify-between items-center'>
+    <div className='bg-slate-900 sticky top-0 left-0 right-0 z-40'>
+      <Row className='mx-auto max-w-screen-xl px-4 md:px-8 py-4 justify-between items-center'>
         <div className='select-none'>
           <Link href='/'>
             <span className='font-anton text-[24px] text-slate-400'>P</span>
