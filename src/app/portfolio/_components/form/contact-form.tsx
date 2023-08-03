@@ -9,13 +9,13 @@ import { IContactForm } from '../../_forms';
 import FormControl from './form-control';
 
 export type ContactFormProps = {
-  onSubmit: (form: IContactForm) => Promise<void>;
+  onSubmit?: (form: IContactForm) => Promise<void>;
   isLoading: boolean;
   isFinished: boolean;
 };
 
 const ContactForm: FunctionComponent<ContactFormProps> = ({
-  onSubmit,
+  onSubmit = () => Promise.reject(),
   isLoading,
 }) => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -74,6 +74,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                   autoComplete='email'
                   name='email'
                   placeholder='email'
+                  type='email'
                   value={values.email}
                   isError={!!touched.email && !!errors.email}
                 />

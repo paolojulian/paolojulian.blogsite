@@ -1,3 +1,4 @@
+'use client';
 import { useState } from "react";
 import { IContactForm } from "../_forms";
 import { sendContactForm } from "../_api/contact";
