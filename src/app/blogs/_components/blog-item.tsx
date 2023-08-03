@@ -14,7 +14,7 @@ export type BlogItemProps = {
 const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
   return (
     <Link href={`/blogs/${blogPost.slug}`}>
-      <div className='flex flex-col md:flex-row items-center group relative'>
+      <div className='flex flex-col md:flex-row items-center group relative md:space-x-8'>
         <div className='relative w-full md:w-[400px] h-[200px] md:h-[300px] bg-slate-50 border-b border-l border-r border-slate-400 overflow-hidden'>
           {/* image */}
           {/* line */}
