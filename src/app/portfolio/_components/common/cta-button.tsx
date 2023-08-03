@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './cta-button.module.css';
 import React, { ButtonHTMLAttributes, FunctionComponent } from 'react';
 
-type Variants = 'default' | 'secondary' | 'success';
+type Variants = 'default' | 'default-dark' | 'secondary' | 'success';
 type Sizes = 'base' | 'lg';
 
 export type CTAButtonProps = {
@@ -10,16 +10,21 @@ export type CTAButtonProps = {
   variant?: Variants;
   size?: Sizes;
   block?: boolean;
-  dark?: boolean;
   loadingText?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const bgVariants: Record<Variants, string> = {
-  default:
+  default: classNames(
     'bg-slate-800 md:hover:bg-red-400 md:active:bg-red-500 active:bg-red-600 active:scale-[0.98]',
+    'text-slate-50'
+  ),
+  'default-dark': classNames(
+    'bg-slate-200 md:hover:bg-red-400 md:active:bg-red-500 active:bg-red-600 active:scale-[0.98]',
+    'text-slate-700 hover:text-slate-50'
+  ),
   secondary:
     'bg-transparent md:hover:bg-slate-500 md:active:bg-slate-400 active:bg-slate-400 :scale-[0.98] text-slate-700 md:hover:text-slate-50',
-  success: 'bg-emerald-600',
+  success: 'bg-emerald-600 text-slate-50',
 };
 
 const sizes: Record<Sizes, string> = {
@@ -32,7 +37,6 @@ const CTAButton: FunctionComponent<CTAButtonProps> = ({
   variant = 'default',
   size = 'base',
   block = true,
-  dark = false,
   isLoading = false,
   children,
   ...props
@@ -50,7 +54,7 @@ const CTAButton: FunctionComponent<CTAButtonProps> = ({
       <button
         {...props}
         className={classNames(
-          'text-slate-50 transition-colors',
+          'transition-colors',
           sizes[size],
           block ? 'w-full px-5' : 'w-fit px-8 max-w-full',
           isLoading ? bgVariants['secondary'] : bgVariants[variant]

@@ -1,9 +1,9 @@
 'use client';
-import ContactForm from '@/app/portfolio/_components/form/contact-form';
 import useContactForm from '@/app/portfolio/_hooks/useContactForm';
 import React, { FunctionComponent } from 'react';
 import Stack from './stack';
 import Link from 'next/link';
+import ContactForm from '../form/contact-form';
 
 export type FooterProps = {
   // no props
@@ -36,6 +36,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
               onSubmit={handleSubmit}
               isLoading={isSubmittingContactForm}
               isFinished={isFinished}
+              dark
             />
             {/* bottom divider */}
             <div className='w-[115%] absolute bottom-0 -left-4 right-0 border-b border-slate-400 z-0'></div>
@@ -82,9 +83,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
           </Stack>
           <footer>
             <p className='text-sm text-slate-500'>
-              Copyright @ 2017-2023 Paolo Vincent Julian.
-              <br />
-              All rights reserved.
+              © 2017-2023 Paolo Vincent Julian
             </p>
           </footer>
         </Stack>

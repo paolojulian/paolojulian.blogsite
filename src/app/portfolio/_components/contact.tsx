@@ -4,7 +4,7 @@ import SectionHeading from './common/section-heading';
 import classNames from 'classnames';
 import Stack from '@/_components/layouts/stack';
 import Row from '@/_components/layouts/row';
-import ContactForm from './form/contact-form';
+import ContactForm from '../../../_components/form/contact-form';
 import useContactForm from '../_hooks/useContactForm';
 import { IPortfolio } from '../_contentful';
 
@@ -57,7 +57,7 @@ const ContactSection: FunctionComponent<ContactSectionProps> = ({
           <div className='hidden md:block absolute bottom-12 -left-4 border-b border-slate-400 w-[108%]'></div>
         </Stack>
 
-        <Stack className='relative h-full justify-center flex-1 space-y-16 md:ml-[300px] pl-8 md:pl-6 md:border-l border-slate-400 py-12'>
+        <Stack className='relative h-full justify-center flex-1 space-y-16 md:ml-6 pl-8 md:pl-6 md:border-l border-slate-400 py-12'>
           <Stack className='space-y-6 flex-1'>
             <Stack className='text-slate-600'>
               <h4 className='text-sm font-medium text-slate-500/70 mb-1'>
@@ -86,9 +86,7 @@ const ContactSection: FunctionComponent<ContactSectionProps> = ({
           </Stack>
           <footer>
             <p className='text-sm text-slate-500'>
-              Copyright @ 2017-2023 Paolo Vincent Julian.
-              <br />
-              All rights reserved.
+              © 2017-2023 Paolo Vincent Julian
             </p>
           </footer>
         </Stack>

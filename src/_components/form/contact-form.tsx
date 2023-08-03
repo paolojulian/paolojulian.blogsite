@@ -3,19 +3,21 @@ import React, { FunctionComponent, useState } from 'react';
 import { Formik } from 'formik';
 import Stack from '@/_components/layouts/stack';
 import TextInput from './text-input';
-import CTAButton from '../common/cta-button';
-import { contactFormSchema } from '../../_utils/schemas';
-import { IContactForm } from '../../_forms';
+import CTAButton from '../../app/portfolio/_components/common/cta-button';
+import { contactFormSchema } from '../../app/portfolio/_utils/schemas';
+import { IContactForm } from '../../app/portfolio/_forms';
 import FormControl from './form-control';
 
 export type ContactFormProps = {
   onSubmit?: (form: IContactForm) => Promise<void>;
+  dark?: boolean;
   isLoading: boolean;
   isFinished: boolean;
 };
 
 const ContactForm: FunctionComponent<ContactFormProps> = ({
   onSubmit = () => Promise.reject(),
+  dark = false,
   isLoading,
 }) => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -93,7 +95,9 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
             </Stack>
             <CTAButton
               type='submit'
-              variant={isSuccess ? 'success' : 'default'}
+              variant={
+                isSuccess ? 'success' : dark ? 'default-dark' : 'default'
+              }
               loadingText='sending'
               isLoading={isLoading}
               disabled={isLoading}
