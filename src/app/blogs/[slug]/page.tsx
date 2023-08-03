@@ -20,9 +20,10 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
 
   return (
     <Stack className='relative'>
-      <div className='p-8 z-10'>
+      <div className='p-4 md:p-8 z-10'>
         <Stack className='space-y-12 mb-24'>
-          <Stack className='relative pb-8'>
+          {/* header */}
+          <Stack className='relative pb-8 space-y-2'>
             <Row className='space-x-2'>
               <span className='text-slate-700 font-medium'>
                 <AppDate dateTime={blogPost.sys.publishedAt} />
@@ -31,15 +32,16 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
                 Paolo Vincent Julian
               </address>
             </Row>
-            <h1 className='font-anton uppercase text-7xl leading-tight text-slate-800'>
+            <h1 className='font-anton uppercase text-4xl md:text-7xl leading-tight text-slate-800'>
               {blogPost.title}
             </h1>
             <div className='absolute bottom-0 left-0 w-3/6 border-b border-slate-400'></div>
           </Stack>
 
-          <Stack className='ml-24 space-y-12 pb-12'>
+          {/* content */}
+          <Stack className='md:ml-24 space-y-12 pb-6 md:pb-12'>
             <Stack className='space-y-1 items-center'>
-              <div className='h-[350px] w-full relative'>
+              <div className='h-[200px] md:h-[350px] w-full relative'>
                 <Image
                   alt={`${blogPost.title} banner`}
                   layout='fill'
@@ -49,10 +51,10 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
                   }}
                 />
               </div>
-              <p className='text-slate-500'>thumbnail</p>
+              <p className='text-slate-500 text-sm md:text-base'>thumbnail</p>
             </Stack>
 
-            <div className='border-b border-slate-400 pb-24'>
+            <div className='border-b border-slate-400 pb-12 md:pb-24'>
               <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>
             </div>
 
@@ -72,29 +74,31 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
                 <span className='group-hover:-translate-x-2 transition-transform'>
                   <LeftArrowIcon />
                 </span>
-                <p>go to blog list</p>
+                <p>go to article list</p>
               </Row>
             </Link>
           </Stack>
 
           <div className='relative space-y-8'>
-            <div className='absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-main to-transparent z-10'></div>
+            <div className='hidden md:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-main to-transparent z-10'></div>
             <h3 className='font-anton text-6xl'>LATEST ARTICLES</h3>
-            <Stack className='space-y-8 w-full overflow-x-hidden relative'>
-              <Row className='space-x-4'>
-                <BlogItemShort blogPost={blogPost} />
-                <BlogItemShort blogPost={blogPost} />
-                <BlogItemShort blogPost={blogPost} />
-                <BlogItemShort blogPost={blogPost} />
-                <BlogItemShort blogPost={blogPost} />
-                <BlogItemShort blogPost={blogPost} />
+            <Stack className='space-y-2'>
+              <Row className='space-x-1'>
+                <button className='border border-slate-500 bg-red-500 w-14 h-4'></button>
+                <button className='border border-slate-500 hover:bg-red-500/20 w-14 h-4'></button>
+                <button className='border border-slate-500 hover:bg-red-500/20 w-14 h-4'></button>
               </Row>
+              <Stack className='space-y-8 w-full overflow-x-hidden relative'>
+                <Row className='space-x-4 overflow-auto md:overflow-hidden snap-x snap-mandatory'>
+                  <BlogItemShort blogPost={blogPost} />
+                  <BlogItemShort blogPost={blogPost} />
+                  <BlogItemShort blogPost={blogPost} />
+                  <BlogItemShort blogPost={blogPost} />
+                  <BlogItemShort blogPost={blogPost} />
+                  <BlogItemShort blogPost={blogPost} />
+                </Row>
+              </Stack>
             </Stack>
-            <Row className='space-x-1'>
-              <button className='border border-slate-500 bg-red-500 w-14 h-4'></button>
-              <button className='border border-slate-500 w-14 h-4'></button>
-              <button className='border border-slate-500 w-14 h-4'></button>
-            </Row>
           </div>
         </Stack>
       </div>

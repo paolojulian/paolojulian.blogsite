@@ -7,7 +7,11 @@ const quicksand = Quicksand({
   subsets: ['latin'],
   variable: '--font-quicksand',
 });
-const anton = Anton({ weight: '400', variable: '--font-anton', subsets: ['latin'] });
+const anton = Anton({
+  weight: '400',
+  variable: '--font-anton',
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'Paolo Vincent Julian',
@@ -20,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html className='overflow-x-hidden' lang='en'>
       <body
         className={classNames(
           `${anton.variable} font-anton`,

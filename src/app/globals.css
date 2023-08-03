@@ -48,28 +48,31 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #fefaf3 inset !important;
 }
 
-/* scrollbar */
-/* width */
-::-webkit-scrollbar {
-  width: 14px;
-}
+/** Web */
+@media screen and (min-width: 1024px) {
+  /* scrollbar */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 14px;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #ece8e1;
-}
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ece8e1;
+  }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  cursor: pointer;
-  background: #888;
-  border-radius: 10px;
-  border: 3px solid #ece8e1;
-}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background: #888;
+    border-radius: 10px;
+    border: 3px solid #ece8e1;
+  }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 .text-stroke {

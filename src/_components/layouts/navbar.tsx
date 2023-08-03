@@ -81,7 +81,14 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
       >
         <Row className='justify-between items-center p-4'>
           <Link href='/'>
-            <span className='font-anton text-[24px] text-slate-400'>P</span>
+            <span
+              className={classNames(
+                'font-anton text-[24px] text-slate-400 transition-opacity duration-500',
+                isOpen ? 'opacity-1' : 'opacity-0'
+              )}
+            >
+              P
+            </span>
           </Link>
           <button>
             <CloseIcon onClick={handleToggleMenu} />
@@ -94,6 +101,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                 'py-2',
                 'text-red-400 border-b border-red-400'
               )}
+              onClick={handleToggleMenu}
             >
               <Link href='/blogs'>blogs</Link>
             </li>
@@ -102,6 +110,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                 'py-2',
                 'text-slate-400 border-b border-transparent'
               )}
+              onClick={handleToggleMenu}
             >
               <Link href='/components'>components</Link>
             </li>
@@ -110,6 +119,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                 'py-2',
                 'text-slate-400 border-b border-transparent'
               )}
+              onClick={handleToggleMenu}
             >
               <Link href='/portfolio'>portfolio</Link>
             </li>

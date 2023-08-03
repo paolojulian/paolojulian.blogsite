@@ -13,8 +13,9 @@ export type BlogItemShortProps = {
 
 const BlogItemShort: FunctionComponent<BlogItemShortProps> = ({ blogPost }) => {
   return (
-    <Link href={`/blogs/${blogPost.slug}`}>
+    <Link className='snap-start' href={`/blogs/${blogPost.slug}`}>
       <div className='flex flex-col items-center group relative w-[270px] border border-slate-400 overflow-hidden bg-main'>
+        <div className='w-2 h-2 bg-red-500 absolute bottom-0 left-0'></div>
         <div className='relative w-[270px] h-[200px] bg-slate-50 overflow-hidden'>
           {/* image */}
         </div>
