@@ -71,3 +71,9 @@ input:-webkit-autofill:active {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.text-stroke {
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #d1d5db;
+}

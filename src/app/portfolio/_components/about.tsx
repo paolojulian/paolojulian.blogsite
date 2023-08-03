@@ -40,21 +40,6 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
                 {portfolio.about}
               </ReactMarkdown>
             </div>
-            {/* <p className='text-xl max-w-screen-md'>
-              With <TextHighlight>{yearsOfExperience}</TextHighlight> years of
-              experience, I am a seasoned{' '}
-              <TextHighlight>full-stack developer</TextHighlight> with a focus
-              on <TextHighlight>front-end development</TextHighlight>. My
-              passion lies in coding, and I take great pleasure in creating
-              captivating user experiences.
-            </p>
-
-            <p className='text-xl max-w-screen-md'>
-              As time has passed, I have embraced a simpler and more{' '}
-              <TextHighlight>minimalist</TextHighlight> approach. I firmly
-              believe that in app and system development, complexity should be
-              avoided, and simplicity should be prioritized for better results.
-            </p> */}
             <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8'>
               <Link href={'/portfolio#contact'}>
                 <span className='hidden md:block'>

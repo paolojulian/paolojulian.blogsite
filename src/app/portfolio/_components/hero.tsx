@@ -49,7 +49,15 @@ const NavLink = ({
 const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
   return (
     <Stack className='min-h-screen h-full py-4 md:py-10'>
-      <Row className='justify-end'>
+      <Row className='justify-between items-center'>
+        <div>
+          <Link
+            href='/portfolio'
+            className='font-anton text-slate-500 text-2xl'
+          >
+            P
+          </Link>
+        </div>
         <nav>
           <ul className='flex space-x-4 md:space-x-8'>
             <NavLink name='about' href='/portfolio#about' />

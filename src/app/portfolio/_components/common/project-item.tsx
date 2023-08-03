@@ -13,6 +13,7 @@ import ProjectImage from './project-image';
 import ProjectTitle from './project-title';
 import ProjectDetailsModal from '../modals/project-detail-modal';
 import { IPortfolioItem } from '../../_contentful';
+import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 
 type ProjectItemVariants = 'left-image' | 'right-image';
 
@@ -47,13 +48,16 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
         <div
           className={classNames(
             'flex flex-col space-y-5 md:space-y-0 md:flex-row',
+            'group cursor-pointer',
             variant === 'left-image' ? 'md:flex-row' : 'md:flex-row-reverse'
           )}
+          onClick={handleOpenDetails}
         >
-          <div className='relative p-1 md:p-3' onClick={handleOpenDetails}>
+          <div className='relative p-1 md:p-3 overflow-hidden'>
             <div className='absolute top-0 left-0 w-full md:w-5/6 h-2/6 md:h-1/6 border-t border-l border-r md:border-r-0 border-slate-400 pointer-events-none'></div>
             <ProjectImage alt={project.name} src={project.image?.url} />
             <div className='absolute bottom-0 right-0 w-full md:w-5/6 h-2/6 md:h-1/6 border-b border-x md:border-l-0 border-r border-slate-400 pointer-events-none'></div>
+            <div className='transition-transform -translate-x-full group-hover:translate-x-0 bg-slate-800/10 absolute inset-0'></div>
           </div>
           <Stack
             className={classNames(
@@ -74,14 +78,18 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
             </div>
             <p className='text-base text-slate-500'>{project.description}</p>
 
-            <div>
-              <button
-                className='text-left text-sm font-medium text-slate-600 md:hover:text-red-400 md:hover:scale-[1.02] italic'
-                onClick={handleOpenDetails}
-              >
-                SEE MORE &gt;
-              </button>
-            </div>
+            <button
+              className={classNames(
+                'text-left text-sm font-medium text-red-500 italic flex flex-row items-center space-x-2',
+                variant === 'left-image' ? 'justify-start' : 'justify-end'
+              )}
+            >
+              <span>SEE MORE</span>
+              <span className='transition-transform translate-x-0 group-hover:translate-x-2'>
+                <RightArrowIcon />
+              </span>
+            </button>
+
             {/* <Row
               className={classNames(
                 'space-x-2 flex-wrap',

@@ -29,7 +29,7 @@ const ProjectImage: FunctionComponent<ProjectImageProps> = ({
           className={classNames(
             'absolute inset-0 left-1/2 -translate-x-1/2',
             hasEffects
-              ? 'transition md:group-hover:scale-[1.01] md:group-hover:-translate-y-[1px]'
+              ? 'transition md:group-hover:scale-[1.02] md:group-hover:-translate-y-[2px]'
               : ''
           )}
           alt={alt}

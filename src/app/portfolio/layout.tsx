@@ -14,6 +14,7 @@ export default function PortfolioLayout({
   return (
     <div
       className={classNames(
+        'relative',
         'font-quicksand bg-main 2xl:max-w-screen-xl max-w-screen-lg mx-auto text-slate-700',
         'px-4 md:px-0'
       )}
