@@ -60,7 +60,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               <div className='border-b border-slate-400 w-[90%] absolute left-5 -bottom-4'></div> */}
             </Stack>
           </Stack>
-          <Stack className='space-y-6 md:mx-16'>
+          <Stack className='space-y-6 md:px-16 md:border-l md:border-slate-400'>
             <Stack className='items-center pb-8 space-y-1'>
               <Row className='w-full justify-center bg-slate-50 mix-blend-luminosity'>
                 <ProjectImage
