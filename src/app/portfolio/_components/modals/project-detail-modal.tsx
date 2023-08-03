@@ -18,7 +18,6 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const project = useProjectItemContext();
-  console.log({ project });
 
   const handleBackToTop = () => {
     containerRef.current?.scrollTo({
