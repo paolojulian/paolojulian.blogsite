@@ -1,3 +1,5 @@
+import Footer from '@/_components/layouts/footer';
+import Navbar from '@/_components/layouts/navbar';
 import classNames from 'classnames';
 import type { Metadata } from 'next';
 
@@ -14,9 +16,8 @@ export default function PortfolioLayout({
   return (
     <div
       className={classNames(
-        'relative',
-        'font-quicksand bg-main 2xl:max-w-screen-xl max-w-screen-lg mx-auto text-slate-700',
-        'px-4 md:px-0'
+        'relative flex flex-col',
+        'font-manrope bg-main text-slate-700',
       )}
     >
       {children}

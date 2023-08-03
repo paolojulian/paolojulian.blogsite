@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         anton: ['var(--font-anton)'],
         quicksand: ['var(--font-quicksand)'],
+        manrope: ['var(--font-manrope)'],
       },
       colors: {
         main: '#ECE8E1',

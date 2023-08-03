@@ -18,7 +18,7 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
         <Stack className='space-y-2'>
           <SectionHeading>about</SectionHeading>
           <Stack className='space-y-12'>
-            <div className='max-w-screen-md text-xl'>
+            <div className='text-xl'>
               <ReactMarkdown
                 components={{
                   strong: ({ children }) => (

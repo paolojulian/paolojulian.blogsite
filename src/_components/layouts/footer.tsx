@@ -18,7 +18,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
   } = useContactForm();
 
   return (
-    <footer className='bg-slate-900 w-full'>
+    <footer id="contact" className='bg-slate-900 w-full'>
       <div className='flex flex-col md:flex-row mx-auto max-w-screen-md relative'>
         <Stack className='space-y-6 relative border-r border-slate-400 py-8 md:pb-24 md:pt-8'>
           {/* left divider */}

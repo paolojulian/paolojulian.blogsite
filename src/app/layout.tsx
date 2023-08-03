@@ -1,11 +1,15 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Quicksand } from 'next/font/google';
+import { Anton, Quicksand, Manrope } from 'next/font/google';
 
 const quicksand = Quicksand({
   subsets: ['latin'],
-  variable: '--font-quicksand',
+  variable: '--font-manrope',
+});
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
 });
 const anton = Anton({
   weight: '400',
@@ -28,7 +32,8 @@ export default function RootLayout({
       <body
         className={classNames(
           `${anton.variable} font-anton`,
-          `${quicksand.variable} font-quicksand`
+          `${manrope.variable} font-manrope`,
+          `${quicksand.variable} font-manrope`
         )}
       >
         {children}

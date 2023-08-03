@@ -47,39 +47,47 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
       <div>
         <div
           className={classNames(
-            'flex flex-col space-y-5 md:space-y-0 md:flex-row',
+            'relative',
+            'flex flex-col space-y-5 md:space-y-0 md:space-x-8 md:flex-row',
             'group cursor-pointer',
             variant === 'left-image' ? 'md:flex-row' : 'md:flex-row-reverse'
           )}
           onClick={handleOpenDetails}
         >
-          <div className='relative p-1 md:p-3 overflow-hidden'>
-            <div className='absolute top-0 left-0 w-full md:w-5/6 h-2/6 md:h-1/6 border-t border-l border-r md:border-r-0 border-slate-400 pointer-events-none'></div>
+          {/* image */}
+          <div className='relative overflow-hidden'>
             <ProjectImage alt={project.name} src={project.image?.url} />
-            <div className='absolute bottom-0 right-0 w-full md:w-5/6 h-2/6 md:h-1/6 border-b border-x md:border-l-0 border-r border-slate-400 pointer-events-none'></div>
           </div>
+
+          {/* content */}
           <Stack
             className={classNames(
-              'flex-1 justify-center space-y-4 z-10',
-              variant === 'left-image' ? 'md:ml-8' : 'md:mr-8 md:text-right'
+              'flex-1 justify-center space-y-4 z-10 p-5',
+              variant === 'left-image' ? '' : 'md:text-right'
             )}
           >
+            {/* border */}
+            {variant === 'left-image' ? (
+              <div className='absolute right-0 bottom-0 w-2/6 h-full border-r border-t border-b border-slate-400 pointer-events-none'></div>
+            ) : (
+              <div className='absolute left-0 bottom-0 w-2/6 h-full border-l border-t border-b border-slate-400 pointer-events-none'></div>
+            )}
             <div
               className={classNames(
                 // 'cursor-pointer',
-                variant === 'left-image'
-                  ? 'md:-ml-16'
-                  : 'md:-mr-16 md:text-right'
+                variant === 'left-image' ? '' : 'md:text-right'
               )}
               // onClick={handleOpenDetails}
             >
               <ProjectTitle>{project.name}</ProjectTitle>
             </div>
-            <p className='text-base text-slate-500 line-clamp-4 md:line-clamp-none'>{project.description}</p>
+            <p className='text-base text-slate-700 line-clamp-4 xl:line-clamp-none'>
+              {project.description}
+            </p>
 
             <button
               className={classNames(
-                'text-left text-sm font-medium text-red-500 italic flex flex-row items-center space-x-2',
+                'text-left text-sm font-medium text-red-400 flex flex-row items-center space-x-2',
                 variant === 'left-image' ? 'justify-start' : 'md:justify-end'
               )}
             >

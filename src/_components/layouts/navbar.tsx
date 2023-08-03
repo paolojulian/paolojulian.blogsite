@@ -8,8 +8,20 @@ import classNames from 'classnames';
 import CloseIcon from '../icons/close-icon';
 import { usePathname } from 'next/navigation';
 
+type Variants = 'default' | 'light';
+
 export type NavbarProps = {
-  // no props
+  variant?: Variants;
+};
+
+const colorVariants: Record<Variants, string> = {
+  default: 'bg-slate-900 text-slate-400',
+  light: 'bg-main text-slate-600',
+};
+
+const borderVariants: Record<Variants, string> = {
+  default: '',
+  light: 'border-l border-slate-400',
 };
 
 const WebLink: FunctionComponent<
@@ -21,7 +33,7 @@ const WebLink: FunctionComponent<
         'border-b',
         isActive
           ? 'text-red-400 border-red-400'
-          : 'text-slate-400 hover:text-red-400 border-transparent'
+          : 'hover:text-red-400 border-transparent'
       )}
     >
       <Link {...props}>{name}</Link>
@@ -29,7 +41,7 @@ const WebLink: FunctionComponent<
   );
 };
 
-const Navbar: FunctionComponent<NavbarProps> = () => {
+const Navbar: FunctionComponent<NavbarProps> = ({ variant = 'default' }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -40,15 +52,25 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
 
   return (
     <>
-      <div className='bg-slate-900 sticky top-0 left-0 right-0 z-30'>
-        <Row className='mx-auto max-w-screen-xl px-4 md:px-8 py-4 justify-between items-center'>
+      <div
+        className={classNames(
+          'sticky top-0 left-0 right-0 z-30',
+          colorVariants[variant]
+        )}
+      >
+        <Row
+          className={classNames(
+            '2xl:max-w-screen-xl max-w-screen-lg mx-auto px-4 md:px-8 py-4 justify-between items-center',
+            borderVariants[variant]
+          )}
+        >
           <div className='select-none'>
             <Link href='/'>
-              <span className='font-anton text-[24px] text-slate-400'>P</span>
+              <span className='font-anton text-[24px]'>P</span>
             </Link>
           </div>
           <nav>
-            <ul className='flex-row space-x-8 text-slate-400 hidden md:flex'>
+            <ul className='flex-row space-x-8 hidden md:flex'>
               <WebLink
                 href='/blogs'
                 name='blogs'
@@ -105,7 +127,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
             </button>
           </Row>
           <nav className='w-full text-right p-4 flex flex-col space-y-2'>
-            <ul className='flex-row space-x-8 text-slate-400'>
+            <ul className='flex-row space-x-8'>
               <li
                 className={classNames(
                   'py-2',

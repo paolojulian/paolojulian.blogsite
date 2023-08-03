@@ -61,7 +61,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
           </Stack>
           <Stack className='space-y-6 md:px-16 md:border-l md:border-slate-400'>
             <Stack className='items-center pb-8 space-y-1'>
-              <Row className='w-full justify-center bg-slate-50 mix-blend-luminosity'>
+              <Row className='w-full justify-center bg-light'>
                 <ProjectImage
                   alt={project.name}
                   src={project.image?.url}
@@ -83,7 +83,10 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
                 </h4>
                 <Row className='flex-wrap space-x-4'>
                   {project.tags.map((tag, i) => (
-                    <span className='text-slate-700 uppercase font-medium' key={i}>
+                    <span
+                      className='text-slate-700 uppercase font-medium italic'
+                      key={i}
+                    >
                       {`//${tag}`}
                     </span>
                   ))}
