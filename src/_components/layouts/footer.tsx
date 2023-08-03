@@ -66,10 +66,18 @@ const Footer: FunctionComponent<FooterProps> = () => {
               <h4 className='text-sm font-medium text-slate-500/70 mb-1'>
                 support
               </h4>
-              <Link href='mailto:paolojulian.personal@gmail.com'>
+              <Link
+                className='transition-colors hover:text-red-400'
+                href='mailto:paolojulian.personal@gmail.com'
+              >
                 paolojulian.personal@gmail.com
               </Link>
-              <Link href='tel:09279488654'>(+63) 927 948 8564</Link>
+              <Link
+                className='transition-colors hover:text-red-400'
+                href='tel:09279488654'
+              >
+                (+63) 927 948 8564
+              </Link>
             </Stack>
           </Stack>
           <footer>

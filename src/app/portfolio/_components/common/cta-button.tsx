@@ -10,6 +10,7 @@ export type CTAButtonProps = {
   variant?: Variants;
   size?: Sizes;
   block?: boolean;
+  dark?: boolean;
   loadingText?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -23,14 +24,15 @@ const bgVariants: Record<Variants, string> = {
 
 const sizes: Record<Sizes, string> = {
   base: 'py-3',
-  lg: 'py-4'
-}
+  lg: 'py-4',
+};
 
 const CTAButton: FunctionComponent<CTAButtonProps> = ({
   loadingText = 'loading',
   variant = 'default',
   size = 'base',
   block = true,
+  dark = false,
   isLoading = false,
   children,
   ...props
