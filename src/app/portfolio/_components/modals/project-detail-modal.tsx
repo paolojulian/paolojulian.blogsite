@@ -72,13 +72,13 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               <p className='text-slate-400 text-sm'>thumbnail</p>
             </Stack>
             {project.role ? (
-              <Stack>
+              <Stack className='space-y-1'>
                 <h4 className='text-slate-500 text-sm font-medium'>role</h4>
                 <p className='text-slate-700 font-semibold'>{project.role}</p>
               </Stack>
             ) : null}
             {project.tags ? (
-              <Stack>
+              <Stack className='space-y-1'>
                 <h4 className='text-slate-500 text-sm font-medium'>
                   technologies
                 </h4>
