@@ -1,6 +1,7 @@
 import Row from '@/_components/layouts/row';
 import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
+import HamburgerMenuIcon from '../icons/hamburger-menu';
 
 export type NavbarProps = {
   // no props
@@ -16,7 +17,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
           </Link>
         </div>
         <nav>
-          <ul className='flex flex-row space-x-8 text-slate-400'>
+          <ul className='flex-row space-x-8 text-slate-400 hidden md:flex'>
             <li>
               <Link href='/blogs'>blogs</Link>
             </li>
@@ -27,6 +28,9 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
               <Link href='/blogs'>portfolio</Link>
             </li>
           </ul>
+          <button className='block md:hidden'>
+            <HamburgerMenuIcon />
+          </button>
         </nav>
       </Row>
     </div>
