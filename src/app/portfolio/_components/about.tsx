@@ -1,10 +1,8 @@
 import Stack from '@/_components/layouts/stack';
-import React, { FunctionComponent, useMemo } from 'react';
+import React, { FunctionComponent } from 'react';
 import SectionHeading from './common/section-heading';
 import TextHighlight from './common/text-highlight';
 import CTAButton from './common/cta-button';
-import Row from '@/_components/layouts/row';
-import dayjs from 'dayjs';
 import Link from 'next/link';
 import { IPortfolio } from '../_contentful';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
@@ -13,15 +11,7 @@ export type AboutSectionProps = {
   portfolio: IPortfolio;
 };
 
-const yearStarted = 2017;
-
 const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
-  const currentYear = dayjs().year();
-  const yearsOfExperience = useMemo(
-    () => currentYear - yearStarted,
-    [currentYear]
-  );
-
   return (
     <section id='about'>
       <Stack className='py-36 space-y-6'>
