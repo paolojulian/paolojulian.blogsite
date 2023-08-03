@@ -32,7 +32,7 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
                 Paolo Vincent Julian
               </address>
             </Row>
-            <h1 className='font-anton uppercase text-4xl md:text-7xl leading-tight text-slate-800'>
+            <h1 className='font-anton uppercase text-5xl md:text-7xl leading-tight text-slate-800'>
               {blogPost.title}
             </h1>
             <div className='absolute bottom-0 left-0 w-3/6 border-b border-slate-400'></div>
@@ -102,7 +102,7 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
           </div>
         </Stack>
       </div>
-      <div className='absolute font-anton bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0'>
+      <div className='absolute font-anton bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0 w-full overflow-clip'>
         <p>IAM</p>
         <p>PAOLOJULIAN</p>
       </div>
