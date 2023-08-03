@@ -13,16 +13,17 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
 
   return (
     <>
-      <div className='p-8'>
-        <Stack className='space-y-8'>
+      <div className='p-8 py-24'>
+        <Stack className='space-y-24'>
           <Row className='justify-between'>
-            <h1 className='text-slate-600'>blogs</h1>
-            <input
-              className='p-2 border-b border-slate-400 bg-inherit w-fit focus:outline-none focus:border-blue-400'
-              placeholder='search'
-            />
+            <div className='relative'>
+              <h1 className='text-slate-800 text-8xl font-anton w-full'>
+                ARTICLES
+              </h1>
+              <div className='absolute translate-y-3 top-1/2 -right-4 w-16 h-[3px] bg-red-400 pointer-events-none'></div>
+            </div>
           </Row>
-          <Stack className='space-y-6'>
+          <Stack className='space-y-12 mx-auto max-w-screen-lg'>
             {blogPosts.map((blogPost, i) => (
               <BlogItem blogPost={blogPost} key={i} />
             ))}
