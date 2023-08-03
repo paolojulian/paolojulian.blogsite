@@ -51,7 +51,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               <h2 className='text-slate-500'>project overview</h2>
               <h3
                 className={classNames(
-                  'font-anton text-3xl md:text-6xl text-slate-700 uppercase'
+                  'font-anton text-3xl md:text-6xl text-slate-800 uppercase'
                 )}
               >
                 {project.name}
