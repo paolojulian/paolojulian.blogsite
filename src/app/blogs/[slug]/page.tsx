@@ -3,7 +3,11 @@ import React, { FunctionComponent } from 'react';
 import { getBlogPostBySlug } from '../_api/blog-post';
 import AppDate from '@/_components/common/app-date';
 import AppReactMarkdown from '@/_components/markdown/app-react-markdown';
+import Row from '@/_components/layouts/row';
 import Link from 'next/link';
+import LeftArrowIcon from '@/_components/icons/left-arrow-icon';
+import Image from 'next/image';
+import BlogItemShort from '../_components/blog-item-short';
 
 export type BlogDetailsProps = {
   params: {
@@ -15,28 +19,88 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
   const blogPost = await getBlogPostBySlug(params.slug);
 
   return (
-    <Stack className=''>
-      <div className='p-8'>
-        <Stack className='space-y-12'>
-          <nav className='text-slate-700 flex space-x-2'>
-            <Link href={'/blogs'}>blogs</Link>
-            <span>{'>'}</span>
-            <span className='text-slate-400'>{blogPost.slug}</span>
-          </nav>
+    <Stack className='relative'>
+      <div className='p-8 z-10'>
+        <Stack className='space-y-12 mb-24'>
           <Stack className='relative pb-8'>
-            <p className='text-slate-500 text-sm'>
-              <AppDate dateTime={blogPost.sys.publishedAt} />
-            </p>
-            <h1 className='font-black text-5xl leading-tight text-slate-700'>
+            <Row className='space-x-2'>
+              <span className='text-slate-700 font-medium'>
+                <AppDate dateTime={blogPost.sys.publishedAt} />
+              </span>
+              <address className='text-red-500 font-medium'>
+                Paolo Vincent Julian
+              </address>
+            </Row>
+            <h1 className='font-anton uppercase text-7xl leading-tight text-slate-800'>
               {blogPost.title}
             </h1>
             <div className='absolute bottom-0 left-0 w-3/6 border-b border-slate-400'></div>
           </Stack>
 
-          <div>
-            <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>
+          <Stack className='ml-24 space-y-12 pb-12'>
+            <Stack className='space-y-1 items-center'>
+              <div className='h-[350px] w-full relative'>
+                <Image
+                  alt={`${blogPost.title} banner`}
+                  layout='fill'
+                  src={blogPost.banner.url}
+                  style={{
+                    objectFit: 'cover',
+                  }}
+                />
+              </div>
+              <p className='text-slate-500'>thumbnail</p>
+            </Stack>
+
+            <div className='border-b border-slate-400 pb-24'>
+              <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>
+            </div>
+
+            <Row className='space-x-4 items-center'>
+              <p className='text-slate-600'>tags:</p>
+              <Row className='space-x-4 flex-wrap'>
+                {blogPost.tags?.map((tag, i) => (
+                  <p key={i} className='uppercase font-semibold text-slate-700'>
+                    {`//${tag}`}
+                  </p>
+                ))}
+              </Row>
+            </Row>
+
+            <Link href='/blogs'>
+              <Row className='items-center space-x-2 text-red-400 font-semibold group'>
+                <span className='group-hover:-translate-x-2 transition-transform'>
+                  <LeftArrowIcon />
+                </span>
+                <p>go to blog list</p>
+              </Row>
+            </Link>
+          </Stack>
+
+          <div className='relative space-y-8'>
+            <div className='absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-main to-transparent z-10'></div>
+            <h3 className='font-anton text-6xl'>LATEST ARTICLES</h3>
+            <Stack className='space-y-8 w-full overflow-x-hidden relative'>
+              <Row className='space-x-4'>
+                <BlogItemShort blogPost={blogPost} />
+                <BlogItemShort blogPost={blogPost} />
+                <BlogItemShort blogPost={blogPost} />
+                <BlogItemShort blogPost={blogPost} />
+                <BlogItemShort blogPost={blogPost} />
+                <BlogItemShort blogPost={blogPost} />
+              </Row>
+            </Stack>
+            <Row className='space-x-1'>
+              <button className='border border-slate-500 bg-red-500 w-14 h-4'></button>
+              <button className='border border-slate-500 w-14 h-4'></button>
+              <button className='border border-slate-500 w-14 h-4'></button>
+            </Row>
           </div>
         </Stack>
+      </div>
+      <div className='absolute font-anton bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0'>
+        <p>IAM</p>
+        <p>PAOLOJULIAN</p>
       </div>
     </Stack>
   );

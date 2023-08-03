@@ -11,6 +11,10 @@ export async function getBlogPostBySlug(slug: string): Promise<IBlogPost> {
           content
           description
           slug
+          tags
+          banner {
+            url
+          }
           sys {
             publishedAt
           }
@@ -42,6 +46,10 @@ export async function getLatestBlogPosts(): Promise<IBlogPost[]> {
           content
           description
           slug
+          tags
+          banner {
+            url
+          }
           sys {
             publishedAt
           }
