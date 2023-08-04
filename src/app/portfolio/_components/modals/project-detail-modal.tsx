@@ -7,6 +7,7 @@ import AppReactMarkdown from '@/_components/markdown/app-react-markdown';
 import styles from './project-detail-modal.module.css';
 import Row from '@/_components/layouts/row';
 import ProjectImage from '../common/project-image';
+import AppTag from '@/_components/common/app-tag';
 
 export type ProjectDetailsModalProps = {
   // no props
@@ -83,12 +84,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
                 </h4>
                 <Row className='flex-wrap space-x-4'>
                   {project.tags.map((tag, i) => (
-                    <span
-                      className='text-slate-700 uppercase font-medium italic'
-                      key={i}
-                    >
-                      {`//${tag}`}
-                    </span>
+                    <AppTag key={i} tag={tag} />
                   ))}
                 </Row>
               </Stack>
