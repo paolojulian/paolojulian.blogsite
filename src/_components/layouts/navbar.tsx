@@ -97,6 +97,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           <nav>
             <ul className='flex-row space-x-8 hidden md:flex'>
               <WebLink
+                href='/portfolio'
+                name='home'
+                isActive={!!pathname?.match(/portfolio/)}
+              />
+              <WebLink
                 href='/blogs'
                 name='blogs'
                 isActive={!!pathname?.match(/blogs/)}
@@ -105,11 +110,6 @@ const Navbar: FunctionComponent<NavbarProps> = ({
                 href='/components'
                 name='components'
                 isActive={!!pathname?.match(/components/)}
-              />
-              <WebLink
-                href='/portfolio'
-                name='portfolio'
-                isActive={!!pathname?.match(/portfolio/)}
               />
             </ul>
             <button className='block md:hidden' onClick={handleToggleMenu}>
@@ -154,6 +154,12 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           <nav className='w-full text-right p-4 flex flex-col space-y-2'>
             <ul className='flex-row space-x-8'>
               <MobileLink
+                name='home'
+                href='/portfolio'
+                isActive={pathname === '/portfolio'}
+                onClick={handleToggleMenu}
+              />
+              <MobileLink
                 name='blogs'
                 href='/blogs'
                 isActive={pathname === '/blogs'}
@@ -163,12 +169,6 @@ const Navbar: FunctionComponent<NavbarProps> = ({
                 name='components'
                 href='/components'
                 isActive={pathname === '/components'}
-                onClick={handleToggleMenu}
-              />
-              <MobileLink
-                name='portfolio'
-                href='/portfolio'
-                isActive={pathname === '/portfolio'}
                 onClick={handleToggleMenu}
               />
             </ul>
