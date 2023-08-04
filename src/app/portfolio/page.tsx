@@ -25,9 +25,13 @@ const PortfolioPage: FunctionComponent<PortfolioPageProps> = async () => {
 
   return (
     <>
+      <Navbar variant='light' />
+
       <main className='px-4 md:px-0'>
-        <Stack className='md:px-0 xl:px-24 w-full relative min-h-screen'>
-          <Navbar variant='light' />
+        <Stack
+          className='md:px-0 xl:px-24 w-full relative'
+          style={{ minHeight: 'calc(100vh - 70px)' }}
+        >
           <Stack className='flex-1 2xl:max-w-screen-xl max-w-screen-lg mx-auto w-full border-l border-slate-400 px-4 md:px-8 2xl:px-24'>
             <HeroSection />
           </Stack>

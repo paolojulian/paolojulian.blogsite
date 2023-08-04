@@ -17,7 +17,7 @@ export default function PortfolioLayout({
     <div
       className={classNames(
         'relative flex flex-col',
-        'font-manrope bg-main text-slate-700',
+        'font-manrope bg-main text-slate-700'
       )}
     >
       {children}

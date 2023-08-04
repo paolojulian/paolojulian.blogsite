@@ -12,6 +12,7 @@ type Variants = 'default' | 'light';
 
 export type NavbarProps = {
   variant?: Variants;
+  fixed?: boolean;
 };
 
 const colorVariants: Record<Variants, string> = {
@@ -59,7 +60,10 @@ const MobileLink: FunctionComponent<
   );
 };
 
-const Navbar: FunctionComponent<NavbarProps> = ({ variant = 'default' }) => {
+const Navbar: FunctionComponent<NavbarProps> = ({
+  variant = 'default',
+  fixed = false,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -72,13 +76,16 @@ const Navbar: FunctionComponent<NavbarProps> = ({ variant = 'default' }) => {
     <>
       <div
         className={classNames(
-          'sticky top-0 left-0 right-0 z-30',
+          'top-0 left-0 right-0 z-30',
+          fixed ? 'fixed' : 'sticky',
           colorVariants[variant]
         )}
       >
         <Row
           className={classNames(
-            '2xl:max-w-screen-xl max-w-screen-lg mx-auto px-4 md:px-8 py-4 justify-between items-center',
+            'h-[70px]',
+            '2xl:max-w-screen-xl max-w-screen-lg mx-auto',
+            'px-4 md:px-8 justify-between items-center',
             borderVariants[variant]
           )}
         >
