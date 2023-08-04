@@ -29,7 +29,6 @@ const ProjectImage: FunctionComponent<ProjectImageProps> = ({
         className={classNames(
           'h-[300px] md:h-[400px] xl:h-[400px] w-full md:w-[400px] xl:w-[480px] z-20 relative overflow-hidden',
           'opacity-80',
-          hasEffects ? 'border border-slate-300' : '',
           hasEffects ? 'cursor-pointer' : 'pointer-events-none'
         )}
       >

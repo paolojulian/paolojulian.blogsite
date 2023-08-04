@@ -48,7 +48,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
         <div
           className={classNames(
             'relative',
-            'flex flex-col space-y-5 md:space-y-0 md:space-x-8 md:flex-row',
+            'flex flex-col',
             'group cursor-pointer',
             variant === 'left-image' ? 'md:flex-row' : 'md:flex-row-reverse'
           )}
@@ -63,7 +63,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
           <Stack
             className={classNames(
               'flex-1 justify-center space-y-4 z-10 p-5',
-              variant === 'left-image' ? '' : 'md:text-right'
+              variant === 'left-image' ? 'md:ml-8' : 'md:mr-8 md:text-right'
             )}
           >
             {/* border */}
