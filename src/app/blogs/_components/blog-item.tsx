@@ -35,7 +35,7 @@ const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
         <Stack className='flex-1 h-full p-4 relative space-y-2'>
           <Stack>
             <p className='font-medium text-sm md:text-xl'>
-              <AppDate dateTime='05-Jul-2023 09:00 AM' />
+              <AppDate dateTime={blogPost.sys.publishedAt} />
             </p>
             <h4 className='font-semibold text-lg lg:text-xl xl:text-2xl text-slate-700 line-clamp-1'>
               {blogPost.title}
