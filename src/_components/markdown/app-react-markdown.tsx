@@ -18,6 +18,11 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
         h3: ({ children }) => <AppHeading.H3>{children}</AppHeading.H3>,
         p: ({ children }) => <p className='text-slate-700'>{children}</p>,
         li: ({ children }) => <li className='text-slate-700'>{children}</li>,
+        a: ({ href, children }) => (
+          <a target={'_blank'} href={href} className='text-red-500 font-medium'>
+            {children}
+          </a>
+        ),
         strong: ({ children }) => (
           <strong className='font-semibold'>{children}</strong>
         ),

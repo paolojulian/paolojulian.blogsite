@@ -1,6 +1,6 @@
 import Stack from '@/_components/layouts/stack';
 import React, { FunctionComponent } from 'react';
-import { getBlogPostBySlug } from '../_api/blog-post';
+import { getBlogPostBySlug, getLatestBlogPosts } from '../_api/blog-post';
 import AppDate from '@/_components/common/app-date';
 import AppReactMarkdown from '@/_components/markdown/app-react-markdown';
 import Row from '@/_components/layouts/row';
@@ -17,7 +17,10 @@ export type BlogDetailsProps = {
 };
 
 const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
-  const blogPost = await getBlogPostBySlug(params.slug);
+  const [blogPost, latestBlogPosts] = await Promise.all([
+    getBlogPostBySlug(params.slug),
+    getLatestBlogPosts(),
+  ]);
 
   return (
     <Stack className='relative'>
@@ -98,12 +101,9 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
               </Row>
               <Stack className='space-y-8 w-full overflow-x-hidden relative'>
                 <Row className='space-x-4 overflow-auto md:overflow-hidden snap-x snap-mandatory'>
-                  <BlogItemShort blogPost={blogPost} />
-                  <BlogItemShort blogPost={blogPost} />
-                  <BlogItemShort blogPost={blogPost} />
-                  <BlogItemShort blogPost={blogPost} />
-                  <BlogItemShort blogPost={blogPost} />
-                  <BlogItemShort blogPost={blogPost} />
+                  {latestBlogPosts.map((blogPost, i) => (
+                    <BlogItemShort key={i} blogPost={blogPost} />
+                  ))}
                 </Row>
               </Stack>
             </Stack>
