@@ -20,6 +20,8 @@ const BlogItemShort: FunctionComponent<BlogItemShortProps> = ({ blogPost }) => {
             alt={`${blogPost.title} banner`}
             src={blogPost.banner.url}
             layout='fill'
+            objectFit='cover'
+            objectPosition='center center'
           />
           {/* overlay */}
           <div className='absolute inset-0 bg-red-500/50 transition-transform -translate-x-full group-hover:translate-x-0'></div>
