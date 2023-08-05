@@ -76,7 +76,7 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
         <ol className='flex justify-end md:justify-normal space-x-4 md:space-x-10 py-3'>
           <li className='md:hover:text-red-400'>
             <Link
-              href={'https://www.facebook.com/profile.php?id=100078321445396'}
+              href={'https://www.facebook.com/profile.php?id=100095657733002'}
               target='_blank'
             >
               <span className='hidden md:block'>facebook</span>
