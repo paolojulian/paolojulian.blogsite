@@ -50,12 +50,13 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
           {/* content */}
           <Stack className='md:ml-24 space-y-12 pb-6 md:pb-12'>
             <Stack className='space-y-1 items-center'>
-              <div className='h-[200px] md:h-[350px] w-full relative'>
+              <div className='h-[200px] sm:h-[300px] md:h-[400px] 2xl:h-[600px] w-full relative'>
                 <Image
                   alt={`${blogPost.title} banner`}
                   layout='fill'
                   src={blogPost.banner.url}
                   style={{
+                    objectPosition: 'center center',
                     objectFit: 'cover',
                   }}
                 />
