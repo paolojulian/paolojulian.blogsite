@@ -13,7 +13,8 @@ const contentfulGQLClient = {
     return fetch(URL, {
       method: 'POST',
       headers,
-      body: JSON.stringify({ query, variables })
+      body: JSON.stringify({ query, variables }),
+      next: { revalidate: 3600 }
     })
   }
 }
