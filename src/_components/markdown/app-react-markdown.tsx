@@ -16,6 +16,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
       components={{
         h2: ({ children }) => <AppHeading.H2>{children}</AppHeading.H2>,
         h3: ({ children }) => <AppHeading.H3>{children}</AppHeading.H3>,
+        h4: ({ children }) => <AppHeading.H4>{children}</AppHeading.H4>,
         p: ({ children }) => <p className='text-slate-700'>{children}</p>,
         li: ({ children }) => <li className='text-slate-700'>{children}</li>,
         a: ({ href, children }) => (
@@ -23,8 +24,9 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             {children}
           </a>
         ),
+        img: ({ ...props }) => <img {...props} className='pt-4' />,
         strong: ({ children }) => (
-          <strong className='font-semibold'>{children}</strong>
+          <strong className='font-bold'>{children}</strong>
         ),
         pre: ({ children }) => <>{children}</>,
         code: ({ children, className }) => (

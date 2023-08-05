@@ -35,7 +35,7 @@ const H3: FunctionComponent<React.HtmlHTMLAttributes<HTMLHeadingElement>> = ({
   return (
     <h3
       className={classNames(
-        'text-slate-800 font-bold text-xl md:text-2xl',
+        'text-slate-800 font-bold text-xl md:text-2xl pt-6',
         className
       )}
       {...props}
@@ -43,10 +43,26 @@ const H3: FunctionComponent<React.HtmlHTMLAttributes<HTMLHeadingElement>> = ({
   );
 };
 
+const H4: FunctionComponent<React.HtmlHTMLAttributes<HTMLHeadingElement>> = ({
+  className,
+  ...props
+}) => {
+  return (
+    <h4
+      className={classNames(
+        'text-slate-800 font-bold text-lg md:text-xl pt-4',
+        className
+      )}
+      {...props}
+    ></h4>
+  );
+};
+
 interface AppHeadingSubComponents {
   H1: typeof H1;
   H2: typeof H2;
   H3: typeof H3;
+  H4: typeof H4;
 }
 
 export type AppHeadingProps = {};
@@ -55,6 +71,7 @@ const AppHeading: AppHeadingSubComponents = {
   H1,
   H2,
   H3,
+  H4
 };
 
 export default AppHeading;
