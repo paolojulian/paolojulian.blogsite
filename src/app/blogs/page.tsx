@@ -3,9 +3,16 @@ import BlogItem from './_components/blog-item';
 import Stack from '@/_components/layouts/stack';
 import Row from '@/_components/layouts/row';
 import { getLatestBlogPosts } from './_api/blog-post';
+import { Metadata } from 'next';
 
 export type BlogsPageProps = {
   // no props
+};
+
+export const metadata: Metadata = {
+  title: 'Paolo Julian | Blog List',
+  description:
+    'Explore my latest blog posts and stay updated with our informative content. Discover insights, tips, and news on various topics.',
 };
 
 const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
