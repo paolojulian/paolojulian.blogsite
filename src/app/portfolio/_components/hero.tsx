@@ -81,8 +81,10 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
 
   return (
     <>
-      <div className='fixed w-3/5 h-screen right-0 top-24 overflow-hidden pointer-events-none'>
-        <DotGrid gridGap={30} dotColor={'#374151'} />
+      {/* <div className='fixed w-3/5 h-screen right-0 top-24 overflow-hidden pointer-events-none'>
+        <DotGrid gridGap={30} dotColor={'#374151'} /> */}
+      <div className='fixed w-3/5 h-screen right-0 top-24 -z-20 overflow-hidden pointer-events-none'>
+        <DotGrid gridGap={30} dotColor={'#11182720'} />
       </div>
       <Stack className='flex-1 h-full'>
         <Stack className='flex-1'>
