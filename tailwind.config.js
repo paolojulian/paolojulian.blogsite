@@ -12,6 +12,9 @@ module.exports = {
         main: '#ECE8E1',
         light: '#fefaf3',
       },
+      transitionTimingFunction: {
+        fadeIn: 'cubic-bezier(.24,.6,.64,.65)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

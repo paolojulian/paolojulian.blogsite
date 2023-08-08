@@ -1,4 +1,5 @@
-import React, { FunctionComponent } from 'react';
+'use client';
+import React, { FunctionComponent, useEffect, useRef } from 'react';
 import { Anton } from 'next/font/google';
 import classNames from 'classnames';
 import Stack from '@/_components/layouts/stack';
@@ -40,16 +41,44 @@ const contactItems: {
   },
 ];
 
-const NavLink = ({
-  name,
-  ...props
-}: React.ComponentProps<typeof Link> & { name: string }) => (
-  <li className='md:hover:text-red-400'>
-    <Link {...props}>{name}</Link>
-  </li>
-);
-
 const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
+  const logoRef = useRef<HTMLHeadingElement>(null);
+  const professionRef = useRef<HTMLParagraphElement>(null);
+  const socialLinksRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let scroll = window.scrollY;
+      const logo = logoRef.current;
+      const profession = professionRef.current;
+      const socialLinks = socialLinksRef.current;
+
+      if (logo) {
+        logo.style.transform = `translateY(${scroll * 0.8}px)`;
+      }
+
+      if (profession) {
+        const opacity = 1 - Math.min(scroll / 200, 1);
+        profession.style.transform = `translateY(${scroll * 0.7}px)`;
+        profession.style.opacity = opacity.toFixed(2);
+      }
+
+      if (socialLinks) {
+        const opacity = 1 - Math.min(scroll / 100, 1);
+        socialLinks.style.transform = `translateY(${scroll * 0.7}px)`;
+        socialLinks.style.opacity = opacity.toFixed(2);
+      }
+    };
+
+    if (window.innerWidth > 768) {
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
   return (
     <>
       <div className='fixed w-3/5 h-screen right-0 top-24 -z-20 overflow-hidden pointer-events-none'>
@@ -63,23 +92,29 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
                 <h1
                   className={classNames(
                     antonFont.className,
-                    'font-black text-[80px] md:text-[140px] leading-[1] tracking-wide w-fit'
+                    'font-black text-[80px] md:text-[140px] leading-[1] tracking-wide w-fit -z-10 select-none'
                   )}
+                  ref={logoRef}
                 >
                   <span className='text-main/60 block md:inline'>PAOLO</span>
                   <span className='text-main relative'>
                     <span>JULIAN</span>
-                    <div className='absolute translate-y-1 top-1/2 -right-3 w-16 h-[3px] bg-red-400'></div>
                   </span>
                 </h1>
               </div>
-              <p className='text-main/70 text-base md:text-xl tracking-widest'>
+              <p
+                className='text-main/70 text-base md:text-xl tracking-widest'
+                ref={professionRef}
+              >
                 SOFTWARE ENGINEER
               </p>
             </Stack>
           </Stack>
 
-          <Row className='justify-end md:justify-center space-x-4 md:space-x-4 py-8'>
+          <div
+            className='flex flex-row justify-end md:justify-center space-x-4 md:space-x-4 py-8'
+            ref={socialLinksRef}
+          >
             <Link href={'https://www.linkedin.com/in/pipz/'} target='_blank'>
               <div className='rounded-full flex justify-center items-center transition-colors bg-main/90 hover:bg-red-300 h-12 w-12'>
                 <LinkedinIcon className='fill-slate-800' />
@@ -100,7 +135,7 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
                 <PhoneIcon className='fill-slate-800' />
               </div>
             </Link>
-          </Row>
+          </div>
         </Stack>
       </Stack>
     </>

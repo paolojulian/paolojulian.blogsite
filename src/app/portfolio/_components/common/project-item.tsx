@@ -14,6 +14,7 @@ import ProjectTitle from './project-title';
 import ProjectDetailsModal from '../modals/project-detail-modal';
 import { IPortfolioItem } from '../../_contentful';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';
+import IntersectProvider from '@/_context/IntersectContext';
 
 type ProjectItemVariants = 'left-image' | 'right-image';
 
@@ -54,52 +55,55 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
           )}
           onClick={handleOpenDetails}
         >
-          {/* image */}
-          <div className='relative overflow-hidden'>
-            <ProjectImage alt={project.name} src={project.image?.url} />
-          </div>
+          <IntersectProvider>
+            {/* image */}
+            <div className='relative overflow-hidden'>
+              <ProjectImage alt={project.name} src={project.image?.url} />
+            </div>
+          </IntersectProvider>
 
           {/* content */}
-          <Stack
-            className={classNames(
-              'flex-1 justify-center space-y-4 z-10 p-5',
-              variant === 'left-image'
-                ? 'md:ml-8 pr-12'
-                : 'md:mr-8 md:text-right pl-8'
-            )}
-          >
-            {/* border */}
-            {variant === 'left-image' ? (
-              <div className='absolute right-0 bottom-0 w-2/6 h-full border-r border-b border-slate-400 pointer-events-none'></div>
-            ) : (
-              <div className='absolute left-0 bottom-0 w-2/6 h-full border-l border-b border-slate-400 pointer-events-none'></div>
-            )}
-            <div
+          <IntersectProvider duration={700}>
+            <Stack
               className={classNames(
-                // 'cursor-pointer',
-                variant === 'left-image' ? '' : 'md:text-right'
-              )}
-              // onClick={handleOpenDetails}
-            >
-              <ProjectTitle>{project.name}</ProjectTitle>
-            </div>
-            <p className='text-base text-slate-700 line-clamp-4'>
-              {project.description}
-            </p>
-
-            <button
-              className={classNames(
-                'text-left text-sm font-medium text-red-400 flex flex-row items-center space-x-2',
-                variant === 'left-image' ? 'justify-start' : 'md:justify-end'
+                'flex-1 justify-center space-y-4 z-10 p-5 h-full',
+                variant === 'left-image'
+                  ? 'md:ml-8 pr-12'
+                  : 'md:mr-8 md:text-right pl-8'
               )}
             >
-              <span>SEE MORE</span>
-              <span className='transition-transform translate-x-0 group-hover:translate-x-2'>
-                <RightArrowIcon />
-              </span>
-            </button>
+              {/* border */}
+              {variant === 'left-image' ? (
+                <div className='absolute right-0 bottom-0 w-2/6 h-full border-r border-b border-slate-400 pointer-events-none'></div>
+              ) : (
+                <div className='absolute left-0 bottom-0 w-2/6 h-full border-l border-b border-slate-400 pointer-events-none'></div>
+              )}
+              <div
+                className={classNames(
+                  // 'cursor-pointer',
+                  variant === 'left-image' ? '' : 'md:text-right'
+                )}
+                // onClick={handleOpenDetails}
+              >
+                <ProjectTitle>{project.name}</ProjectTitle>
+              </div>
+              <p className='text-base text-slate-700 line-clamp-4'>
+                {project.description}
+              </p>
 
-            {/* <Row
+              <button
+                className={classNames(
+                  'text-left text-sm font-medium text-red-400 flex flex-row items-center space-x-2',
+                  variant === 'left-image' ? 'justify-start' : 'md:justify-end'
+                )}
+              >
+                <span>SEE MORE</span>
+                <span className='transition-transform translate-x-0 group-hover:translate-x-2'>
+                  <RightArrowIcon />
+                </span>
+              </button>
+
+              {/* <Row
               className={classNames(
                 'space-x-2 flex-wrap',
                 variant === 'left-image' ? 'text-left' : 'justify-end'
@@ -110,13 +114,14 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
               ))}
             </Row> */}
 
-            {/* <span
+              {/* <span
               onClick={handleOpenDetails}
               className='text-slate-500 text-sm cursor-pointer'
             >
               learn more...
             </span> */}
-          </Stack>
+            </Stack>
+          </IntersectProvider>
         </div>
 
         <ProjectDetailsModal

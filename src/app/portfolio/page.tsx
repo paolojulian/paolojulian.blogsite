@@ -36,7 +36,7 @@ const PortfolioPage: FunctionComponent<PortfolioPageProps> = async () => {
             <HeroSection />
           </Stack>
         </Stack>
-        <Stack className='2xl:max-w-screen-xl max-w-screen-lg mx-auto w-full border-l border-slate-400 px-4 md:px-8 2xl:px-24 relative'>
+        <Stack className='2xl:max-w-screen-xl max-w-screen-lg mx-auto w-full border-l border-slate-400 px-4 md:px-8 2xl:px-24 relative z-10'>
           <AboutSection portfolio={portfolio} />
           <ProjectsSection items={portfolioItems} />
           <div className='w-full border-b border-slate-400'></div>
