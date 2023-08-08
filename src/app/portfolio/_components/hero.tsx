@@ -81,7 +81,7 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
 
           <Row className='justify-end md:justify-center space-x-4 md:space-x-4 py-8'>
             <Link href={'https://www.linkedin.com/in/pipz/'} target='_blank'>
-              <div className='rounded-full flex justify-center items-center bg-main/80 h-12 w-12'>
+              <div className='rounded-full flex justify-center items-center transition-colors bg-main/90 hover:bg-red-300 h-12 w-12'>
                 <LinkedinIcon className='fill-slate-800' />
               </div>
             </Link>
@@ -90,13 +90,13 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
               href={'mailto:paolojulian.personal@gmail.com'}
               target='_blank'
             >
-              <div className='rounded-full flex justify-center items-center bg-main/80 h-12 w-12'>
+              <div className='rounded-full flex justify-center items-center transition-colors bg-main/90 hover:bg-red-300 h-12 w-12'>
                 <MailIcon className='fill-slate-800' />
               </div>
             </Link>
 
             <Link href={'tel:09279488654'} target='_blank'>
-              <div className='rounded-full flex justify-center items-center bg-main/80 h-12 w-12'>
+              <div className='rounded-full flex justify-center items-center transition-colors bg-main/90 hover:bg-red-300 h-12 w-12'>
                 <PhoneIcon className='fill-slate-800' />
               </div>
             </Link>
