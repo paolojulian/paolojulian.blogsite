@@ -10,12 +10,12 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
   return (
     <>
       <Stack
-        className='h-full justify-center items-center text-slate-600'
+        className='h-full justify-center items-center text-slate-600 text-2xl font-medium'
         style={{
           minHeight: 'calc(100vh - 70px)',
         }}
       >
-        under construction.
+        coming soon...
       </Stack>
     </>
   );
