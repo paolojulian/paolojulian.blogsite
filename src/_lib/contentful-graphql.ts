@@ -8,15 +8,24 @@ const headers = {
   'Content-Type': 'application/json'
 }
 
+interface IQueryParams {
+  query: string;
+  variables?: Record<string, unknown>;
+  preview?: boolean;
+}
+
 const contentfulGQLClient = {
-  query: ({ query, variables = undefined }: { query: string, variables?: Record<string, string> }) => {
+  query: ({ query, variables = undefined, preview = false }: IQueryParams) => {
     return fetch(URL, {
       method: 'POST',
-      headers,
+      headers: {
+        ...headers,
+        Authorization: preview === true ? `Bearer ${PREVIEW_TOKEN}` : headers.Authorization
+      },
       body: JSON.stringify({ query, variables }),
       next: { revalidate: 3600 }
     })
-  }
+  },
 }
 
 export default contentfulGQLClient
