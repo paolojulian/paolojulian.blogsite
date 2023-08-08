@@ -3,11 +3,8 @@ import React, { FunctionComponent, useEffect, useRef } from 'react';
 import { Anton } from 'next/font/google';
 import classNames from 'classnames';
 import Stack from '@/_components/layouts/stack';
-import Row from '@/_components/layouts/row';
 import Link from 'next/link';
-import FacebookIcon from './icons/facebook-icon';
 import LinkedinIcon from './icons/linkedin-icon';
-import EmailIcon from './icons/email-icon';
 import DotGrid from '@/_components/common/dot-grid';
 import PhoneIcon from './icons/phone-icon';
 import MailIcon from './icons/mail-icon';
@@ -70,14 +67,14 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
       }
     };
 
-    if (window.innerWidth > 768) {
-      window.addEventListener('scroll', handleScroll);
-    }
+    // if (window.innerWidth > 768) {
+    window.addEventListener('scroll', handleScroll);
+    // }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  });
+  }, []);
 
   return (
     <>
