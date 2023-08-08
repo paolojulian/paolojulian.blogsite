@@ -16,7 +16,7 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
     <section id='about'>
       <Stack className='py-36 space-y-6'>
         <Stack className='space-y-2'>
-          <SectionHeading>about</SectionHeading>
+          <SectionHeading>WHO AM I?</SectionHeading>
           <Stack className='space-y-12'>
             <div className='text-xl'>
               <ReactMarkdown
