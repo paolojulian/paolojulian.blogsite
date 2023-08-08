@@ -9,5 +9,7 @@ export interface IBlogPost {
   title: string;
   banner: {
     url: string;
+    width: number;
+    height: number;
   }
 }

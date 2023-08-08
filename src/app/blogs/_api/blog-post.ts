@@ -14,6 +14,8 @@ export async function getBlogPostBySlug(slug: string, preview: boolean = false):
           tags
           banner {
             url
+            width
+            height
           }
           sys {
             publishedAt

@@ -60,8 +60,9 @@ const Article: FunctionComponent<ArticleProps> = ({
               <div className='h-[200px] sm:h-[300px] md:h-[400px] 2xl:h-[600px] w-full relative'>
                 <Image
                   alt={`${blogPost.title} banner`}
-                  layout='fill'
                   src={blogPost.banner.url}
+                  width={blogPost.banner.width}
+                  height={blogPost.banner.height}
                   style={{
                     objectPosition: 'center center',
                     objectFit: 'cover',
