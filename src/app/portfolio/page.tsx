@@ -32,11 +32,11 @@ const PortfolioPage: FunctionComponent<PortfolioPageProps> = async () => {
           className='md:px-0 xl:px-24 w-full relative bg-slate-900'
           style={{ minHeight: 'calc(100vh - 70px)' }}
         >
-          <Stack className='flex-1 2xl:max-w-screen-xl max-w-screen-lg mx-auto w-full border-l border-slate-400 px-4 md:px-8 2xl:px-24'>
+          <Stack className='flex-1 2xl:max-w-screen-xl max-w-screen-lg mx-auto w-full sm:border-l border-slate-400 px-4 md:px-8 2xl:px-24'>
             <HeroSection />
           </Stack>
         </Stack>
-        <Stack className='2xl:max-w-screen-xl max-w-screen-lg mx-auto w-full border-l border-slate-400 px-4 md:px-8 2xl:px-24 relative z-10'>
+        <Stack className='2xl:max-w-screen-xl max-w-screen-lg mx-auto w-full sm:border-l border-slate-400 px-4 md:px-8 2xl:px-24 relative z-10'>
           <AboutSection portfolio={portfolio} />
           <ProjectsSection items={portfolioItems} />
           <div className='w-full border-b border-slate-400'></div>

@@ -22,7 +22,7 @@ const colorVariants: Record<Variants, string> = {
 
 const borderVariants: Record<Variants, string> = {
   default: '',
-  'default-bordered': 'border-l border-slate-400',
+  'default-bordered': 'sm:border-l border-slate-400',
 };
 
 const WebLink: FunctionComponent<

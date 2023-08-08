@@ -16,27 +16,7 @@ export type HeroSectionProps = {
   // No Props
 };
 
-const contactItems: {
-  title: string;
-  link: string;
-  // icon: React.ReactNode
-}[] = [
-  {
-    title: 'facebook',
-    link: 'https://www.facebook.com/profile.php?id=100078321445396',
-    // icon: FacebookIcon,
-  },
-  {
-    title: 'linkedin',
-    link: 'https://www.linkedin.com/in/pipz/',
-    // icon: FacebookIcon
-  },
-  {
-    title: 'paolojulian.personal@gmail.com',
-    link: 'mailto:paolojulian.personal@gmail.com',
-    // icon: () => FacebookIcon,
-  },
-];
+let isScrolling = false;
 
 const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
   const logoRef = useRef<HTMLHeadingElement>(null);
@@ -45,31 +25,59 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      let scroll = window.scrollY;
-      const logo = logoRef.current;
-      const profession = professionRef.current;
-      const socialLinks = socialLinksRef.current;
+      if (!isScrolling) {
+        isScrolling = true;
+        requestAnimationFrame(() => {
+          let scroll = window.scrollY;
 
-      if (logo) {
-        logo.style.transform = `translateY(${scroll * 0.8}px)`;
-      }
+          if (logoRef.current) {
+            logoRef.current.style.transform = `translateY(${scroll * 0.8}px)`;
+          }
 
-      if (profession) {
-        const opacity = 1 - Math.min(scroll / 200, 1);
-        profession.style.transform = `translateY(${scroll * 0.7}px)`;
-        profession.style.opacity = opacity.toFixed(2);
-      }
+          if (professionRef.current) {
+            const opacity = 1 - Math.min(scroll / 200, 1);
+            professionRef.current.style.transform = `translateY(${
+              scroll * 0.7
+            }px)`;
+            professionRef.current.style.opacity = opacity.toFixed(2);
+          }
 
-      if (socialLinks) {
-        const opacity = 1 - Math.min(scroll / 100, 1);
-        socialLinks.style.transform = `translateY(${scroll * 0.7}px)`;
-        socialLinks.style.opacity = opacity.toFixed(2);
+          if (socialLinksRef.current) {
+            const opacity = 1 - Math.min(scroll / 100, 1);
+            socialLinksRef.current.style.transform = `translateY(${
+              scroll * 0.7
+            }px)`;
+            socialLinksRef.current.style.opacity = opacity.toFixed(2);
+          }
+
+          isScrolling = false;
+        });
       }
+      // let scroll = window.scrollY;
+      // const logo = logoRef.current;
+      // const profession = professionRef.current;
+      // const socialLinks = socialLinksRef.current;
+
+      // if (logo) {
+      //   logo.style.transform = `translateY(${scroll * 0.8}px)`;
+      // }
+
+      // if (profession) {
+      //   const opacity = 1 - Math.min(scroll / 200, 1);
+      //   profession.style.transform = `translateY(${scroll * 0.7}px)`;
+      //   profession.style.opacity = opacity.toFixed(2);
+      // }
+
+      // if (socialLinks) {
+      //   const opacity = 1 - Math.min(scroll / 100, 1);
+      //   socialLinks.style.transform = `translateY(${scroll * 0.7}px)`;
+      //   socialLinks.style.opacity = opacity.toFixed(2);
+      // }
     };
 
-    // if (window.innerWidth > 768) {
-    window.addEventListener('scroll', handleScroll);
-    // }
+    if (window.innerWidth > 768) {
+      window.addEventListener('scroll', handleScroll);
+    }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
