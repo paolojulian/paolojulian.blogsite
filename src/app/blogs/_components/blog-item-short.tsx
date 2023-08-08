@@ -34,7 +34,7 @@ const BlogItemShort: FunctionComponent<BlogItemShortProps> = ({ blogPost }) => {
         <Stack className='flex-1 h-full p-3 relative space-y-2'>
           <Stack>
             <p className='font-medium text-sm'>
-              <AppDate dateTime='05-Jul-2023 09:00 AM' />
+              <AppDate dateTime={blogPost.sys.publishedAt} />
             </p>
             <h4 className='font-semibold text-base text-slate-700 line-clamp-1'>
               {blogPost.title}
