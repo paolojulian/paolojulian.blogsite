@@ -28,11 +28,11 @@ export const IntersectProvider: FunctionComponent<{
   useEffect(() => {
     const callbackFunction: IntersectionObserverCallback = (entries) => {
       const [entry] = entries;
-      // setIsInView((prev) => {
-      //   if (prev === true) return true;
-      //   return entry.isIntersecting;
-      // });
-      setIsInView(entry.isIntersecting);
+      setIsInView((prev) => {
+        if (prev === true) return true;
+        return entry.isIntersecting;
+      });
+      // setIsInView(entry.isIntersecting);
     };
 
     const container = containerRef.current;
