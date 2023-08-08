@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import CloseIcon from '../icons/close-icon';
 import { usePathname } from 'next/navigation';
 
-type Variants = 'default' | 'light';
+type Variants = 'default' | 'default-bordered';
 
 export type NavbarProps = {
   variant?: Variants;
@@ -17,12 +17,12 @@ export type NavbarProps = {
 
 const colorVariants: Record<Variants, string> = {
   default: 'bg-slate-900 text-slate-400',
-  light: 'bg-main text-slate-600',
+  'default-bordered': 'bg-slate-900 text-slate-400',
 };
 
 const borderVariants: Record<Variants, string> = {
   default: '',
-  light: 'border-l border-slate-400',
+  'default-bordered': 'border-l border-slate-400',
 };
 
 const WebLink: FunctionComponent<

@@ -25,7 +25,7 @@ const PortfolioPage: FunctionComponent<PortfolioPageProps> = async () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar variant='default-bordered' />
 
       <main className='px-0'>
         <Stack
@@ -42,7 +42,9 @@ const PortfolioPage: FunctionComponent<PortfolioPageProps> = async () => {
           <div className='w-full border-b border-slate-400'></div>
           <div className='relative space-y-8 py-24 z-10'>
             <div className='hidden md:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-main to-transparent z-10'></div>
-            <h3 className='font-anton text-slate-800 text-6xl'>LATEST ARTICLES</h3>
+            <h3 className='font-anton text-slate-800 text-6xl'>
+              LATEST ARTICLES
+            </h3>
             <Stack className='space-y-2'>
               <Row className='space-x-1'>
                 <button className='border border-slate-500 bg-red-500 w-14 h-2'></button>
