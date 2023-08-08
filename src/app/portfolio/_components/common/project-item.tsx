@@ -63,14 +63,16 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
           <Stack
             className={classNames(
               'flex-1 justify-center space-y-4 z-10 p-5',
-              variant === 'left-image' ? 'md:ml-8' : 'md:mr-8 md:text-right'
+              variant === 'left-image'
+                ? 'md:ml-8 pr-12'
+                : 'md:mr-8 md:text-right pl-8'
             )}
           >
             {/* border */}
             {variant === 'left-image' ? (
-              <div className='absolute right-0 bottom-0 w-2/6 h-full border-r border-t border-b border-slate-400 pointer-events-none'></div>
+              <div className='absolute right-0 bottom-0 w-2/6 h-full border-r border-b border-slate-400 pointer-events-none'></div>
             ) : (
-              <div className='absolute left-0 bottom-0 w-2/6 h-full border-l border-t border-b border-slate-400 pointer-events-none'></div>
+              <div className='absolute left-0 bottom-0 w-2/6 h-full border-l border-b border-slate-400 pointer-events-none'></div>
             )}
             <div
               className={classNames(
@@ -81,7 +83,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
             >
               <ProjectTitle>{project.name}</ProjectTitle>
             </div>
-            <p className='text-base text-slate-700 line-clamp-4 xl:line-clamp-none'>
+            <p className='text-base text-slate-700 line-clamp-4'>
               {project.description}
             </p>
 

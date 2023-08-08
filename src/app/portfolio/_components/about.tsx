@@ -15,9 +15,10 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
   return (
     <section id='about'>
       <Stack className='py-36 space-y-6'>
-        <Stack className='space-y-2'>
+        <Stack className='space-y-12'>
           <SectionHeading>WHO AM I?</SectionHeading>
-          <Stack className='space-y-12'>
+
+          <Stack className='space-y-12 xl:mx-24'>
             <div className='text-xl'>
               <ReactMarkdown
                 components={{
@@ -30,24 +31,26 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
                 {portfolio.about}
               </ReactMarkdown>
             </div>
-            <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8'>
+            <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4'>
               <Link href={'/portfolio#contact'}>
                 <span className='hidden md:block'>
-                  <CTAButton block={false}>let&lsquo;s talk</CTAButton>
+                  <CTAButton size='lg' block={false}>
+                    GET IN TOUCH
+                  </CTAButton>
                 </span>
                 <span className='block md:hidden'>
-                  <CTAButton size='lg'>let&lsquo;s talk</CTAButton>
+                  <CTAButton size='lg'>GET IN TOUCH</CTAButton>
                 </span>
               </Link>
               <Link href={portfolio.resume.url} target='_blank'>
                 <span className='hidden md:block'>
-                  <CTAButton block={false} variant='secondary'>
-                    view cv
+                  <CTAButton size='lg' block={false} variant='secondary'>
+                    VIEW CV
                   </CTAButton>
                 </span>
                 <span className='block md:hidden'>
                   <CTAButton size='lg' variant='secondary'>
-                    view cv
+                    VIEW CV
                   </CTAButton>
                 </span>
               </Link>
