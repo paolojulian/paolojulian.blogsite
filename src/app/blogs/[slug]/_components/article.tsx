@@ -57,7 +57,7 @@ const Article: FunctionComponent<ArticleProps> = ({
           {/* content */}
           <Stack className='md:ml-24 space-y-12 pb-6 md:pb-12'>
             <Stack className='space-y-1 items-center'>
-              <div className='h-[200px] sm:h-[300px] md:h-[400px] 2xl:h-[600px] w-full relative'>
+              <div className='w-full relative'>
                 <Image
                   alt={`${blogPost.title} banner`}
                   src={blogPost.banner.url}
@@ -67,6 +67,7 @@ const Article: FunctionComponent<ArticleProps> = ({
                     objectPosition: 'center center',
                     objectFit: 'cover',
                   }}
+                  priority
                 />
               </div>
               <p className='text-slate-500 text-sm md:text-base'>thumbnail</p>

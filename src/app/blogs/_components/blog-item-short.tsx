@@ -14,14 +14,18 @@ const BlogItemShort: FunctionComponent<BlogItemShortProps> = ({ blogPost }) => {
     <Link className='snap-start' href={`/blogs/${blogPost.slug}`}>
       <div className='flex flex-col group relative w-[300px] border border-slate-400 overflow-hidden bg-main'>
         <div className='w-2 h-2 bg-red-500 absolute bottom-0 left-0'></div>
-        <div className='relative w-[300px] h-[200px] bg-slate-50 overflow-hidden'>
+        <div className='relative bg-slate-50 overflow-hidden'>
           {/* image */}
           <Image
             alt={`${blogPost.title} banner`}
             src={blogPost.banner.url}
-            layout='fill'
-            objectFit='cover'
-            objectPosition='center center'
+            width={blogPost.banner.width}
+            height={blogPost.banner.height}
+            style={{
+              objectPosition: 'center center',
+              objectFit: 'cover',
+            }}
+            sizes='(max-width: 768px) 100vw, 300px'
           />
           {/* overlay */}
           <div className='absolute inset-0 bg-red-500/50 transition-transform -translate-x-full group-hover:translate-x-0'></div>

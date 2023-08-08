@@ -51,6 +51,8 @@ export async function getLatestBlogPosts(): Promise<IBlogPost[]> {
           tags
           banner {
             url
+            width
+            height
           }
           sys {
             publishedAt

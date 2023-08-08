@@ -16,15 +16,17 @@ const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
   return (
     <Link href={`/blogs/${blogPost.slug}`}>
       <div className='flex flex-col md:flex-row items-center group relative md:space-x-8'>
-        <div className='relative w-full md:w-[420px] h-[200px] md:h-[280px] bg-slate-50 border-b border-l border-r border-slate-400 overflow-hidden'>
+        <div className='relative w-full md:w-1/2 lg:w-[420px] bg-slate-50 border-b border-l border-r border-slate-400 overflow-hidden'>
           {/* image */}
           <Image
-            layout='fill'
             src={blogPost.banner.url}
             alt={`${blogPost.title} banner`}
             style={{
               objectFit: 'cover',
             }}
+            width={blogPost.banner.width}
+            height={blogPost.banner.height}
+            sizes='(max-width: 768px) 100vw, 420px'
           />
           {/* overlay */}
           <div className='absolute inset-0 bg-red-500/50 transition-transform -translate-x-full group-hover:translate-x-0'></div>
