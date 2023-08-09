@@ -57,7 +57,7 @@ export const IntersectProvider: FunctionComponent<{
       <div
         className={classNames(
           'w-full md:w-auto transition-transform ease-fadeIn',
-          isInView ? 'translate-y-0' : 'translate-y-32'
+          isInView ? 'translate-y-0' : 'translate-y-96'
         )}
         style={{
           transitionDuration: `${duration}ms`,

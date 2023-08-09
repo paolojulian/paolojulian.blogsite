@@ -22,7 +22,7 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
           <SectionHeading>WHO AM I?</SectionHeading>
 
           <Stack className='space-y-12 xl:mx-24'>
-            <IntersectProvider duration={700}>
+            <IntersectProvider duration={500}>
               <div className={classNames('text-xl')}>
                 <ReactMarkdown
                   components={{
@@ -37,7 +37,7 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
               </div>
             </IntersectProvider>
 
-            <IntersectProvider duration={700}>
+            <IntersectProvider duration={500}>
               <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4'>
                 <Link href={'/portfolio#contact'}>
                   <span className='hidden md:block'>

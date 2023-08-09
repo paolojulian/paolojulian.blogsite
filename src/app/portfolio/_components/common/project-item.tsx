@@ -63,7 +63,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
           </IntersectProvider>
 
           {/* content */}
-          <IntersectProvider duration={700}>
+          <IntersectProvider duration={500}>
             <Stack
               className={classNames(
                 'flex-1 justify-center space-y-4 z-10 p-5 h-full',
