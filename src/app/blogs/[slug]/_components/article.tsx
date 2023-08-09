@@ -55,7 +55,7 @@ const Article: FunctionComponent<ArticleProps> = ({
           </Stack>
 
           {/* content */}
-          <Stack className='md:ml-24 space-y-12 pb-6 md:pb-12'>
+          <Stack className='space-y-12 pb-6 md:pb-12 max-w-screen-md mx-auto w-full'>
             <Stack className='space-y-1 items-center'>
               <div className='w-full relative'>
                 <Image
