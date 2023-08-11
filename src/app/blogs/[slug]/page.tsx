@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: BlogDetailsProps) {
   const blogPost = await getBlogPostBySlug(params.slug);
   return {
     title: `Paolo Julian | ${blogPost.title}`,
-    description: blogPost.description
+    description: blogPost.description,
   };
 }
 
@@ -24,7 +24,7 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
 
   return (
     <>
-    <Article blogPost={blogPost} latestBlogPosts={latestBlogPosts} />
+      <Article blogPost={blogPost} latestBlogPosts={latestBlogPosts} />
     </>
   );
 };
