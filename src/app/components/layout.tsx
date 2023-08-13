@@ -24,11 +24,7 @@ export default function PortfolioLayout({
         )}
       >
         <>
-          <Navbar />
-          <main className='mx-auto max-w-screen-lg 2xl:max-w-screen-xl px-4 md:px-12 flex-1 w-full'>
-            <div className='border-l border-slate-400'>{children}</div>
-          </main>
-          <Footer />
+          {children}
         </>
       </Stack>
     </>

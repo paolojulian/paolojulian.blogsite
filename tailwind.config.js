@@ -3,6 +3,12 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      width: {
+        sidebar: '18rem',
+      },
+      margin: {
+        sidebar: '18rem',
+      },
       fontFamily: {
         anton: ['var(--font-anton)'],
         quicksand: ['var(--font-quicksand)'],
