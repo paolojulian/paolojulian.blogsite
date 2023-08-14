@@ -21,7 +21,7 @@ const CategoryTab: FunctionComponent<CategoryTabProps> = ({
   return (
     <Stack
       className={classNames(
-        'space-y-1 flex-1 select-none py-6 px-3 border-t',
+        'space-y-1 flex-1 select-none py-3 md:py-6 px-1 md:px-3 border-t',
         isActive
           ? 'border-red-400 pointer-events-none'
           : ' border-slate-300 hover:border-slate-500 hover:bg-slate-400/10'
@@ -31,13 +31,13 @@ const CategoryTab: FunctionComponent<CategoryTabProps> = ({
     >
       <h2
         className={classNames(
-          'font-semibold text-lg',
+          'font-semibold md:text-lg text-center md:text-left',
           isActive && 'text-red-400'
         )}
       >
         {title}
       </h2>
-      <p className='text-sm'>{description}</p>
+      <p className='hidden md:block text-sm'>{description}</p>
     </Stack>
   );
 };

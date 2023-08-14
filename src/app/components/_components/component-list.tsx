@@ -42,7 +42,7 @@ const ComponentList: FunctionComponent<ComponentListProps> = (props) => {
         />
       </Row>
 
-      <div className='grid grid-cols-4 relative'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 relative'>
         <ComponentFactory category={activeCategory} />
 
         {/* gradient overlay */}
