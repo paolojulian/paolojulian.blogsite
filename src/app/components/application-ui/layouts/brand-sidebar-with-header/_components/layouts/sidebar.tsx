@@ -23,7 +23,7 @@ const MemoizedSidebarItem = React.memo(SidebarItem);
 
 const SidebarMenu = () => {
   return (
-    <Container className='flex-1 flex flex-col bg-gradient-to-t from-violet-700 to-fuchsia-700 xl:border-r xl:border-neutral-300 h-full'>
+    <Container className='flex-1 flex flex-col bg-gradient-to-t from-violet-700 to-fuchsia-700 lg:border-r lg:border-neutral-300 h-full'>
       <Stack className='py-5 space-y-8 flex-1'>
         {/* logo */}
         <div
@@ -105,7 +105,7 @@ const Sidebar: FunctionComponent<SidebarProps> = (props) => {
       {/* web */}
       <aside
         className={classNames(
-          'hidden xl:flex flex-col w-72 fixed inset-0',
+          'hidden lg:flex flex-col w-72 fixed inset-0',
           'z-50'
         )}
       >

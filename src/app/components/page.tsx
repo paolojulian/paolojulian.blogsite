@@ -12,10 +12,10 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
   return (
     <>
       <Navbar />
-      <main className='max-w-screen-xl px-4 md:px-12 flex-1 w-full'>
+      <main className='max-w-screen-xl mx-auto px-4 lg:px-0 flex-1 w-full'>
         <div className='border-l border-slate-400'>
           <Stack
-            className='h-full  text-slate-600 px-2 md:px-12 py-8 md:py-16'
+            className='h-full  text-slate-600 px-4 md:px-8 py-8 md:py-16'
             style={{
               minHeight: 'calc(100vh - 70px)',
             }}

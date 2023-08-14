@@ -21,7 +21,7 @@ const BrandSidebarWithHeader: FunctionComponent<
     <SidebarControlsProvider>
       <div className={font.className}>
         <Sidebar />
-        <div className='xl:pl-72 flex w-screen min-h-screen bg-neutral-50 text-neutral-700'>
+        <div className='lg:pl-72 flex w-screen min-h-screen bg-neutral-50 text-neutral-700'>
           <div className='flex flex-col flex-1'>
             <Navbar />
 

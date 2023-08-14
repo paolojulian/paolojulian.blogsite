@@ -22,15 +22,15 @@ const Navbar: FunctionComponent<NavbarProps> = (props) => {
     <nav className='flex shadow-sm border-b border-neutral-300'>
       <Container className='flex-1'>
         <Row className='items-center'>
-          <Row className='flex-1 space-x-2 xl:space-x-0 items-center'>
+          <Row className='flex-1 space-x-2 lg:space-x-0 items-center'>
             <button
-              className='flex xl:hidden items-center justify-center w-9 h-9 rounded-sm'
+              className='flex lg:hidden items-center justify-center w-9 h-9 rounded-sm'
               onClick={() => setIsOpen(true)}
             >
               <BarsIcon />
             </button>
 
-            <span className='block xl:hidden h-6 w-[1px] border-r border-neutral-200'></span>
+            <span className='block lg:hidden h-6 w-[1px] border-r border-neutral-200'></span>
 
             <form
               className='relative flex-1'
