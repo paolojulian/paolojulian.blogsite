@@ -105,7 +105,7 @@ const Sidebar: FunctionComponent<SidebarProps> = (props) => {
       {/* web */}
       <aside
         className={classNames(
-          'hidden xl:flex flex-col w-72 h-screen fixed inset-0',
+          'hidden xl:flex flex-col w-72 fixed inset-0',
           'z-50'
         )}
       >

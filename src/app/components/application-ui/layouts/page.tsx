@@ -20,13 +20,13 @@ const ApplicationUILayoutsPage: FunctionComponent<
       <main className='flex-1 w-full'>
         <div className=''>
           <Stack
-            className='h-full  text-slate-600 px-8 py-16'
+            className='h-full  text-slate-600 px-4 md:px-8 py-8 md:py-16'
             style={{
               minHeight: 'calc(100vh - 70px)',
             }}
           >
             {/* header */}
-            <Stack className='space-y-4 pb-24'>
+            <Stack className='space-y-4 pb-12 md:pb-24'>
               <div className='space-x-4'>
                 <Link
                   href='/components'
@@ -58,7 +58,7 @@ const ApplicationUILayoutsPage: FunctionComponent<
                       </Row>
                     </Link>
                   </Row>
-                  <div className='overflow-hidden aspect-video relative bg-gray-100 rounded-2xl border border-slate-400'>
+                  <div className='overflow-hidden h-[600px] lg:h-auto lg:aspect-video relative bg-gray-100 rounded lg:rounded-2xl border border-slate-400'>
                     <iframe
                       src='/components/application-ui/layouts/brand-sidebar-with-header'
                       title='Branded sidebar with header'
