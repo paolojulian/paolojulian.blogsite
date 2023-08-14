@@ -16,7 +16,7 @@ export type NavbarProps = {
 };
 
 const Navbar: FunctionComponent<NavbarProps> = (props) => {
-  const { isOpen, setIsOpen } = useSidebarControls();
+  const { setIsOpen } = useSidebarControls();
 
   return (
     <nav className='flex shadow-sm border-b border-neutral-300'>
@@ -33,7 +33,7 @@ const Navbar: FunctionComponent<NavbarProps> = (props) => {
             <span className='block xl:hidden h-6 w-[1px] border-r border-neutral-200'></span>
 
             <form
-              className='relative'
+              className='relative flex-1'
               onSubmit={(e) => {
                 e.preventDefault();
               }}
@@ -47,7 +47,7 @@ const Navbar: FunctionComponent<NavbarProps> = (props) => {
               <input
                 id='search-field'
                 className='p-4 pl-8 w-full bg-transparent focus:outline-none'
-                placeholder='Search'
+                placeholder='Search...'
               ></input>
             </form>
           </Row>
@@ -62,18 +62,18 @@ const Navbar: FunctionComponent<NavbarProps> = (props) => {
 
             <PopoverMenu
               Menu={
-                <Stack className='px-2 py-3 md:px-3 md:py-4 space-y-2 text-sm'>
+                <Stack className='px-2 py-3 md:px-3 md:py-4 space-y-1 text-sm'>
                   <Link
                     href='#'
                     role='menuitem'
-                    className='hover:bg-neutral-200/50 active:bg-neutral-200 rounded p-2'
+                    className='hover:bg-neutral-200/50 active:bg-neutral-200 rounded px-4 p-2'
                   >
                     Profile
                   </Link>
                   <Link
                     href='#'
                     role='menuitem'
-                    className='hover:bg-neutral-200/50 active:bg-neutral-200 rounded p-2 whitespace-nowrap'
+                    className='hover:bg-neutral-200/50 active:bg-neutral-200 rounded px-4 p-2 whitespace-nowrap'
                   >
                     Sign Out
                   </Link>

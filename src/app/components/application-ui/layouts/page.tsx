@@ -4,6 +4,8 @@ import Stack from '@/_components/layouts/stack';
 import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
 import BrandSidebarWithHeaderPage from './brand-sidebar-with-header/page';
+import Row from '@/_components/layouts/row';
+import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 
 export type ApplicationUILayoutsPageProps = {
   // no props
@@ -15,10 +17,10 @@ const ApplicationUILayoutsPage: FunctionComponent<
   return (
     <>
       <Navbar />
-      <main className='mx-auto max-w-screen-lg 2xl:max-w-screen-xl px-4 md:px-12 flex-1 w-full'>
-        <div className='border-l border-slate-400'>
+      <main className='flex-1 w-full'>
+        <div className=''>
           <Stack
-            className='h-full  text-slate-600 px-12 py-16'
+            className='h-full  text-slate-600 px-8 py-16'
             style={{
               minHeight: 'calc(100vh - 70px)',
             }}
@@ -44,10 +46,24 @@ const ApplicationUILayoutsPage: FunctionComponent<
 
               <Stack className='py-12 space-y-12'>
                 <Stack className='space-y-4'>
-                  <h2 className='text-bold text-lg'>
-                    Branded sidebar with header
-                  </h2>
-                  <div className='overflow-hidden aspect-video relative bg-gray-100 rounded-2xl'>
+                  <Row className='justify-between items-center'>
+                    <h2 className='text-bold text-lg'>
+                      Branded sidebar with header
+                    </h2>
+
+                    <Link href='/components/application-ui/layouts/brand-sidebar-with-header'>
+                      <Row className='items-center space-x-1 text-red-400 text-sm font-medium'>
+                        <span>Full screen</span>
+                        <RightArrowIcon />
+                      </Row>
+                    </Link>
+                  </Row>
+                  <div className='overflow-hidden aspect-video relative bg-gray-100 rounded-2xl border border-slate-400'>
+                    <iframe
+                      src='/components/application-ui/layouts/brand-sidebar-with-header'
+                      title='Branded sidebar with header'
+                      className='w-full h-full'
+                    />
                     {/* <BrandSidebarWithHeaderPage /> */}
                   </div>
                 </Stack>

@@ -84,9 +84,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         <Row
           className={classNames(
             'h-[70px]',
-            '2xl:max-w-screen-xl max-w-screen-lg mx-auto',
             'px-4 md:px-8 justify-between items-center',
-            borderVariants[variant]
           )}
         >
           <div className='select-none'>

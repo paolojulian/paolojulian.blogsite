@@ -17,54 +17,53 @@ const ComponentFactory: FunctionComponent<ComponentFactoryProps> = ({
         <>
           <MemoizedComponentCard
             title='Layouts'
-            variantCount={5}
+            variantCount={1}
             href='components/application-ui/layouts'
+            imageUrl='/assets/application-ui/layouts/layouts.png'
           />
-          <MemoizedComponentCard title='Text Input' variantCount={5} />
-          <MemoizedComponentCard title='Text Area' variantCount={5} />
-          <MemoizedComponentCard title='Buttons' variantCount={5} />
-          <MemoizedComponentCard title='Layouts' variantCount={5} />
-          <MemoizedComponentCard title='Text Input' variantCount={5} />
-          <MemoizedComponentCard title='Text Area' variantCount={5} />
-          <MemoizedComponentCard title='Buttons' variantCount={5} />
-          <MemoizedComponentCard title='Layouts' variantCount={5} />
-          <MemoizedComponentCard title='Text Input' variantCount={5} />
-          <MemoizedComponentCard title='Text Area' variantCount={5} />
-          <MemoizedComponentCard title='Buttons' variantCount={5} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
         </>
       );
     case 'marketing':
       return (
         <>
-          <MemoizedComponentCard title='Hero' variantCount={5} />
-          <MemoizedComponentCard title='Text Input' variantCount={5} />
-          <MemoizedComponentCard title='Text Area' variantCount={5} />
-          <MemoizedComponentCard title='Buttons' variantCount={5} />
-          <MemoizedComponentCard title='Layouts' variantCount={5} />
-          <MemoizedComponentCard title='Text Input' variantCount={5} />
-          <MemoizedComponentCard title='Text Area' variantCount={5} />
-          <MemoizedComponentCard title='Buttons' variantCount={5} />
-          <MemoizedComponentCard title='Layouts' variantCount={5} />
-          <MemoizedComponentCard title='Text Input' variantCount={5} />
-          <MemoizedComponentCard title='Text Area' variantCount={5} />
-          <MemoizedComponentCard title='Buttons' variantCount={5} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
         </>
       );
     case 'ecommerce':
       return (
         <>
-          <MemoizedComponentCard title='Product' variantCount={5} />
-          <MemoizedComponentCard title='Text Input' variantCount={5} />
-          <MemoizedComponentCard title='Text Area' variantCount={5} />
-          <MemoizedComponentCard title='Buttons' variantCount={5} />
-          <MemoizedComponentCard title='Layouts' variantCount={5} />
-          <MemoizedComponentCard title='Text Input' variantCount={5} />
-          <MemoizedComponentCard title='Text Area' variantCount={5} />
-          <MemoizedComponentCard title='Buttons' variantCount={5} />
-          <MemoizedComponentCard title='Layouts' variantCount={5} />
-          <MemoizedComponentCard title='Text Input' variantCount={5} />
-          <MemoizedComponentCard title='Text Area' variantCount={5} />
-          <MemoizedComponentCard title='Buttons' variantCount={5} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
+          <MemoizedComponentCard title='Coming soon...' variantCount={1} />
         </>
       );
   }

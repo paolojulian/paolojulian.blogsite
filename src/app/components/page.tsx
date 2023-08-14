@@ -12,7 +12,7 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
   return (
     <>
       <Navbar />
-      <main className='mx-auto max-w-screen-lg 2xl:max-w-screen-xl px-4 md:px-12 flex-1 w-full'>
+      <main className='max-w-screen-xl px-4 md:px-12 flex-1 w-full'>
         <div className='border-l border-slate-400'>
           <Stack
             className='h-full  text-slate-600 px-12 py-16'
@@ -28,7 +28,7 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
                 </h1>
                 <div className='absolute translate-y-2 md:translate-y-3 top-1/2 -right-4 w-16 h-[3px] bg-red-400 pointer-events-none'></div>
               </div>
-              <p className='px-2 font-medium text-lg'>
+              <p className='px-2 font-medium text-lg max-w-screen-sm'>
                 Experience a collection of impeccably designed components and
                 templates. Elevate your upcoming project with a foundation built
                 on aesthetic excellence and optimal functionality.
