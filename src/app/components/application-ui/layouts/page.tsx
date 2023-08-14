@@ -3,7 +3,6 @@ import Navbar from '@/_components/layouts/navbar';
 import Stack from '@/_components/layouts/stack';
 import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
-import BrandSidebarWithHeaderPage from './brand-sidebar-with-header/page';
 import Row from '@/_components/layouts/row';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 

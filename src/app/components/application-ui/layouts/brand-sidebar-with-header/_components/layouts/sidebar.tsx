@@ -24,7 +24,7 @@ const MemoizedSidebarItem = React.memo(SidebarItem);
 const SidebarMenu = () => {
   return (
     <Container className='flex-1 flex flex-col bg-gradient-to-t from-violet-700 to-fuchsia-700 lg:border-r lg:border-neutral-300 h-full'>
-      <Stack className='py-5 space-y-8 flex-1'>
+      <Stack className='py-5 space-y-4 md:space-y-8 flex-1'>
         {/* logo */}
         <div
           className={classNames(
@@ -34,7 +34,7 @@ const SidebarMenu = () => {
         >
           P
         </div>
-        <nav className='space-y-12 flex flex-col flex-1'>
+        <nav className='space-y-6 md:space-y-12 flex flex-col flex-1'>
           <ul className='space-y-1'>
             <MemoizedSidebarItem Icon={<HomeIcon />} isActive>
               Dashboard
@@ -64,16 +64,6 @@ const SidebarMenu = () => {
                 }
               >
                 Front-end Devs
-              </MemoizedSidebarItem>
-
-              <MemoizedSidebarItem
-                Icon={
-                  <div className='w-6 h-6 rounded-lg text-white bg-neutral-800/10 border border-neutral-400 text-xs flex items-center justify-center'>
-                    U
-                  </div>
-                }
-              >
-                UI Designers
               </MemoizedSidebarItem>
 
               <MemoizedSidebarItem
@@ -115,7 +105,7 @@ const Sidebar: FunctionComponent<SidebarProps> = (props) => {
       {/* mobile */}
       <aside
         className={classNames(
-          'absolute inset-0',
+          'fixed inset-0 h-screen',
           'flex flex-row z-50',
           isOpen ? 'pointer-events-auto' : 'pointer-events-none'
         )}
