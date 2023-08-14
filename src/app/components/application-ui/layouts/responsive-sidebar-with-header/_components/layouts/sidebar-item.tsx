@@ -30,7 +30,9 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = ({
         )}
       >
         {Icon}
-        <span className='inline sm:hidden lg:inline text-sm font-medium'>{children}</span>
+        <span className='inline sm:hidden lg:inline text-sm font-medium'>
+          {children}
+        </span>
       </Link>
     </li>
   );
