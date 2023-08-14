@@ -15,7 +15,11 @@ const ComponentFactory: FunctionComponent<ComponentFactoryProps> = ({
     case 'application-ui':
       return (
         <>
-          <MemoizedComponentCard title='Layouts' variantCount={5} />
+          <MemoizedComponentCard
+            title='Layouts'
+            variantCount={5}
+            href='components/application-ui/layouts'
+          />
           <MemoizedComponentCard title='Text Input' variantCount={5} />
           <MemoizedComponentCard title='Text Area' variantCount={5} />
           <MemoizedComponentCard title='Buttons' variantCount={5} />

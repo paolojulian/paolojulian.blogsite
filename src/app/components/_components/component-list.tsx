@@ -43,16 +43,16 @@ const ComponentList: FunctionComponent<ComponentListProps> = (props) => {
       </Row>
 
       <div className='grid grid-cols-4 relative'>
+        <ComponentFactory category={activeCategory} />
+
         {/* gradient overlay */}
-        <div className='absolute bottom-0 left-0 right-0 h-1/2 w-full bg-gradient-to-t from-main to-transparent pointer-events-none z-0'></div>
+        <div className='absolute bottom-0 left-0 right-0 h-1/2 w-full bg-gradient-to-t from-main to-transparent pointer-events-none z-10'></div>
         {/* show more */}
         <div className='absolute bottom-4 left-0 right-0 h-1/4 w-full z-10 flex flex-col justify-end items-center'>
           <button className='px-5 py-2 bg-slate-800 hover:bg-red-400 active:bg-red-500 text-slate-50 shadow'>
             Show more
           </button>
         </div>
-
-        <ComponentFactory category={activeCategory} />
       </div>
     </Stack>
   );
