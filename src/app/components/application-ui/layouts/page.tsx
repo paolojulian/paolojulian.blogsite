@@ -3,12 +3,13 @@ import Navbar from '@/_components/layouts/navbar';
 import Stack from '@/_components/layouts/stack';
 import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
-import Row from '@/_components/layouts/row';
-import RightArrowIcon from '@/_components/icons/right-arrow-icon';
+import ComponentShowcase from '../../_components/component-showcase';
 
 export type ApplicationUILayoutsPageProps = {
   // no props
 };
+
+const MemoizedComponentShowcase = React.memo(ComponentShowcase);
 
 const ApplicationUILayoutsPage: FunctionComponent<
   ApplicationUILayoutsPageProps
@@ -44,28 +45,14 @@ const ApplicationUILayoutsPage: FunctionComponent<
               </div>
 
               <Stack className='py-12 space-y-12'>
-                <Stack className='space-y-4'>
-                  <div className='flex flex-col md:flex-row justify-between md:items-center'>
-                    <h2 className='text-bold text-lg'>
-                      Branded sidebar with header
-                    </h2>
-
-                    <Link href='/components/application-ui/layouts/brand-sidebar-with-header'>
-                      <Row className='items-center space-x-1 text-red-400 text-sm font-medium'>
-                        <span>Full screen</span>
-                        <RightArrowIcon />
-                      </Row>
-                    </Link>
-                  </div>
-                  <div className='overflow-hidden h-[600px] lg:h-auto lg:aspect-video relative rounded lg:rounded-2xl border border-slate-400'>
-                    <iframe
-                      src='/components/application-ui/layouts/brand-sidebar-with-header'
-                      title='Branded sidebar with header'
-                      className='w-full h-full'
-                    />
-                    {/* <BrandSidebarWithHeaderPage /> */}
-                  </div>
-                </Stack>
+                <MemoizedComponentShowcase
+                  title='Branded sidebar with header'
+                  componentUrl='/components/application-ui/layouts/brand-sidebar-with-header'
+                />
+                <MemoizedComponentShowcase
+                  title='Responsive sidebar with header'
+                  componentUrl='/components/application-ui/layouts/responsive-sidebar-with-header'
+                />
               </Stack>
             </Stack>
           </Stack>

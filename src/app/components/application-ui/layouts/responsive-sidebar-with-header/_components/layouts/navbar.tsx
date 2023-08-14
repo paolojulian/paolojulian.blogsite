@@ -23,15 +23,18 @@ const Navbar: FunctionComponent<NavbarProps> = (props) => {
       <Container className='flex-1'>
         <Row className='items-center'>
           <Row className='flex-1 space-x-2 lg:space-x-0 items-center'>
+            {/* mobile menu toggler btn */}
             <button
-              className='flex lg:hidden items-center justify-center w-9 h-9 rounded-sm'
+              className='flex sm:hidden items-center justify-center w-9 h-9 rounded-sm'
               onClick={() => setIsOpen(true)}
             >
               <BarsIcon />
             </button>
 
-            <span className='block lg:hidden h-6 w-[1px] border-r border-neutral-200'></span>
+            {/* horizontal line spacer */}
+            <span className='block sm:hidden h-6 w-[1px] border-r border-neutral-200'></span>
 
+            {/* search */}
             <form
               className='relative flex-1'
               onSubmit={(e) => {

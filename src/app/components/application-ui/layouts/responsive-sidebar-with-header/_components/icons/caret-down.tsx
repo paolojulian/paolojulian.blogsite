@@ -1,10 +1,10 @@
 import React, { FunctionComponent, SVGAttributes } from 'react';
 
-export type CrossIconProps = {
+export type CaretDownIconProps = {
   // no props
 } & SVGAttributes<SVGElement>;
 
-const CrossIcon: FunctionComponent<CrossIconProps> = (props) => {
+const CaretDownIcon: FunctionComponent<CaretDownIconProps> = (props) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -18,10 +18,10 @@ const CrossIcon: FunctionComponent<CrossIconProps> = (props) => {
       <path
         strokeLinecap='round'
         strokeLinejoin='round'
-        d='M6 18L18 6M6 6l12 12'
+        d='M19.5 8.25l-7.5 7.5-7.5-7.5'
       />
     </svg>
   );
 };
 
-export default CrossIcon;
+export default CaretDownIcon;
