@@ -46,7 +46,7 @@ const ApplicationUILayoutsPage: FunctionComponent<
 
               <Stack className='py-12 space-y-12'>
                 <Stack className='space-y-4'>
-                  <Row className='justify-between items-center'>
+                  <div className='flex flex-col md:flex-row justify-between md:items-center'>
                     <h2 className='text-bold text-lg'>
                       Branded sidebar with header
                     </h2>
@@ -57,8 +57,8 @@ const ApplicationUILayoutsPage: FunctionComponent<
                         <RightArrowIcon />
                       </Row>
                     </Link>
-                  </Row>
-                  <div className='overflow-hidden h-[600px] lg:h-auto lg:aspect-video relative bg-gray-100 rounded lg:rounded-2xl border border-slate-400'>
+                  </div>
+                  <div className='overflow-hidden h-[600px] lg:h-auto lg:aspect-video relative rounded lg:rounded-2xl border border-slate-400'>
                     <iframe
                       src='/components/application-ui/layouts/brand-sidebar-with-header'
                       title='Branded sidebar with header'
