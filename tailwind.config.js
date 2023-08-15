@@ -3,10 +3,18 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      height: {
+        navbar: '4rem',
+      },
       width: {
         sidebar: '18rem',
       },
+      padding: {
+        navbar: '4rem',
+        sidebar: '18rem',
+      },
       margin: {
+        navbar: '4rem',
         sidebar: '18rem',
       },
       fontFamily: {

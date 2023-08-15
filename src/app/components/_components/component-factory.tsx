@@ -18,7 +18,7 @@ const ComponentFactory: FunctionComponent<ComponentFactoryProps> = ({
           <MemoizedComponentCard
             title='Layouts'
             variantCount={1}
-            href='components/application-ui/layouts'
+            href='/components/application-ui/layouts'
             imageUrl='/assets/application-ui/layouts/layouts.png'
           />
           <MemoizedComponentCard title='Coming soon...' variantCount={1} />

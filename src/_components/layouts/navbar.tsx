@@ -76,14 +76,13 @@ const Navbar: FunctionComponent<NavbarProps> = ({
     <>
       <div
         className={classNames(
-          'top-0 left-0 right-0 z-30',
-          fixed ? 'fixed' : 'sticky',
+          'fixed top-0 inset-x-0 z-30',
           colorVariants[variant]
         )}
       >
         <Row
           className={classNames(
-            'h-[70px]',
+            'h-navbar',
             'px-4 md:px-8 justify-between items-center'
           )}
         >
