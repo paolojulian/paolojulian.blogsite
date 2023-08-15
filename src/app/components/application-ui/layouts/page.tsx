@@ -53,6 +53,10 @@ const ApplicationUILayoutsPage: FunctionComponent<
                 title='Stacked header'
                 componentUrl='/custom-components/application-ui/layouts/stacked-header'
               />
+              <MemoizedComponentShowcase
+                title='Multi Column'
+                componentUrl='/custom-components/application-ui/layouts/multi-column'
+              />
             </Stack>
           </Stack>
         </Stack>
