@@ -53,6 +53,10 @@ const ApplicationUILayoutsPage: FunctionComponent<
                   title='Responsive sidebar with header'
                   componentUrl='/components/application-ui/layouts/responsive-sidebar-with-header'
                 />
+                <MemoizedComponentShowcase
+                  title='Stacked header'
+                  componentUrl='/components/application-ui/layouts/stacked-header'
+                />
               </Stack>
             </Stack>
           </Stack>

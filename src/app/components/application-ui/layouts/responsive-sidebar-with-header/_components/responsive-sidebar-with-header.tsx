@@ -26,10 +26,10 @@ const ResponsiveSidebarWithHeader: FunctionComponent<
             <Navbar />
 
             <main className='flex-1 flex flex-col p-4'>
-              <Container className='flex-1 py-4'>
+              <Container className='flex-1 py-4 flex flex-col'>
                 <div
                   className={classNames(
-                    'border border-neutral-300 border-dashed rounded-xl overflow-hidden h-full w-full',
+                    'border border-neutral-300 border-dashed rounded-xl overflow-hidden w-full flex-1',
                     styles.pattern
                   )}
                 >
