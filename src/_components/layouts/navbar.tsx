@@ -84,7 +84,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         <Row
           className={classNames(
             'h-[70px]',
-            'px-4 md:px-8 justify-between items-center',
+            'px-4 md:px-8 justify-between items-center'
           )}
         >
           <div className='select-none'>
@@ -97,17 +97,17 @@ const Navbar: FunctionComponent<NavbarProps> = ({
               <WebLink
                 href='/portfolio'
                 name='Home'
-                isActive={!!pathname?.match(/portfolio/)}
+                isActive={pathname === '/portfolio'}
               />
               <WebLink
                 href='/blogs'
                 name='Blogs'
-                isActive={!!pathname?.match(/blogs/)}
+                isActive={pathname === '/blogs'}
               />
               <WebLink
                 href='/components'
                 name='Components'
-                isActive={!!pathname?.match(/components/)}
+                isActive={pathname === '/components'}
               />
             </ul>
             <button className='block md:hidden' onClick={handleToggleMenu}>
