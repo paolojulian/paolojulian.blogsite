@@ -23,7 +23,7 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
 
           <Stack className='space-y-12 xl:mx-24'>
             <IntersectProvider duration={500}>
-              <div className={classNames('text-xl')}>
+              <div className={classNames('text-xl text-slate-700')}>
                 <ReactMarkdown
                   components={{
                     strong: ({ children }) => (

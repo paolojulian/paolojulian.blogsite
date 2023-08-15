@@ -8,6 +8,8 @@ export type ProjectsSectionProps = {
   items: IPortfolioItem[];
 };
 
+const MemoizedProjectItem = React.memo(ProjectItem);
+
 const ProjectsSection: FunctionComponent<ProjectsSectionProps> = ({
   items,
 }) => {
@@ -15,9 +17,9 @@ const ProjectsSection: FunctionComponent<ProjectsSectionProps> = ({
     <section id='projects'>
       <Stack className='py-10 mb-32 space-y-12 lg:space-y-24'>
         <SectionHeading>latest projects</SectionHeading>
-        <Stack className='space-y-8 xl:space-y-32 xl:mx-24'>
+        <Stack className='space-y-8 xl:space-y-32 2xl:mx-24'>
           {items.map((project, i) => (
-            <ProjectItem
+            <MemoizedProjectItem
               key={i}
               variant={i % 2 === 0 ? 'left-image' : 'right-image'}
               project={project}

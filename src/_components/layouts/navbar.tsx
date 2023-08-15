@@ -93,11 +93,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           </div>
           <nav>
             <ul className='flex-row space-x-8 hidden md:flex'>
-              <WebLink
-                href='/portfolio'
-                name='Home'
-                isActive={pathname === '/portfolio'}
-              />
+              <WebLink href='/' name='Home' isActive={pathname === '/'} />
               <WebLink
                 href='/blogs'
                 name='Blogs'
