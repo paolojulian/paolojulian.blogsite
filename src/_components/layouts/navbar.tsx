@@ -148,8 +148,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({
             <ul className='flex-row space-x-8'>
               <MobileLink
                 name='home'
-                href='/portfolio'
-                isActive={pathname === '/portfolio'}
+                href='/'
+                isActive={pathname === '/'}
                 onClick={handleToggleMenu}
               />
               <MobileLink
