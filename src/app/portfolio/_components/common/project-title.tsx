@@ -19,7 +19,7 @@ const ProjectTitle: FunctionComponent<ProjectTitleProps> = ({
   return (
     <h3
       {...props}
-      className={classNames('font-bold text-slate-700', fontSizes[size])}
+      className={classNames('font-bold text-slate-800', fontSizes[size])}
     ></h3>
   );
 };

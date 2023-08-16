@@ -19,7 +19,7 @@ const ProjectImage: FunctionComponent<ProjectImageProps> = ({
       {hasEffects ? (
         <>
           {/* overlay */}
-          <div className='absolute inset-0 bg-red-500/10 transition-transform -translate-x-full group-hover:translate-x-0 z-10'></div>
+          <div className='absolute inset-0 bg-[#FAD4C0] transition-transform -translate-x-full group-hover:translate-x-0 z-10'></div>
           {/* overlay */}
           <div className='absolute inset-0 bg-light z-0'></div>
         </>

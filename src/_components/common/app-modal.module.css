@@ -19,6 +19,7 @@
 }
 
 .app-modal::backdrop {
+  cursor: pointer;
   background-color: #11182777;
   backdrop-filter: blur(4px);
 }

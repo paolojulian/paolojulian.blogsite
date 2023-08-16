@@ -43,11 +43,15 @@ const AppModal: FunctionComponent<AppModalProps> = ({
       className={classNames('max-w-screen-md w-full', styles['app-modal'])}
       ref={dialogRef}
       style={{ maxWidth: '1024px', height: '100%' }}
+      onClick={closeModal}
     >
       <Stack
         className={classNames('h-full transition-transform duration-1000')}
         style={{
           maxHeight: '100%',
+        }}
+        onClick={(e) => {
+          e.stopPropagation();
         }}
       >
         <Row className='justify-end'>

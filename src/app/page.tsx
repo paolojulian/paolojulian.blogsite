@@ -26,7 +26,7 @@ export default async function Home() {
       <div
         className={classNames(
           'relative h-full',
-          'font-manrope bg-main text-slate-700'
+          'font-inconsolata bg-main text-slate-700'
         )}
       >
         <Navbar variant='default-bordered' />

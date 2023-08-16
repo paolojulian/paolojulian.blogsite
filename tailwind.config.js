@@ -21,6 +21,7 @@ module.exports = {
         anton: ['var(--font-anton)'],
         quicksand: ['var(--font-quicksand)'],
         manrope: ['var(--font-manrope)'],
+        inconsolata: ['var(--font-inconsolata)'],
       },
       colors: {
         main: '#ECE8E1',

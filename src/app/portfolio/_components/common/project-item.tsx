@@ -72,12 +72,6 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
                   : 'md:mr-8 md:text-right pl-8'
               )}
             >
-              {/* border */}
-              {variant === 'left-image' ? (
-                <div className='absolute right-0 bottom-0 w-2/6 h-full border-r border-b border-slate-400 pointer-events-none'></div>
-              ) : (
-                <div className='absolute left-0 bottom-0 w-2/6 h-full border-l border-b border-slate-400 pointer-events-none'></div>
-              )}
               <div
                 className={classNames(
                   // 'cursor-pointer',
@@ -87,13 +81,13 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
               >
                 <ProjectTitle>{project.name}</ProjectTitle>
               </div>
-              <p className='text-base text-slate-700 line-clamp-4'>
+              <p className='text-base xl:text-lg text-slate-700 line-clamp-4'>
                 {project.description}
               </p>
 
               <button
                 className={classNames(
-                  'text-left text-sm font-medium text-red-400 flex flex-row items-center space-x-2',
+                  'text-left text-base font-bold text-red-400 flex flex-row items-center space-x-2',
                   variant === 'left-image' ? 'justify-start' : 'md:justify-end'
                 )}
               >
