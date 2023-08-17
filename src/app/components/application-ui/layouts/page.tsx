@@ -57,6 +57,10 @@ const ApplicationUILayoutsPage: FunctionComponent<
                 title='Multi Column'
                 componentUrl='/custom-components/application-ui/layouts/multi-column'
               />
+              <MemoizedComponentShowcase
+                title='Multi Column with Header'
+                componentUrl='/custom-components/application-ui/layouts/multi-column-with-header'
+              />
             </Stack>
           </Stack>
         </Stack>
