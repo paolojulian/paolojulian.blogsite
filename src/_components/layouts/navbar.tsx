@@ -76,7 +76,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
     <>
       <div
         className={classNames(
-          'font-manrope',
+          'font-main',
           'fixed top-0 inset-x-0 z-30',
           colorVariants[variant]
         )}
@@ -89,7 +89,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         >
           <div className='select-none'>
             <Link href='/'>
-              <span className='font-anton text-[24px]'>P</span>
+              <span className='font-capital text-[24px]'>P</span>
             </Link>
           </div>
           <nav>
@@ -137,7 +137,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         >
           <Row className='justify-between items-center p-4'>
             <span
-              className={classNames('font-anton text-[24px] text-transparent')}
+              className={classNames('font-capital text-[24px] text-transparent')}
             >
               P
             </span>

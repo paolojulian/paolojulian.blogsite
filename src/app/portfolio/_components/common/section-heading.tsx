@@ -11,11 +11,9 @@ export type SectionHeadingProps = {
 
 const SectionHeading: FunctionComponent<SectionHeadingProps> = (props) => {
   return (
-    <IntersectProvider>
-      <h2 className='font-anton uppercase font-medium text-7xl text-slate-900'>
-        {props.children}
-      </h2>
-    </IntersectProvider>
+    <h2 className='font-capital uppercase font-medium text-7xl text-slate-900'>
+      {props.children}
+    </h2>
   );
 };
 

@@ -34,7 +34,7 @@ const ApplicationUILayoutsPage: FunctionComponent<
               <span>Application UI</span>
             </div>
             <div className='relative w-fit'>
-              <h1 className='font-anton pointer-events-none text-slate-800 text-5xl md:text-8xl w-full uppercase'>
+              <h1 className='font-capital pointer-events-none text-slate-800 text-5xl md:text-8xl w-full uppercase'>
                 Layouts
               </h1>
               <div className='absolute translate-y-2 md:translate-y-3 top-1/2 -right-4 w-16 h-[3px] bg-red-400 pointer-events-none'></div>

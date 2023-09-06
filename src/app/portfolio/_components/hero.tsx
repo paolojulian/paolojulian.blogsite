@@ -91,7 +91,7 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
       <Stack className='flex-1 h-full'>
         <Stack className='flex-1'>
           <Stack className='flex-1 justify-center items-center text-center'>
-            <Stack className='items-center'>
+            <Stack className='items-center space-y-4'>
               <div className='w-fit relative'>
                 <h1
                   className={classNames(

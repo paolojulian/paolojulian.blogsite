@@ -1,24 +1,17 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Quicksand, Manrope, Inconsolata } from 'next/font/google';
+import { Anton, Nunito } from 'next/font/google';
 
-const quicksand = Quicksand({
-  subsets: ['latin'],
-  variable: '--font-manrope',
-});
-const manrope = Manrope({
-  subsets: ['latin'],
-  variable: '--font-manrope',
-});
-const inconsolata = Inconsolata({
-  subsets: ['latin'],
-  variable: '--font-inconsolata',
-});
-const anton = Anton({
+const capital = Anton({
   weight: '400',
-  variable: '--font-anton',
+  variable: '--font-capital',
   subsets: ['latin'],
+});
+const main = Nunito({
+  subsets: ['latin'],
+  variable: '--font-main',
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
@@ -42,10 +35,8 @@ export default function RootLayout({
       </head>
       <body
         className={classNames(
-          `${anton.variable} font-anton`,
-          `${manrope.variable} font-manrope`,
-          `${inconsolata.variable} font-inconsolata`,
-          `${quicksand.variable} font-quicksand`
+          `${capital.variable} font-capital`,
+          `${main.variable} font-main`
         )}
       >
         {children}

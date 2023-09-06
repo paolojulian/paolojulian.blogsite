@@ -46,7 +46,7 @@ const Navbar: FunctionComponent<NavbarProps> = (props) => {
         <Container className='flex flex-row h-full w-full items-center justify-between'>
           <Row className='items-center space-x-8 h-full'>
             {/* logo */}
-            <div className='pointer-events-none select-none font-anton text-neutral-800 text-xl'>
+            <div className='pointer-events-none select-none font-capital text-neutral-800 text-xl'>
               P
             </div>
 
@@ -136,7 +136,7 @@ const Navbar: FunctionComponent<NavbarProps> = (props) => {
           <Stack className='p-4 space-y-2'>
             <Row className='justify-between items-center'>
               {/* logo */}
-              <div className='pointer-events-none select-none font-anton text-neutral-800 text-xl px-4'>
+              <div className='pointer-events-none select-none font-capital text-neutral-800 text-xl px-4'>
                 P
               </div>
 

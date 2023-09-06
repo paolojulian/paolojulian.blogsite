@@ -24,7 +24,7 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
         <Stack className='space-y-12 md:space-y-16'>
           <Row className='justify-between'>
             <div className='relative'>
-              <h1 className='text-slate-800 text-5xl md:text-8xl font-anton w-full'>
+              <h1 className='text-slate-800 text-5xl md:text-8xl font-capital w-full'>
                 ARTICLES
               </h1>
               <div className='absolute translate-y-2 md:translate-y-3 top-1/2 -right-4 w-16 h-[3px] bg-red-400 pointer-events-none'></div>

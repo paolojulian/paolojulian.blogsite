@@ -49,55 +49,52 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
         <div
           className={classNames(
             'relative',
-            'flex flex-col',
+            'flex flex-col md:items-center',
             'group cursor-pointer',
             variant === 'left-image' ? 'md:flex-row' : 'md:flex-row-reverse'
           )}
           onClick={handleOpenDetails}
         >
-          <IntersectProvider>
-            {/* image */}
-            <div className='relative overflow-hidden'>
-              <ProjectImage alt={project.name} src={project.image?.url} />
-            </div>
-          </IntersectProvider>
+          {/* image */}
+          <div className='relative overflow-hidden'>
+            <ProjectImage alt={project.name} src={project.image?.url} />
+          </div>
 
           {/* content */}
-          <IntersectProvider duration={500}>
-            <Stack
+          <Stack
+            className={classNames(
+              'flex-1 justify-center space-y-4 z-10 py-5 md:p-5 h-full',
+              variant === 'left-image'
+                ? 'md:ml-8 md:pr-12'
+                : 'md:mr-8 md:text-right md:pl-8'
+            )}
+          >
+            <div
               className={classNames(
-                'flex-1 justify-center space-y-4 z-10 p-5 h-full',
-                variant === 'left-image'
-                  ? 'md:ml-8 pr-12'
-                  : 'md:mr-8 md:text-right pl-8'
+                // 'cursor-pointer',
+                variant === 'left-image' ? '' : 'md:text-right'
+              )}
+              // onClick={handleOpenDetails}
+            >
+              <ProjectTitle>{project.name}</ProjectTitle>
+            </div>
+            <p className='text-sm xl:text-base tracking-wide text-slate-500 line-clamp-4'>
+              {project.description}
+            </p>
+
+            <button
+              className={classNames(
+                'text-left text-base text-red-400 flex flex-row items-center space-x-2',
+                variant === 'left-image' ? 'justify-start' : 'md:justify-end'
               )}
             >
-              <div
-                className={classNames(
-                  // 'cursor-pointer',
-                  variant === 'left-image' ? '' : 'md:text-right'
-                )}
-                // onClick={handleOpenDetails}
-              >
-                <ProjectTitle>{project.name}</ProjectTitle>
-              </div>
-              <p className='text-base xl:text-lg text-slate-700 line-clamp-4'>
-                {project.description}
-              </p>
+              <span>SEE MORE</span>
+              <span className='transition-transform translate-x-0 group-hover:translate-x-2'>
+                <RightArrowIcon />
+              </span>
+            </button>
 
-              <button
-                className={classNames(
-                  'text-left text-base font-bold text-red-400 flex flex-row items-center space-x-2',
-                  variant === 'left-image' ? 'justify-start' : 'md:justify-end'
-                )}
-              >
-                <span>SEE MORE</span>
-                <span className='transition-transform translate-x-0 group-hover:translate-x-2'>
-                  <RightArrowIcon />
-                </span>
-              </button>
-
-              {/* <Row
+            {/* <Row
               className={classNames(
                 'space-x-2 flex-wrap',
                 variant === 'left-image' ? 'text-left' : 'justify-end'
@@ -108,14 +105,13 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
               ))}
             </Row> */}
 
-              {/* <span
+            {/* <span
               onClick={handleOpenDetails}
               className='text-slate-500 text-sm cursor-pointer'
             >
               learn more...
             </span> */}
-            </Stack>
-          </IntersectProvider>
+          </Stack>
         </div>
 
         <ProjectDetailsModal

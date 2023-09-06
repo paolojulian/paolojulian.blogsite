@@ -26,7 +26,7 @@ export default async function Home() {
       <div
         className={classNames(
           'relative h-full',
-          'font-inconsolata bg-main text-slate-700'
+          'font-main bg-main text-slate-700'
         )}
       >
         <Navbar variant='default-bordered' />
@@ -43,7 +43,7 @@ export default async function Home() {
             <div className='w-full border-b border-slate-400'></div>
             <div className='relative space-y-8 py-24 z-10'>
               <div className='hidden md:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-main to-transparent z-10'></div>
-              <h3 className='font-anton text-slate-800 text-6xl'>
+              <h3 className='font-capital text-slate-800 text-6xl'>
                 LATEST ARTICLES
               </h3>
               <Stack className='space-y-2'>
@@ -60,10 +60,6 @@ export default async function Home() {
                   </Row>
                 </Stack>
               </Stack>
-            </div>
-            <div className='hidden md:block absolute font-anton bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0'>
-              <p>IAM</p>
-              <p>PAOLOJULIAN</p>
             </div>
           </Stack>
         </main>

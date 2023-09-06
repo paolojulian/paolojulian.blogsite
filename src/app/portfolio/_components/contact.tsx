@@ -38,7 +38,7 @@ const ContactSection: FunctionComponent<ContactSectionProps> = ({
             <SectionHeading>want to work with me?</SectionHeading>
             <h3
               className={classNames(
-                'uppercase tracking-wide font-black text-[50px] md:text-[70px] leading-[1] md:-ml-4 pr-5 font-anton',
+                'uppercase tracking-wide font-black text-[50px] md:text-[70px] leading-[1] md:-ml-4 pr-5 font-capital',
                 'text-slate-800'
               )}
             >

@@ -18,10 +18,8 @@ module.exports = {
         sidebar: '18rem',
       },
       fontFamily: {
-        anton: ['var(--font-anton)'],
-        quicksand: ['var(--font-quicksand)'],
-        manrope: ['var(--font-manrope)'],
-        inconsolata: ['var(--font-inconsolata)'],
+        capital: ['var(--font-capital)'],
+        main: ['var(--font-main)'],
       },
       colors: {
         main: '#ECE8E1',

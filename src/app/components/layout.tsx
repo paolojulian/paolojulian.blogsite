@@ -18,7 +18,7 @@ export default function PortfolioLayout({
     <>
       <div
         className={classNames(
-          'font-manrope',
+          'font-main',
           'bg-main text-slate-700 h-full w-full',
           'relative'
         )}

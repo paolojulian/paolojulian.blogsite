@@ -50,7 +50,7 @@ const Article: FunctionComponent<ArticleProps> = ({
                   Paolo Vincent Julian
                 </address>
               </Row>
-              <h1 className='font-anton uppercase text-5xl md:text-7xl leading-tight text-slate-800'>
+              <h1 className='font-capital uppercase text-5xl md:text-7xl leading-tight text-slate-800'>
                 {blogPost.title}
               </h1>
               <div className='absolute bottom-0 left-0 w-3/6 border-b border-slate-400'></div>
@@ -103,7 +103,7 @@ const Article: FunctionComponent<ArticleProps> = ({
 
             <div className='relative space-y-8'>
               <div className='hidden md:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-main to-transparent z-10'></div>
-              <h3 className='font-anton text-6xl'>LATEST ARTICLES</h3>
+              <h3 className='font-capital text-6xl'>LATEST ARTICLES</h3>
               <Stack className='space-y-2'>
                 <Row className='space-x-1'>
                   <button className='border border-slate-500 bg-red-500 w-14 h-2'></button>
@@ -137,7 +137,7 @@ const Article: FunctionComponent<ArticleProps> = ({
             </div>
           </Stack>
         </div>
-        <div className='hidden md:block absolute font-anton bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0'>
+        <div className='hidden md:block absolute font-capital bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0'>
           <p>IAM</p>
           <p>PAOLOJULIAN</p>
         </div>

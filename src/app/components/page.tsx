@@ -14,7 +14,7 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
           {/* header */}
           <Stack className='space-y-2 pb-12 md:pb-24'>
             <div className='relative w-fit'>
-              <h1 className='text-slate-800 text-5xl md:text-8xl font-anton w-full'>
+              <h1 className='text-slate-800 text-5xl md:text-8xl font-capital w-full'>
                 TAILWIND COMPONENTS
               </h1>
             </div>

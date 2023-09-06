@@ -22,47 +22,44 @@ const AboutSection: FunctionComponent<AboutSectionProps> = ({ portfolio }) => {
           <SectionHeading>WHO AM I?</SectionHeading>
 
           <Stack className='space-y-12 xl:mx-24'>
-            <IntersectProvider duration={500}>
-              <div className={classNames('text-xl text-slate-700')}>
-                <ReactMarkdown
-                  components={{
-                    strong: ({ children }) => (
-                      <TextHighlight>{children}</TextHighlight>
-                    ),
-                  }}
-                  className='line-break'
-                >
-                  {portfolio.about}
-                </ReactMarkdown>
-              </div>
-            </IntersectProvider>
+            <div className={classNames('text-xl text-slate-600 font-normal')}>
+              <ReactMarkdown
+                components={{
+                  p: ({ children }) => <p className='tracking-wide text-slate-500'>{children}</p>,
+                  strong: ({ children }) => (
+                    <TextHighlight>{children}</TextHighlight>
+                  ),
+                }}
+                className='line-break'
+              >
+                {portfolio.about}
+              </ReactMarkdown>
+            </div>
 
-            <IntersectProvider duration={500}>
-              <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4'>
-                <Link href={'/portfolio#contact'}>
-                  <span className='hidden md:block'>
-                    <CTAButton size='lg' block={false}>
-                      GET IN TOUCH
-                    </CTAButton>
-                  </span>
-                  <span className='block md:hidden'>
-                    <CTAButton size='lg'>GET IN TOUCH</CTAButton>
-                  </span>
-                </Link>
-                <Link href={portfolio.resume.url} target='_blank'>
-                  <span className='hidden md:block'>
-                    <CTAButton size='lg' block={false} variant='secondary'>
-                      VIEW CV
-                    </CTAButton>
-                  </span>
-                  <span className='block md:hidden'>
-                    <CTAButton size='lg' variant='secondary'>
-                      VIEW CV
-                    </CTAButton>
-                  </span>
-                </Link>
-              </div>
-            </IntersectProvider>
+            <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4'>
+              <Link href={'/portfolio#contact'}>
+                <span className='hidden md:block'>
+                  <CTAButton size='lg' block={false}>
+                    GET IN TOUCH
+                  </CTAButton>
+                </span>
+                <span className='block md:hidden'>
+                  <CTAButton size='lg'>GET IN TOUCH</CTAButton>
+                </span>
+              </Link>
+              <Link href={portfolio.resume.url} target='_blank'>
+                <span className='hidden md:block'>
+                  <CTAButton size='lg' block={false} variant='secondary'>
+                    VIEW CV
+                  </CTAButton>
+                </span>
+                <span className='block md:hidden'>
+                  <CTAButton size='lg' variant='secondary'>
+                    VIEW CV
+                  </CTAButton>
+                </span>
+              </Link>
+            </div>
           </Stack>
         </Stack>
       </Stack>

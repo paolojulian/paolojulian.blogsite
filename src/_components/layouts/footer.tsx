@@ -27,7 +27,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
           <div className='bg-slate-900 z-10'>
             <div className='md:-ml-4 px-8 md:px-0'>
               <p className='text-slate-400'>want to work with me?</p>
-              <p className='uppercase text-slate-50 font-anton text-6xl'>
+              <p className='uppercase text-slate-50 font-capital text-6xl'>
                 CONTACT ME
               </p>
             </div>

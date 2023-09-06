@@ -5,7 +5,7 @@ type Sizes = 'base' | 'lg';
 
 const fontSizes: Record<Sizes, string> = {
   base: 'text-xl md:text-3xl',
-  lg: 'text-3xl md:text-5xl',
+  lg: 'text-3xl md:text-6xl',
 };
 
 export type ProjectTitleProps = {
@@ -19,7 +19,7 @@ const ProjectTitle: FunctionComponent<ProjectTitleProps> = ({
   return (
     <h3
       {...props}
-      className={classNames('font-bold text-slate-800', fontSizes[size])}
+      className={classNames('font-semibold tracking-wide text-slate-800', fontSizes[size])}
     ></h3>
   );
 };
