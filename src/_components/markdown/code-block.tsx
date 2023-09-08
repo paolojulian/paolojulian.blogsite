@@ -33,7 +33,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({
       <div
         className={classNames(
           language === 'text' ? 'block' : 'hidden',
-          'bg-slate-900 text-slate-50 font-normal px-2 py-2'
+          'bg-slate-900 text-slate-50 font-normal px-2 py-2 text-base'
         )}
       >
         {children}

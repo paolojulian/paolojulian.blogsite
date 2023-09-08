@@ -75,7 +75,7 @@ const Article: FunctionComponent<ArticleProps> = ({
                 <p className='text-slate-500 text-sm md:text-base'>thumbnail</p>
               </Stack>
 
-              <div className='border-b border-slate-400 pb-12 md:pb-24'>
+              <div className='border-b border-slate-400 pb-12 md:pb-24 text-lg'>
                 <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>
               </div>
 
@@ -137,10 +137,10 @@ const Article: FunctionComponent<ArticleProps> = ({
             </div>
           </Stack>
         </div>
-        <div className='hidden md:block absolute font-capital bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0'>
+        {/* <div className='hidden md:block absolute font-anton bottom-0 -left-1 text-stroke tracking-[9px] leading-[160px] text-[183px] z-0'>
           <p>IAM</p>
           <p>PAOLOJULIAN</p>
-        </div>
+        </div> */}
       </Stack>
       <ToTopFab />
     </>
