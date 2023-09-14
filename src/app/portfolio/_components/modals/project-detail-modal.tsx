@@ -19,29 +19,13 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const project = useProjectItemContext();
 
-  const handleBackToTop = () => {
-    containerRef.current?.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      containerRef.current?.scrollTo({
-        top: 0,
-        behavior: 'instant',
-      });
-    }
-  }, [isOpen]);
-
   return (
     <AppModal isOpen={isOpen} {...props}>
       <div ref={containerRef}>
-        <Stack className='space-y-16 bg-white'>
+        <Stack className='space-y-16 px-[50px] py-[100px] bg-white'>
           <Stack className='space-y-16'>
             <Stack className='relative'>
-              <h2 className='text-slate-500'>project overview</h2>
+              <p className='text-[20px] tracking-[1px] text-slate-400 uppercase'>{`// PROJECT OVERVIEW`}</p>
               <h3
                 className={classNames(
                   'font-capital text-3xl md:text-6xl text-slate-800 uppercase'
@@ -53,9 +37,9 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               <div className='border-b border-slate-400 w-[90%] absolute left-5 -bottom-4'></div> */}
             </Stack>
           </Stack>
-          <Stack className='space-y-6 md:px-16'>
+          <Stack className='space-y-12'>
             <Stack className='items-center pb-8 space-y-1'>
-              <Row className='w-full justify-center bg-light'>
+              <Row className='w-full justify-center bg-slate-50'>
                 <ProjectImage
                   alt={project.name}
                   src={project.image?.url}
@@ -64,41 +48,45 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               </Row>
               <p className='text-slate-400 text-sm'>thumbnail</p>
             </Stack>
-            {project.role ? (
-              <Stack className='space-y-1'>
-                <h4 className='text-slate-500 text-sm font-medium'>role</h4>
-                <p className='text-slate-700 font-medium'>{project.role}</p>
-              </Stack>
-            ) : null}
-            {project.tags ? (
-              <Stack className='space-y-1'>
-                <h4 className='text-slate-500 text-sm font-medium'>
-                  technologies
-                </h4>
-                <Row className='flex-wrap space-x-4'>
-                  {project.tags.map((tag, i) => (
-                    <AppTag key={i} tag={tag} />
-                  ))}
+            <Stack>
+              {project.tags ? (
+                <Row className='space-x-12 justify-between items-center border-y border-slate-300 py-[30px]'>
+                  <p className='text-slate-500'>01</p>
+                  <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
+                    TECHNOLOGIES
+                  </h4>
+                  <Row className='flex-wrap gap-2'>
+                    {project.tags.map((tag, i) => (
+                      <AppTag key={i} tag={tag} />
+                    ))}
+                  </Row>
                 </Row>
-              </Stack>
-            ) : null}
-
-            <Stack className='space-y-2'>
-              <h4 className='text-slate-500 text-sm font-medium'>
-                description
-              </h4>
-              <p className='text-slate-700'>{project.description}</p>
+              ) : null}
+              {project.role ? (
+                <Row className='space-x-12 justify-between items-center border-b border-slate-300 py-[30px]'>
+                  <p className='text-slate-500'>02</p>
+                  <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
+                    ROLE
+                  </h4>
+                  <p className='text-slate-700'>{project.role}</p>
+                </Row>
+              ) : null}
+              <Row className='space-x-12 justify-between items-center border-b border-slate-300 py-[30px]'>
+                <p className='text-slate-500'>03</p>
+                <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
+                  DESCRIPTION
+                </h4>
+                <p className='text-slate-700'>{project.description}</p>
+              </Row>
             </Stack>
 
-            <Stack className='space-y-2'>
-              <h4 className='text-slate-500 text-sm font-medium'>features</h4>
+            <Stack className='space-y-12'>
+              <h4 className='text-slate-800 text-3xl min-w-[250px] flex justify-center items-center'>
+                FEATURES
+              </h4>
               <AppReactMarkdown>{project.content}</AppReactMarkdown>
             </Stack>
           </Stack>
-
-          <button onClick={handleBackToTop}>
-            <span className='text-slate-500 text-sm'>back to top</span>
-          </button>
         </Stack>
       </div>
     </AppModal>

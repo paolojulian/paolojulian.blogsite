@@ -9,6 +9,7 @@ import React, {
   useRef,
 } from 'react';
 import classNames from 'classnames';
+import CrossIcon from '@/app/custom-components/application-ui/layouts/brand-sidebar-with-header/_components/icons/cross-icon';
 
 export type AppModalProps = {
   onClose: () => void;
@@ -61,13 +62,21 @@ const AppModal: FunctionComponent<AppModalProps> = ({
       >
         <div
           className={classNames(
-            'max-w-screen-lg w-full mx-auto bg-white p-5 z-10',
-            'transition-transform cursor-auto',
+            'max-w-screen-lg w-full mx-auto bg-white z-10',
+            'transition-transform cursor-auto relative',
             'shadow-[0_4px_28px_4px_rgba(0,0,0,0.15)]',
             isOpen ? 'translate-y-0' : 'translate-y-full'
           )}
           onClick={(e) => e.stopPropagation()}
         >
+          <div className='absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+            <button
+              className='rounded-full w-[80px] aspect-square text-primary-400 transition bg-white hover:border-primary-300 border flex justify-center items-center shadow-[0_4px_28px_rgba(0,0,0,0.10)]'
+              onClick={closeModal}
+            >
+              <CrossIcon className='w-12 h-12' />
+            </button>
+          </div>
           {children}
         </div>
       </div>
