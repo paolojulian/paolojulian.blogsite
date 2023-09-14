@@ -76,7 +76,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
       <div
         className={classNames(
           'font-main',
-          'fixed top-0 inset-x-0 z-30',
+          'fixed top-0 inset-x-0 z-40',
           colorVariants[variant]
         )}
       >

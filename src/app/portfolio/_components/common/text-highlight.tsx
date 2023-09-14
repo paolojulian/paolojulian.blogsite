@@ -5,7 +5,7 @@ export type TextHighlightProps = {
 } & HtmlHTMLAttributes<HTMLSpanElement>;
 
 const TextHighlight: FunctionComponent<TextHighlightProps> = (props) => {
-  return <span {...props} className='font-medium text-slate-800'></span>;
+  return <span {...props} className='text-primary-500'></span>;
 };
 
 export default TextHighlight;

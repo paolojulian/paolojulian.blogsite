@@ -1,5 +1,4 @@
 'use client';
-import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
 import React, {
   FunctionComponent,
@@ -7,19 +6,17 @@ import React, {
   useContext,
   useState,
 } from 'react';
-import HashTag from './hashtag';
-import classNames from 'classnames';
-import ProjectImage from './project-image';
-import ProjectTitle from './project-title';
 import ProjectDetailsModal from '../modals/project-detail-modal';
 import { IPortfolioItem } from '../../_contentful';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';
-import IntersectProvider from '@/_context/IntersectContext';
+import Row from '@/_components/layouts/row';
+import Image from 'next/image';
 
 type ProjectItemVariants = 'left-image' | 'right-image';
 
 export type ProjectItemProps = {
   project: IPortfolioItem;
+  number: number;
   variant?: ProjectItemVariants;
 };
 
@@ -36,7 +33,7 @@ export const useProjectItemContext = () => useContext(ProjectItemContext);
 
 const ProjectItem: FunctionComponent<ProjectItemProps> = ({
   project,
-  variant = 'left-image',
+  number,
 }) => {
   const [openDetails, setOpenDetails] = useState(false);
 
@@ -45,74 +42,33 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
 
   return (
     <ProjectItemContext.Provider value={project}>
-      <div>
-        <div
-          className={classNames(
-            'relative',
-            'flex flex-col md:items-center',
-            'group cursor-pointer',
-            variant === 'left-image' ? 'md:flex-row' : 'md:flex-row-reverse'
-          )}
-          onClick={handleOpenDetails}
-        >
-          {/* image */}
-          <div className='relative overflow-hidden'>
-            <ProjectImage alt={project.name} src={project.image?.url} />
+      <div className='first:border-y border-b border-slate-300'>
+        <Row className='justify-between items-center py-[25px]'>
+          <div className='aspect-[380/360] w-[380px] border border-primary-300/30 relative'>
+            <Image
+              className='object-cover'
+              src={project.image.url}
+              alt={project.name}
+              fill
+            />
           </div>
-
-          {/* content */}
-          <Stack
-            className={classNames(
-              'flex-1 justify-center space-y-4 z-10 py-5 md:p-5 h-full',
-              variant === 'left-image'
-                ? 'md:ml-8 md:pr-12'
-                : 'md:mr-8 md:text-right md:pl-8'
-            )}
-          >
-            <div
-              className={classNames(
-                // 'cursor-pointer',
-                variant === 'left-image' ? '' : 'md:text-right'
-              )}
-              // onClick={handleOpenDetails}
-            >
-              <ProjectTitle>{project.name}</ProjectTitle>
-            </div>
-            <p className='text-sm xl:text-base tracking-wide text-slate-500 line-clamp-4'>
-              {project.description}
+          <Stack className='flex-1 space-y-[10px] items-start max-w-[600px]'>
+            <p className='text-[20px] tracking-[1.4px] text-slate-500'>{`03.${number}`}</p>
+            <p className='uppercase text-[32px] text-slate-700 tracking-[2.24px]'>
+              {project.name}
             </p>
-
+            <p className='text-slate-500 text-[16px]'>{project.description}</p>
             <button
-              className={classNames(
-                'text-left text-base text-red-400 flex flex-row items-center space-x-2',
-                variant === 'left-image' ? 'justify-start' : 'md:justify-end'
-              )}
+              className='flex flex-row justify-center items-center space-x-[10px] text-primary-400 group'
+              onClick={handleOpenDetails}
             >
               <span>SEE MORE</span>
-              <span className='transition-transform translate-x-0 group-hover:translate-x-2'>
+              <div className='transition-transform group-hover:translate-x-4'>
                 <RightArrowIcon />
-              </span>
+              </div>
             </button>
-
-            {/* <Row
-              className={classNames(
-                'space-x-2 flex-wrap',
-                variant === 'left-image' ? 'text-left' : 'justify-end'
-              )}
-            >
-              {project.tags.map((tag) => (
-                <HashTag key={tag}>{tag}</HashTag>
-              ))}
-            </Row> */}
-
-            {/* <span
-              onClick={handleOpenDetails}
-              className='text-slate-500 text-sm cursor-pointer'
-            >
-              learn more...
-            </span> */}
           </Stack>
-        </div>
+        </Row>
 
         <ProjectDetailsModal
           isOpen={openDetails}

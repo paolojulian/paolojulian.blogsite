@@ -4,7 +4,6 @@ import AppModal, { AppModalProps } from '@/_components/common/app-modal';
 import classNames from 'classnames';
 import { useProjectItemContext } from '../common/project-item';
 import AppReactMarkdown from '@/_components/markdown/app-react-markdown';
-import styles from './project-detail-modal.module.css';
 import Row from '@/_components/layouts/row';
 import ProjectImage from '../common/project-image';
 import AppTag from '@/_components/common/app-tag';
@@ -38,14 +37,8 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
 
   return (
     <AppModal isOpen={isOpen} {...props}>
-      <div
-        ref={containerRef}
-        className={classNames(
-          'inset-0 p-8 md:p-16 h-full overflow-y-scroll',
-          styles.container
-        )}
-      >
-        <Stack className='space-y-16'>
+      <div ref={containerRef}>
+        <Stack className='space-y-16 bg-white'>
           <Stack className='space-y-16'>
             <Stack className='relative'>
               <h2 className='text-slate-500'>project overview</h2>
@@ -60,7 +53,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               <div className='border-b border-slate-400 w-[90%] absolute left-5 -bottom-4'></div> */}
             </Stack>
           </Stack>
-          <Stack className='space-y-6 md:px-16 md:border-l md:border-slate-400'>
+          <Stack className='space-y-6 md:px-16'>
             <Stack className='items-center pb-8 space-y-1'>
               <Row className='w-full justify-center bg-light'>
                 <ProjectImage

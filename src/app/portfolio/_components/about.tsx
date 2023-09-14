@@ -7,6 +7,7 @@ import SectionHeading from '@/app/portfolio/_components/common/section-heading';
 import Row from '@/_components/layouts/row';
 import Image from 'next/image';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';
+import Link from 'next/link';
 
 interface Props {
   // No Props
@@ -40,13 +41,17 @@ const AboutSection: FunctionComponent<Props> = (props) => {
               crafting engaging user experiences. I believe in simplicity over
               complexity for effective app and system development.`}
             </p>
-            <button className='relative bg-primary-400 py-[20px] pr-[37px] pl-[50px] text-white shadow-[0_4px_28px_rgba(0,0,0,0.12)]'>
-              <Row className='space-x-[10px]'>
+            <Link
+              href='#'
+              role='button'
+              className='relative transition bg-primary-400 hover:bg-primary-500 py-[20px] pr-[37px] pl-[50px] text-white shadow-[0_4px_28px_rgba(0,0,0,0.12)]'
+            >
+              <Row className='space-x-[10px] tracking-[0.8px]'>
                 <span>VIEW RESUME</span>
                 <RightArrowIcon className='text-white' />
               </Row>
               <div className='w-[15px] aspect-square bg-white absolute left-0 top-0'></div>
-            </button>
+            </Link>
           </Stack>
         </Row>
       </Stack>

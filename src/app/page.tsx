@@ -32,13 +32,14 @@ export default async function Home() {
             <HeroSection />
             <AboutSection />
             <ServicesSection />
-            <ProjectsSection />
+            <ProjectsSection items={portfolioItems} />
             <ArticlesSection />
             <ContactSection />
           </main>
           {/* <Footer /> */}
         </SectionsProvider>
       </div>
+      <div id='modal-root'></div>
     </>
   );
 }
