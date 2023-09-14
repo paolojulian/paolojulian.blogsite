@@ -2,7 +2,6 @@
 import React, { FunctionComponent } from 'react';
 import Stack from '@/_components/layouts/stack';
 import { SECTIONS } from '@/app/portfolio/_context/sections-context';
-import classNames from 'classnames';
 import SectionHeading from '@/app/portfolio/_components/common/section-heading';
 import Row from '@/_components/layouts/row';
 import Image from 'next/image';

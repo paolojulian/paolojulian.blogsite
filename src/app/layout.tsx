@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Lato, Lora, Nunito, Outfit } from 'next/font/google';
+import { Anton, Lora, Outfit } from 'next/font/google';
 
 const capital = Anton({
   weight: '400',
@@ -41,8 +41,9 @@ export default function RootLayout({
       <body
         className={classNames(
           `${capital.variable} font-capital`,
-          `${sans.variable}`,
-          `${main.variable} font-main`
+          `${sans.variable} font-sans`,
+          `${main.variable} font-main`,
+          'font-main'
         )}
       >
         {children}

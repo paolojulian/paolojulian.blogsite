@@ -1,7 +1,4 @@
-import styles from './app-modal.module.css';
 import ReactDOM from 'react-dom';
-import Row from '@/_components/layouts/row';
-import Stack from '@/_components/layouts/stack';
 import React, {
   FunctionComponent,
   useCallback,

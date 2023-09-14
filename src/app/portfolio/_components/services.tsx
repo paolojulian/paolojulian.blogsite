@@ -2,11 +2,8 @@
 import React, { FunctionComponent } from 'react';
 import Stack from '@/_components/layouts/stack';
 import { SECTIONS } from '@/app/portfolio/_context/sections-context';
-import classNames from 'classnames';
 import SectionHeading from '@/app/portfolio/_components/common/section-heading';
 import Row from '@/_components/layouts/row';
-import Image from 'next/image';
-import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 
 interface Props {
   // No Props
@@ -18,7 +15,7 @@ const ServicesSection: FunctionComponent<Props> = (props) => {
       id={SECTIONS[2]}
       className='bg-white flex flex-row flex-1 max-w-[1268px] px-[50px] mx-auto w-full z-10'
     >
-      <Stack className='py-[50px] w-full space-y-[50px]'>
+      <Stack className='py-[25px] w-full space-y-[50px]'>
         <div className='text-left'>
           <SectionHeading number={2} section='services'></SectionHeading>
         </div>

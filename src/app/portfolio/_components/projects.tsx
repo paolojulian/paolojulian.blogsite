@@ -18,7 +18,7 @@ const ProjectsSection: FunctionComponent<Props> = ({ items }) => {
       id={SECTIONS[3]}
       className='bg-white flex flex-row flex-1 max-w-[1268px] px-[50px] mx-auto w-full z-10'
     >
-      <Stack className='py-[50px] w-full space-y-[50px]'>
+      <Stack className='py-[50px] w-full space-y-[25px]'>
         <div className='text-left'>
           <SectionHeading number={3} section='latest projects'></SectionHeading>
         </div>

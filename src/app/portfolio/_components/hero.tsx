@@ -2,7 +2,6 @@
 import React, { FunctionComponent, useEffect, useRef } from 'react';
 import Stack from '@/_components/layouts/stack';
 import Link from 'next/link';
-import Row from '@/_components/layouts/row';
 import Image from 'next/image';
 import LinkedinIcon from '@/_components/icons/linkedin-icon';
 import Fab from '@/_components/buttons/fab';

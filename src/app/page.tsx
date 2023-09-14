@@ -33,7 +33,7 @@ export default async function Home() {
             <AboutSection />
             <ServicesSection />
             <ProjectsSection items={portfolioItems} />
-            <ArticlesSection />
+            <ArticlesSection items={blogPosts} />
             <ContactSection />
           </main>
           {/* <Footer /> */}

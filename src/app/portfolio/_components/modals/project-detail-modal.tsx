@@ -1,5 +1,5 @@
 import Stack from '@/_components/layouts/stack';
-import React, { FunctionComponent, useEffect, useRef } from 'react';
+import React, { FunctionComponent, useRef } from 'react';
 import AppModal, { AppModalProps } from '@/_components/common/app-modal';
 import classNames from 'classnames';
 import { useProjectItemContext } from '../common/project-item';
@@ -22,7 +22,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
   return (
     <AppModal isOpen={isOpen} {...props}>
       <div ref={containerRef}>
-        <Stack className='space-y-16 px-[50px] py-[100px] bg-white'>
+        <Stack className='space-y-16 px-[50px] py-[100px] bg-white font-main'>
           <Stack className='space-y-16'>
             <Stack className='relative'>
               <p className='text-[20px] tracking-[1px] text-slate-400 uppercase'>{`// PROJECT OVERVIEW`}</p>
@@ -46,12 +46,28 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
                   hasEffects={false}
                 />
               </Row>
-              <p className='text-slate-400 text-sm'>thumbnail</p>
+              <p className='text-slate-400 text-sm'>banner</p>
             </Stack>
             <Stack>
+              <Row className='space-x-12 justify-between items-center border-y border-slate-300 py-[30px]'>
+                <p className='text-slate-500'>01</p>
+                <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
+                  DESCRIPTION
+                </h4>
+                <p className='text-slate-500'>{project.description}</p>
+              </Row>
+              {project.role ? (
+                <Row className='space-x-12 justify-between items-center border-b border-slate-300 py-[30px]'>
+                  <p className='text-slate-500'>02</p>
+                  <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
+                    ROLE
+                  </h4>
+                  <p className='text-slate-500'>{project.role}</p>
+                </Row>
+              ) : null}
               {project.tags ? (
-                <Row className='space-x-12 justify-between items-center border-y border-slate-300 py-[30px]'>
-                  <p className='text-slate-500'>01</p>
+                <Row className='space-x-12 justify-between items-center border-b border-slate-300 py-[30px]'>
+                  <p className='text-slate-500'>03</p>
                   <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
                     TECHNOLOGIES
                   </h4>
@@ -62,28 +78,10 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
                   </Row>
                 </Row>
               ) : null}
-              {project.role ? (
-                <Row className='space-x-12 justify-between items-center border-b border-slate-300 py-[30px]'>
-                  <p className='text-slate-500'>02</p>
-                  <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
-                    ROLE
-                  </h4>
-                  <p className='text-slate-700'>{project.role}</p>
-                </Row>
-              ) : null}
-              <Row className='space-x-12 justify-between items-center border-b border-slate-300 py-[30px]'>
-                <p className='text-slate-500'>03</p>
-                <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
-                  DESCRIPTION
-                </h4>
-                <p className='text-slate-700'>{project.description}</p>
-              </Row>
             </Stack>
 
             <Stack className='space-y-12'>
-              <h4 className='text-slate-800 text-3xl min-w-[250px] flex justify-center items-center'>
-                FEATURES
-              </h4>
+              <p className='text-slate-500'>04</p>
               <AppReactMarkdown>{project.content}</AppReactMarkdown>
             </Stack>
           </Stack>
