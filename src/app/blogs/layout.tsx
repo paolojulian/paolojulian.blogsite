@@ -19,7 +19,7 @@ export default function PortfolioLayout({
       <Stack
         className={classNames(
           'font-main',
-          'bg-main text-slate-700 min-h-screen',
+          'bg-white text-slate-700 min-h-screen',
           'relative'
         )}
       >

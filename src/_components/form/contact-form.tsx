@@ -3,7 +3,6 @@ import React, { FunctionComponent, useState } from 'react';
 import { Formik } from 'formik';
 import Stack from '@/_components/layouts/stack';
 import TextInput from './text-input';
-import CTAButton from '../../app/portfolio/_components/common/cta-button';
 import { contactFormSchema } from '../../app/portfolio/_utils/schemas';
 import { IContactForm } from '../../app/portfolio/_forms';
 import FormControl from './form-control';
@@ -96,18 +95,12 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                 />
               </FormControl>
             </Stack>
-            <CTAButton
+            <button
+              className='rounded-full py-[15px] flex justify-center items-center bg-primary-400 text-white'
               type='submit'
-              variant={
-                isSuccess ? 'success' : dark ? 'default-dark' : 'default'
-              }
-              loadingText='sending'
-              isLoading={isLoading}
-              disabled={isLoading}
-              size='lg'
             >
-              send
-            </CTAButton>
+              SEND
+            </button>
           </Stack>
         </form>
       )}
