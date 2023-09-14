@@ -16,7 +16,7 @@ const RightArrowIcon: FunctionComponent<RightArrowIconProps> = (props) => {
     >
       <path
         d='M17 8L21 12M21 12L17 16M21 12L3 12'
-        stroke='#F87171'
+        stroke='currentColor'
         strokeWidth='2'
         strokeLinecap='round'
         strokeLinejoin='round'

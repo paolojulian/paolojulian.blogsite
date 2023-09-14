@@ -1,20 +1,22 @@
 import classNames from 'classnames';
-import React, { FunctionComponent, HtmlHTMLAttributes, useMemo } from 'react';
+import React, { HtmlHTMLAttributes, useMemo } from 'react';
 
-export type StackProps = {
-  children?: React.ReactNode;
-} & HtmlHTMLAttributes<HTMLDivElement>;
+interface Props extends HtmlHTMLAttributes<HTMLDivElement> {}
 
-const Stack: FunctionComponent<StackProps> = ({
-  children,
-  className = '',
-  ...props
-}) => {
-  return (
-    <div className={classNames('flex flex-col', className)} {...props}>
-      {children}
-    </div>
-  );
-};
+const Stack = React.forwardRef<HTMLDivElement, Props>(
+  ({ children, className = '', ...props }, ref) => {
+    return (
+      <div
+        className={classNames('flex flex-col', className)}
+        {...props}
+        ref={ref}
+      >
+        {children}
+      </div>
+    );
+  }
+);
+
+Stack.displayName = 'Stack';
 
 export default Stack;

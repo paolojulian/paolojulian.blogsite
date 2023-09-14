@@ -1,16 +1,22 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Nunito, Outfit } from 'next/font/google';
+import { Anton, Lato, Lora, Nunito, Outfit } from 'next/font/google';
 
 const capital = Anton({
   weight: '400',
   variable: '--font-capital',
   subsets: ['latin'],
 });
-const main = Outfit({
+const main = Lora({
   subsets: ['latin'],
   variable: '--font-main',
+  weight: ['400', '600', '700'],
+});
+const sans = Outfit({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: ['400', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -35,6 +41,7 @@ export default function RootLayout({
       <body
         className={classNames(
           `${capital.variable} font-capital`,
+          `${sans.variable}`,
           `${main.variable} font-main`
         )}
       >
