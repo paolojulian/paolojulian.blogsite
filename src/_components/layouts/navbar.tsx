@@ -16,8 +16,8 @@ export type NavbarProps = {
 };
 
 const colorVariants: Record<Variants, string> = {
-  default: 'bg-slate-900 text-slate-400',
-  'default-bordered': 'bg-slate-900 text-slate-400',
+  default: 'bg-white text-gray-700',
+  'default-bordered': 'bg-white text-gray-700',
 };
 
 const borderVariants: Record<Variants, string> = {
@@ -31,13 +31,12 @@ const WebLink: FunctionComponent<
   return (
     <li
       className={classNames(
-        'border-b',
-        isActive
-          ? 'text-red-400 border-red-400'
-          : 'hover:text-red-400 border-transparent'
+        'flex flex-col justify-between items-center space-y-2',
+        isActive ? 'text-gray-800' : 'text-gray-400 hover:text-red-400'
       )}
     >
       <Link {...props}>{name}</Link>
+      {isActive ? <div className='w-[10px] h-[1px] bg-gray-800'></div> : null}
     </li>
   );
 };
@@ -84,9 +83,14 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         <Row
           className={classNames(
             'h-navbar',
-            'px-4 md:px-8 justify-between items-center'
+            'px-4 justify-between items-center max-w-[1480px] w-full mx-auto',
+            'relative'
           )}
         >
+          <div className='absolute pointer-events-none inset-0'>
+            <div className='max-w-7xl w-full h-full mx-auto'>&nbsp;</div>
+          </div>
+
           <div className='select-none'>
             <Link href='/'>
               <span className='font-capital text-[24px]'>P</span>
@@ -97,7 +101,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
               <WebLink href='/' name='Home' isActive={pathname === '/'} />
               <WebLink
                 href='/blogs'
-                name='Blogs'
+                name='Articles'
                 isActive={pathname === '/blogs'}
               />
               <WebLink
@@ -137,7 +141,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         >
           <Row className='justify-between items-center p-4'>
             <span
-              className={classNames('font-capital text-[24px] text-transparent')}
+              className={classNames(
+                'font-capital text-[24px] text-transparent'
+              )}
             >
               P
             </span>

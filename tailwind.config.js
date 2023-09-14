@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -24,6 +26,10 @@ module.exports = {
       colors: {
         main: '#ECE8E1',
         light: '#fefaf3',
+        primary: colors.red,
+        background: colors.white,
+        gray: colors.slate,
+        accent: colors.cyan,
       },
       transitionTimingFunction: {
         fadeIn: 'cubic-bezier(.24,.6,.64,.65)',

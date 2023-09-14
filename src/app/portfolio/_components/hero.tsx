@@ -1,27 +1,30 @@
 'use client';
 import React, { FunctionComponent, useEffect, useRef } from 'react';
-import { Anton } from 'next/font/google';
-import classNames from 'classnames';
 import Stack from '@/_components/layouts/stack';
 import Link from 'next/link';
-import LinkedinIcon from './icons/linkedin-icon';
-import DotGrid from '@/_components/common/dot-grid';
-import PhoneIcon from './icons/phone-icon';
-import MailIcon from './icons/mail-icon';
+import Row from '@/_components/layouts/row';
+import Image from 'next/image';
+import LinkedinIcon from '@/_components/icons/linkedin-icon';
+import Fab from '@/_components/buttons/fab';
+import MailIcon from '@/app/portfolio/_components/icons/mail-icon';
+import PhoneIcon from '@/app/portfolio/_components/icons/phone-icon';
+import {
+  SECTIONS,
+  useSections,
+} from '@/app/portfolio/_context/sections-context';
+import classNames from 'classnames';
 
-// const interFont = Inter({ subsets: ['latin'] });
-const antonFont = Anton({ weight: '400', subsets: ['latin'] });
-
-export type HeroSectionProps = {
+interface Props {
   // No Props
-};
+}
 
 let isScrolling = false;
 
-const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
+const HeroSection: FunctionComponent<Props> = (props) => {
   const logoRef = useRef<HTMLHeadingElement>(null);
   const professionRef = useRef<HTMLParagraphElement>(null);
   const socialLinksRef = useRef<HTMLDivElement>(null);
+  const { activeSection } = useSections();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,26 +56,6 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
           isScrolling = false;
         });
       }
-      // let scroll = window.scrollY;
-      // const logo = logoRef.current;
-      // const profession = professionRef.current;
-      // const socialLinks = socialLinksRef.current;
-
-      // if (logo) {
-      //   logo.style.transform = `translateY(${scroll * 0.8}px)`;
-      // }
-
-      // if (profession) {
-      //   const opacity = 1 - Math.min(scroll / 200, 1);
-      //   profession.style.transform = `translateY(${scroll * 0.7}px)`;
-      //   profession.style.opacity = opacity.toFixed(2);
-      // }
-
-      // if (socialLinks) {
-      //   const opacity = 1 - Math.min(scroll / 100, 1);
-      //   socialLinks.style.transform = `translateY(${scroll * 0.7}px)`;
-      //   socialLinks.style.opacity = opacity.toFixed(2);
-      // }
     };
 
     if (window.innerWidth > 768) {
@@ -85,64 +68,85 @@ const HeroSection: FunctionComponent<HeroSectionProps> = (props) => {
   }, []);
 
   return (
-    <>
-      {/* <div className='fixed w-3/5 h-screen right-0 top-24 overflow-hidden pointer-events-none'>
-        <DotGrid gridGap={30} dotColor={'#374151'} /> */}
-      <Stack className='flex-1 h-full'>
-        <Stack className='flex-1'>
-          <Stack className='flex-1 justify-center items-center text-center'>
-            <Stack className='items-center space-y-4'>
-              <div className='w-fit relative'>
-                <h1
-                  className={classNames(
-                    antonFont.className,
-                    'font-black text-[80px] md:text-[140px] leading-[1] tracking-wide w-fit -z-10 select-none'
-                  )}
-                  ref={logoRef}
-                >
-                  <span className='text-main/60 block md:inline'>PAOLO</span>
-                  <span className='text-main relative'>
-                    <span>JULIAN</span>
-                  </span>
-                </h1>
-              </div>
-              <p
-                className='text-main/70 text-base md:text-xl tracking-widest'
-                ref={professionRef}
-              >
-                SOFTWARE ENGINEER
-              </p>
-            </Stack>
-          </Stack>
-
-          <div
-            className='flex flex-row justify-end md:justify-center space-x-4 md:space-x-4 py-8'
-            ref={socialLinksRef}
-          >
-            <Link href={'https://www.linkedin.com/in/pipz/'} target='_blank'>
-              <div className='rounded-full flex justify-center items-center transition-colors bg-main/90 hover:bg-red-300 h-12 w-12'>
-                <LinkedinIcon className='fill-slate-800' />
-              </div>
-            </Link>
-
+    <section
+      id='hero'
+      className='flex flex-row min-h-screen flex-1 w-full justify-center pt-navbar border-l-[10px] border-red-300'
+    >
+      <Stack className='justify-center relative'>
+        <Stack className='w-[100px] h-full justify-center sticky top-0 space-y-[10px]'>
+          {SECTIONS.map((section, i) => (
             <Link
-              href={'mailto:paolojulian.personal@gmail.com'}
-              target='_blank'
+              className='flex flex-row justify-between items-center transition hover:bg-slate-200 pl-4'
+              href={`#${section}`}
+              key={i}
             >
-              <div className='rounded-full flex justify-center items-center transition-colors bg-main/90 hover:bg-red-300 h-12 w-12'>
-                <MailIcon className='fill-slate-800' />
-              </div>
+              <span
+                className={classNames(
+                  'font-black text-[16px] tracking-[-0.48px]',
+                  activeSection === section ? 'text-gray-800' : 'text-gray-300'
+                )}
+              >
+                {`0${i}`}
+              </span>
+              <div
+                className={classNames(
+                  'w-[3px] h-[40px]',
+                  activeSection === section
+                    ? 'bg-primary-400'
+                    : 'bg-transparent'
+                )}
+              ></div>
             </Link>
-
-            <Link href={'tel:09279488654'} target='_blank'>
-              <div className='rounded-full flex justify-center items-center transition-colors bg-main/90 hover:bg-red-300 h-12 w-12'>
-                <PhoneIcon className='fill-slate-800' />
-              </div>
-            </Link>
-          </div>
+          ))}
         </Stack>
       </Stack>
-    </>
+
+      <div className='flex-1 flex flex-col justify-center items-center text-center gap-[20px] max-w-7xl w-full relative'>
+        <div className='h-full aspect-[880/1002] absolute left-0 bottom-0'>
+          <Image
+            className='object-contain select-none'
+            draggable={false}
+            src='/assets/background.png'
+            alt='background'
+            fill
+            priority
+          />
+        </div>
+
+        <h1 className='text-[40px] tracking-[8px] leading-[72px]'>
+          SIMPLIFY YOUR LIFE,
+          <br />
+          AMPLIFY YOUR HAPPINESS.
+        </h1>
+        <div className='flex flex-row font-black text-[12px] tracking-[12.32px] uppercase items-center space-x-4 text-gray-400'>
+          <p>PAOLO JULIAN</p>
+          <div className='h-[18px] w-[2px] bg-primary-400'></div>
+          <p>SOFTWARE ENGINEER</p>
+        </div>
+
+        <Stack
+          className='absolute left-1/2 bottom-0 -translate-x-1/2 items-center space-y-2'
+          role='button'
+        >
+          <p className='animate-bounce'>Read more</p>
+          <div className='w-[1px] h-[100px] bg-slate-600'></div>
+        </Stack>
+      </div>
+
+      <Stack className='justify-center'>
+        <Stack className='w-[100px] h-full justify-center space-y-[20px] text-white'>
+          <Fab>
+            <LinkedinIcon />
+          </Fab>
+          <Fab>
+            <MailIcon />
+          </Fab>
+          <Fab>
+            <PhoneIcon />
+          </Fab>
+        </Stack>
+      </Stack>
+    </section>
   );
 };
 

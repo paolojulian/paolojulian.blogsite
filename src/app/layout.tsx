@@ -1,17 +1,16 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Nunito } from 'next/font/google';
+import { Anton, Nunito, Outfit } from 'next/font/google';
 
 const capital = Anton({
   weight: '400',
   variable: '--font-capital',
   subsets: ['latin'],
 });
-const main = Nunito({
+const main = Outfit({
   subsets: ['latin'],
   variable: '--font-main',
-  weight: ['400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
