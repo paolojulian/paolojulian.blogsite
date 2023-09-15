@@ -43,7 +43,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
   return (
     <ProjectItemContext.Provider value={project}>
       <div className='first:border-y border-b border-slate-300'>
-        <Row className='justify-between items-center py-[25px]'>
+        <Row className='justify-between items-center py-[25px] space-x-[50px]'>
           <div className='aspect-[380/360] w-[380px] border border-primary-300/30 relative'>
             <Image
               className='object-cover'
@@ -52,8 +52,8 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
               fill
             />
           </div>
-          <Stack className='flex-1 space-y-[10px] items-start max-w-[600px]'>
-            <p className='text-[20px] tracking-[1.4px] text-slate-500'>{`03.${number}`}</p>
+          <Stack className='flex-1 space-y-[10px] items-start max-w-[500px]'>
+            <p className='text-[16px] tracking-[1.4px] text-slate-700'>{`03.${number}`}</p>
             <p className='uppercase text-[32px] text-slate-700 tracking-[2.24px]'>
               {project.name}
             </p>

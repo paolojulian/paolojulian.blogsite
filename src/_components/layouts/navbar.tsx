@@ -75,7 +75,6 @@ const Navbar: FunctionComponent<NavbarProps> = ({
     <>
       <div
         className={classNames(
-          'font-main',
           'fixed top-0 inset-x-0 z-40',
           colorVariants[variant]
         )}
@@ -83,7 +82,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         <Row
           className={classNames(
             'h-navbar',
-            'px-4 justify-between items-center max-w-[1480px] w-full mx-auto',
+            'px-[50px] justify-between items-center max-w-large w-full mx-auto',
             'relative'
           )}
         >
@@ -109,6 +108,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
                 name='Components'
                 isActive={pathname === '/components'}
               />
+              <WebLink href='#contact' name='Contact Us' isActive={false} />
             </ul>
             <button className='block md:hidden' onClick={handleToggleMenu}>
               <HamburgerMenuIcon />

@@ -16,7 +16,7 @@ const AboutSection: FunctionComponent<Props> = (props) => {
   return (
     <section
       id={SECTIONS[1]}
-      className='bg-white flex flex-row flex-1 max-w-[1268px] px-[50px] mx-auto w-full z-10'
+      className='bg-white flex flex-row flex-1 max-w-main px-[50px] mx-auto w-full z-10'
     >
       <Stack className='py-[150px] w-full space-y-[50px]'>
         <div className='text-left'>

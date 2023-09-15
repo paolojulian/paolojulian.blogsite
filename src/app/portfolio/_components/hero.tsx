@@ -1,7 +1,6 @@
 'use client';
 import React, { FunctionComponent, useEffect, useRef } from 'react';
 import Stack from '@/_components/layouts/stack';
-import Link from 'next/link';
 import Image from 'next/image';
 import LinkedinIcon from '@/_components/icons/linkedin-icon';
 import Fab from '@/_components/buttons/fab';
@@ -11,7 +10,6 @@ import {
   SECTIONS,
   useSections,
 } from '@/app/portfolio/_context/sections-context';
-import classNames from 'classnames';
 
 interface Props {
   // No Props
@@ -19,7 +17,7 @@ interface Props {
 
 let isScrolling = false;
 
-const HeroSection: FunctionComponent<Props> = (props) => {
+const HeroSection: FunctionComponent<Props> = () => {
   const logoRef = useRef<HTMLHeadingElement>(null);
   const professionRef = useRef<HTMLParagraphElement>(null);
   const socialLinksRef = useRef<HTMLDivElement>(null);
@@ -75,97 +73,67 @@ const HeroSection: FunctionComponent<Props> = (props) => {
   }, []);
 
   return (
-    <section
-      id={SECTIONS[0]}
-      className='flex flex-row min-h-screen flex-1 w-full justify-center border-l-[10px] border-primary-300'
-    >
-      <Stack className='justify-center relative'>
-        <Stack className='fixed inset-0 max-w-[1468px] mx-auto z-40 pointer-events-none'>
-          <Stack className='w-[100px] h-full justify-center sticky top-0 left-0 space-y-[10px]'>
-            {SECTIONS.map((section, i) =>
-              i > 0 ? (
-                <Link
-                  className='flex flex-row justify-between items-center transition hover:bg-slate-200 pl-4'
-                  href={`#${section}`}
-                  key={i}
-                >
-                  <span
-                    className={classNames(
-                      'font-black text-[16px] tracking-[-0.48px]',
-                      activeSection === section
-                        ? 'text-gray-800'
-                        : 'text-gray-300'
-                    )}
-                  >
-                    {`0${i}`}
-                  </span>
-                  <div
-                    className={classNames(
-                      'w-[3px] h-[40px]',
-                      activeSection === section
-                        ? 'bg-primary-400'
-                        : 'bg-transparent'
-                    )}
-                  ></div>
-                </Link>
-              ) : null
-            )}
-          </Stack>
-        </Stack>
-      </Stack>
-
-      <div className='flex-1 flex flex-col justify-center items-center text-center gap-[20px] max-w-[1280px] w-full relative'>
-        <div className='fixed inset-0 max-w-[1268px] mx-auto pointer-events-none'>
-          <div className='h-full aspect-[880/1002] absolute left-0 bottom-0'>
-            <Image
-              className='object-contain select-none'
-              draggable={false}
-              src='/assets/background.png'
-              alt='background'
-              fill
-              priority
-            />
+    <>
+      <div className='fixed inset-0 max-w-large mx-auto pointer-events-none pt-navbar'>
+        <div className='h-full aspect-[880/1002] absolute left-0 bottom-0'>
+          <Image
+            className='object-contain select-none'
+            draggable={false}
+            src='/assets/background.png'
+            alt='background'
+            fill
+            priority
+          />
+        </div>
+      </div>
+      <section
+        id={SECTIONS[0]}
+        className='flex flex-row min-h-screen flex-1 w-full justify-center'
+      >
+        <div className='w-[100px]'></div>
+        <div className='flex-1 flex flex-col justify-center items-center text-center gap-[20px] max-w-main w-full relative'>
+          <h1
+            className='text-[40px] tracking-[8px] leading-[72px]'
+            ref={logoRef}
+          >
+            SIMPLIFY YOUR LIFE,
+            <br />
+            AMPLIFY YOUR HAPPINESS.
+          </h1>
+          <div
+            className='flex flex-row font-black text-[12px] tracking-[12.32px] uppercase items-center space-x-4 text-gray-400 font-sans'
+            ref={professionRef}
+          >
+            <p>PAOLO JULIAN</p>
+            <div className='h-[18px] w-[2px] bg-primary-400'></div>
+            <p>SOFTWARE ENGINEER</p>
           </div>
+
+          <Stack
+            ref={readMoreRef}
+            className='absolute left-1/2 bottom-0 -translate-x-1/2 items-center space-y-2'
+            role='button'
+          >
+            <p className='animate-bounce'>Read more</p>
+            <div className='w-[1px] h-[50px] bg-slate-600'></div>
+          </Stack>
         </div>
 
-        <h1 className='text-[40px] tracking-[8px] leading-[72px]' ref={logoRef}>
-          SIMPLIFY YOUR LIFE,
-          <br />
-          AMPLIFY YOUR HAPPINESS.
-        </h1>
-        <div
-          className='flex flex-row font-black text-[12px] tracking-[12.32px] uppercase items-center space-x-4 text-gray-400 font-sans'
-          ref={professionRef}
-        >
-          <p>PAOLO JULIAN</p>
-          <div className='h-[18px] w-[2px] bg-primary-400'></div>
-          <p>SOFTWARE ENGINEER</p>
+        <div className='justify-center flex flex-col' ref={socialLinksRef}>
+          <Stack className='w-[100px] h-full justify-center space-y-[20px] text-white'>
+            <Fab>
+              <LinkedinIcon />
+            </Fab>
+            <Fab>
+              <MailIcon />
+            </Fab>
+            <Fab>
+              <PhoneIcon />
+            </Fab>
+          </Stack>
         </div>
-
-        <Stack
-          ref={readMoreRef}
-          className='absolute left-1/2 bottom-0 -translate-x-1/2 items-center space-y-2'
-          role='button'
-        >
-          <p className='animate-bounce'>Read more</p>
-          <div className='w-[1px] h-[100px] bg-slate-600'></div>
-        </Stack>
-      </div>
-
-      <div className='justify-center flex flex-col' ref={socialLinksRef}>
-        <Stack className='w-[100px] h-full justify-center space-y-[20px] text-white'>
-          <Fab>
-            <LinkedinIcon />
-          </Fab>
-          <Fab>
-            <MailIcon />
-          </Fab>
-          <Fab>
-            <PhoneIcon />
-          </Fab>
-        </Stack>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

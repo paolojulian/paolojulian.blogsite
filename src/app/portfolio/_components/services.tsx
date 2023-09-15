@@ -13,7 +13,7 @@ const ServicesSection: FunctionComponent<Props> = (props) => {
   return (
     <section
       id={SECTIONS[2]}
-      className='bg-white flex flex-row flex-1 max-w-[1268px] px-[50px] mx-auto w-full z-10'
+      className='bg-white flex flex-row flex-1 px-[50px] w-full z-10'
     >
       <Stack className='py-[25px] w-full space-y-[50px]'>
         <div className='text-left'>
@@ -24,7 +24,7 @@ const ServicesSection: FunctionComponent<Props> = (props) => {
             <p className='px-[9px] flex justify-center items-center text-[16px] tracking-[4px]'>
               02.1
             </p>
-            <Row className='w-[500px] justify-center items-center text-center'>
+            <Row className='w-[400px] justify-center items-center text-center'>
               <p className='text-[24px] tracking-[6px] uppercase flex-1'>
                 DESIGN
               </p>
@@ -39,7 +39,7 @@ const ServicesSection: FunctionComponent<Props> = (props) => {
             <p className='px-[9px] flex justify-center items-center text-[16px] tracking-[4px]'>
               02.2
             </p>
-            <Row className='w-[500px] justify-center items-center text-center'>
+            <Row className='w-[400px] justify-center items-center text-center'>
               <p className='text-[24px] tracking-[6px] uppercase flex-1'>
                 DEVELOP
               </p>
@@ -54,7 +54,7 @@ const ServicesSection: FunctionComponent<Props> = (props) => {
             <p className='px-[9px] flex justify-center items-center text-[16px] tracking-[4px]'>
               02.3
             </p>
-            <Row className='w-[500px] justify-center items-center text-center'>
+            <Row className='w-[400px] justify-center items-center text-center'>
               <p className='text-[24px] tracking-[6px] uppercase flex-1'>
                 DEPLOY
               </p>

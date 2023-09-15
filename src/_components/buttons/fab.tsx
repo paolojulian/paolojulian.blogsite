@@ -1,10 +1,11 @@
 import classNames from 'classnames';
 import React, { ButtonHTMLAttributes, FunctionComponent } from 'react';
 
-type Themes = 'primary';
+type Themes = 'primary' | 'gray';
 
 const THEMES: Record<Themes, string> = {
   primary: 'bg-primary-400 hover:bg-primary-500 transition-colors',
+  gray: 'bg-gray-400 hover:bg-gray-500 transition-colors'
 };
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {

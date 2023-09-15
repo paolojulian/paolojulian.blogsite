@@ -11,6 +11,12 @@ module.exports = {
       width: {
         sidebar: '18rem',
       },
+      maxWidth: {
+        phone: '420px',
+        tablet: '620px',
+        web: '1080px',
+        large: '1268px'
+      },
       padding: {
         navbar: '4rem',
         sidebar: '18rem',
