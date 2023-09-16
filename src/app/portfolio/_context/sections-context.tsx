@@ -33,7 +33,7 @@ export function SectionsProvider({ children }: { children: React.ReactNode }) {
 
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5,
+      threshold: 0.2,
     });
     sections.forEach((section) => observer.observe(section));
 

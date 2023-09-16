@@ -27,15 +27,15 @@ export default async function Home() {
           {/* horizontal left margin */}
           <div className='fixed inset-0 pointer-events-none border-l-[10px] border-red-300 z-50'>
             {/* horizontal left divider */}
-            <div className='border-l border-gray-400 max-w-large h-full w-full mx-auto'></div>
+            <div className='border-l border-gray-400 max-w-large fixed inset-0 mx-auto'></div>
           </div>
 
           <Navbar variant='default-bordered' />
           <SideNav />
 
-          <main className='px-0 text-slate-700 flex flex-col lg:max-w-large mx-auto relative'>
+          <main className='px-0 text-slate-700 flex flex-col lg:max-w-large mx-auto relative w-full'>
             <HeroSection />
-            <AboutSection />
+            <AboutSection resumeUrl={portfolio.resume.url} />
             <ServicesSection />
             <ProjectsSection items={portfolioItems} />
             <ArticlesSection items={blogPosts} />

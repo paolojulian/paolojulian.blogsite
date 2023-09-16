@@ -9,10 +9,10 @@ import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Link from 'next/link';
 
 interface Props {
-  // No Props
+  resumeUrl: string;
 }
 
-const AboutSection: FunctionComponent<Props> = (props) => {
+const AboutSection: FunctionComponent<Props> = ({ resumeUrl }) => {
   return (
     <section
       id={SECTIONS[1]}
@@ -41,7 +41,7 @@ const AboutSection: FunctionComponent<Props> = (props) => {
               complexity for effective app and system development.`}
             </p>
             <Link
-              href='#'
+              href={resumeUrl}
               role='button'
               className='relative transition bg-primary-400 hover:bg-primary-500 py-[20px] pr-[37px] pl-[50px] text-white shadow-[0_4px_28px_rgba(0,0,0,0.12)]'
             >

@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import React, { FunctionComponent } from 'react';
 
 export type AppCopyrightProps = {
@@ -5,7 +6,8 @@ export type AppCopyrightProps = {
 };
 
 const AppCopyright: FunctionComponent<AppCopyrightProps> = (props) => {
-  return <p>&copy; 2017-2023 Paolo Vincent Julian</p>;
+  const year = dayjs().get('year');
+  return <p>&copy; 2017-{year} Paolo Vincent Julian</p>;
 };
 
 export default AppCopyright;

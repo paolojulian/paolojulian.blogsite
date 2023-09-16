@@ -42,7 +42,11 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
 
   return (
     <ProjectItemContext.Provider value={project}>
-      <div className='first:border-y border-b border-slate-300'>
+      <div
+        className='first:border-y border-b border-slate-300 group transition md:hover:bg-red-50/50'
+        role='button'
+        onClick={handleOpenDetails}
+      >
         <Row className='justify-between items-center py-[25px] space-x-[50px]'>
           <div className='aspect-[380/360] w-[380px] border border-primary-300/30 relative'>
             <Image
@@ -58,10 +62,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
               {project.name}
             </p>
             <p className='text-slate-500 text-[16px]'>{project.description}</p>
-            <button
-              className='flex flex-row justify-center items-center space-x-[10px] text-primary-400 group'
-              onClick={handleOpenDetails}
-            >
+            <button className='flex flex-row justify-center items-center space-x-[10px] text-primary-400'>
               <span>SEE MORE</span>
               <div className='transition-transform group-hover:translate-x-4'>
                 <RightArrowIcon />
@@ -69,12 +70,8 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
             </button>
           </Stack>
         </Row>
-
-        <ProjectDetailsModal
-          isOpen={openDetails}
-          onClose={handleCloseDetails}
-        />
       </div>
+      <ProjectDetailsModal isOpen={openDetails} onClose={handleCloseDetails} />
     </ProjectItemContext.Provider>
   );
 };

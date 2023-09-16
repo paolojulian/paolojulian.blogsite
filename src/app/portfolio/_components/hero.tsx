@@ -6,10 +6,7 @@ import LinkedinIcon from '@/_components/icons/linkedin-icon';
 import Fab from '@/_components/buttons/fab';
 import MailIcon from '@/app/portfolio/_components/icons/mail-icon';
 import PhoneIcon from '@/app/portfolio/_components/icons/phone-icon';
-import {
-  SECTIONS,
-  useSections,
-} from '@/app/portfolio/_context/sections-context';
+import { SECTIONS } from '@/app/portfolio/_context/sections-context';
 
 interface Props {
   // No Props
@@ -22,7 +19,6 @@ const HeroSection: FunctionComponent<Props> = () => {
   const professionRef = useRef<HTMLParagraphElement>(null);
   const socialLinksRef = useRef<HTMLDivElement>(null);
   const readMoreRef = useRef<HTMLDivElement>(null);
-  const { activeSection } = useSections();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +70,7 @@ const HeroSection: FunctionComponent<Props> = () => {
 
   return (
     <>
-      <div className='fixed inset-0 max-w-large mx-auto pointer-events-none pt-navbar'>
+      <div className='fixed inset-0 max-w-web xl:max-w-large mx-auto pointer-events-none pt-navbar'>
         <div className='h-full aspect-[880/1002] absolute left-0 bottom-0'>
           <Image
             className='object-contain select-none'
@@ -91,7 +87,7 @@ const HeroSection: FunctionComponent<Props> = () => {
         className='flex flex-row min-h-screen flex-1 w-full justify-center'
       >
         <div className='w-[100px]'></div>
-        <div className='flex-1 flex flex-col justify-center items-center text-center gap-[20px] max-w-main w-full relative'>
+        <div className='flex-1 flex flex-col justify-center items-center text-center gap-[20px] max-w-large w-full relative'>
           <h1
             className='text-[40px] tracking-[8px] leading-[72px]'
             ref={logoRef}
@@ -112,7 +108,6 @@ const HeroSection: FunctionComponent<Props> = () => {
           <Stack
             ref={readMoreRef}
             className='absolute left-1/2 bottom-0 -translate-x-1/2 items-center space-y-2'
-            role='button'
           >
             <p className='animate-bounce'>Read more</p>
             <div className='w-[1px] h-[50px] bg-slate-600'></div>

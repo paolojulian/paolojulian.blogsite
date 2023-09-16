@@ -32,7 +32,7 @@ const FooterSection: FunctionComponent<Props> = (props) => {
           />
         </div>
       </div>
-      <Stack className='py-[150px] px-[50px] w-full space-y-[50px] max-w-large mx-auto justify-center items-center'>
+      <Stack className='pt-[150px] pb-[50px] px-[50px] w-full space-y-[50px] max-w-large mx-auto justify-center items-center'>
         <div className='bg-white relative py-[50px] px-[50px] shadow-[0_4px_28px_rgba(0,0,0,0.25)] w-full lg:max-w-[500px]'>
           <div className='aspect-square w-[20px] bg-primary-400 absolute left-0 top-0'></div>
           <Stack className='space-y-[50px]'>

@@ -3,6 +3,7 @@ import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Stack from '@/_components/layouts/stack';
 import { IBlogPost } from '@/app/blogs/_contentful';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 interface Props {
@@ -12,33 +13,40 @@ interface Props {
 const ArticleItem = React.memo(
   React.forwardRef<HTMLDivElement, Props>(({ article }, ref) => {
     return (
-      <div className='w-[300px] flex flex-col relative' ref={ref}>
-        <Stack className='gap-[10px]'>
-          <div className='w-full bg-primary-300/30 relative'>
-            <Image
-              className='object-cover obect-center opacity-90'
-              src={article.banner.url}
-              alt={article.title}
-              width={article.banner.width}
-              height={article.banner.height}
-              sizes='(max-width: 768px) 100vw, 300px'
-            />
-          </div>
-          <Stack>
-            <p className='text-slate-500 text-[14px]'>
-              <AppDate dateTime={article.sys.publishedAt} />
-            </p>
-            <p className='uppercase text-[16px] text-slate-600 line-clamp-2'>
-              {article.title}
-            </p>
+      <Link href={`/blogs/${article.slug}`}>
+        <div
+          className='w-[300px] flex flex-col relative group'
+          ref={ref}
+          role='button'
+        >
+          <Stack className='gap-[10px]'>
+            <div className='w-full bg-primary-300/30 relative overflow-hidden'>
+              <Image
+                className='object-cover obect-center opacity-90'
+                src={article.banner.url}
+                alt={article.title}
+                width={article.banner.width}
+                height={article.banner.height}
+                sizes='(max-width: 768px) 100vw, 300px'
+              />
+              <div className='group-hover:translate-x-0 -translate-x-full transition-transform absolute inset-0 bg-primary-400/30'></div>
+            </div>
+            <Stack>
+              <p className='text-slate-500 text-[14px]'>
+                <AppDate dateTime={article.sys.publishedAt} />
+              </p>
+              <p className='uppercase text-[16px] text-slate-600 line-clamp-2'>
+                {article.title}
+              </p>
+            </Stack>
+            <button className='flex flex-row text-primary-400 space-x-[10px]'>
+              <span className='text-[14px]'>SEE MORE</span>
+              <RightArrowIcon className='w-[24px] h-[24px] transition-transform group-hover:translate-x-2' />
+            </button>
           </Stack>
-          <button className='flex flex-row text-primary-400 space-x-[10px]'>
-            <span className='text-[14px]'>SEE MORE</span>
-            <RightArrowIcon className='w-[24px] h-[24px]' />
-          </button>
-        </Stack>
-        <div className='w-[10px] aspect-square absolute left-0 top-0 bg-primary-300'></div>
-      </div>
+          <div className='w-[10px] aspect-square absolute left-0 top-0 bg-primary-300'></div>
+        </div>
+      </Link>
     );
   })
 );

@@ -22,7 +22,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
   return (
     <AppModal isOpen={isOpen} {...props}>
       <div ref={containerRef}>
-        <Stack className='space-y-16 px-[50px] py-[100px] bg-white font-main'>
+        <Stack className='space-y-16 px-[50px] py-[100px] bg-white'>
           <Stack className='space-y-16'>
             <Stack className='relative'>
               <p className='text-[20px] tracking-[1px] text-slate-400 uppercase'>{`// PROJECT OVERVIEW`}</p>
@@ -67,7 +67,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               ) : null}
               {project.tags ? (
                 <Row className='space-x-12 justify-between items-center border-b border-slate-300 py-[30px]'>
-                  <p className='text-slate-500'>03</p>
+                  <p className='text-slate-500'>{project.role ? '03' : '02'}</p>
                   <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
                     TECHNOLOGIES
                   </h4>
@@ -81,7 +81,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
             </Stack>
 
             <Stack className='space-y-12'>
-              <p className='text-slate-500'>04</p>
+              <p className='text-slate-500'>More</p>
               <AppReactMarkdown>{project.content}</AppReactMarkdown>
             </Stack>
           </Stack>

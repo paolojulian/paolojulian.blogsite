@@ -16,8 +16,8 @@ const SideNav: FunctionComponent<Props> = (props) => {
   const { activeSection } = useSections();
 
   return (
-    <Stack className='fixed inset-0 max-w-web lg:hidden mx-auto z-40 pointer-events-none'>
-      <Stack className='w-[100px] h-full justify-center sticky top-0 left-0 space-y-[10px]'>
+    <Stack className='fixed inset-0 max-w-large lg:hidden 2xl:flex mx-auto z-40 pointer-events-none'>
+      <Stack className='w-[100px] h-full justify-center sticky top-0 left-0 space-y-[10px] -mx-[100px]'>
         {SECTIONS.map((section, i) =>
           i > 0 ? (
             <Link
