@@ -119,7 +119,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({
 
       <Stack
         className={classNames(
-          'block md:hidden fixed inset-0 z-40 pointer-events-none overflow-hidden'
+          'block md:hidden fixed inset-0 z-40 pointer-events-none overflow-hidden',
+          isOpen ? 'backdrop-blur-sm' : ''
         )}
       >
         <div
@@ -154,20 +155,26 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           <nav className='w-full text-right p-4 flex flex-col space-y-2'>
             <ul className='flex-row space-x-8'>
               <MobileLink
-                name='home'
+                name='About'
                 href='/'
                 isActive={pathname === '/'}
                 onClick={handleToggleMenu}
               />
               <MobileLink
-                name='blogs'
+                name='Articles'
                 href='/blogs'
                 isActive={pathname === '/blogs'}
                 onClick={handleToggleMenu}
               />
               <MobileLink
-                name='components'
+                name='Components'
                 href='/components'
+                isActive={pathname === '/components'}
+                onClick={handleToggleMenu}
+              />
+              <MobileLink
+                name='Contact Us'
+                href='/#contact'
                 isActive={pathname === '/components'}
                 onClick={handleToggleMenu}
               />

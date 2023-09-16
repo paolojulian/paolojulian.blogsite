@@ -13,7 +13,7 @@ interface Props {
 const ArticleItem = React.memo(
   React.forwardRef<HTMLDivElement, Props>(({ article }, ref) => {
     return (
-      <Link href={`/blogs/${article.slug}`}>
+      <Link href={`/blogs/${article.slug}`} className='snap-start'>
         <div
           className='w-[300px] flex flex-col relative group'
           ref={ref}
@@ -44,7 +44,7 @@ const ArticleItem = React.memo(
               <RightArrowIcon className='w-[24px] h-[24px] transition-transform group-hover:translate-x-2' />
             </button>
           </Stack>
-          <div className='w-[10px] aspect-square absolute left-0 top-0 bg-primary-300'></div>
+          <div className='w-[10px] aspect-square absolute left-0 top-0 bg-primary-400'></div>
         </div>
       </Link>
     );

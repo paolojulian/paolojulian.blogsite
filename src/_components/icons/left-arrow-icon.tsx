@@ -16,7 +16,7 @@ const LeftArrowIcon: FunctionComponent<LeftArrowIconProps> = (props) => {
     >
       <path
         d='M7 16L3 12M3 12L7 8M3 12H21'
-        stroke='#F87171'
+        stroke='currentColor'
         strokeWidth='2'
         strokeLinecap='round'
         strokeLinejoin='round'

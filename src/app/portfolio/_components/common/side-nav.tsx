@@ -12,38 +12,36 @@ interface Props {
   // no props
 }
 
-const SideNav: FunctionComponent<Props> = (props) => {
+const SideNav: FunctionComponent<Props> = () => {
   const { activeSection } = useSections();
 
   return (
-    <Stack className='fixed inset-0 max-w-large lg:hidden 2xl:flex mx-auto z-40 pointer-events-none'>
-      <Stack className='w-[100px] h-full justify-center sticky top-0 left-0 space-y-[10px] -mx-[100px]'>
-        {SECTIONS.map((section, i) =>
-          i > 0 ? (
-            <Link
-              className='flex flex-row justify-between items-center transition hover:bg-slate-200 pl-4'
-              href={`#${section}`}
-              key={i}
+    <Stack className='fixed inset-0 xl:max-w-screen-lg 2xl:max-w-screen-xl hidden lg:flex mx-auto'>
+      <Stack className='max-w-[100px] w-full h-full justify-center sticky top-0 left-0 space-y-[10px] -translate-x-full'>
+        {SECTIONS.map((section, i) => (
+          <Link
+            className='flex flex-row justify-between items-center transition pl-4 group w-full'
+            href={`#${section}`}
+            key={i}
+          >
+            <span
+              className={classNames(
+                'font-black text-[16px] tracking-[-0.48px]',
+                activeSection === section
+                  ? 'text-gray-800'
+                  : 'text-gray-300 transition-colors group-hover:text-gray-700'
+              )}
             >
-              <span
-                className={classNames(
-                  'font-black text-[16px] tracking-[-0.48px]',
-                  activeSection === section ? 'text-gray-800' : 'text-gray-300'
-                )}
-              >
-                {`0${i}`}
-              </span>
-              <div
-                className={classNames(
-                  'w-[3px] h-[40px]',
-                  activeSection === section
-                    ? 'bg-primary-400'
-                    : 'bg-transparent'
-                )}
-              ></div>
-            </Link>
-          ) : null
-        )}
+              {`0${i}`}
+            </span>
+            <div
+              className={classNames(
+                'w-[3px] h-[40px]',
+                activeSection === section ? 'bg-primary-400' : 'bg-transparent'
+              )}
+            ></div>
+          </Link>
+        ))}
       </Stack>
     </Stack>
   );

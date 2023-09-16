@@ -15,7 +15,7 @@ const ServicesSection: FunctionComponent<Props> = (props) => {
       id={SECTIONS[2]}
       className='bg-white flex flex-row flex-1 px-[50px] w-full z-10'
     >
-      <Stack className='py-[25px] w-full space-y-[50px]'>
+      <Stack className='pt-[150px] w-full space-y-[50px]'>
         <div className='text-left'>
           <SectionHeading number={2} section='services'></SectionHeading>
         </div>

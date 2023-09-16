@@ -7,24 +7,28 @@ import Row from '@/_components/layouts/row';
 import Image from 'next/image';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Link from 'next/link';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import classNames from 'classnames';
+import Container from '@/_components/layouts/container';
 
 interface Props {
   resumeUrl: string;
+  about: string;
 }
 
-const AboutSection: FunctionComponent<Props> = ({ resumeUrl }) => {
+const AboutSection: FunctionComponent<Props> = ({ resumeUrl, about }) => {
   return (
     <section
       id={SECTIONS[1]}
-      className='bg-white flex flex-row flex-1 max-w-main px-[50px] mx-auto w-full z-10'
+      className='bg-white flex flex-row flex-1 max-w-main mx-auto w-full z-10'
     >
-      <Stack className='py-[150px] w-full space-y-[50px]'>
+      <Container className='flex flex-col pt-[150px] w-full gap-[50px]'>
         <div className='text-left'>
           <SectionHeading number={1} section='about'></SectionHeading>
         </div>
-        <Row className='space-x-[50px]'>
-          <div className='relative aspect-[400/465] w-[400px] h-auto'>
-            <div className='w-[30px] aspect-square bg-primary-400 absolute left-0 bottom-0 z-10'></div>
+        <Row className='space-x-[50px] xl:space-x-[100px]'>
+          <div className='relative aspect-[400/465] lg:w-[300px] 2xl:w-[400px] h-auto'>
+            <div className='w-[15px] lg:w-[20px] 2xl:w-[30px] aspect-square bg-primary-400 absolute left-0 bottom-0 z-10'></div>
             <Image
               fill
               className='object-cover'
@@ -34,12 +38,25 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl }) => {
           </div>
           <Stack className='flex-1 text-right justify-end items-end space-y-[50px]'>
             <h3 className='text-[48px] tracking-[2.4px]'>WHO AM I?</h3>
-            <p className='text-slate-500 text-[20px]'>
-              {`With 6 years of experience as a Software Engineer, my focus is on
-              Front-End Development. I'm passionate about coding and enjoy
-              crafting engaging user experiences. I believe in simplicity over
-              complexity for effective app and system development.`}
-            </p>
+            <div
+              className={classNames('text-[20px] text-slate-500 font-normal')}
+            >
+              <ReactMarkdown
+                components={{
+                  p: ({ children }) => (
+                    <p className='tracking-wide text-slate-500'>{children}</p>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className='text-red-500 font-normal'>
+                      {children}
+                    </strong>
+                  ),
+                }}
+                className='line-break'
+              >
+                {about}
+              </ReactMarkdown>
+            </div>
             <Link
               href={resumeUrl}
               role='button'
@@ -53,7 +70,7 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl }) => {
             </Link>
           </Stack>
         </Row>
-      </Stack>
+      </Container>
     </section>
   );
 };

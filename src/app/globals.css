@@ -39,6 +39,27 @@ body.modal--open {
   white-space: pre-wrap;
 }
 
+/* Add a custom scrollbar to the HTML document */
+.horizontal-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+/* Track (the background) */
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: #fff; /* Background color of the scrollbar track */
+}
+
+/* Handle (the draggable part) */
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: #FCA5A5;
+  border-radius: 6px; /* Rounded corners of the scrollbar thumb */
+}
+
+/* On hover, the thumb will be darker */
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .text-stroke {
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
   -webkit-text-strokewidth: 1px;

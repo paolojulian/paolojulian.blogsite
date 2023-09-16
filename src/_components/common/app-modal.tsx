@@ -3,10 +3,19 @@ import React, {
   FunctionComponent,
   useCallback,
   useEffect,
+  useLayoutEffect,
   useRef,
+  useState,
 } from 'react';
 import classNames from 'classnames';
 import CrossIcon from '@/app/custom-components/application-ui/layouts/brand-sidebar-with-header/_components/icons/cross-icon';
+
+function createWrapperAndAppendToBody(wrapperId: string) {
+  const wrapperElement = document.createElement('div');
+  wrapperElement.setAttribute('id', wrapperId);
+  document.body.appendChild(wrapperElement);
+  return wrapperElement;
+}
 
 export type AppModalProps = {
   onClose: () => void;
@@ -19,6 +28,7 @@ const AppModal: FunctionComponent<AppModalProps> = ({
   isOpen,
   children,
 }) => {
+  const [modalRoot, setModalRoot] = useState<HTMLElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const closeModal = useCallback(() => {
     document.body.classList.remove('modal--open');
@@ -36,8 +46,15 @@ const AppModal: FunctionComponent<AppModalProps> = ({
     }
   }, [isOpen, closeModal]);
 
-  const modalRoot = document.getElementById('modal-root');
-  if (!modalRoot) {
+  useLayoutEffect(() => {
+    let element = document.getElementById('modal-root');
+    if (!element) {
+      element = createWrapperAndAppendToBody('modal-root');
+    }
+    setModalRoot(element);
+  }, []);
+
+  if (modalRoot === null) {
     return null;
   }
 
@@ -45,14 +62,14 @@ const AppModal: FunctionComponent<AppModalProps> = ({
     // container
     <div
       className={classNames(
-        'fixed inset-0 z-50 transition backdrop-blur-sm',
+        'fixed inset-0 z-50 backdrop-blur-sm',
         isOpen
           ? 'opacity-100 pointer-events-auto'
           : 'opacity-0 pointer-events-none'
       )}
     >
       <div
-        className='fixed inset-0 bg-black bg-opacity-25 overflow-y-auto py-[100px]'
+        className='fixed inset-0 bg-black/50 overflow-y-auto py-[100px]'
         ref={containerRef}
         role='button'
         onClick={closeModal}
@@ -81,63 +98,6 @@ const AppModal: FunctionComponent<AppModalProps> = ({
       {/* content */}
     </div>,
     modalRoot
-    // <dialog
-    //   className={classNames('max-w-screen-md w-full', styles['app-modal'])}
-    //   ref={dialogRef}
-    //   style={{ maxWidth: '1024px', height: '100%' }}
-    //   onClick={closeModal}
-    // >
-    //   <Stack
-    //     className={classNames('h-full transition-transform duration-1000')}
-    //     style={{
-    //       maxHeight: '100%',
-    //     }}
-    //     onClick={(e) => {
-    //       e.stopPropagation();
-    //     }}
-    //   >
-    //     <Row className='justify-end'>
-    //       <button
-    //         className='px-3 py-2 focus:outline-none text-slate-50 hover:text-red-200'
-    //         onClick={closeModal}
-    //       >
-    //         exit
-    //       </button>
-    //     </Row>
-    //     <div className='w-full h-full relative bg-main flex-1 shadow-md'>
-    //       {children}
-    //     </div>
-    //   </Stack>
-    // </dialog>
-    // <div
-    //   className={classNames(
-    //     'fixed inset-0 w-screen h-screen z-50',
-    //     'transition-opacity backdrop-blur-sm',
-    //     isOpen ? 'opacity-1' : 'opacity-0 pointer-events-none'
-    //   )}
-    // >
-    //   {/* overlay */}
-    //   <div className='absolute w-full h-full inset-0 bg-slate-900/30'></div>
-
-    //   {/* modal */}
-    //   <Stack
-    //     className={classNames(
-    //       'absolute inset-0 max-w-screen-lg w-full h-full mx-auto transition-transform',
-    //       isOpen ? 'translate-y-0' : 'translate-y-full'
-    //     )}
-    //   >
-    //     {/* exit */}
-    //     <Row className='py-2 w-full bg-transparent justify-end'>
-    //       <button onClick={onClose}>
-    //         <span className='text-slate-50'>exit</span>
-    //       </button>
-    //     </Row>
-    //     {/* content */}
-    //     <Stack className='flex-1 bg-main w-full px-12 py-12 items-center overflow-y-scroll space-y-12'>
-    //       {children}
-    //     </Stack>
-    //   </Stack>
-    // </div>
   );
 };
 

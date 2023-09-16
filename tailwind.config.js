@@ -15,7 +15,7 @@ module.exports = {
         phone: '420px',
         tablet: '620px',
         web: '1080px',
-        large: '1268px'
+        large: '1268px',
       },
       padding: {
         navbar: '4rem',
