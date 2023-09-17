@@ -8,12 +8,13 @@ import Row from '@/_components/layouts/row';
 import ProjectImage from '../common/project-image';
 import AppTag from '@/_components/common/app-tag';
 import Container from '@/_components/layouts/container';
+import ProjectOverviewItem from '@/app/portfolio/_components/modals/project-overview-item';
 
-export type ProjectDetailsModalProps = {
+interface Props extends Omit<AppModalProps, 'children'> {
   // no props
-} & Omit<AppModalProps, 'children'>;
+}
 
-const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
+const ProjectDetailsModal: FunctionComponent<Props> = ({
   isOpen,
   ...props
 }) => {
@@ -26,7 +27,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
         <Container className='flex flex-col space-y-16 py-[50px] md:py-[100px] bg-white'>
           <Stack className='space-y-16'>
             <Stack className='relative'>
-              <p className='text-[20px] tracking-[1px] text-slate-400 uppercase'>{`// PROJECT OVERVIEW`}</p>
+              <p className='text-[16px] md:text-[20px] tracking-[1px] text-slate-400 uppercase'>{`// PROJECT OVERVIEW`}</p>
               <h3
                 className={classNames(
                   'font-capital text-3xl md:text-6xl text-slate-800 uppercase'
@@ -50,39 +51,35 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               <p className='text-slate-400 text-sm'>banner</p>
             </Stack>
             <Stack>
-              <Row className='space-x-12 justify-between items-center border-y border-slate-300 py-[30px]'>
-                <p className='text-slate-500'>01</p>
-                <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
-                  DESCRIPTION
-                </h4>
-                <p className='text-slate-500'>{project.description}</p>
-              </Row>
+              <ProjectOverviewItem
+                number={1}
+                name='DESCRIPTION'
+                description={project.description}
+              />
               {project.role ? (
-                <Row className='space-x-12 justify-between items-center border-b border-slate-300 py-[30px]'>
-                  <p className='text-slate-500'>02</p>
-                  <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
-                    ROLE
-                  </h4>
-                  <p className='text-slate-500'>{project.role}</p>
-                </Row>
+                <ProjectOverviewItem
+                  number={2}
+                  name='ROLE'
+                  description={project.role}
+                />
               ) : null}
               {project.tags ? (
-                <Row className='space-x-12 justify-between items-center border-b border-slate-300 py-[30px]'>
-                  <p className='text-slate-500'>{project.role ? '03' : '02'}</p>
-                  <h4 className='tracking-wider text-slate-800 text-xl min-w-[250px] flex justify-center items-center'>
-                    TECHNOLOGIES
-                  </h4>
-                  <Row className='flex-wrap gap-2'>
-                    {project.tags.map((tag, i) => (
-                      <AppTag key={i} tag={tag} />
-                    ))}
-                  </Row>
-                </Row>
+                <ProjectOverviewItem
+                  number={project.role ? 3 : 2}
+                  name='TECHNOLOGIES'
+                  description={
+                    <Row className='flex-wrap gap-2'>
+                      {project.tags.map((tag, i) => (
+                        <AppTag key={i} tag={tag} />
+                      ))}
+                    </Row>
+                  }
+                />
               ) : null}
             </Stack>
 
             <Stack className='space-y-12'>
-              <p className='text-slate-500'>More</p>
+              <h4 className='tracking-wider text-slate-800 text-xl'>CONTENT</h4>
               <AppReactMarkdown>{project.content}</AppReactMarkdown>
             </Stack>
           </Stack>
