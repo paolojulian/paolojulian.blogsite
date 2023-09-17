@@ -20,6 +20,7 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
 
   return (
     <>
+
       <div className='p-4 md:p-8 py-12 md:py-16 pb-16 md:pb-24'>
         <Stack className='space-y-12 md:space-y-16'>
           <Row className='justify-between'>

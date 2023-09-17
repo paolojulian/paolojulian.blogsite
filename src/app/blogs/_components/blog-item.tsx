@@ -35,14 +35,12 @@ const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
         </div>
 
         <Stack className='flex-1 h-full p-4 relative space-y-2'>
-          <Stack>
-            <p className='font-medium text-sm md:text-xl'>
-              <AppDate dateTime={blogPost.sys.publishedAt} />
-            </p>
-            <h4 className='font-semibold text-lg lg:text-xl xl:text-2xl text-slate-700 line-clamp-1'>
-              {blogPost.title}
-            </h4>
-          </Stack>
+          <p className='text-gray-400 text-sm md:text-base'>
+            <AppDate dateTime={blogPost.sys.publishedAt} />
+          </p>
+          <h4 className='uppercase text-lg lg:text-lg xl:text-xl text-slate-700 xl:line-clamp-2'>
+            {blogPost.title}
+          </h4>
 
           <p className='line-clamp-3 text-slate-700'>{blogPost.description}</p>
 

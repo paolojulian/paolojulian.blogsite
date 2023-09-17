@@ -17,7 +17,7 @@ export type NavbarProps = {
 };
 
 const colorVariants: Record<Variants, string> = {
-  default: 'bg-white text-gray-700',
+  default: 'bg-white text-gray-400',
   'default-bordered': 'bg-white text-gray-700',
 };
 

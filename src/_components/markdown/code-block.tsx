@@ -147,6 +147,9 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({
               background: 'none',
             },
           }}
+          customStyle={{
+            fontSize: '14px'
+          }}
         >
           {children as string}
         </SyntaxHighlighter>

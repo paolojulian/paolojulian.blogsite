@@ -11,7 +11,7 @@ import ServicesSection from '@/app/portfolio/_components/services';
 import ProjectsSection from '@/app/portfolio/_components/projects';
 import ArticlesSection from '@/app/portfolio/_components/articles';
 import SideNav from '@/app/portfolio/_components/common/side-nav';
-import FooterSection from '@/app/portfolio/_components/footer';
+import FooterSection from '@/_components/layouts/footer';
 
 export default async function Home() {
   const [portfolioItems, portfolio, blogPosts] = await Promise.all([

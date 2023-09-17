@@ -24,8 +24,13 @@ export default function PortfolioLayout({
       >
         <>
           <Navbar />
+          {/* horizontal left margin */}
+          <div className='fixed inset-0 pointer-events-none border-l md:border-l-[5px] lg:border-l-[10px] border-red-300 z-50'>
+            {/* horizontal left divider */}
+            <div className='md:border-l border-gray-400 xl:max-w-screen-lg 2xl:max-w-screen-xl fixed inset-0 mx-auto'></div>
+          </div>
           <main className='mx-auto max-w-screen-lg 2xl:max-w-screen-xl px-4 md:px-12 flex-1 w-full pt-navbar'>
-            <div className='border-l border-slate-400'>{children}</div>
+            {children}
           </main>
           <Footer />
         </>

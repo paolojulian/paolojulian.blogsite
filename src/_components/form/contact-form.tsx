@@ -6,6 +6,7 @@ import TextInput from './text-input';
 import { contactFormSchema } from '../../app/portfolio/_utils/schemas';
 import { IContactForm } from '../../app/portfolio/_forms';
 import FormControl from './form-control';
+import CTAButton from '@/_components/form/cta-button';
 
 export type ContactFormProps = {
   onSubmit?: (form: IContactForm) => Promise<void>;
@@ -47,14 +48,10 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
             e.preventDefault();
             handleSubmit();
           }}
-          className='relative px-8 pb-8'
+          className='relative md:px-4'
         >
-          <Stack className='w-full md:w-[330px] space-y-8'>
+          <Stack className='w-full space-y-8'>
             <Stack className='space-y-4'>
-              <h4 className='text-sm font-medium text-slate-500'>
-                feel free to contact me and I will get back to you as soon as I
-                can.
-              </h4>
               <FormControl
                 error={touched.name && errors.name ? errors.name : undefined}
               >
@@ -95,12 +92,14 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                 />
               </FormControl>
             </Stack>
-            <button
-              className='rounded-full py-[15px] flex justify-center items-center bg-primary-400 text-white'
+            <CTAButton
               type='submit'
+              isLoading={isLoading}
+              variant={isSuccess ? 'success' : 'default'}
+              loadingText='Sending...'
             >
               SEND
-            </button>
+            </CTAButton>
           </Stack>
         </form>
       )}

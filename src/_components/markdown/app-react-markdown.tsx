@@ -29,8 +29,12 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             {children}
           </AppHeading.H3>
         ),
-        h4: ({ children }) => (<AppHeading.H4 id={toKebabCase(children.toString())}>{children}</AppHeading.H4>),
-        p: ({ children }) => <p className='text-slate-700'>{children}</p>,
+        h4: ({ children }) => (
+          <AppHeading.H4 id={toKebabCase(children.toString())}>
+            {children}
+          </AppHeading.H4>
+        ),
+        p: ({ children }) => <p className='text-slate-500'>{children}</p>,
         ol: ({ children }) => (
           <ol
             style={{
@@ -53,7 +57,9 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             {children}
           </ul>
         ),
-        li: ({ children }) => <li className='text-slate-700 whitespace-normal'>{children}</li>,
+        li: ({ children }) => (
+          <li className='text-slate-700 whitespace-normal'>{children}</li>
+        ),
         a: ({ href, children }) => (
           <a href={href} className='text-red-500 font-medium'>
             {children}
@@ -61,7 +67,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
         ),
         img: ({ ...props }) => <img {...props} className='pt-4' />,
         strong: ({ children }) => (
-          <strong className='font-bold'>{children}</strong>
+          <strong className='font-medium'>{children}</strong>
         ),
         pre: ({ children }) => <>{children}</>,
         code: ({ children, className }) => (
