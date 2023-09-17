@@ -1,7 +1,6 @@
 'use client';
 import React, { FunctionComponent } from 'react';
 import Stack from '@/_components/layouts/stack';
-import { SECTIONS } from '@/app/portfolio/_context/sections-context';
 import Row from '@/_components/layouts/row';
 import Image from 'next/image';
 import TextInput from '@/_components/form/text-input';
@@ -11,6 +10,7 @@ import LinkedinIcon from '@/_components/icons/linkedin-icon';
 import MailIcon from '@/app/portfolio/_components/icons/mail-icon';
 import PhoneIcon from '@/app/portfolio/_components/icons/phone-icon';
 import AppCopyright from '@/_components/common/app-copyright';
+import Container from '@/_components/layouts/container';
 
 interface Props {
   // No Props
@@ -20,7 +20,7 @@ const FooterSection: FunctionComponent<Props> = (props) => {
   return (
     <section
       id={'#contact'}
-      className='flex flex-row flex-1 w-full bg-slate-900 z-40 relative overflow-hidden'
+      className='flex flex-row flex-1 w-full bg-slate-900 z-30 relative overflow-hidden'
     >
       <div className='absolute bottom-0 inset-x-0 -z-10'>
         <div className='aspect-[2519/888] w-screen h-auto'>
@@ -32,8 +32,8 @@ const FooterSection: FunctionComponent<Props> = (props) => {
           />
         </div>
       </div>
-      <Stack className='pt-[150px] pb-[50px] px-[50px] w-full space-y-[50px] max-w-large mx-auto justify-center items-center'>
-        <div className='bg-white relative py-[50px] px-[50px] shadow-[0_4px_28px_rgba(0,0,0,0.25)] w-full lg:max-w-[500px]'>
+      <Container className='pt-[150px] pb-[50px] flex flex-col w-full space-y-[50px] max-w-large mx-auto justify-center items-center'>
+        <Container className='bg-white relative py-[50px] shadow-[0_4px_28px_rgba(0,0,0,0.25)] w-full md:max-w-[500px]'>
           <div className='aspect-square w-[20px] bg-primary-400 absolute left-0 top-0'></div>
           <Stack className='space-y-[50px]'>
             <h4 className='text-[48px] font-semibold tracking-[4.64px] leading-[60px] text-slate-800'>
@@ -41,7 +41,7 @@ const FooterSection: FunctionComponent<Props> = (props) => {
               <br />
               TOUCH
             </h4>
-            <Stack className='space-y-[50px] min-w-[300px]'>
+            <Stack className='space-y-[50px] w-full md:min-w-[300px]'>
               <Stack className='space-y-[20px]'>
                 <TextInput autoComplete='name' name='name' placeholder='name' />
                 <TextInput
@@ -76,7 +76,7 @@ const FooterSection: FunctionComponent<Props> = (props) => {
               </Link>
             </Row>
           </Stack>
-        </div>
+        </Container>
         <div className='text-gray-500'>
           <AppCopyright />
         </div>
@@ -115,7 +115,7 @@ const FooterSection: FunctionComponent<Props> = (props) => {
               </Link>
             </Stack>
           </Stack> */}
-      </Stack>
+      </Container>
     </section>
   );
 };

@@ -1,5 +1,9 @@
 'use client';
+import Fab from '@/_components/buttons/fab';
+import LinkedinIcon from '@/_components/icons/linkedin-icon';
 import Stack from '@/_components/layouts/stack';
+import MailIcon from '@/app/portfolio/_components/icons/mail-icon';
+import PhoneIcon from '@/app/portfolio/_components/icons/phone-icon';
 import {
   SECTIONS,
   useSections,
@@ -42,6 +46,26 @@ const SideNav: FunctionComponent<Props> = () => {
             ></div>
           </Link>
         ))}
+      </Stack>
+
+      <Stack className='absolute right-0 inset-y-0 translate-x-full hidden lg:flex pl-8'>
+        <Stack className='w-[100px] h-full justify-center space-y-[15px] text-white'>
+          <Link href='https://www.linkedin.com/in/pipz/'>
+            <Fab size='sm'>
+              <LinkedinIcon className='w-3.5 h-auto' />
+            </Fab>
+          </Link>
+          <Link href='mailto:paolojulian.dev@gmail.com'>
+            <Fab size='sm'>
+              <MailIcon className='w-4 h-auto' />
+            </Fab>
+          </Link>
+          <Link href='tel:09279488654'>
+            <Fab size='sm'>
+              <PhoneIcon className='w-4 h-auto' />
+            </Fab>
+          </Link>
+        </Stack>
       </Stack>
     </Stack>
   );

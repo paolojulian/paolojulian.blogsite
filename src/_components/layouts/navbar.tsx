@@ -7,6 +7,7 @@ import Stack from './stack';
 import classNames from 'classnames';
 import CloseIcon from '../icons/close-icon';
 import { usePathname } from 'next/navigation';
+import Container from '@/_components/layouts/container';
 
 type Variants = 'default' | 'default-bordered';
 
@@ -79,10 +80,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           colorVariants[variant]
         )}
       >
-        <Row
+        <Container
           className={classNames(
+            'flex flex-row',
             'h-navbar',
-            'px-[50px] justify-between items-center max-w-large w-full mx-auto',
+            'justify-between items-center max-w-screen-lg xl:max-w-screen-xl w-full mx-auto',
             'relative'
           )}
         >
@@ -114,7 +116,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
               <HamburgerMenuIcon />
             </button>
           </nav>
-        </Row>
+        </Container>
       </div>
 
       <Stack

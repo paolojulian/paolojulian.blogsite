@@ -25,9 +25,9 @@ export default async function Home() {
       <div className={classNames('font-sans bg-white text-slate-700')}>
         <SectionsProvider>
           {/* horizontal left margin */}
-          <div className='fixed inset-0 pointer-events-none border-l-[10px] border-red-300 z-50'>
+          <div className='fixed inset-0 pointer-events-none border-l md:border-l-[5px] lg:border-l-[10px] border-red-300 z-50'>
             {/* horizontal left divider */}
-            <div className='border-l border-gray-400 xl:max-w-screen-lg 2xl:max-w-screen-xl fixed inset-0 mx-auto'></div>
+            <div className='md:border-l border-gray-400 xl:max-w-screen-lg 2xl:max-w-screen-xl fixed inset-0 mx-auto'></div>
           </div>
 
           <Navbar variant='default-bordered' />

@@ -47,7 +47,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
         role='button'
         onClick={handleOpenDetails}
       >
-        <Row className='justify-between items-center py-[25px] space-x-[50px]'>
+        <div className='flex flex-col md:flex-row justify-between items-center py-[25px] gap-[20px] md:gap-[50px]'>
           <div className='aspect-[380/360] w-[380px] border border-primary-300/30 relative'>
             <Image
               className='object-cover'
@@ -58,7 +58,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
           </div>
           <Stack className='flex-1 space-y-[10px] items-start max-w-[500px]'>
             <p className='text-[16px] tracking-[1.4px] text-slate-700'>{`03.${number}`}</p>
-            <p className='uppercase text-[32px] text-slate-700 tracking-[2.24px]'>
+            <p className='uppercase text-[24px] md:text-[32px] text-slate-700 tracking-[2.24px]'>
               {project.name}
             </p>
             <p className='text-slate-500 text-[16px]'>{project.description}</p>
@@ -69,7 +69,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
               </div>
             </button>
           </Stack>
-        </Row>
+        </div>
       </div>
       <ProjectDetailsModal isOpen={openDetails} onClose={handleCloseDetails} />
     </ProjectItemContext.Provider>

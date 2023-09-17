@@ -7,6 +7,7 @@ import AppReactMarkdown from '@/_components/markdown/app-react-markdown';
 import Row from '@/_components/layouts/row';
 import ProjectImage from '../common/project-image';
 import AppTag from '@/_components/common/app-tag';
+import Container from '@/_components/layouts/container';
 
 export type ProjectDetailsModalProps = {
   // no props
@@ -22,7 +23,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
   return (
     <AppModal isOpen={isOpen} {...props}>
       <div ref={containerRef}>
-        <Stack className='space-y-16 px-[50px] py-[100px] bg-white'>
+        <Container className='flex flex-col space-y-16 py-[50px] md:py-[100px] bg-white'>
           <Stack className='space-y-16'>
             <Stack className='relative'>
               <p className='text-[20px] tracking-[1px] text-slate-400 uppercase'>{`// PROJECT OVERVIEW`}</p>
@@ -85,7 +86,7 @@ const ProjectDetailsModal: FunctionComponent<ProjectDetailsModalProps> = ({
               <AppReactMarkdown>{project.content}</AppReactMarkdown>
             </Stack>
           </Stack>
-        </Stack>
+        </Container>
       </div>
     </AppModal>
   );

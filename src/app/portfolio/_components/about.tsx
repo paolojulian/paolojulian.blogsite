@@ -22,12 +22,12 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl, about }) => {
       id={SECTIONS[1]}
       className='bg-white flex flex-row flex-1 max-w-main mx-auto w-full z-10'
     >
-      <Container className='flex flex-col pt-[150px] w-full gap-[50px]'>
+      <Container className='flex flex-col pt-[100px] md:pt-[150px] w-full gap-[50px]'>
         <div className='text-left'>
           <SectionHeading number={1} section='about'></SectionHeading>
         </div>
-        <Row className='space-x-[50px] xl:space-x-[100px]'>
-          <div className='relative aspect-[400/465] lg:w-[300px] 2xl:w-[400px] h-auto'>
+        <div className='flex flex-col md:flex-row gap-[50px] xl:gap-[100px]'>
+          <div className='relative aspect-[400/465] w-full md:w-[250px] lg:w-[300px] 2xl:w-[400px]'>
             <div className='w-[15px] lg:w-[20px] 2xl:w-[30px] aspect-square bg-primary-400 absolute left-0 bottom-0 z-10'></div>
             <Image
               fill
@@ -36,10 +36,14 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl, about }) => {
               alt='profile-picture'
             />
           </div>
-          <Stack className='flex-1 text-right justify-end items-end space-y-[50px]'>
-            <h3 className='text-[48px] tracking-[2.4px]'>WHO AM I?</h3>
+          <Stack className='flex-1 text-left md:text-right md:justify-end md:items-end gap-[20px] md:gap-[50px]'>
+            <h3 className='text-[32px] md:text-[48px] tracking-[1.6px] md:tracking-[2.4px]'>
+              WHO AM I?
+            </h3>
             <div
-              className={classNames('text-[20px] text-slate-500 font-normal')}
+              className={classNames(
+                'text-[16px] md:text-[20px] text-slate-500 font-normal'
+              )}
             >
               <ReactMarkdown
                 components={{
@@ -60,7 +64,7 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl, about }) => {
             <Link
               href={resumeUrl}
               role='button'
-              className='relative transition bg-primary-400 hover:bg-primary-500 py-[20px] pr-[37px] pl-[50px] text-white shadow-[0_4px_28px_rgba(0,0,0,0.12)]'
+              className='relative w-fit transition bg-primary-400 hover:bg-primary-500 py-[20px] pr-[37px] pl-[50px] text-white shadow-[0_4px_28px_rgba(0,0,0,0.12)]'
             >
               <Row className='space-x-[10px] tracking-[0.8px]'>
                 <span>VIEW RESUME</span>
@@ -69,7 +73,7 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl, about }) => {
               <div className='w-[15px] aspect-square bg-white absolute left-0 top-0'></div>
             </Link>
           </Stack>
-        </Row>
+        </div>
       </Container>
     </section>
   );

@@ -9,7 +9,7 @@ const Container: FunctionComponent<Props> = ({ className, ...props }) => {
   return (
     <div
       {...props}
-      className={classNames('px-[25px] lg:px-[50px]', className)}
+      className={classNames('px-[20px] lg:px-[50px]', className)}
     ></div>
   );
 };

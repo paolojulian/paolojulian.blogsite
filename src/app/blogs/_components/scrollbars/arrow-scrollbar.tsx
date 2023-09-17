@@ -92,7 +92,7 @@ const ArrowScrollBar: FunctionComponent<Props> = ({
       <div
         ref={containerRef}
         className={classNames(
-          'flex flex-row overflow-hidden scroll-smooth snap-x snap-mandatory',
+          'flex flex-row overflow-auto md:overflow-hidden scroll-smooth snap-x snap-mandatory',
           className
         )}
         {...props}

@@ -2,12 +2,8 @@
 import React, { FunctionComponent, useRef } from 'react';
 import Stack from '@/_components/layouts/stack';
 import Image from 'next/image';
-import LinkedinIcon from '@/_components/icons/linkedin-icon';
-import Fab from '@/_components/buttons/fab';
-import MailIcon from '@/app/portfolio/_components/icons/mail-icon';
-import PhoneIcon from '@/app/portfolio/_components/icons/phone-icon';
 import { SECTIONS } from '@/app/portfolio/_context/sections-context';
-import Link from 'next/link';
+import Container from '@/_components/layouts/container';
 
 interface Props {
   // No Props
@@ -18,7 +14,6 @@ let isScrolling = false;
 const HeroSection: FunctionComponent<Props> = () => {
   const logoRef = useRef<HTMLHeadingElement>(null);
   const professionRef = useRef<HTMLParagraphElement>(null);
-  const socialLinksRef = useRef<HTMLDivElement>(null);
   const readMoreRef = useRef<HTMLDivElement>(null);
 
   // useLayoutEffect(() => {
@@ -74,10 +69,10 @@ const HeroSection: FunctionComponent<Props> = () => {
 
   return (
     <>
-      <div className='fixed inset-0 max-w-web xl:max-w-large mx-auto pointer-events-none pt-navbar'>
-        <div className='h-full aspect-[880/1002] absolute left-0 bottom-0'>
+      <div className='fixed inset-0 xl:max-w-screen-lg 2xl:max-w-screen-xl mx-auto pointer-events-none pt-navbar'>
+        <div className='h-full aspect-[880/1002] max-w-full absolute left-0 bottom-0'>
           <Image
-            className='object-contain select-none'
+            className='object-cover object-right select-none'
             draggable={false}
             src='/assets/background.png'
             alt='background'
@@ -90,10 +85,10 @@ const HeroSection: FunctionComponent<Props> = () => {
         id={SECTIONS[0]}
         className='flex flex-row min-h-screen flex-1 w-full justify-center'
       >
-        <div className='w-[100px]'></div>
-        <div className='flex-1 flex flex-col justify-center items-center text-center gap-[20px] max-w-large w-full relative'>
+        <div className='hidden md:block w-[100px]'></div>
+        <Container className='flex-1 flex flex-col justify-center md:items-center text-left md:text-center gap-[20px] max-w-screen-xl w-full relative'>
           <h1
-            className='text-[40px] tracking-[8px] leading-[72px]'
+            className='text-[32px] md:text-[48px] tracking-[6.4px] md:tracking-[8px] md:leading-[72px]'
             style={{
               willChange: 'transform',
             }}
@@ -104,26 +99,29 @@ const HeroSection: FunctionComponent<Props> = () => {
             AMPLIFY YOUR HAPPINESS.
           </h1>
           <div
-            className='flex flex-row font-black text-[12px] tracking-[12.32px] uppercase items-center space-x-4 text-gray-400 font-sans'
+            className='flex flex-col md:flex-row font-black text-[12px] tracking-[12.32px] uppercase md:items-center gap-2 md:gap-4 text-gray-400 font-sans'
             ref={professionRef}
           >
             <p>PAOLO JULIAN</p>
-            <div className='h-[18px] w-[2px] bg-primary-400'></div>
+            <div className='h-[1px] md:h-[18px] w-full md:w-[2px] bg-primary-400'></div>
             <p>SOFTWARE ENGINEER</p>
           </div>
 
           <Stack
             ref={readMoreRef}
-            className='absolute left-1/2 -bottom-8 -translate-x-1/2 items-center z-40'
+            className='absolute left-1/2 -bottom-8 -translate-x-1/2 items-center z-30'
           >
             <Stack className='space-y-2 animate-bounce items-center'>
               <p className=''>Read more</p>
               <div className='w-[1px] h-[100px] bg-slate-600'></div>
             </Stack>
           </Stack>
-        </div>
+        </Container>
 
-        <div className='justify-center flex flex-col' ref={socialLinksRef}>
+        {/* <div
+          className='hidden md:flex justify-center flex-col'
+          ref={socialLinksRef}
+        >
           <Stack className='w-[100px] h-full justify-center space-y-[20px] text-white'>
             <Link href='https://www.linkedin.com/in/pipz/'>
               <Fab>
@@ -141,7 +139,7 @@ const HeroSection: FunctionComponent<Props> = () => {
               </Fab>
             </Link>
           </Stack>
-        </div>
+        </div> */}
       </section>
     </>
   );
