@@ -37,7 +37,12 @@ const WebLink: FunctionComponent<
       )}
     >
       <Link {...props}>{name}</Link>
-      {isActive ? <div className='w-[10px] h-[1px] bg-gray-800'></div> : null}
+      <div
+        className={classNames(
+          'w-[10px] h-[1px]',
+          isActive ? 'bg-gray-800' : 'bg-transparent'
+        )}
+      ></div>
     </li>
   );
 };

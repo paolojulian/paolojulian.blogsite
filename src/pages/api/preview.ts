@@ -18,8 +18,12 @@ const handler: NextApiHandler = async (req, res) => {
       return res.status(404).json({ message: 'Slug not found' })
     }
 
-    res.setPreviewData({});
-    res.redirect(`/blogs/${blogPost.slug}/preview`);
+    const path = `/blogs/${blogPost.slug}/preview`
+    res
+      .setPreviewData({}, {
+        path
+      })
+      .redirect(307, path);
   } catch (e) {
     console.error(e)
     return res.status(500).json({ message: 'Error', e });

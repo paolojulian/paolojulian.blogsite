@@ -23,7 +23,8 @@ const contentfulGQLClient = {
         Authorization: preview === true ? `Bearer ${PREVIEW_TOKEN}` : headers.Authorization
       },
       body: JSON.stringify({ query, variables }),
-      next: { revalidate: 3600 }
+      cache: preview ? 'no-cache': undefined,
+      next: preview ? undefined : { revalidate: 3600 }
     })
   },
 }

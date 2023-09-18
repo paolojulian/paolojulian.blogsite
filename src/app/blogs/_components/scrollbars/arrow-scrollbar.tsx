@@ -1,3 +1,4 @@
+'use client';
 import Fab from '@/_components/buttons/fab';
 import LeftArrowIcon from '@/_components/icons/left-arrow-icon';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';

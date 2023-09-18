@@ -8,9 +8,10 @@ import { IBlogPost } from '../../_contentful';
 import Image from 'next/image';
 import AppReactMarkdown from '@/_components/markdown/app-react-markdown';
 import AppTag from '@/_components/common/app-tag';
-import BlogItemShort from '../../_components/blog-item-short';
 import classNames from 'classnames';
 import ToTopFab from '@/_components/common/to-top-fab';
+import ArrowScrollBar from '@/app/blogs/_components/scrollbars/arrow-scrollbar';
+import ArticleItem from '@/app/components/_components/articles/article-item';
 
 export type ArticleProps = {
   blogPost: IBlogPost;
@@ -60,19 +61,23 @@ const Article: FunctionComponent<ArticleProps> = ({
             <Stack className='space-y-12 pb-6 md:pb-12 max-w-screen-md mx-auto w-full'>
               <Stack className='space-y-1 items-center'>
                 <div className='w-full relative'>
-                  <Image
-                    alt={`${blogPost.title} banner`}
-                    src={blogPost.banner.url}
-                    width={blogPost.banner.width}
-                    height={blogPost.banner.height}
-                    style={{
-                      objectPosition: 'center center',
-                      objectFit: 'cover',
-                    }}
-                    priority
-                  />
+                  {blogPost.banner ? (
+                    <Image
+                      alt={`${blogPost.title} banner`}
+                      src={blogPost.banner.url}
+                      width={blogPost.banner.width}
+                      height={blogPost.banner.height}
+                      style={{
+                        objectPosition: 'center center',
+                        objectFit: 'cover',
+                      }}
+                      priority
+                    />
+                  ) : null}
                 </div>
-                <p className='text-slate-500 text-sm md:text-base'>thumbnail</p>
+                <p className='text-slate-500 text-sm md:text-base line-clamp-1'>
+                  thumbnail
+                </p>
               </Stack>
 
               <div className='border-b border-slate-400 pb-12 md:pb-24 text-lg'>
@@ -102,38 +107,16 @@ const Article: FunctionComponent<ArticleProps> = ({
             </Stack>
 
             <div className='relative space-y-8'>
-              <div className='hidden md:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-main to-transparent z-10'></div>
               <h3 className='font-capital text-6xl'>LATEST ARTICLES</h3>
-              <Stack className='space-y-2'>
-                <Row className='space-x-1'>
-                  <button className='border border-slate-500 bg-red-500 w-14 h-2'></button>
-                  <button className='border border-slate-500 hover:bg-red-500/20 w-14 h-2'></button>
-                  <button className='border border-slate-500 hover:bg-red-500/20 w-14 h-2'></button>
-                </Row>
-                <Stack className='space-y-8 w-full overflow-x-hidden relative'>
-                  <Row
-                    className={classNames(
-                      'space-x-4 overflow-auto md:overflow-hidden snap-x snap-mandatory',
-                      preview ? 'pointer-events-none' : ''
-                    )}
-                  >
-                    {preview ? (
-                      <>
-                        <BlogItemShort blogPost={blogPost} />
-                        <BlogItemShort blogPost={blogPost} />
-                        <BlogItemShort blogPost={blogPost} />
-                        <BlogItemShort blogPost={blogPost} />
-                      </>
-                    ) : (
-                      latestBlogPosts.map((item, i) =>
-                        item.slug === blogPost.slug ? null : (
-                          <BlogItemShort key={i} blogPost={item} />
-                        )
+              <ArrowScrollBar className='py-[50px] gap-[20px]'>
+                {!preview
+                  ? latestBlogPosts.map((item, i) =>
+                      item.slug === blogPost.slug ? null : (
+                        <ArticleItem key={i} article={item} />
                       )
-                    )}
-                  </Row>
-                </Stack>
-              </Stack>
+                    )
+                  : null}
+              </ArrowScrollBar>
             </div>
           </Stack>
         </div>
