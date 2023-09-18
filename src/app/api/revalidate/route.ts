@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get('secret')
   const tag = request.nextUrl.searchParams.get('tag')
 
-  if (secret !== process.env.CONTENTFUL_REVALIDATE_TOKEN) {
+  if (secret !== 'sadfaceqwe123!') {
     return NextResponse.json({ message: 'Invalid secret' }, { status: 401 })
   }
 

@@ -63,7 +63,7 @@ export async function getLatestBlogPosts(): Promise<IBlogPost[]> {
   `;
 
   // fetch data
-  const res = await contentfulGQLClient.query({ query });
+  const res = await contentfulGQLClient.query({ query, tags: ['blogPost'] });
   const { data } = await res.json();
 
   return data.blogPostCollection.items;
