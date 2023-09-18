@@ -27,7 +27,7 @@ export async function getBlogPostBySlug(slug: string, preview: boolean = false):
   const variables = { slug, preview }
 
   // fetch data
-  const res = await contentfulGQLClient.query({ query, variables, preview });
+  const res = await contentfulGQLClient.query({ query, variables, preview, tags: ['blogPost'] });
   const { data } = await res.json();
 
   // check if the blog exists

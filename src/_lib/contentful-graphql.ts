@@ -11,11 +11,12 @@ const headers = {
 interface IQueryParams {
   query: string;
   variables?: Record<string, unknown>;
+  tags?: string[];
   preview?: boolean;
 }
 
 const contentfulGQLClient = {
-  query: ({ query, variables = undefined, preview = false }: IQueryParams) => {
+  query: ({ query, variables = undefined, tags = [], preview = false }: IQueryParams) => {
     return fetch(URL, {
       method: 'POST',
       headers: {
@@ -23,8 +24,8 @@ const contentfulGQLClient = {
         Authorization: preview === true ? `Bearer ${PREVIEW_TOKEN}` : headers.Authorization
       },
       body: JSON.stringify({ query, variables }),
-      cache: preview ? 'no-cache': undefined,
-      next: preview ? undefined : { revalidate: 3600 }
+      cache: preview ? 'no-cache' : undefined,
+      next: preview ? undefined : { revalidate: 3600, tags }
     })
   },
 }
