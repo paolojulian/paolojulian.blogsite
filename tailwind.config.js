@@ -27,7 +27,6 @@ module.exports = {
       },
       fontFamily: {
         capital: ['var(--font-capital)'],
-        main: ['var(--font-main)'],
         sans: ['var(--font-sans)'],
         serif: ['var(--font-serif)'],
       },

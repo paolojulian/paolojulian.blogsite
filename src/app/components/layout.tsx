@@ -18,6 +18,7 @@ export default function PortfolioLayout({
     <>
       <div
         className={classNames(
+          'font-sans',
           'bg-white text-slate-700 h-full w-full',
           'relative'
         )}

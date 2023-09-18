@@ -34,7 +34,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             {children}
           </AppHeading.H4>
         ),
-        p: ({ children }) => <p className='text-slate-500'>{children}</p>,
+        p: ({ children }) => <p className='text-slate-600'>{children}</p>,
         ol: ({ children }) => (
           <ol
             style={{

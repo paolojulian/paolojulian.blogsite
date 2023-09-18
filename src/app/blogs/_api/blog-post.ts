@@ -26,7 +26,6 @@ export async function getBlogPostBySlug(slug: string, preview: boolean = false):
   `;
   const variables = { slug, preview }
 
-  console.log('calling getBlogPostBySlug')
   // fetch data
   const res = await contentfulGQLClient.query({ query, variables, preview });
   const { data } = await res.json();

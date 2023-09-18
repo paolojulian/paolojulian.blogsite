@@ -8,9 +8,9 @@ const capital = Anton({
   variable: '--font-capital',
   subsets: ['latin'],
 });
-const main = Lora({
+const serif = Lora({
   subsets: ['latin'],
-  variable: '--font-main',
+  variable: '--font-serif',
   weight: ['400', '600', '700'],
 });
 const sans = Outfit({
@@ -36,14 +36,14 @@ export default function RootLayout({
         <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
         <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
         <link rel='manifest' href='/site.webmanifest' />
-        <meta name='theme-color' content='#ECE8E1' />
+        <meta name='theme-color' content='#fffffff' />
       </head>
       <body
         className={classNames(
           `${capital.variable} font-capital`,
+          `${serif.variable} font-serif`,
           `${sans.variable} font-sans`,
-          `${main.variable} font-main`,
-          'font-main'
+          'font-sans'
         )}
       >
         {children}
