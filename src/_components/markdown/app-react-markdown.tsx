@@ -67,7 +67,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
         ),
         img: ({ ...props }) => <img {...props} className='pt-4' />,
         strong: ({ children }) => (
-          <strong className='font-medium'>{children}</strong>
+          <strong className='font-semibold'>{children}</strong>
         ),
         pre: ({ children }) => <>{children}</>,
         code: ({ children, className }) => (
