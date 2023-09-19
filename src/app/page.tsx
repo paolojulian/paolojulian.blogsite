@@ -48,7 +48,6 @@ export default async function Home() {
           {/* <Footer /> */}
         </SectionsProvider>
       </div>
-      <div id='modal-root'></div>
     </>
   );
 }

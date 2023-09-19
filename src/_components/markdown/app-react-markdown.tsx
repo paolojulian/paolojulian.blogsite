@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
-import remarkGfm from 'remark-gfm';
 import AppHeading from '../common/app-heading';
 import CodeBlock from './code-block';
-import Link from 'next/link';
+import ZoomableImage from '@/_components/images/zoomable-image';
 
 export type AppReactMarkdownProps = {
   children: React.ReactNode;
@@ -20,21 +19,23 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
     <ReactMarkdown
       components={{
         h2: ({ children }) => (
-          <AppHeading.H2 id={toKebabCase(children.toString())}>
+          <AppHeading.H2 id={toKebabCase(children.toString())} className='mb-4'>
             {children}
           </AppHeading.H2>
         ),
         h3: ({ children }) => (
-          <AppHeading.H3 id={toKebabCase(children.toString())}>
+          <AppHeading.H3 id={toKebabCase(children.toString())} className='mb-4'>
             {children}
           </AppHeading.H3>
         ),
         h4: ({ children }) => (
-          <AppHeading.H4 id={toKebabCase(children.toString())}>
+          <AppHeading.H4 id={toKebabCase(children.toString())} className='mb-4'>
             {children}
           </AppHeading.H4>
         ),
-        p: ({ children }) => <p className='text-slate-600'>{children}</p>,
+        p: ({ children }) => (
+          <div className='text-slate-600 mb-4'>{children}</div>
+        ),
         ol: ({ children }) => (
           <ol
             style={{
@@ -65,16 +66,17 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             {children}
           </a>
         ),
-        img: ({ ...props }) => <img {...props} className='pt-4' />,
+        img: ({ ...props }) => <ZoomableImage {...props}></ZoomableImage>,
         strong: ({ children }) => (
           <strong className='font-semibold'>{children}</strong>
         ),
         pre: ({ children }) => <>{children}</>,
         code: ({ children, className }) => (
-          <CodeBlock className={className || ''}>{children}</CodeBlock>
+          <div className='mb-8'>
+            <CodeBlock className={className || ''}>{children}</CodeBlock>
+          </div>
         ),
       }}
-      className='line-break'
     >
       {children}
     </ReactMarkdown>
