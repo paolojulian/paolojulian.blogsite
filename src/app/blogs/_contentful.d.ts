@@ -5,6 +5,7 @@ export interface IBlogPost {
   tags: string[];
   sys: {
     publishedAt: string;
+    firstPublishedAt: string;
   }
   title: string;
   banner: {

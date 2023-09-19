@@ -19,6 +19,7 @@ export async function getBlogPostBySlug(slug: string, preview: boolean = false):
           }
           sys {
             publishedAt
+            firstPublishedAt
           }
         }
       }
@@ -42,7 +43,7 @@ export async function getLatestBlogPosts(): Promise<IBlogPost[]> {
   // initiate query params
   const query = `
     query GetBlogPostBySlug {
-      blogPostCollection (limit: 5) {
+      blogPostCollection (limit: 10) {
         items {
           title
           content
@@ -56,6 +57,7 @@ export async function getLatestBlogPosts(): Promise<IBlogPost[]> {
           }
           sys {
             publishedAt
+            firstPublishedAt
           }
         }
       }

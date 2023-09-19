@@ -44,9 +44,11 @@ const Article: FunctionComponent<ArticleProps> = ({
             {/* header */}
             <Stack className='relative pb-8 space-y-2'>
               <Row className='space-x-2'>
-                <span className='text-slate-700 font-medium'>
-                  <AppDate dateTime={blogPost.sys.publishedAt} />
-                </span>
+                {blogPost.sys.firstPublishedAt !== blogPost.sys.publishedAt ? (
+                  <span className='text-slate-400'>
+                    Updated <AppDate dateTime={blogPost.sys.publishedAt} />
+                  </span>
+                ) : null}
                 <address className='text-red-500 font-medium'>
                   Paolo Vincent Julian
                 </address>
