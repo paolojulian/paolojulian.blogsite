@@ -5,8 +5,6 @@ export async function POST(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get('secret')
   const tag = request.nextUrl.searchParams.get('tag')
 
-  console.log('Testing')
-
   if (secret !== 'sadfaceqwe123!') {
     return NextResponse.json({ message: 'Invalid secret' }, { status: 401 })
   }
@@ -17,12 +15,13 @@ export async function POST(request: NextRequest) {
 
   revalidateTag(tag)
 
-  return NextResponse.json({ message: `Revalidated`, date: Date.now() }, {
+  return new NextResponse(JSON.stringify({ message: 'Revalidated', date: Date.now() }), {
     status: 200,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'POST',
       'Access-Control-Allow-Headers': 'Content-Type, Accept',
+      'Content-Type': 'application/json'
     }
   })
 }
