@@ -86,7 +86,7 @@ const Article: FunctionComponent<ArticleProps> = ({
 
               <Row className='space-x-4 items-center'>
                 <p className='text-slate-600'>tags:</p>
-                <Row className='space-x-4 flex-wrap'>
+                <Row className='gap-4 flex-wrap'>
                   {blogPost.tags?.map((tag, i) => (
                     <AppTag key={i} tag={tag} />
                   ))}
