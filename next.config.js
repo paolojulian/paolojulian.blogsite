@@ -17,13 +17,14 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/api/revalidate',
+        // matching all API routes
+        source: '/api/:path*',
         headers: [
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
-          { key: 'Access-Control-Allow-Origin', value: '*' }, // replace this your actual origin
+          { key: 'Access-Control-Allow-Origin', value: '*' },
           {
             key: 'Access-Control-Allow-Methods',
-            value: 'POST',
+            value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
           },
           {
             key: 'Access-Control-Allow-Headers',
@@ -31,6 +32,14 @@ const nextConfig = {
               'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
           },
         ],
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/revalidate',
+        destination: 'http://localhost:3000/api/revalidate',
       },
     ];
   },
