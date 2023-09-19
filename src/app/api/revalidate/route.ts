@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidateTag } from 'next/cache'
 
+const allowedOrigins = [
+  'https://app.contentful.com'
+]
+
 export async function POST(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get('secret')
   const tag = request.nextUrl.searchParams.get('tag')
@@ -18,12 +22,20 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ revalidated: true, date: Date.now() }, { status: 200 })
 }
 
-export async function OPTIONS() {
-  return new Response('Hello, Next.js!', {
+export async function OPTIONS(request: NextRequest) {
+  let origin: string = '*'
+  if (process.env.NODE_ENV === 'production') {
+    origin = request.headers.get('Origin') || '';
+    if (origin && !allowedOrigins.includes(origin)) {
+      return NextResponse.json({ message: 'Bad Request' }, { status: 400 })
+    }
+  }
+
+  return new Response(null, {
     status: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Origin': origin,
+      'Access-Control-Allow-Methods': 'POST',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     },
   })
