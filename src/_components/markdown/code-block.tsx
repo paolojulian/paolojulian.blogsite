@@ -44,7 +44,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({
           language === 'text' ? 'hidden' : 'flex'
         )}
       >
-        <div className='w-full'>
+        <div className='w-full font-sans'>
           <Row
             className={classNames(
               'justify-between text-sm px-4 py-2 bg-slate-900 text-gray-50',
@@ -125,9 +125,9 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({
                 </svg>
 
                 {isCopied ? (
-                  <span className='text-green-400'>copied!</span>
+                  <span className='text-green-400'>Copied!</span>
                 ) : (
-                  <span>copy</span>
+                  <span>Copy</span>
                 )}
               </Row>
             </button>
