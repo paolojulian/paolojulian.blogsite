@@ -40,7 +40,6 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           <ol
             style={{
               listStyle: 'auto',
-              whiteSpace: 'initial',
               marginLeft: '20px',
             }}
           >
@@ -51,16 +50,13 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           <ul
             style={{
               listStyle: 'inside',
-              whiteSpace: 'initial',
               marginLeft: '20px',
             }}
           >
             {children}
           </ul>
         ),
-        li: ({ children }) => (
-          <li className='text-slate-700 whitespace-normal'>{children}</li>
-        ),
+        li: ({ children }) => <li className='text-slate-700 last:mb-4'>{children}</li>,
         a: ({ href, children }) => (
           <a href={href} className='text-red-500 font-medium'>
             {children}
