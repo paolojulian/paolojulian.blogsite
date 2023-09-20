@@ -1,17 +1,26 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Lora, Outfit } from 'next/font/google';
+import {
+  Anton,
+  Lato,
+  Libre_Baskerville,
+  Lora,
+  Merriweather,
+  Montserrat,
+  Outfit,
+  Roboto,
+} from 'next/font/google';
 
 const capital = Anton({
   weight: '400',
   variable: '--font-capital',
   subsets: ['latin'],
 });
-const serif = Lora({
+const serif = Merriweather({
   subsets: ['latin'],
   variable: '--font-serif',
-  weight: ['400', '600', '700'],
+  weight: ['400', '700', '900'],
 });
 const sans = Outfit({
   subsets: ['latin'],

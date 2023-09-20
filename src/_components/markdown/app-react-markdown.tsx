@@ -19,23 +19,30 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
     <ReactMarkdown
       components={{
         h2: ({ children }) => (
-          <AppHeading.H2 id={toKebabCase(children.toString())} className='mb-4'>
+          <AppHeading.H2
+            id={toKebabCase(children.toString())}
+            className='mb-4 font-bold'
+          >
             {children}
           </AppHeading.H2>
         ),
         h3: ({ children }) => (
-          <AppHeading.H3 id={toKebabCase(children.toString())} className='mb-4'>
+          <AppHeading.H3
+            id={toKebabCase(children.toString())}
+            className='mb-4 font-bold'
+          >
             {children}
           </AppHeading.H3>
         ),
         h4: ({ children }) => (
-          <AppHeading.H4 id={toKebabCase(children.toString())} className='mb-4'>
+          <AppHeading.H4
+            id={toKebabCase(children.toString())}
+            className='mb-4 font-bold'
+          >
             {children}
           </AppHeading.H4>
         ),
-        p: ({ children }) => (
-          <div className='text-slate-600 mb-4'>{children}</div>
-        ),
+        p: ({ children }) => <div className='mb-4'>{children}</div>,
         ol: ({ children }) => (
           <ol
             style={{
@@ -56,7 +63,9 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             {children}
           </ul>
         ),
-        li: ({ children }) => <li className='text-slate-700 last:mb-4'>{children}</li>,
+        li: ({ children }) => (
+          <li className='text-slate-700 last:mb-4'>{children}</li>
+        ),
         a: ({ href, children }) => (
           <a href={href} className='text-red-500 font-medium'>
             {children}
