@@ -7,7 +7,6 @@ const allowedOrigins = ['https://app.contentful.com', 'https://paolojulian.dev/'
 export function middleware(request: NextRequest) {
   if (process.env.NODE_ENV === 'production') {
     const origin = request.headers.get('origin');
-    console.log('origin', origin)
     if (origin && !allowedOrigins.includes(origin)) {
       return new NextResponse(`Bad origin ${origin}`, {
         status: 400,
