@@ -25,7 +25,7 @@ const contentfulGQLClient = {
       },
       body: JSON.stringify({ query, variables }),
       cache: preview ? 'no-cache' : undefined,
-      next: preview ? undefined : { revalidate: 3600, tags }
+      next: preview ? undefined : { tags }
     })
   },
 }
