@@ -82,7 +82,7 @@ const Article: FunctionComponent<ArticleProps> = ({
                 </p>
               </Stack>
 
-              <div className='border-b border-slate-400 pb-12 md:pb-24 text-base font-serif text-slate-700'>
+              <div className='border-b border-slate-400 pb-12 md:pb-24 text-lg text-slate-600'>
                 <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>
               </div>
 

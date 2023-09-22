@@ -42,7 +42,9 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             {children}
           </AppHeading.H4>
         ),
-        p: ({ children }) => <div className='mb-4'>{children}</div>,
+        p: ({ children }) => (
+          <div className='mb-4 leading-loose'>{children}</div>
+        ),
         ol: ({ children }) => (
           <ol
             style={{
