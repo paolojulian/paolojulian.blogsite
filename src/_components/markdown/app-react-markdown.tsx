@@ -22,7 +22,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
         h2: ({ children }) => (
           <AppHeading.H2
             id={toKebabCase(children.toString())}
-            className='mb-4 font-bold'
+            className='font-bold'
           >
             {children}
           </AppHeading.H2>
@@ -30,7 +30,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
         h3: ({ children }) => (
           <AppHeading.H3
             id={toKebabCase(children.toString())}
-            className='mb-4 font-bold'
+            className='font-bold'
           >
             {children}
           </AppHeading.H3>
@@ -38,16 +38,15 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
         h4: ({ children }) => (
           <AppHeading.H4
             id={toKebabCase(children.toString())}
-            className='mb-4 font-bold'
+            className='font-bold'
           >
             {children}
           </AppHeading.H4>
         ),
-        p: ({ children }) => (
-          <div className='mb-4 leading-loose'>{children}</div>
-        ),
+        p: ({ children }) => <div className='leading-relaxed'>{children}</div>,
         ol: ({ children }) => (
           <ol
+            className='whitespace-normal'
             style={{
               listStyle: 'auto',
               marginLeft: '20px',
@@ -58,6 +57,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
         ),
         ul: ({ children }) => (
           <ul
+            className='whitespace-normal'
             style={{
               listStyle: 'inside',
               marginLeft: '20px',
@@ -67,7 +67,9 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           </ul>
         ),
         li: ({ children }) => (
-          <li className='text-slate-700 last:mb-4'>{children}</li>
+          <li className='text-slate-700 whitespace-normal'>
+            {children}
+          </li>
         ),
         a: ({ href, children }) => (
           <a href={href} className='text-red-500 font-medium'>
@@ -85,6 +87,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           </CodeSpan>
         ),
       }}
+      className='whitespace-pre-line'
     >
       {children}
     </ReactMarkdown>
