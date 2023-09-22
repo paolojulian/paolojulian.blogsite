@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import AppHeading from '../common/app-heading';
-import CodeBlock from './code-block';
+import CodeBlock from '../common/code-block/code-block';
 import ZoomableImage from '@/_components/images/zoomable-image';
+import CodeSpan from '@/_components/common/code-span';
 
 export type AppReactMarkdownProps = {
   children: React.ReactNode;
@@ -77,11 +78,11 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
         strong: ({ children }) => (
           <strong className='font-semibold'>{children}</strong>
         ),
-        pre: ({ children }) => <>{children}</>,
+        pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
         code: ({ children, className }) => (
-          <div className='mb-8'>
-            <CodeBlock className={className || ''}>{children}</CodeBlock>
-          </div>
+          <CodeSpan language={className?.replace('language-', '') || ''}>
+            {children}
+          </CodeSpan>
         ),
       }}
     >

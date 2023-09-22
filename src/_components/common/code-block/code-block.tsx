@@ -3,24 +3,21 @@ import classNames from 'classnames';
 import { FunctionComponent, useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark as style } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import Stack from '../layouts/stack';
-import Row from '../layouts/row';
+import Stack from '../../layouts/stack';
+import Row from '../../layouts/row';
 
 export type CodeBlockProps = {
   children: any;
-  className: string;
 };
 
-const CodeBlock: FunctionComponent<CodeBlockProps> = ({
-  children,
-  className,
-}) => {
-  const language = className.replace('language-', '');
+const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
   const [isCopied, setIsCopied] = useState(false);
+  const childrenText = children[0].props.children[0] as string;
+  const language = children[0].props['data-language'] || '';
 
   const copyToClipboard = () => {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(children.toString().trim());
+      navigator.clipboard.writeText(childrenText.trim());
       setIsCopied(true);
       setTimeout(() => {
         setIsCopied(false);
@@ -36,11 +33,12 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({
           'bg-slate-900 text-slate-50 font-normal px-2 py-2 text-base'
         )}
       >
-        {children}
+        {childrenText}
       </div>
       <Stack
         className={classNames(
           'overflow-hidden space-y-0',
+          'mb-8', // spacing
           language === 'text' ? 'hidden' : 'flex'
         )}
       >
@@ -151,7 +149,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({
             fontSize: '14px',
           }}
         >
-          {children as string}
+          {childrenText}
         </SyntaxHighlighter>
       </Stack>
     </>
