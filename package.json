@@ -51,8 +51,21 @@
     "@types/jest": "^29.5.5",
     "@types/lodash": "^4.14.199",
     "@types/nodemailer": "^6.4.9",
+    "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^14.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn test",
+      "git add"
+    ]
   }
 }
