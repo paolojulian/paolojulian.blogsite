@@ -7,10 +7,7 @@ interface Props extends HtmlHTMLAttributes<HTMLDivElement> {
 
 const Container: FunctionComponent<Props> = ({ className, ...props }) => {
   return (
-    <div
-      {...props}
-      className={classNames('px-[20px] lg:px-[50px]', className)}
-    ></div>
+    <div {...props} className={classNames('px-4 lg:px-12', className)}></div>
   );
 };
 

@@ -88,15 +88,15 @@ const HeroSection: FunctionComponent<Props> = () => {
         <div className='hidden md:block w-[100px]'></div>
         <Container className='flex-1 flex flex-col justify-center md:items-center text-left md:text-center gap-[20px] max-w-screen-xl w-full relative'>
           <h1
-            className='text-[32px] md:text-[48px] tracking-[6.4px] md:tracking-[8px] md:leading-[72px]'
+            className='text-5xl tracking-wider md:text-5xl md:tracking-widest md:leading-[72px]'
             style={{
               willChange: 'transform',
             }}
             ref={logoRef}
           >
-            SIMPLIFY YOUR LIFE,
+            <span>SIMPLIFY YOUR LIFE,</span>
             <br />
-            AMPLIFY YOUR HAPPINESS.
+            <span>AMPLIFY YOUR HAPPINESS.</span>
           </h1>
           <div
             className='flex flex-col md:flex-row font-black text-[12px] tracking-[12.32px] uppercase md:items-center gap-2 md:gap-4 text-gray-400 font-sans'
