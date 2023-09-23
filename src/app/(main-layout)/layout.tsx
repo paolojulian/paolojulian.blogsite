@@ -21,12 +21,12 @@ export default function RootLayout({
           className={classNames(
             'text-slate-700 bg-white',
             'flex flex-col relative',
-            '2xl:max-w-screen-2xl w-full mx-auto', // margins
+            'w-full',
             'px-0', // spacing
             'border-l md:border-l-4 lg:border-l-8 border-primary-300'
           )}
         >
-          {children}
+          <div className='2xl:max-w-screen-2xl w-full mx-auto'>{children}</div>
         </main>
       </div>
       <FooterSection />
