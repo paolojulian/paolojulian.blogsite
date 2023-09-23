@@ -153,7 +153,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
               },
             }}
             customStyle={{
-              fontSize: '14px',
+              fontSize: '1rem',
             }}
           >
             {childrenText}

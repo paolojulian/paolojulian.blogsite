@@ -35,7 +35,7 @@ const ToTopFab: FunctionComponent<ToTopFabProps> = (props) => {
       style={{ zIndex: 9999 }}
     >
       <button
-        className='h-16 w-14 bg-red-400 md:hover:bg-red-300 active:scale-95 md:active:bg-red-500 flex justify-center items-center'
+        className='h-16 w-14 bg-primary-400 md:hover:bg-primary-300 active:scale-95 md:active:bg-primary-500 flex justify-center items-center'
         style={{
           boxShadow: '0 4px 20px rgba(0,0,0,0.25)',
         }}
