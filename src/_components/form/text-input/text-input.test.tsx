@@ -42,8 +42,17 @@ describe('TESTING TextInput Component', () => {
     });
 
     describe('WHEN the TextInput Component has different variant', () => {
+      const props: Partial<TextInputProps> = {
+        ...defaultProps,
+        variant: 'default-dark',
+      };
       beforeEach(() => {
         renderComponent({ ...defaultProps, variant: 'default-dark' });
+      });
+
+      it('THEN it should match the snapshot', () => {
+        const { asFragment } = render(<TextInput {...props} />);
+        expect(asFragment()).toMatchSnapshot();
       });
 
       it('THEN it should apply the default-dark variant style', () => {
@@ -53,8 +62,14 @@ describe('TESTING TextInput Component', () => {
     });
 
     describe('WHEN the TextInput Component has isError set to true', () => {
+      const props = { ...defaultProps, isError: true };
       beforeEach(() => {
-        renderComponent({ ...defaultProps, isError: true });
+        renderComponent({ ...props });
+      });
+
+      it('THEN it should match the snapshot', () => {
+        const { asFragment } = render(<TextInput {...props} />);
+        expect(asFragment()).toMatchSnapshot();
       });
 
       it('THEN it should apply the error styles', () => {
