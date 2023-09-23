@@ -1,4 +1,4 @@
-import { getBlogPostBySlug } from "@/app/blogs/_api/blog-post";
+import { getBlogPostBySlug } from "@/app/(main-layout)/blogs/_api/blog-post";
 import { NextApiHandler } from "next"
 
 const handler: NextApiHandler = async (req, res) => {

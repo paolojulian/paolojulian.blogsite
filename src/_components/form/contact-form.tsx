@@ -3,8 +3,8 @@ import React, { FunctionComponent, useState } from 'react';
 import { Formik } from 'formik';
 import Stack from '@/_components/layouts/stack';
 import TextInput from './text-input';
-import { contactFormSchema } from '../../app/portfolio/_utils/schemas';
-import { IContactForm } from '../../app/portfolio/_forms';
+import { contactFormSchema } from '@/app/(main-layout)/portfolio/_utils/schemas';
+import { IContactForm } from '@/app/(main-layout)/portfolio/_forms';
 import FormControl from './form-control';
 import CTAButton from '@/_components/form/cta-button';
 

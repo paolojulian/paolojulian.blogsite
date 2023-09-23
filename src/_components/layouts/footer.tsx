@@ -1,17 +1,10 @@
 'use client';
 import React, { FunctionComponent } from 'react';
 import Stack from '@/_components/layouts/stack';
-import Row from '@/_components/layouts/row';
-import Image from 'next/image';
 import Link from 'next/link';
-import Fab from '@/_components/buttons/fab';
-import LinkedinIcon from '@/_components/icons/linkedin-icon';
-import MailIcon from '@/app/portfolio/_components/icons/mail-icon';
-import PhoneIcon from '@/app/portfolio/_components/icons/phone-icon';
 import AppCopyright from '@/_components/common/app-copyright';
-import Container from '@/_components/layouts/container';
 import ContactForm from '@/_components/form/contact-form';
-import useContactForm from '@/app/portfolio/_hooks/useContactForm';
+import useContactForm from '@/app/(main-layout)/portfolio/_hooks/useContactForm';
 
 interface Props {
   // No Props

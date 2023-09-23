@@ -10,13 +10,8 @@ import React, {
 import classNames from 'classnames';
 import CrossIcon from '@/app/custom-components/application-ui/layouts/brand-sidebar-with-header/_components/icons/cross-icon';
 import Row from '@/_components/layouts/row';
-
-function createWrapperAndAppendToBody(wrapperId: string) {
-  const wrapperElement = document.createElement('div');
-  wrapperElement.setAttribute('id', wrapperId);
-  document.body.appendChild(wrapperElement);
-  return wrapperElement;
-}
+import createWrapperAndAppendToBody from '@/_utils/create-wrapper-and-append-to-body';
+import usePortal from '@/_hooks/use-portal/use-portal';
 
 export type AppModalProps = {
   onClose: () => void;
@@ -29,7 +24,6 @@ const AppModal: FunctionComponent<AppModalProps> = ({
   isOpen,
   children,
 }) => {
-  const [modalRoot, setModalRoot] = useState<HTMLElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const closeModal = useCallback(() => {
     document.body.classList.remove('modal--open');
@@ -47,13 +41,7 @@ const AppModal: FunctionComponent<AppModalProps> = ({
     }
   }, [isOpen, closeModal]);
 
-  useLayoutEffect(() => {
-    let element = document.getElementById('modal-root');
-    if (!element) {
-      element = createWrapperAndAppendToBody('modal-root');
-    }
-    setModalRoot(element);
-  }, []);
+  const modalRoot = usePortal('modal-root');
 
   if (modalRoot === null) {
     return null;

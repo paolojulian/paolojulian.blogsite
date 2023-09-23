@@ -81,7 +81,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({
     <>
       <div
         className={classNames(
-          'fixed top-0 inset-x-0 z-40',
+          'fixed top-0 inset-x-0 z-40 h-navbar',
+          'border-l md:border-l-4 lg:border-l-8 border-primary-300',
           colorVariants[variant]
         )}
       >
@@ -89,7 +90,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           className={classNames(
             'flex flex-row',
             'h-navbar',
-            'justify-between items-center max-w-screen-lg xl:max-w-screen-xl w-full mx-auto',
+            'justify-between items-center w-full mx-auto',
             'relative'
           )}
         >

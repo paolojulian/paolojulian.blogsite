@@ -1,16 +1,7 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import {
-  Anton,
-  Lato,
-  Libre_Baskerville,
-  Lora,
-  Merriweather,
-  Montserrat,
-  Outfit,
-  Roboto,
-} from 'next/font/google';
+import { Anton, Merriweather, Outfit } from 'next/font/google';
 
 const capital = Anton({
   weight: '400',
@@ -41,22 +32,25 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta name='theme-color' content='#fffffff' />
         <link rel='icon' href='/favicon.ico' sizes='any' />
         <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
         <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
         <link rel='manifest' href='/site.webmanifest' />
-        <meta name='theme-color' content='#fffffff' />
       </head>
       <body
         className={classNames(
           `${capital.variable} font-capital`,
           `${serif.variable} font-serif`,
           `${sans.variable} font-sans`,
-          'font-sans'
+          'font-sans',
+          'overflow-x-hidden max-w-screen'
         )}
       >
         {children}
         <div id='modal-root'></div>
+        <div id='fixed'></div>
       </body>
     </html>
   );
