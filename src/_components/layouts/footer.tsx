@@ -56,7 +56,7 @@ const FooterSection: FunctionComponent<Props> = (props) => {
           <div className='hidden lg:block font-capital text-[200px] leading-[200px] text-cyan-300/5 absolute left-1/2 -translate-x-1/2 top-[48px] whitespace-nowrap'>
             PAOLO JULIAN
           </div>
-          <div className='flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-20 py-[40px]'>
+          <div className='flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-20 py-[40px] text-lg'>
             <ContactItem title='Availability'>
               <p>Monday - Friday</p>
               <p>7am - 6pm</p>

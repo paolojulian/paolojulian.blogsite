@@ -29,8 +29,8 @@ const ToTopFab: FunctionComponent<ToTopFabProps> = () => {
     <div
       className={classNames(
         'fixed right-2 md:right-4 bottom-0',
-        'transition-opacity',
-        isScrolledDown ? 'opacity-100' : 'opacity-0'
+        'transition-transform',
+        isScrolledDown ? 'translate-y-0' : 'translate-y-full'
       )}
       style={{ zIndex: 9999 }}
     >

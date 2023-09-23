@@ -55,8 +55,8 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           <ol
             className='whitespace-normal'
             style={{
-              listStyle: 'auto',
-              marginLeft: '20px',
+              listStyleType: 'decimal',
+              listStylePosition: 'inside',
             }}
           >
             {children}
@@ -66,8 +66,9 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           <ul
             className='whitespace-normal'
             style={{
-              listStyle: 'inside',
-              marginLeft: '20px',
+              listStyleType: 'disc',
+              listStylePosition: 'inside',
+              marginLeft: '24px',
             }}
           >
             {children}
@@ -83,7 +84,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
         ),
         img: ({ ...props }) => <ZoomableImage {...props}></ZoomableImage>,
         strong: ({ children }) => (
-          <strong className='font-semibold'>{children}</strong>
+          <strong className='font-semibold leading-relaxed'>{children}</strong>
         ),
         pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
         code: ({ children, className }) => (

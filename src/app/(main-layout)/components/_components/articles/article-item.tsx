@@ -29,7 +29,7 @@ const ArticleItem = React.memo(
                 height={article.banner.height}
                 sizes='(max-width: 768px) 100vw, 300px'
               />
-              <div className='group-hover:translate-x-0 -translate-x-full transition-transform absolute inset-0 bg-primary-400/30'></div>
+              <div className='group-hover:translate-x-0 -translate-x-full transition-transform absolute inset-0 bg-primary-400/20'></div>
             </div>
             <Stack>
               <p className='text-slate-500 text-[14px]'>

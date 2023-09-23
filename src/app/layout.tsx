@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Lora, Outfit } from 'next/font/google';
+import { Anton, Inter, Outfit } from 'next/font/google';
 
 const capital = Anton({
   weight: '400',
   variable: '--font-capital',
   subsets: ['latin'],
 });
-const serif = Lora({
+const serif = Inter({
   subsets: ['latin'],
   variable: '--font-serif',
   weight: ['400', '700'],
