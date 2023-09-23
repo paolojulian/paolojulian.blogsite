@@ -17,6 +17,21 @@ interface Props {
   // No Props
 }
 
+const ContactItem = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <Stack className='gap-1 text-base text-slate-400'>
+      <p className='font-medium text-cyan-300/70'>{title}</p>
+      <Stack>{children}</Stack>
+    </Stack>
+  );
+};
+
 const FooterSection: FunctionComponent<Props> = (props) => {
   const {
     isLoading: isSubmittingContactForm,
@@ -27,92 +42,50 @@ const FooterSection: FunctionComponent<Props> = (props) => {
   return (
     <section
       id={'#contact'}
-      className='flex flex-row flex-1 w-full bg-slate-900 z-30 relative overflow-hidden'
+      className='md:flex md:flex-row flex-1 w-full bg-slate-900 z-50 relative overflow-hidden'
     >
-      <div className='absolute bottom-0 inset-x-0 -z-10'>
-        <div className='aspect-[2519/888] w-screen h-auto'>
-          <Image
-            className='object-fill object-bottom'
-            src='/assets/portfolio/polygon-wave.png'
-            alt='polygon-background'
-            fill
+      <div className='flex flex-col md:flex-row pt-12 pb-20 lg:px-12 gap-2 md:gap-12 w-full relative'>
+        {/* Contact Form */}
+        <Stack className='gap-12 p-8 md:p-12 w-full lg:min-w-[450px] md:max-w-[450px]'>
+          <h4 className='text-6xl font-medium'>
+            <div className='text-slate-400'>Get in touch.</div>
+            <div className='text-slate-200'>{`Let's work together.`}</div>
+          </h4>
+
+          <ContactForm
+            isLoading={isSubmittingContactForm}
+            isFinished={isFinished}
+            onSubmit={handleSubmit}
           />
-        </div>
-      </div>
-      <Container className='pt-[150px] pb-[50px] flex flex-col w-full space-y-[50px] max-w-large mx-auto justify-center items-center'>
-        <Container className='bg-white relative py-[50px] shadow-[0_4px_28px_rgba(0,0,0,0.25)] w-full md:max-w-[500px]'>
-          <div className='aspect-square w-[20px] bg-primary-400 absolute left-0 top-0'></div>
-          <Stack className='space-y-[50px]'>
-            <h4 className='text-[48px] font-semibold tracking-[4.64px] leading-[60px] text-slate-800'>
-              GET IN
-              <br />
-              TOUCH
-            </h4>
+        </Stack>
 
-            <ContactForm
-              isLoading={isSubmittingContactForm}
-              isFinished={isFinished}
-              onSubmit={handleSubmit}
-            />
-
-            <Row className='justify-end space-x-[15px] text-white'>
-              <Link href='https://www.linkedin.com/in/pipz/'>
-                <Fab theme='gray'>
-                  <LinkedinIcon />
-                </Fab>
-              </Link>
-              <Link href='mailto:paolojulian.dev@gmail.com'>
-                <Fab theme='gray'>
-                  <MailIcon />
-                </Fab>
-              </Link>
-              <Link href='tel:09279488654'>
-                <Fab theme='gray'>
-                  <PhoneIcon />
-                </Fab>
-              </Link>
-            </Row>
-          </Stack>
-        </Container>
-        <div className='text-gray-500'>
-          <AppCopyright />
-        </div>
-
-        {/* <Stack className='text-slate-500 text-[24px] space-y-[10px]'>
-            <Link href={'#'}>ABOUT ME</Link>
-            <Link href={'#'}>ARTICLES</Link>
-            <Link href={'#'}>COMPONENTS</Link>
-            <Link href={'#'}>APPS</Link>
-          </Stack> */}
-
-        {/* <Stack className='space-y-[40px] text-slate-400 items-end text-right flex-1'>
-            <Stack>
-              <h5 className='text-[24px] text-accent-300/60 mb-[10px]'>
-                Availability
-              </h5>
+        <Stack className='px-8 md:px-12 md:p-12 gap-[8px] flex-1 justify-end relative'>
+          <div className='hidden lg:block font-capital text-[200px] leading-[200px] text-cyan-300/5 absolute left-1/2 -translate-x-1/2 top-[48px] whitespace-nowrap'>
+            PAOLO JULIAN
+          </div>
+          <div className='flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-20 py-[40px]'>
+            <ContactItem title='Availability'>
               <p>Monday - Friday</p>
-              <p>9AM - 6PM</p>
-            </Stack>
-            <Stack>
-              <h5 className='text-[24px] text-accent-300/60 mb-[10px]'>
-                Contact
-              </h5>
-              <Link href='tel:09279488654'>+63 927 948 8654</Link>
+              <p>7am - 6pm</p>
+              <p>GMT +8</p>
+            </ContactItem>
+            <ContactItem title='Address'>
+              <p>Philippines</p>
+              <p>Baguio City</p>
+              <p>2600</p>
+            </ContactItem>
+            <ContactItem title='Contact'>
+              <Link href='https://www.linkedin.com/in/pipz/'>linkedin</Link>
               <Link href='mailto:paolojulian.dev@gmail.com'>
                 paolojulian.dev@gmail.com
               </Link>
-            </Stack>
-            <Stack>
-              <h5 className='text-[24px] text-accent-300/60 mb-[10px]'>
-                Social
-              </h5>
-              <Link href='https://www.linkedin.com/in/pipz/'>linkedin</Link>
-              <Link href='https://www.facebook.com/profile.php?id=100095657733002'>
-                facebook
-              </Link>
-            </Stack>
-          </Stack> */}
-      </Container>
+            </ContactItem>
+          </div>
+          <div className='border-t border-gray-400 py-[24px] text-slate-500 w-full'>
+            <AppCopyright />
+          </div>
+        </Stack>
+      </div>
     </section>
   );
 };
