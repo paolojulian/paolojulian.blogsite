@@ -68,7 +68,7 @@ const HeroSection: FunctionComponent<Props> = () => {
           >
             <Stack className='space-y-2 animate-bounce items-center'>
               <p className=''>Read more</p>
-              <div className='w-[1px] h-[100px] bg-slate-600'></div>
+              <div className='w-[1px] h-[64px] bg-slate-600'></div>
             </Stack>
           </Stack>
         </Container>
