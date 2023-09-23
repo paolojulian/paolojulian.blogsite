@@ -5,7 +5,7 @@ export type AppCopyrightProps = {
   // no props
 };
 
-const AppCopyright: FunctionComponent<AppCopyrightProps> = (props) => {
+const AppCopyright: FunctionComponent<AppCopyrightProps> = () => {
   const year = dayjs().get('year');
   return <p>&copy; 2017-{year} Paolo Vincent Julian</p>;
 };

@@ -10,7 +10,7 @@ export type ToTopFabProps = {
   // no props
 };
 
-const ToTopFab: FunctionComponent<ToTopFabProps> = (props) => {
+const ToTopFab: FunctionComponent<ToTopFabProps> = () => {
   const handleClick = () => {
     window.scrollTo({
       top: 0,

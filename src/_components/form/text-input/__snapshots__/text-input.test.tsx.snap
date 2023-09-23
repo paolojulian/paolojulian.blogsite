@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TESTING TextInput Component GIVEN a TextInput component with variant and isError prop WHEN the TextInput Component is rendered THEN it should match the snapshot 1`] = `
+<DocumentFragment>
+  <input
+    class="transition focus:outline-none bg-inherit px-3 py-2 border-b border-slate-400 focus:border-slate-800 text-slate-700"
+    data-testid="text-input-container"
+  />
+</DocumentFragment>
+`;
