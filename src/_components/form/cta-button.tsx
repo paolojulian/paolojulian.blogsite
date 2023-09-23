@@ -20,11 +20,11 @@ export type CTAButtonProps = {
 
 const bgVariants: Record<Variants, string> = {
   default: classNames(
-    'bg-red-400 md:hover:bg-slate-900 md:active:bg-slate-800 active:bg-red-600 active:scale-[0.98]',
+    'bg-primary-400 md:hover:bg-primary-500 md:active:bg-primary-500 active:bg-primary-600 active:scale-[0.98]',
     'text-slate-50'
   ),
   'default-dark': classNames(
-    'bg-slate-200 md:hover:bg-red-400 md:active:bg-red-500 active:bg-red-600 active:scale-[0.98]',
+    'bg-slate-200 md:hover:bg-primary-400 md:active:bg-primary-500 active:bg-primary-600 active:scale-[0.98]',
     'text-slate-700 hover:text-slate-50'
   ),
   secondary:
@@ -57,8 +57,6 @@ const CTAButton: FunctionComponent<CTAButtonProps> = ({
         variant === 'success' ? 'pointer-events-none' : ''
       )}
     >
-      <div className='absolute top-0 left-0 w-5/6 h-3/6 border-t border-l border-slate-400 pointer-events-none'></div>
-
       <button
         {...props}
         className={classNames(
@@ -71,12 +69,15 @@ const CTAButton: FunctionComponent<CTAButtonProps> = ({
         {variant === 'success' ? (
           <span className='text-slate-50 uppercase'>Success</span>
         ) : isLoading ? (
-          <span className={styles['dots-animation']}>{loadingText}</span>
+          <span
+            className={classNames(styles['dots-animation'], 'text-slate-300')}
+          >
+            {loadingText}
+          </span>
         ) : (
           children
         )}
       </button>
-      <div className='absolute bottom-0 right-0 w-5/6 h-5/6 border-b border-r border-slate-400 pointer-events-none'></div>
     </div>
   );
 };

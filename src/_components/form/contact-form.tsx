@@ -17,7 +17,7 @@ export type ContactFormProps = {
 
 const ContactForm: FunctionComponent<ContactFormProps> = ({
   onSubmit = () => Promise.reject(),
-  dark = false,
+  dark = true,
   isLoading,
 }) => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -48,7 +48,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
             e.preventDefault();
             handleSubmit();
           }}
-          className='relative md:px-4'
+          className='relative'
         >
           <Stack className='w-full space-y-8'>
             <Stack className='space-y-4'>
@@ -59,7 +59,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                   onChange={(e) => setFieldValue('name', e.target.value)}
                   autoComplete='name'
                   name='name'
-                  placeholder='name'
+                  placeholder='Name'
                   value={values.name}
                   isError={!!touched.name && !!errors.name}
                   variant={dark ? 'default-dark' : 'default'}
@@ -72,7 +72,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                   onChange={(e) => setFieldValue('email', e.target.value)}
                   autoComplete='email'
                   name='email'
-                  placeholder='email'
+                  placeholder='Email'
                   type='email'
                   value={values.email}
                   isError={!!touched.email && !!errors.email}
@@ -85,15 +85,17 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
               >
                 <TextInput
                   onChange={(e) => setFieldValue('text', e.target.value)}
-                  placeholder='tell me about it'
+                  placeholder='Tell me about it'
                   value={values.text}
                   isError={!!touched.text && !!errors.text}
                   variant={dark ? 'default-dark' : 'default'}
                 />
               </FormControl>
             </Stack>
+
             <CTAButton
               type='submit'
+              size='lg'
               isLoading={isLoading}
               variant={isSuccess ? 'success' : 'default'}
               loadingText='Sending...'

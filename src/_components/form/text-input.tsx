@@ -5,7 +5,7 @@ type Variants = 'default' | 'default-dark'
 
 const colorVariants: Record<Variants, string> = {
   default: 'border-slate-400 focus:border-slate-800 text-slate-700',
-  'default-dark': 'border-slate-400 focus:border-slate-50 text-slate-200 placeholder-slate-500'
+  'default-dark': 'border-slate-600 focus:border-slate-50 text-slate-200 placeholder-slate-500'
 }
 
 export type TextInputProps = {
