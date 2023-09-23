@@ -20,7 +20,7 @@ const H2: FunctionComponent<React.HtmlHTMLAttributes<HTMLHeadingElement>> = ({
   return (
     <h2
       className={classNames(
-        'text-slate-800 text-3xl md:text-4xl pt-24 -mt-12',
+        'text-slate-800 text-3xl md:text-4xl',
         className
       )}
       {...props}

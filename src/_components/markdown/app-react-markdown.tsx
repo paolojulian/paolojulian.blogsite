@@ -4,6 +4,7 @@ import AppHeading from '../common/app-heading';
 import CodeBlock from '../common/code-block/code-block';
 import ZoomableImage from '@/_components/images/zoomable-image';
 import CodeSpan from '@/_components/common/code-span';
+import HeadingLink from '@/_components/buttons/heading-link';
 
 export type AppReactMarkdownProps = {
   children: React.ReactNode;
@@ -20,12 +21,18 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
     <ReactMarkdown
       components={{
         h2: ({ children }) => (
-          <AppHeading.H2
-            id={toKebabCase(children.toString())}
-            className='font-bold'
-          >
-            {children}
-          </AppHeading.H2>
+          <HeadingLink
+            className='mt-12 mb-4'
+            Heading={
+              <AppHeading.H2
+                id={toKebabCase(children.toString())}
+                className='font-bold'
+              >
+                {children}
+              </AppHeading.H2>
+            }
+            tag={toKebabCase(children.toString())}
+          ></HeadingLink>
         ),
         h3: ({ children }) => (
           <AppHeading.H3
@@ -67,9 +74,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           </ul>
         ),
         li: ({ children }) => (
-          <li className='text-slate-700 whitespace-normal'>
-            {children}
-          </li>
+          <li className='text-slate-700 whitespace-normal'>{children}</li>
         ),
         a: ({ href, children }) => (
           <a href={href} className='text-red-500 font-medium'>
