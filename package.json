@@ -59,13 +59,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn test"
+      "pre-commit": "yarn test"
     }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "yarn test",
-      "git add"
-    ]
   }
 }
