@@ -9,9 +9,9 @@ interface Props {
 const ProgressBar: FunctionComponent<Props> = () => {
   return (
     <AppProgressBar
-      height='3px'
+      height='4px'
       color='#1f2937'
-      options={{ showSpinner: false, speed: 5000, easing: 'ease' }}
+      options={{ showSpinner: false }}
       shallowRouting
     />
   );
