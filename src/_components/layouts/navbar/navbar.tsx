@@ -2,50 +2,18 @@
 import Row from '@/_components/layouts/row';
 import Link from 'next/link';
 import React, { FunctionComponent, useState } from 'react';
-import HamburgerMenuIcon from '../icons/hamburger-menu';
-import Stack from './stack';
+import HamburgerMenuIcon from '../../icons/hamburger-menu';
+import Stack from '../stack';
 import classNames from 'classnames';
-import CloseIcon from '../icons/close-icon';
+import CloseIcon from '../../icons/close-icon';
 import { usePathname } from 'next/navigation';
 import Container from '@/_components/layouts/container';
+import WebLink from './navbar.weblink';
+import { navbarItems } from './navbar.constants';
 
-type Variants = 'default' | 'default-bordered';
-
-export type NavbarProps = {
-  variant?: Variants;
-  fixed?: boolean;
-};
-
-const colorVariants: Record<Variants, string> = {
-  default: 'bg-white text-gray-700',
-  'default-bordered': 'bg-white text-gray-700',
-};
-
-const borderVariants: Record<Variants, string> = {
-  default: '',
-  'default-bordered': 'sm:border-l border-slate-400',
-};
-
-const WebLink: FunctionComponent<
-  React.ComponentProps<typeof Link> & { isActive: boolean; name: string }
-> = ({ isActive, name, ...props }) => {
-  return (
-    <li
-      className={classNames(
-        'flex flex-col justify-between items-center space-y-2',
-        isActive ? 'text-gray-800' : 'text-gray-400 hover:text-red-400'
-      )}
-    >
-      <Link {...props}>{name}</Link>
-      <div
-        className={classNames(
-          'w-[10px] h-[1px]',
-          isActive ? 'bg-gray-800' : 'bg-transparent'
-        )}
-      ></div>
-    </li>
-  );
-};
+interface Props {
+  // no props
+}
 
 const MobileLink: FunctionComponent<
   React.ComponentProps<typeof Link> & { isActive: boolean; name: string }
@@ -65,10 +33,7 @@ const MobileLink: FunctionComponent<
   );
 };
 
-const Navbar: FunctionComponent<NavbarProps> = ({
-  variant = 'default',
-  fixed = false,
-}) => {
+const Navbar: FunctionComponent<Props> = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -83,16 +48,16 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         className={classNames(
           'fixed top-0 inset-x-0 z-40 h-navbar',
           'border-l md:border-l-4 lg:border-l-8 border-primary-300',
-          'font-medium',
-          colorVariants[variant]
+          'font-medium'
         )}
       >
         <Container
           className={classNames(
+            'justify-between items-center w-full mx-auto',
             'flex flex-row',
             'h-navbar',
-            'justify-between items-center w-full mx-auto',
-            'relative'
+            'relative',
+            'bg-white text-gray-700'
           )}
         >
           <div className='absolute pointer-events-none inset-0'>
@@ -106,22 +71,14 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           </div>
           <nav>
             <ul className='flex-row space-x-8 hidden md:flex'>
-              <WebLink href='/' name='Home' isActive={pathname === '/'} />
-              <WebLink
-                href='/blogs'
-                name='Articles'
-                isActive={pathname === '/blogs'}
-              />
-              <WebLink
-                href='/components'
-                name='Components'
-                isActive={pathname === '/components'}
-              />
-              <WebLink
-                href='/contact'
-                name='Contact'
-                isActive={pathname === '/contact'}
-              />
+              {navbarItems.map((item, i) => (
+                <WebLink
+                  href={item.href}
+                  isActive={item.isActive(pathname)}
+                  name={item.name}
+                  key={i}
+                />
+              ))}
             </ul>
             <button className='block md:hidden' onClick={handleToggleMenu}>
               <HamburgerMenuIcon />
@@ -167,30 +124,15 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           </Row>
           <nav className='w-full text-right p-4 flex flex-col space-y-2'>
             <ul className='flex-row space-x-8'>
-              <MobileLink
-                name='About'
-                href='/'
-                isActive={pathname === '/'}
-                onClick={handleToggleMenu}
-              />
-              <MobileLink
-                name='Articles'
-                href='/blogs'
-                isActive={pathname === '/blogs'}
-                onClick={handleToggleMenu}
-              />
-              <MobileLink
-                name='Components'
-                href='/components'
-                isActive={pathname === '/components'}
-                onClick={handleToggleMenu}
-              />
-              <MobileLink
-                name='Contact'
-                href='/contact'
-                isActive={pathname === '/contact'}
-                onClick={handleToggleMenu}
-              />
+              {navbarItems.map((item, i) => (
+                <MobileLink
+                  key={i}
+                  name={item.name}
+                  href={item.href}
+                  isActive={item.isActive(pathname)}
+                  onClick={handleToggleMenu}
+                />
+              ))}
             </ul>
           </nav>
         </Stack>

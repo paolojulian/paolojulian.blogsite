@@ -3,6 +3,7 @@ import Stack from '@/_components/layouts/stack';
 import ComponentList from './_components/component-list';
 import Container from '@/_components/layouts/container';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';
+import ScrollToElementBtn from '@/_components/common/scroll-to-element-btn';
 
 export type BlogsPageProps = {
   // no props
@@ -31,13 +32,15 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
           </h1>
         </Stack>
         <button className='flex flex-row w-fit gap-4 md:pl-4 text-xl items-center group'>
-          <span className='transition-colors group-hover:text-red-400 text-base font-black tracking-widest'>
-            BROWSE NOW
-          </span>
+          <ScrollToElementBtn targetId='component-list'>
+            <span className='transition-colors group-hover:text-red-400 text-base font-black tracking-widest'>
+              BROWSE NOW
+            </span>
+          </ScrollToElementBtn>
           <RightArrowIcon className='text-red-400 transition-transform group-hover:translate-x-full' />
         </button>
       </Container>
-      <Container>
+      <Container id='component-list'>
         <Stack className='h-full  text-slate-600'>
           {/* content */}
           <ComponentList />

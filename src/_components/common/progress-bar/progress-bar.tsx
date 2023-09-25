@@ -11,7 +11,7 @@ const ProgressBar: FunctionComponent<Props> = () => {
     <AppProgressBar
       height='4px'
       color='#1f2937'
-      options={{ showSpinner: false }}
+      options={{ showSpinner: false, speed: 700 }}
       shallowRouting
     />
   );
