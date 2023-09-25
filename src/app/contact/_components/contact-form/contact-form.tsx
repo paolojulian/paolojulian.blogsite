@@ -57,7 +57,7 @@ const ContactForm: FunctionComponent<Props> = () => {
           }}
           className='relative'
         >
-          <Stack className='w-full space-y-8'>
+          <Stack className='w-full space-y-12'>
             <Stack className='space-y-4'>
               <FormControl
                 error={touched.name && errors.name ? errors.name : undefined}

@@ -119,7 +119,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
               />
               <WebLink
                 href='/contact'
-                name='Contact Us'
+                name='Contact'
                 isActive={pathname === '/contact'}
               />
             </ul>
@@ -186,7 +186,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
                 onClick={handleToggleMenu}
               />
               <MobileLink
-                name='Contact Us'
+                name='Contact'
                 href='/contact'
                 isActive={pathname === '/contact'}
                 onClick={handleToggleMenu}

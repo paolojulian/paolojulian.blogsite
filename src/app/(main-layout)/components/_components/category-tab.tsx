@@ -31,13 +31,13 @@ const CategoryTab: FunctionComponent<CategoryTabProps> = ({
     >
       <h2
         className={classNames(
-          'font-semibold md:text-lg text-center md:text-left',
+          'font-semibold md:text-xl text-center md:text-left uppercase',
           isActive && 'text-red-400'
         )}
       >
         {title}
       </h2>
-      <p className='hidden md:block text-sm'>{description}</p>
+      <p className='hidden md:block text-base'>{description}</p>
     </Stack>
   );
 };

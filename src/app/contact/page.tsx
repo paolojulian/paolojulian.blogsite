@@ -53,7 +53,7 @@ const ContactPage: FunctionComponent<Props> = (props) => {
 
               <Stack className='flex-1 gap-12 justify-end max-w-2xl min-w-[450px]'>
                 <h3 className='text-4xl text-slate-700 font-medium'>
-                  Tell us about your project
+                  Tell me about your project
                 </h3>
                 <ContactForm />
               </Stack>
