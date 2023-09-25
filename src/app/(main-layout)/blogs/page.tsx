@@ -4,6 +4,8 @@ import Stack from '@/_components/layouts/stack';
 import Row from '@/_components/layouts/row';
 import { getLatestBlogPosts } from './_api/blog-post';
 import { Metadata } from 'next';
+import Container from '@/_components/layouts/container';
+import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 
 export type BlogsPageProps = {
   // no props
@@ -20,7 +22,37 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
 
   return (
     <>
-      <div className='p-4 md:p-8 py-12 md:py-16 pb-16 md:pb-24'>
+      {/* <div className='absolute top-0 right-0 w-[800px] h-[600px] bg-gray-800/30 rounded-bl-full'></div> */}
+      <Container className='min-h-screen pt-navbar pb-20 flex flex-col justify-center gap-8 xl:gap-20 z-10 relative'>
+        <Stack className='text-5xl md:text-8xl font-medium xl:max-w-[70%]'>
+          <h1 className=''>
+            <span className='text-slate-400'>Explore my articles,</span>
+            <span className='text-slate-800'>
+              <br />
+              crafted through both challenges and triumphs.
+            </span>
+          </h1>
+        </Stack>
+        <button className='flex flex-row w-fit gap-4 md:pl-4 text-xl items-center group'>
+          <span className='transition-colors group-hover:text-red-400 text-base font-black tracking-widest'>
+            BROWSE NOW
+          </span>
+          <RightArrowIcon className='text-red-400 transition-transform group-hover:translate-x-full' />
+        </button>
+      </Container>
+      <Container className='mb-8'>
+        <Row className='justify-between p-2 text-base text-slate-600 mb-4 border-b-2 border-slate-400'>
+          <h2>LATEST ARTICLES</h2>
+          <p>01</p>
+        </Row>
+        <Stack className='gap-12 py-12'>
+          {blogPosts.map((blogPost, i) => (
+            <BlogItem blogPost={blogPost} key={i} />
+          ))}
+        </Stack>
+      </Container>
+
+      {/* <div className='p-4 md:p-8 py-12 md:py-16 pb-16 md:pb-24'>
         <Stack className='space-y-12 md:space-y-16'>
           <Row className='justify-between'>
             <div className='relative'>
@@ -36,7 +68,7 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
             ))}
           </Stack>
         </Stack>
-      </div>
+      </div> */}
     </>
   );
 };

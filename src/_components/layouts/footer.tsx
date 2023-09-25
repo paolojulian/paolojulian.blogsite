@@ -39,7 +39,7 @@ const FooterSection: FunctionComponent<Props> = (props) => {
     >
       <div className='flex flex-col md:flex-row py-12 lg:px-12 gap-2 md:gap-12 w-full mx-auto max-w-screen-2xl relative'>
         {/* Contact Form */}
-        <Stack className='gap-12 p-8 md:p-12 w-full lg:min-w-[450px] md:max-w-[450px]'>
+        <Stack className='gap-12 p-8 md:p-12 w-full lg:min-w-[500px] md:max-w-[500px]'>
           <h4 className='text-6xl font-medium'>
             <div className='text-slate-400'>Get in touch.</div>
             <div className='text-slate-200'>{`Let's work together.`}</div>

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Inter, Outfit } from 'next/font/google';
+import { Anton, Inter, Montserrat, Outfit } from 'next/font/google';
 
 const capital = Anton({
   weight: '400',
@@ -13,10 +13,10 @@ const serif = Inter({
   variable: '--font-serif',
   weight: ['400', '700'],
 });
-const sans = Outfit({
+const sans = Montserrat({
   subsets: ['latin'],
   variable: '--font-sans',
-  weight: ['400', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {

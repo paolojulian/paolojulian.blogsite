@@ -12,6 +12,7 @@ import classNames from 'classnames';
 import ToTopFab from '@/_components/common/to-top-fab';
 import ArrowScrollBar from '@/app/(main-layout)/blogs/_components/scrollbars/arrow-scrollbar';
 import ArticleItem from '@/app/(main-layout)/components/_components/articles/article-item';
+import Container from '@/_components/layouts/container';
 
 export type ArticleProps = {
   blogPost: IBlogPost;
@@ -26,8 +27,8 @@ const Article: FunctionComponent<ArticleProps> = ({
 }) => {
   return (
     <>
-      <div>
-        <div className='p-4 md:p-8 z-10'>
+      <Container>
+        <div className='z-10 pt-navbar'>
           <Stack className='space-y-12 mb-24'>
             <Link
               className={classNames(preview ? 'pointer-events-none' : '')}
@@ -42,22 +43,23 @@ const Article: FunctionComponent<ArticleProps> = ({
             </Link>
 
             {/* header */}
-            <Stack className='relative pb-8 space-y-2'>
-              <Row className='space-x-2'>
-                {blogPost.sys.firstPublishedAt !== blogPost.sys.publishedAt ? (
-                  <span className='text-slate-400'>
-                    Updated <AppDate dateTime={blogPost.sys.publishedAt} />
-                  </span>
-                ) : null}
-                <address className='text-red-500 font-medium'>
-                  Paolo Vincent Julian
-                </address>
-              </Row>
-              <h1 className='font-capital uppercase text-5xl md:text-7xl leading-tight text-slate-800'>
+            <Stack className='relative space-y-8 py-4 lg:py-4'>
+              <h1 className='text-6xl md:text-8xl xl:max-w-[80%] font-medium text-slate-800'>
                 {blogPost.title}
               </h1>
-              <div className='absolute bottom-0 left-0 w-3/6 border-b border-slate-400'></div>
             </Stack>
+
+            <Row className='border-b-2 border-gray-400 justify-between p-2'>
+              <span className='text-gray-400 md:text-lg italic inline'>
+                {blogPost.sys.publishedAt !== blogPost.sys.firstPublishedAt
+                  ? 'Updated '
+                  : ' '}
+                <AppDate dateTime={blogPost.sys.publishedAt} />
+              </span>
+              <address className='text-red-500 text-lg'>
+                Paolo Vincent Julian
+              </address>
+            </Row>
 
             {/* content */}
             <Stack className='space-y-12 pb-6 md:pb-12 w-full max-w-screen-md mx-auto overflow-x-hidden'>
@@ -82,7 +84,7 @@ const Article: FunctionComponent<ArticleProps> = ({
                 </p>
               </Stack>
 
-              <div className='border-b border-slate-400 pb-12 md:pb-24 text-xl text-slate-600 font-serif'>
+              <div className='border-b border-slate-400 pb-12 md:pb-24 text-xl text-slate-600'>
                 <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>
               </div>
 
@@ -123,7 +125,7 @@ const Article: FunctionComponent<ArticleProps> = ({
           </Stack>
         </div>
         <ToTopFab />
-      </div>
+      </Container>
     </>
   );
 };
