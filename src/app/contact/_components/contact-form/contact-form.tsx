@@ -5,9 +5,9 @@ import TextInput from '@/_components/form/text-input';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
-import useContactForm from '@/app/(main-layout)/portfolio/_hooks/useContactForm';
+import useContactForm from '@/_hooks/use-contact-form';
 import { contactFormSchema } from '@/app/(main-layout)/portfolio/_utils/schemas';
-import classNames from 'classnames';
+import { DATA_TEST } from '@/app/contact/_components/contact-form/contact-form.constants';
 import { Formik } from 'formik';
 import React, { FunctionComponent, useEffect, useState } from 'react';
 
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const ContactForm: FunctionComponent<Props> = () => {
-  const { isLoading, handleSubmit, isFinished } = useContactForm();
+  const { isLoading, handleSubmit } = useContactForm();
 
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -40,10 +40,6 @@ const ContactForm: FunctionComponent<Props> = () => {
           setIsSuccess(true);
           actions.setSubmitting(false);
           actions.resetForm();
-
-          setTimeout(() => {
-            setIsSuccess(false);
-          }, 2000);
         });
       }}
       initialValues={{
@@ -73,6 +69,7 @@ const ContactForm: FunctionComponent<Props> = () => {
                   placeholder='Your name'
                   value={values.name}
                   isError={!!touched.name && !!errors.name}
+                  data-testid={DATA_TEST.name}
                 />
               </FormControl>
               <FormControl
@@ -86,6 +83,7 @@ const ContactForm: FunctionComponent<Props> = () => {
                   type='email'
                   value={values.email}
                   isError={!!touched.email && !!errors.email}
+                  data-testid={DATA_TEST.email}
                 />
               </FormControl>
 
@@ -97,6 +95,7 @@ const ContactForm: FunctionComponent<Props> = () => {
                   placeholder='Tell me about it'
                   value={values.text}
                   isError={!!touched.text && !!errors.text}
+                  data-testid={DATA_TEST.message}
                 />
               </FormControl>
             </Stack>
@@ -108,6 +107,7 @@ const ContactForm: FunctionComponent<Props> = () => {
               isLoading={isLoading}
               variant={isSuccess ? 'success' : 'default'}
               loadingText='Sending...'
+              data-testid={DATA_TEST.submitBtn}
             >
               <Row className='items-center gap-3 pr-10 pl-12'>
                 <span>SEND</span>

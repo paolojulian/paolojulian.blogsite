@@ -4,7 +4,7 @@ import Stack from '@/_components/layouts/stack';
 import Link from 'next/link';
 import AppCopyright from '@/_components/common/app-copyright';
 import ContactForm from '@/_components/form/contact-form';
-import useContactForm from '@/app/(main-layout)/portfolio/_hooks/useContactForm';
+import useContactForm from '@/_hooks/use-contact-form';
 
 interface Props {
   // No Props
