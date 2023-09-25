@@ -5,6 +5,7 @@ import CodeBlock from '../common/code-block/code-block';
 import ZoomableImage from '@/_components/images/zoomable-image';
 import CodeSpan from '@/_components/common/code-span';
 import HeadingLink from '@/_components/buttons/heading-link';
+import Blockquote from '@/_components/common/blockquote';
 
 export type AppReactMarkdownProps = {
   children: React.ReactNode;
@@ -92,6 +93,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             {children}
           </CodeSpan>
         ),
+        blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
       }}
       className='whitespace-pre-line'
     >
