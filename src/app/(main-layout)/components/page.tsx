@@ -12,7 +12,7 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
   return (
     <>
       <Container className='min-h-screen pt-navbar pb-20 flex flex-col justify-center gap-8 xl:gap-20 z-10 relative'>
-        <Stack className='text-5xl md:text-7xl font-medium'>
+        <Stack className='text-3xl md:text-7xl font-medium'>
           <h1 className=''>
             {/* <span className='text-slate-400'>Explore my articles,</span> */}
             <span className='text-slate-800'>
