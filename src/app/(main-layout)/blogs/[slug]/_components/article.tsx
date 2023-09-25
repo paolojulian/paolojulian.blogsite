@@ -44,7 +44,7 @@ const Article: FunctionComponent<ArticleProps> = ({
 
             {/* header */}
             <Stack className='relative space-y-8 py-4 lg:py-4'>
-              <h1 className='text-6xl md:text-8xl xl:max-w-[80%] font-medium text-slate-800'>
+              <h1 className='text-6xl md:text-7xl xl:max-w-[70%] font-medium text-slate-800'>
                 {blogPost.title}
               </h1>
             </Stack>
