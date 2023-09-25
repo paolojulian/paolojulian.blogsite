@@ -1,11 +1,8 @@
 import AppCopyright from '@/_components/common/app-copyright';
-import TextInput from '@/_components/form/text-input';
-import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Container from '@/_components/layouts/container';
 import Navbar from '@/_components/layouts/navbar';
-import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
-import classNames from 'classnames';
+import ContactForm from '@/app/contact/_components/contact-form';
 import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
 
@@ -47,8 +44,9 @@ const ContactPage: FunctionComponent<Props> = (props) => {
                 <div className='flex flex-row flex-wrap text-slate-400'>
                   <Stack>
                     <p className='mb-1 text-slate-700'>Socials</p>
-                    <Link href='#'>Linkedin</Link>
-                    <Link href='#'>Finkedin</Link>
+                    <Link href='https://www.linkedin.com/in/pipz/'>
+                      Linkedin
+                    </Link>
                   </Stack>
                 </div>
               </Stack>
@@ -57,24 +55,7 @@ const ContactPage: FunctionComponent<Props> = (props) => {
                 <h3 className='text-4xl text-slate-700 font-medium'>
                   Tell us about your project
                 </h3>
-                <Stack className='gap-8'>
-                  <TextInput name='name' placeholder='Your name' />
-                  <TextInput name='email' placeholder='Your email' />
-                  <TextInput name='mobile' placeholder='Your contact number' />
-                  <TextInput name='message' placeholder='Tell me about it' />
-                </Stack>
-                <button
-                  className={classNames(
-                    'transition-colors',
-                    'bg-primary-400 md:hover:bg-primary-500 active:scale-95', // background
-                    'text-xl text-white', // font
-                    'py-3.5 pr-16 pl-20 ', // spacings
-                    'text-xl w-fit flex flex-row items-center gap-2'
-                  )}
-                >
-                  <span>SEND</span>
-                  <RightArrowIcon />
-                </button>
+                <ContactForm />
               </Stack>
             </div>
             <div className='border-t border-slate-200 w-full py-8 text-slate-400'>
