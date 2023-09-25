@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Inter, Montserrat, Outfit } from 'next/font/google';
+import { Anton, Inter, Montserrat } from 'next/font/google';
+import ProgressBar from '@/_components/common/progress-bar';
 
 const capital = Anton({
   weight: '400',
@@ -51,6 +52,7 @@ export default function RootLayout({
         {children}
         <div id='modal-root'></div>
         <div id='fixed'></div>
+        <ProgressBar />
       </body>
     </html>
   );

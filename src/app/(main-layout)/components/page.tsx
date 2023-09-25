@@ -17,13 +17,13 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
             {/* <span className='text-slate-400'>Explore my articles,</span> */}
             <span className='text-slate-800'>
               {/* <br /> */}
-              <span className='text-gray-300'>Discover</span> a selection of
-              <span className='text-gray-300'> beautifully designed</span>{' '}
+              <span className='text-gray-400'>Discover</span> a selection of
+              <span className='text-gray-400'> beautifully designed</span>{' '}
               components and templates that will{' '}
-              <span className='text-gray-300'>elevate your project</span>. With
+              <span className='text-gray-400'>elevate your project</span>. With
               a strong emphasis on aesthetics and functionality, you can create
               a{' '}
-              <span className='text-gray-300'>
+              <span className='text-gray-400'>
                 stunning and user-friendly experience
               </span>
               .
