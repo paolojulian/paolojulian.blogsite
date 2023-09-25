@@ -60,9 +60,10 @@ const CTAButton: FunctionComponent<CTAButtonProps> = ({
       <button
         {...props}
         className={classNames(
-          'transition-colors',
+          'transition-colors relative overflow-hidden',
+          'flex justify-center items-center',
           sizes[size],
-          block ? 'w-full px-5' : 'w-fit px-8 max-w-full',
+          block ? 'w-full px-5' : 'w-fit px-14 max-w-full',
           isLoading ? bgVariants['transparent'] : bgVariants[variant]
         )}
       >
@@ -70,7 +71,7 @@ const CTAButton: FunctionComponent<CTAButtonProps> = ({
           <span className='text-slate-50 uppercase'>Success</span>
         ) : isLoading ? (
           <span
-            className={classNames(styles['dots-animation'], 'text-slate-300')}
+            className={classNames(styles['dots-animation'], 'text-slate-400')}
           >
             {loadingText}
           </span>

@@ -116,7 +116,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({
                 name='Components'
                 isActive={pathname === '/components'}
               />
-              <WebLink href='#contact' name='Contact Us' isActive={false} />
+              <WebLink
+                href='/contact'
+                name='Contact Us'
+                isActive={pathname === '/contact'}
+              />
             </ul>
             <button className='block md:hidden' onClick={handleToggleMenu}>
               <HamburgerMenuIcon />
@@ -182,8 +186,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({
               />
               <MobileLink
                 name='Contact Us'
-                href='/#contact'
-                isActive={pathname === '/components'}
+                href='/contact'
+                isActive={pathname === '/contact'}
                 onClick={handleToggleMenu}
               />
             </ul>

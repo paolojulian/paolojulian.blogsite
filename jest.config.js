@@ -11,6 +11,7 @@ const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
     '^@/_hooks/(.*)$': '<rootDir>/src/_hooks/$1',
+    '^@/_api/(.*)$': '<rootDir>/src/_api/$1',
   },
 };
 

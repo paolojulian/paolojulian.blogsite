@@ -5,3 +5,5 @@ export const contactFormSchema = Yup.object({
   email: Yup.string().email().required().max(320).label('Email'),
   text: Yup.string().required().max(5000).label('Message'),
 });
+
+export interface IContactFormSchema extends Yup.InferType<typeof contactFormSchema> { }
