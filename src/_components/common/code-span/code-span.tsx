@@ -11,7 +11,8 @@ const CodeSpan: FunctionComponent<Props> = ({ children, language }) => {
   return (
     <code
       className={classNames(
-        'px-2.5 py-1.5 text-base rounded text-accent-700 bg-slate-800/10'
+        'px-2.5 py-1.5 text-base font-medium rounded text-accent-700 bg-slate-800/10',
+        'font-sans'
       )}
       data-testid={DATA_TEST.container}
       data-language={language}
