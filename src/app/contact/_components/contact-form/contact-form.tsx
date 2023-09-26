@@ -63,27 +63,31 @@ const ContactForm: FunctionComponent<Props> = () => {
                 error={touched.name && errors.name ? errors.name : undefined}
               >
                 <TextInput
+                  id='contact-name'
                   onChange={(e) => setFieldValue('name', e.target.value)}
                   autoComplete='name'
                   name='name'
-                  placeholder='Your name'
+                  label='Your name'
+                  placeholder='John Doe'
                   value={values.name}
                   isError={!!touched.name && !!errors.name}
-                  data-testid={DATA_TEST.name}
+                  testId={DATA_TEST.name}
                 />
               </FormControl>
               <FormControl
                 error={touched.email && errors.email ? errors.email : undefined}
               >
                 <TextInput
+                  id='contact-email'
                   onChange={(e) => setFieldValue('email', e.target.value)}
                   autoComplete='email'
                   name='email'
-                  placeholder='Your email'
+                  label='Your email'
+                  placeholder='johndoe@email.com'
                   type='email'
                   value={values.email}
                   isError={!!touched.email && !!errors.email}
-                  data-testid={DATA_TEST.email}
+                  testId={DATA_TEST.email}
                 />
               </FormControl>
 
@@ -91,11 +95,14 @@ const ContactForm: FunctionComponent<Props> = () => {
                 error={touched.text && errors.text ? errors.text : undefined}
               >
                 <TextInput
+                  id='contact-message'
                   onChange={(e) => setFieldValue('text', e.target.value)}
-                  placeholder='Tell me about it'
+                  name='message'
+                  label='Tell me about it'
+                  placeholder='I want to hire you!'
                   value={values.text}
                   isError={!!touched.text && !!errors.text}
-                  data-testid={DATA_TEST.message}
+                  testId={DATA_TEST.message}
                 />
               </FormControl>
             </Stack>

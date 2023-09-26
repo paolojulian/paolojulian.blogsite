@@ -58,7 +58,9 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                 <TextInput
                   onChange={(e) => setFieldValue('name', e.target.value)}
                   autoComplete='name'
+                  id='contact-name'
                   name='name'
+                  label='Your name'
                   placeholder='Name'
                   value={values.name}
                   isError={!!touched.name && !!errors.name}
@@ -71,6 +73,8 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                 <TextInput
                   onChange={(e) => setFieldValue('email', e.target.value)}
                   autoComplete='email'
+                  id='contact-email'
+                  label='Your email'
                   name='email'
                   placeholder='Email'
                   type='email'
@@ -84,7 +88,10 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
                 error={touched.text && errors.text ? errors.text : undefined}
               >
                 <TextInput
+                  id='contact-message'
                   onChange={(e) => setFieldValue('text', e.target.value)}
+                  name='message'
+                  label='Tell me about it'
                   placeholder='Tell me about it'
                   value={values.text}
                   isError={!!touched.text && !!errors.text}

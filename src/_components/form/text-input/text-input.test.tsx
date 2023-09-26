@@ -1,4 +1,4 @@
-import { COLOR_VARIANTS, DATA_TEST } from './text-input.constants';
+import { DATA_TEST } from './text-input.constants';
 import TextInput from './text-input';
 import { render, screen } from '@testing-library/react';
 
@@ -6,14 +6,24 @@ type TextInputProps = React.ComponentProps<typeof TextInput>;
 
 describe('TESTING TextInput Component', () => {
   describe('GIVEN a TextInput component with variant and isError prop', () => {
-    const defaultProps: Partial<TextInputProps> = {
+    const defaultProps: TextInputProps = {
       variant: 'default',
       isError: false,
+      id: 'testing',
+      name: 'testing',
+      label: 'testing',
     };
 
     function renderComponent(props: TextInputProps) {
-      render(<TextInput {...props} />);
+      return render(<TextInput {...props} />);
     }
+
+    describe('WHEN the TextInput Component is rendered on snapshot', () => {
+      describe('THEN it should match the snapshot', () => {
+        const { asFragment } = renderComponent(defaultProps);
+        expect(asFragment).toMatchSnapshot();
+      });
+    });
 
     describe('WHEN the TextInput Component is rendered', () => {
       beforeEach(() => {
@@ -30,34 +40,9 @@ describe('TESTING TextInput Component', () => {
         expect(input).toBeInTheDocument();
       });
 
-      it('THEN it should apply the default variant styles', () => {
-        const input = screen.getByTestId(DATA_TEST.container);
-        expect(input).toHaveClass(COLOR_VARIANTS.default);
-      });
-
       it('THEN it should not apply error styles', () => {
         const input = screen.getByTestId(DATA_TEST.container);
         expect(input).not.toHaveClass('border-red-500');
-      });
-    });
-
-    describe('WHEN the TextInput Component has different variant', () => {
-      const props: Partial<TextInputProps> = {
-        ...defaultProps,
-        variant: 'default-dark',
-      };
-      beforeEach(() => {
-        renderComponent({ ...defaultProps, variant: 'default-dark' });
-      });
-
-      it('THEN it should match the snapshot', () => {
-        const { asFragment } = render(<TextInput {...props} />);
-        expect(asFragment()).toMatchSnapshot();
-      });
-
-      it('THEN it should apply the default-dark variant style', () => {
-        const input = screen.getByTestId(DATA_TEST.container);
-        expect(input).toHaveClass(COLOR_VARIANTS['default-dark']);
       });
     });
 

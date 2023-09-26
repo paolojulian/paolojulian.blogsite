@@ -15,4 +15,6 @@ export const COLOR_VARIANTS: Record<Variants, string> = {
 
 export const DATA_TEST = {
   container: 'text-input-container',
+  input: 'text-input-input',
+  label: 'text-input-label',
 };
