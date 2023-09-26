@@ -1,6 +1,5 @@
 'use client';
-import throttle from 'lodash/throttle';
-import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
+import React, { FunctionComponent, useRef } from 'react';
 import Stack from '@/_components/layouts/stack';
 import Image from 'next/image';
 import Container from '@/_components/layouts/container';
