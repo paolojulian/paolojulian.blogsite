@@ -12,6 +12,7 @@ import CrossIcon from '@/app/custom-components/application-ui/layouts/brand-side
 import Row from '@/_components/layouts/row';
 import createWrapperAndAppendToBody from '@/_utils/create-wrapper-and-append-to-body';
 import usePortal from '@/_hooks/use-portal/use-portal';
+import LeftArrowIcon from '@/_components/icons/left-arrow-icon';
 
 export type AppModalProps = {
   onClose: () => void;
@@ -72,20 +73,13 @@ const AppModal: FunctionComponent<AppModalProps> = ({
           )}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className='hidden md:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+          {/* close */}
+          <Row className='flex px-4 md:px-12 py-4 md:pt-12'>
             <button
-              className='rounded-full w-[80px] aspect-square text-primary-400 transition bg-white hover:border-primary-300 border flex justify-center items-center shadow-[0_4px_28px_rgba(0,0,0,0.10)]'
+              className='w-14 aspect-square transition bg-white hover:border-primary-300 hover:text-red-400 border border-slate-300 flex justify-center items-center'
               onClick={closeModal}
             >
-              <CrossIcon className='w-12 h-12' />
-            </button>
-          </div>
-          <Row className='flex md:hidden justify-center p-4'>
-            <button
-              className='text-gray-400 flex justify-center items-center'
-              onClick={closeModal}
-            >
-              <CrossIcon className='w-12 h-12' />
+              <LeftArrowIcon />
             </button>
           </Row>
           {children}

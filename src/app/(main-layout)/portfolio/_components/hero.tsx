@@ -21,7 +21,7 @@ const HeroSection: FunctionComponent<Props> = () => {
 
   return (
     <>
-      <div className='fixed inset-0 pointer-events-none pt-navbar'>
+      <div className='fixed inset-0 pointer-events-none  '>
         <div className='h-full aspect-[880/1002] max-w-full absolute left-[100px] bottom-0 opacity-50 lg:pl-[100px]'>
           <Image
             className='object-cover object-right select-none'
@@ -35,7 +35,7 @@ const HeroSection: FunctionComponent<Props> = () => {
       </div>
       <section
         id={SECTIONS[0]}
-        className='flex flex-row min-h-screen flex-1 w-full justify-center'
+        className='flex flex-row min-h-[calc(100vh-4rem)] flex-1 w-full justify-center'
       >
         <div className='hidden md:block w-[100px]'></div>
         <Container className='flex-1 flex flex-col justify-center md:items-center text-left md:text-center gap-[20px] max-w-screen-xl w-full relative'>

@@ -15,7 +15,7 @@ const ContactPage: FunctionComponent<Props> = (props) => {
     <>
       <div className='font-sans'>
         <Navbar />
-        <Stack className='border-l md:border-l-4 lg:border-l-8 border-primary-300 min-h-screen py-navbar'>
+        <Stack className='border-l md:border-l-4 lg:border-l-8 border-primary-300 min-h-screen'>
           <Container className='mx-auto w-full max-w-screen-2xl'>
             <div className='flex flex-col lg:flex-row py-32 bg-white gap-16 2xl:gap-32 justify-between lg:items-center w-full'>
               {/* Heading */}

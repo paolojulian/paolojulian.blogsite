@@ -28,7 +28,7 @@ const Article: FunctionComponent<ArticleProps> = ({
   return (
     <>
       <Container>
-        <div className='z-10 pt-navbar'>
+        <div className='z-10  '>
           <Stack className='space-y-12 mb-24'>
             <Link
               className={classNames(preview ? 'pointer-events-none' : '')}

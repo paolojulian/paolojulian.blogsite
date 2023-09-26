@@ -11,7 +11,7 @@ export default function PortfolioLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className='max-w-screen-2xl mx-auto mt-navbar relative w-full'>
+    <div className='max-w-screen-2xl mx-auto   relative w-full'>
       {children}
     </div>
   );

@@ -24,13 +24,13 @@ const ProjectDetailsModal: FunctionComponent<Props> = ({
   return (
     <AppModal isOpen={isOpen} {...props}>
       <div ref={containerRef}>
-        <Container className='flex flex-col space-y-16 py-[50px] md:py-[100px] bg-white'>
+        <Container className='flex flex-col space-y-16 py-12 bg-white'>
           <Stack className='space-y-16'>
             <Stack className='relative'>
-              <p className='text-[16px] md:text-[20px] tracking-[1px] text-slate-400 uppercase'>{`// PROJECT OVERVIEW`}</p>
+              <p className='text-base text-slate-400 uppercase'>{`// PROJECT OVERVIEW`}</p>
               <h3
                 className={classNames(
-                  'font-capital text-3xl md:text-6xl text-slate-800 uppercase'
+                  'font-medium text-3xl md:text-5xl text-slate-800 uppercase tracking-wider'
                 )}
               >
                 {project.name}

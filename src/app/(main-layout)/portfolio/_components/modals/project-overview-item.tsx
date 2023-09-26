@@ -21,14 +21,16 @@ const ProjectOverviewItem: FunctionComponent<Props> = ({
       )}
     >
       <p className='text-slate-500 text-sm md:text-base'>0{number}</p>
-      <h4 className='tracking-wider text-slate-800 text-xl lg:min-w-[250px] flex justify-center items-center'>
+      <h4 className='tracking-wider text-slate-800 text-xl lg:min-w-[250px] lg:flex-1 flex justify-center items-center'>
         {name}
       </h4>
-      {typeof description === 'string' ? (
-        <p className='text-slate-500'>{description}</p>
-      ) : (
-        description
-      )}
+      <div className='flex-1'>
+        {typeof description === 'string' ? (
+          <p className='text-slate-500'>{description}</p>
+        ) : (
+          description
+        )}
+      </div>
     </div>
   );
 };

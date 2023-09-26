@@ -10,5 +10,5 @@ export default function PortfolioLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className='mt-navbar'>{children}</div>;
+  return <div className=' '>{children}</div>;
 }
