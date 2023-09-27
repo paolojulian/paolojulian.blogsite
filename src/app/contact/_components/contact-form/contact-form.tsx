@@ -116,7 +116,7 @@ const ContactForm: FunctionComponent<Props> = () => {
               loadingText='Sending...'
               data-testid={DATA_TEST.submitBtn}
             >
-              <Row className='items-center gap-3 pr-10 pl-12'>
+              <Row className='items-center gap-3 pr-10 pl-14'>
                 <span>SEND</span>
                 <RightArrowIcon />
               </Row>
