@@ -10,6 +10,7 @@ import { usePathname } from 'next/navigation';
 import Container from '@/_components/layouts/container';
 import WebLink from './navbar.weblink';
 import { navbarItems } from './navbar.constants';
+import GlobalSearchModal from '@/_components/partials/global-search-modal';
 
 interface Props {
   // no props
@@ -137,6 +138,7 @@ const Navbar: FunctionComponent<Props> = () => {
           </nav>
         </Stack>
       </Stack>
+      <GlobalSearchModal />
     </>
   );
 };
