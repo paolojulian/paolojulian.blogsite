@@ -19,12 +19,12 @@
   dependencies:
     "@algolia/cache-common" "4.20.0"
 
-"@algolia/cache-common@4.20.0":
+"@algolia/cache-common@4.20.0", "@algolia/cache-common@^4.20.0":
   version "4.20.0"
   resolved "https://registry.yarnpkg.com/@algolia/cache-common/-/cache-common-4.20.0.tgz#ec52230509fce891091ffd0d890618bcdc2fa20d"
   integrity sha512-vCfxauaZutL3NImzB2G9LjLt36vKAckc6DhMp05An14kVo8F1Yofb6SIl6U3SaEz8pG2QOB9ptwM5c+zGevwIQ==
 
-"@algolia/cache-in-memory@4.20.0":
+"@algolia/cache-in-memory@4.20.0", "@algolia/cache-in-memory@^4.20.0":
   version "4.20.0"
   resolved "https://registry.yarnpkg.com/@algolia/cache-in-memory/-/cache-in-memory-4.20.0.tgz#5f18d057bd6b3b075022df085c4f83bcca4e3e67"
   integrity sha512-Wm9ak/IaacAZXS4mB3+qF/KCoVSBV6aLgIGFEtQtJwjv64g4ePMapORGmCyulCFwfePaRAtcaTbMcJF+voc/bg==

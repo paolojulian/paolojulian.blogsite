@@ -12,6 +12,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@algolia/cache-common": "^4.20.0",
+    "@algolia/cache-in-memory": "^4.20.0",
     "@apollo/client": "^3.7.17",
     "@types/node": "20.4.4",
     "@types/react": "18.2.16",
