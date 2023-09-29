@@ -1,3 +1,4 @@
+import { DATA_TEST } from './global-search-modal-items.constants';
 import GlobalSearchModalItem, {
   GlobalSearchModalItemSkeleton,
 } from '@/_components/partials/global-search-modal/components/global-search-modal-items/global-search-modal-item';
@@ -13,7 +14,10 @@ const GlobalSearchModalItems: FunctionComponent<Props> = () => {
 
   if (isLoading) {
     return (
-      <div className='flex flex-col gap-2 max-h-[500px] overflow-y-auto p-8'>
+      <div
+        className='flex flex-col gap-2 max-h-[500px] overflow-y-auto p-8'
+        data-testid={DATA_TEST.loadingContainer}
+      >
         <GlobalSearchModalItemSkeleton />
         <GlobalSearchModalItemSkeleton />
       </div>
@@ -22,7 +26,10 @@ const GlobalSearchModalItems: FunctionComponent<Props> = () => {
 
   if (keyword === '') {
     return (
-      <div className='flex flex-col gap-2 h-[500px] max-h-[500px] overflow-y-auto py-16 p-8 justify-center items-center'>
+      <div
+        className='flex flex-col gap-2 h-[500px] max-h-[500px] overflow-y-auto py-16 p-8 justify-center items-center'
+        data-testid={DATA_TEST.noRecentContainer}
+      >
         <span className='text-gray-400 text-lg'>{'No recent searches'}</span>
       </div>
     );
@@ -30,7 +37,10 @@ const GlobalSearchModalItems: FunctionComponent<Props> = () => {
 
   if (isError) {
     return (
-      <div className='flex flex-col gap-2 h-[500px] max-h-[500px] overflow-y-auto py-16 p-8 justify-center items-center'>
+      <div
+        className='flex flex-col gap-2 h-[500px] max-h-[500px] overflow-y-auto py-16 p-8 justify-center items-center'
+        data-testid={DATA_TEST.errorContainer}
+      >
         <span className='text-red-500 italic'>
           {'Something went wrong. Please try again later.'}
         </span>
@@ -40,14 +50,20 @@ const GlobalSearchModalItems: FunctionComponent<Props> = () => {
 
   if (data.length === 0) {
     return (
-      <div className='flex flex-col gap-2 h-[500px] max-h-[500px] overflow-y-auto py-16 p-8 justify-center items-center'>
+      <div
+        className='flex flex-col gap-2 h-[500px] max-h-[500px] overflow-y-auto py-16 p-8 justify-center items-center'
+        data-testid={DATA_TEST.noDataContainer}
+      >
         <span className='text-gray-400 text-lg'>{`No data for ${keyword}`}</span>
       </div>
     );
   }
 
   return (
-    <div className='flex flex-col gap-2 max-h-[500px] overflow-y-auto p-8'>
+    <div
+      className='flex flex-col gap-2 max-h-[500px] overflow-y-auto p-8'
+      data-testid={DATA_TEST.container}
+    >
       {data.map((item, i) => (
         <GlobalSearchModalItem
           datePublished={'Updated 13-Sep-2023'}

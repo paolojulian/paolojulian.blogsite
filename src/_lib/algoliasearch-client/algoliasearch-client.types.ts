@@ -8,14 +8,4 @@ export interface IContentfulSearchItem {
     slug: string;
   }
   spaceId: string;
-  _highlightResult: {
-    parameters: {
-      description: {
-        value: string;
-        fullyHighlighted: boolean;
-        matchLevel: string;
-        matchedWords: string[]
-      }
-    }
-  }
 }
