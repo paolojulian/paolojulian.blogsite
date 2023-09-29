@@ -7,15 +7,22 @@ import Stack from '@/_components/layouts/stack';
 import Row from '@/_components/layouts/row';
 import GlobalSearchModalSearchBar from '@/_components/partials/global-search-modal/components/global-search-modal-search-bar';
 import AlgoliaSearchProvider from '@/_components/partials/global-search-modal/context/search-provider/search-provider';
+import GlobalSearchModalItems from '@/_components/partials/global-search-modal/components/global-search-modal-items';
+import AlgoliaIcon from '@/_components/partials/global-search-modal/components/icons/algolia-icon';
 
 interface Props {
-  // no props
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const GlobalSearchModal: FunctionComponent<Props> = (props) => {
+const GlobalSearchModal: FunctionComponent<Props> = ({ isOpen, onClose }) => {
   const modalRoot = usePortal('modal-root');
 
   if (modalRoot === null) {
+    return null;
+  }
+
+  if (!isOpen) {
     return null;
   }
 
@@ -23,12 +30,14 @@ const GlobalSearchModal: FunctionComponent<Props> = (props) => {
     <AlgoliaSearchProvider>
       <div
         className={classNames(
-          'fixed inset-0 backdrop-blur-md z-50 flex justify-center items-center'
+          'fixed inset-0 backdrop-blur-sm z-50 flex justify-center items-center'
         )}
       >
         {/* Overlay */}
         <div
           className={classNames('fixed inset-0 bg-slate-800/20 -z-10')}
+          role='button'
+          onClick={onClose}
         ></div>
 
         {/* Card */}
@@ -38,10 +47,13 @@ const GlobalSearchModal: FunctionComponent<Props> = (props) => {
             'shadow-highBlur'
           )}
         >
-          <GlobalSearchModalSearchBar />
-          <Stack className='p-8 border-t border-slate-300'></Stack>
-          <Row className='p-4 border-t border-slate-300 justify-end'>
-            Search by algolia
+          <GlobalSearchModalSearchBar onEsc={onClose} />
+          <Stack className='border-t border-slate-300'>
+            <GlobalSearchModalItems />
+          </Stack>
+          <Row className='p-4 border-t border-slate-300 justify-end items-center gap-4'>
+            <span className='text-gray-400 font-medium text-sm'>Search by</span>
+            <AlgoliaIcon />
           </Row>
         </Stack>
       </div>

@@ -11,6 +11,8 @@ import Container from '@/_components/layouts/container';
 import WebLink from './navbar.weblink';
 import { navbarItems } from './navbar.constants';
 import GlobalSearchModal from '@/_components/partials/global-search-modal';
+import SearchIcon from '@/_components/icons/search-icon';
+import useModal from '@/_hooks/use-modal';
 
 interface Props {
   // no props
@@ -35,10 +37,22 @@ const MobileLink: FunctionComponent<
 };
 
 const Navbar: FunctionComponent<Props> = () => {
+  const {
+    isOpen: isGlobalSearchModalOpen,
+    setIsOpen: setIsGlobalSearchModalOpen,
+  } = useModal();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  const handleClickGlobalSearchBtn = () => {
+    setIsGlobalSearchModalOpen((prev) => !prev);
+  };
+  const handleCloseGlobalSearch = () => {
+    setIsGlobalSearchModalOpen(false);
   };
 
   const pathname = usePathname();
@@ -47,7 +61,7 @@ const Navbar: FunctionComponent<Props> = () => {
     <>
       <div
         className={classNames(
-          'w-full z-40 h-navbar',
+          'w-full z-40 h-fit py-6',
           'border-l md:border-l-4 lg:border-l-8 border-primary-300',
           'font-medium'
         )}
@@ -71,7 +85,7 @@ const Navbar: FunctionComponent<Props> = () => {
             </Link>
           </div>
           <nav>
-            <ul className='flex-row space-x-8 hidden md:flex'>
+            <ul className='flex-row space-x-8 hidden md:flex items-center'>
               {navbarItems.map((item, i) => (
                 <WebLink
                   href={item.href}
@@ -80,6 +94,17 @@ const Navbar: FunctionComponent<Props> = () => {
                   key={i}
                 />
               ))}
+              <div
+                className='border border-gray-300 text-gray-400 flex flex-row gap-16 items-center px-6 py-5'
+                role='button'
+                onClick={handleClickGlobalSearchBtn}
+              >
+                <Row className='gap-4 items-center'>
+                  <SearchIcon />
+                  <span>Quick Search</span>
+                </Row>
+                <span>⌘K</span>
+              </div>
             </ul>
             <button className='block md:hidden' onClick={handleToggleMenu}>
               <HamburgerMenuIcon />
@@ -138,7 +163,10 @@ const Navbar: FunctionComponent<Props> = () => {
           </nav>
         </Stack>
       </Stack>
-      <GlobalSearchModal />
+      <GlobalSearchModal
+        isOpen={isGlobalSearchModalOpen}
+        onClose={handleCloseGlobalSearch}
+      />
     </>
   );
 };

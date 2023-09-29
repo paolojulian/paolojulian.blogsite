@@ -1,20 +1,34 @@
 import { useAlgoliaSearch } from '../../context/search-provider';
 import DATA_TEST from './global-search-modal-search-bar.constants';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import Row from '@/_components/layouts/row';
 import classNames from 'classnames';
 import SearchIcon from '@/_components/icons/search-icon';
 
 interface Props {
-  // no props
+  onEsc: () => void;
 }
 
-const GlobalSearchModalSearchBar: FunctionComponent<Props> = () => {
+const GlobalSearchModalSearchBar: FunctionComponent<Props> = ({ onEsc }) => {
   const { keyword, setKeyword } = useAlgoliaSearch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKeyword(e.target.value);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onEsc();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onEsc]);
 
   return (
     <Row className='items-center justify-between relative'>
@@ -41,6 +55,7 @@ const GlobalSearchModalSearchBar: FunctionComponent<Props> = () => {
           'rounded-lg',
           'px-4 py-2 border border-slate-300 md:hover:bg-slate-50 text-slate-400 w-fit h-fit'
         )}
+        onClick={onEsc}
       >
         Esc
       </button>
