@@ -56,6 +56,7 @@ const GlobalSearchModalSearchBar: FunctionComponent<Props> = ({ onEsc }) => {
           'px-4 py-2 border border-slate-300 md:hover:bg-slate-50 text-slate-400 w-fit h-fit'
         )}
         onClick={onEsc}
+        data-testid={DATA_TEST.escapeBtn}
       >
         Esc
       </button>

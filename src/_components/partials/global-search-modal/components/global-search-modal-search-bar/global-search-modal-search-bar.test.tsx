@@ -1,4 +1,4 @@
-import { RenderResult, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import * as searchProvider from '../../context/search-provider';
 import GlobalSearchModalSearchBar from './global-search-modal-search-bar';
 import DATA_TEST from './global-search-modal-search-bar.constants';
@@ -13,12 +13,14 @@ jest.spyOn(searchProvider, 'useAlgoliaSearch').mockReturnValue({
   data: [],
   keyword: mockedKeyword,
   setKeyword: mockedSetKeyword,
+  isError: false,
+  isLoading: false,
 });
 
 describe('TESTING GlobalSearchModalSearchBar component', () => {
-  describe('GIVEN a keyword', () => {
+  describe('GIVEN a keyword and onEsc callback', () => {
     function renderComponent() {
-      return render(<GlobalSearchModalSearchBar />);
+      return render(<GlobalSearchModalSearchBar onEsc={() => {}} />);
     }
 
     describe('WHEN the component is rendered for snapshot testing', () => {
@@ -46,6 +48,18 @@ describe('TESTING GlobalSearchModalSearchBar component', () => {
         const searchBar = getByTestId(DATA_TEST.container);
         fireEvent.change(searchBar, { target: { value: 'New Keyword' } });
         expect(mockedSetKeyword).toHaveBeenCalledWith('New Keyword');
+      });
+    });
+
+    describe('WHEN the esc is clicked', () => {
+      it('THEN it should call the handleEscape function', () => {
+        const handleEscape = jest.fn();
+        const { getByTestId } = render(
+          <GlobalSearchModalSearchBar onEsc={handleEscape} />
+        );
+        const searchBar = getByTestId(DATA_TEST.escapeBtn);
+        fireEvent.click(searchBar);
+        expect(handleEscape).toBeCalledTimes(1);
       });
     });
   });

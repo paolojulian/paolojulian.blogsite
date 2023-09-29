@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TESTING GlobalSearchModalSearchBar component GIVEN a keyword WHEN the component is rendered for snapshot testing THEN it should match the snapshot 1`] = `
+exports[`TESTING GlobalSearchModalSearchBar component GIVEN a keyword and onEsc callback WHEN the component is rendered for snapshot testing THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <div
     class="flex flex-row items-center justify-between relative"
@@ -38,6 +38,7 @@ exports[`TESTING GlobalSearchModalSearchBar component GIVEN a keyword WHEN the c
     />
     <button
       class="absolute top-1/2 -translate-y-1/2 right-6 rounded-lg px-4 py-2 border border-slate-300 md:hover:bg-slate-50 text-slate-400 w-fit h-fit"
+      data-testid="global-search-modal-escape-btn"
     >
       Esc
     </button>
