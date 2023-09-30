@@ -1,5 +1,5 @@
 export function isMacOS() {
-  if (!navigator) return;
+  if (typeof navigator === 'undefined' || !navigator) return false;
 
   const userAgent = navigator.userAgent.toLowerCase();
 
