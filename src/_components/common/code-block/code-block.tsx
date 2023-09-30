@@ -26,7 +26,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
       {language === 'text' ? (
         <div
           className={classNames(
-            'bg-slate-900 text-slate-50 font-normal px-2 py-2 text-base'
+            'bg-slate-900 text-slate-50 font-normal px-2 py-2 mt-4 text-base'
           )}
           data-testid={DATA_TEST.textContainer}
         >
@@ -38,7 +38,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
         <Stack
           className={classNames(
             'overflow-hidden space-y-0',
-            'mb-8', // spacing
+            'mb-8 mt-4', // spacing
             language === 'text' ? 'hidden' : 'flex'
           )}
           data-testid={DATA_TEST.mainContainer}

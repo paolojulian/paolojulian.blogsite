@@ -8,7 +8,7 @@ const WebLink: FunctionComponent<
   return (
     <li
       className={classNames(
-        'flex flex-col justify-between items-center space-y-2 h-fit',
+        'flex flex-col justify-between items-center space-y-2 h-fit font-medium',
         isActive ? 'text-gray-800' : 'text-gray-400 hover:text-red-400'
       )}
     >

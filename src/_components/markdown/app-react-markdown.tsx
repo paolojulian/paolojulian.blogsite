@@ -6,6 +6,7 @@ import ZoomableImage from '@/_components/images/zoomable-image';
 import CodeSpan from '@/_components/common/code-span';
 import HeadingLink from '@/_components/buttons/heading-link';
 import Blockquote from '@/_components/common/blockquote';
+import styles from './app-react-markdown.module.css';
 
 export type AppReactMarkdownProps = {
   children: React.ReactNode;
@@ -19,86 +20,91 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
   children,
 }) => {
   return (
-    <ReactMarkdown
-      components={{
-        h2: ({ children }) => (
-          <HeadingLink
-            className='mt-12 mb-4'
-            Heading={
-              <AppHeading.H2
-                id={toKebabCase(children.toString())}
-                className='font-bold'
-              >
-                {children}
-              </AppHeading.H2>
-            }
-            tag={toKebabCase(children.toString())}
-          ></HeadingLink>
-        ),
-        h3: ({ children }) => (
-          <AppHeading.H3
-            id={toKebabCase(children.toString())}
-            className='font-bold'
-          >
-            {children}
-          </AppHeading.H3>
-        ),
-        h4: ({ children }) => (
-          <AppHeading.H4
-            id={toKebabCase(children.toString())}
-            className='font-bold'
-          >
-            {children}
-          </AppHeading.H4>
-        ),
-        p: ({ children }) => <div className='leading-relaxed'>{children}</div>,
-        ol: ({ children }) => (
-          <ol
-            className='whitespace-normal'
-            style={{
-              listStyleType: 'decimal',
-              listStylePosition: 'inside',
-            }}
-          >
-            {children}
-          </ol>
-        ),
-        ul: ({ children }) => (
-          <ul
-            className='whitespace-normal'
-            style={{
-              listStyleType: 'disc',
-              listStylePosition: 'inside',
-              marginLeft: '24px',
-            }}
-          >
-            {children}
-          </ul>
-        ),
-        li: ({ children }) => (
-          <li className='text-slate-700 whitespace-normal'>{children}</li>
-        ),
-        a: ({ href, children }) => (
-          <a href={href} className='text-red-500 font-medium'>
-            {children}
-          </a>
-        ),
-        img: ({ ...props }) => <ZoomableImage {...props}></ZoomableImage>,
-        strong: ({ children }) => (
-          <strong className='font-semibold leading-relaxed'>{children}</strong>
-        ),
-        pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
-        code: ({ children, className }) => (
-          <CodeSpan language={className?.replace('language-', '') || ''}>
-            {children}
-          </CodeSpan>
-        ),
-        blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
-      }}
-      className='whitespace-pre-line'
-    >
-      {children}
-    </ReactMarkdown>
+    <div className={styles.container}>
+      <ReactMarkdown
+        components={{
+          h2: ({ children }) => (
+            <HeadingLink
+              className='mt-16 mb-6'
+              Heading={
+                <AppHeading.H2
+                  id={toKebabCase(children.toString())}
+                  className='font-bold'
+                >
+                  {children}
+                </AppHeading.H2>
+              }
+              tag={toKebabCase(children.toString())}
+            ></HeadingLink>
+          ),
+          h3: ({ children }) => (
+            <AppHeading.H3
+              id={toKebabCase(children.toString())}
+              className='font-bold mt-12 mb-2'
+            >
+              {children}
+            </AppHeading.H3>
+          ),
+          h4: ({ children }) => (
+            <AppHeading.H4
+              id={toKebabCase(children.toString())}
+              className='font-bold mt-4'
+            >
+              {children}
+            </AppHeading.H4>
+          ),
+          p: ({ children }) => (
+            <p className='leading-relaxed'>{children}</p>
+          ),
+          ol: ({ children }) => (
+            <ol
+              className='whitespace-normal mt-6 mb-6'
+              style={{
+                listStyleType: 'decimal',
+                listStylePosition: 'inside',
+              }}
+            >
+              {children}
+            </ol>
+          ),
+          ul: ({ children }) => (
+            <ul
+              className='whitespace-normal mt-2'
+              style={{
+                listStyleType: 'disc',
+                listStylePosition: 'inside',
+                marginLeft: '24px',
+              }}
+            >
+              {children}
+            </ul>
+          ),
+          li: ({ children }) => (
+            <li className='text-slate-700 whitespace-normal leading-normal'>{children}</li>
+          ),
+          a: ({ href, children }) => (
+            <a href={href} className='text-red-500 font-medium'>
+              {children}
+            </a>
+          ),
+          img: ({ ...props }) => <ZoomableImage {...props}></ZoomableImage>,
+          strong: ({ children }) => (
+            <strong className='font-semibold leading-relaxed'>
+              {children}
+            </strong>
+          ),
+          pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
+          code: ({ children, className }) => (
+            <CodeSpan language={className?.replace('language-', '') || ''}>
+              {children}
+            </CodeSpan>
+          ),
+          blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
+        }}
+      >
+        {children}
+      </ReactMarkdown>
+    </div>
   );
 };
 
