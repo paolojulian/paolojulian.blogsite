@@ -64,7 +64,9 @@ const Navbar: FunctionComponent<Props> = () => {
         className={classNames(
           'w-full z-40 lg:h-navbarLg py-6',
           'border-l md:border-l-4 lg:border-l-8 border-primary-300',
-          'font-medium'
+          'bg-white/70 backdrop-blur-md',
+          'font-medium',
+          'sticky top-0 inset-x-0'
         )}
       >
         <Container
@@ -73,13 +75,13 @@ const Navbar: FunctionComponent<Props> = () => {
             'flex flex-row',
             'h-navbar',
             'relative',
-            'bg-white text-gray-700'
+            'text-gray-700'
           )}
         >
           <nav className='flex-1 flex flex-row gap-16 items-center'>
             <Link
               href='/'
-              className='bg-gray-800 relative aspect-square h-12 md:h-16 flex justify-center items-center'
+              className='bg-gray-800 relative aspect-square h-12 md:h-14 flex justify-center items-center'
             >
               <div className='aspect-square w-3 bg-white absolute bottom-0 right-0 z-20'></div>
               <Logo className='aspect-square w-12 lg:w-16 z-10' />

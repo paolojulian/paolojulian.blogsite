@@ -26,13 +26,13 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl, about }) => {
         <div className='text-left'>
           <SectionHeading number={1} section='about'></SectionHeading>
         </div>
-        <div className='flex flex-col md:flex-row gap-[50px] xl:gap-[100px]'>
+        <div className='flex flex-col-reverse md:flex-row gap-[50px] xl:gap-[100px]'>
           <Stack className='flex-1 text-left md:items-start gap-[20px] md:gap-[50px]'>
-            <div className={classNames('text-xl md:text-xl font-medium')}>
+            <div className={classNames('text-3xl md:text-4xl font-medium')}>
               <ReactMarkdown
                 components={{
                   p: ({ children }) => (
-                    <p className='tracking-wide leading-tight text-4xl text-gray-700'>
+                    <p className='tracking-wide leading-tight text-gray-700'>
                       {children}
                     </p>
                   ),
@@ -60,12 +60,14 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl, about }) => {
             </Link>
           </Stack>
           <div className='relative aspect-[400/465] w-full md:w-[250px] lg:w-[300px] 2xl:w-[400px]'>
-            <div className='w-[15px] lg:w-[20px] 2xl:w-[30px] aspect-square bg-primary-400 absolute left-0 bottom-0 z-10'></div>
+            <div className='w-[15px] lg:w-[20px] 2xl:w-[30px] aspect-square bg-primary-400 absolute right-0 bottom-0 z-10'></div>
             <Image
               fill
               className='object-cover'
-              src='/assets/portfolio/profile-image.png'
+              src='/assets/portfolio/profile-image.v2.png'
               alt='profile-picture'
+              style={{}}
+              priority
             />
           </div>
         </div>

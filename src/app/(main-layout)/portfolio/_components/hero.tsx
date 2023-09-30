@@ -22,19 +22,6 @@ const HeroSection: FunctionComponent<Props> = () => {
 
   return (
     <>
-      <div className='fixed inset-0 pointer-events-none '>
-        <div className='h-full aspect-[880/1002] max-w-full absolute left-[100px] bottom-0 opacity-50 lg:pl-[100px]'>
-          <Image
-            className='object-cover object-right select-none'
-            draggable={false}
-            src='/assets/background.png'
-            alt='background'
-            fill
-            priority
-          />
-        </div>
-      </div>
-
       <section
         id={SECTIONS[0]}
         className='flex flex-row min-h-[calc(100vh-7rem)] flex-1 w-full max-w-screen-2xl relative justify-center'
@@ -42,8 +29,8 @@ const HeroSection: FunctionComponent<Props> = () => {
         <Container className='flex-1 flex flex-col justify-center md:items-center text-left md:text-center gap-5 max-w-screen-2xl w-full relative'>
           <h1
             className={classNames(
-              'font-medium tracking-wider text-7xl lg:text-6xl xl:text-7xl md:tracking-widest md:leading-[4.5rem] uppercase',
-              'flex flex-col md:flex-row gap-2 md:gap-4'
+              'font-medium tracking-wider text-7xl lg:text-7xl xl:text-7xl md:tracking-widest md:leading-[4.5rem] uppercase',
+              'flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 justify-center'
             )}
             ref={logoRef}
           >
@@ -73,10 +60,10 @@ const HeroSection: FunctionComponent<Props> = () => {
           </div>
 
           <Container className='w-full absolute inset-x-0 bottom-0'>
-            <Row className='py-8 justify-between items-center'>
+            <Row className='py-2 md:py-8 justify-between items-center'>
               <Link
                 href='/contact'
-                className='h-16 w-fit px-8 border border-gray-300 hover:border-primary-300 hover:bg-primary-50 transition font-medium flex flex-col justify-center items-center'
+                className='h-12 lg:h-14 w-fit px-8 border border-gray-300 hover:border-primary-300 hover:bg-primary-50 transition font-medium flex flex-col justify-center items-center'
               >
                 Get in touch
               </Link>

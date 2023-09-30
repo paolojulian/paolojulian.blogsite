@@ -32,9 +32,10 @@ const GlobalSearchBtn: FunctionComponent<Props> = ({ onClick }) => {
   return (
     <div
       className={classNames(
-        'transition border border-gray-300 hover:border-primary-400 text-gray-400 hover:text-gray-500  px-4 lg:px-6',
-        'w-12 md:w-fit h-12 md:h-16',
-        'flex flex-col justify-center items-center gap-4 lg:gap-16'
+        'transition border border-gray-300 hover:border-primary-400 text-gray-400 hover:text-gray-500 px-4 lg:pl-6 lg:pr-7',
+        'bg-white',
+        'w-12 md:w-16 lg:w-fit h-12 md:h-14',
+        'flex flex-col md:flex-row justify-center items-center gap-4 lg:gap-16'
       )}
       role='button'
       onClick={onClick}

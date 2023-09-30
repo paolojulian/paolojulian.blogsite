@@ -8,13 +8,6 @@ import AboutSection from '@/app/(main-layout)/portfolio/_components/about';
 import ServicesSection from '@/app/(main-layout)/portfolio/_components/services';
 import ProjectsSection from '@/app/(main-layout)/portfolio/_components/projects';
 import ArticlesSection from '@/app/(main-layout)/portfolio/_components/articles';
-import SideNav from '@/app/(main-layout)/portfolio/_components/common/side-nav';
-import Stack from '@/_components/layouts/stack';
-import Link from 'next/link';
-import Fab from '@/_components/buttons/fab';
-import LinkedinIcon from '@/_components/icons/linkedin-icon';
-import MailIcon from '@/app/(main-layout)/portfolio/_components/icons/mail-icon';
-import PhoneIcon from '@/app/(main-layout)/portfolio/_components/icons/phone-icon';
 
 export default async function Home() {
   const [portfolioItems, portfolio, blogPosts] = await Promise.all([
@@ -27,7 +20,7 @@ export default async function Home() {
     <>
       <SectionsProvider>
         <div className='flex flex-row'>
-          <div className='flex-1 w-full'>
+          <div className='flex-1 w-full relative'>
             <HeroSection />
             <AboutSection
               resumeUrl={portfolio.resume.url}
