@@ -30,15 +30,15 @@ const GlobalSearchBtn: FunctionComponent<Props> = ({ onClick }) => {
 
   return (
     <div
-      className='border border-gray-300 text-gray-400 flex flex-row gap-16 items-center px-6 py-5'
+      className='border border-gray-300 text-gray-400 flex flex-row gap-4 lg:gap-16 items-center px-4 py-4 lg:px-6 lg:py-5 w-fit'
       role='button'
       onClick={onClick}
     >
       <Row className='gap-4 items-center'>
         <SearchIcon />
-        <span>Quick Search</span>
+        <span className='hidden lg:block'>Quick Search</span>
       </Row>
-      <span>{keyShortcut}</span>
+      <span className='hidden lg:block'>{keyShortcut}</span>
     </div>
   );
 };

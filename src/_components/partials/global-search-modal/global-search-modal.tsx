@@ -30,7 +30,7 @@ const GlobalSearchModal: FunctionComponent<Props> = ({ isOpen, onClose }) => {
     <AlgoliaSearchProvider>
       <div
         className={classNames(
-          'fixed inset-0 backdrop-blur-sm z-50 flex justify-center items-center'
+          'fixed inset-0 backdrop-blur-sm z-50 p-2 flex flex-col justify-start lg:justify-center items-center'
         )}
       >
         {/* Overlay */}

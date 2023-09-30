@@ -13,6 +13,7 @@ import { navbarItems } from './navbar.constants';
 import GlobalSearchModal from '@/_components/partials/global-search-modal';
 import useModal from '@/_hooks/use-modal';
 import GlobalSearchBtn from '@/_components/common/global-search-btn';
+import Logo from '@/_components/icons/logo';
 
 interface Props {
   // no props
@@ -75,17 +76,11 @@ const Navbar: FunctionComponent<Props> = () => {
             'bg-white text-gray-700'
           )}
         >
-          <div className='absolute pointer-events-none inset-0'>
-            <div className='max-w-7xl w-full h-full mx-auto'>&nbsp;</div>
-          </div>
-
-          <div className='select-none'>
+          <nav className='flex-1 flex flex-row gap-16 items-center'>
             <Link href='/'>
-              <span className='font-capital text-[24px]'>P</span>
+              <Logo className='aspect-square w-14 lg:w-16' />
             </Link>
-          </div>
-          <nav>
-            <ul className='flex-row space-x-8 hidden md:flex items-center'>
+            <ul className='flex-row space-x-8 hidden md:flex items-center pt-1'>
               {navbarItems.map((item, i) => (
                 <WebLink
                   href={item.href}
@@ -94,12 +89,17 @@ const Navbar: FunctionComponent<Props> = () => {
                   key={i}
                 />
               ))}
-              <GlobalSearchBtn onClick={handleClickGlobalSearchBtn} />
             </ul>
-            <button className='block md:hidden' onClick={handleToggleMenu}>
-              <HamburgerMenuIcon />
-            </button>
           </nav>
+          <div className=''>
+            <GlobalSearchBtn onClick={handleClickGlobalSearchBtn} />
+          </div>
+          <button
+            className='block md:hidden p-4 border border-gray-300 ml-2'
+            onClick={handleToggleMenu}
+          >
+            <HamburgerMenuIcon />
+          </button>
         </Container>
       </div>
 

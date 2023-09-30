@@ -27,8 +27,6 @@ export default async function Home() {
     <>
       <SectionsProvider>
         <div className='flex flex-row'>
-          <SideNav />
-
           <div className='flex-1 w-full lg:px-[100px]'>
             <HeroSection />
             <AboutSection
