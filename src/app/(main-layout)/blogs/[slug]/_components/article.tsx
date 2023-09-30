@@ -27,8 +27,8 @@ const Article: FunctionComponent<ArticleProps> = ({
 }) => {
   return (
     <>
-      <Container>
-        <div className='z-10  '>
+      <Container className='pt-12'>
+        <div className='z-10'>
           <Stack className='space-y-12 mb-24'>
             <Link
               className={classNames(preview ? 'pointer-events-none' : '')}
@@ -80,22 +80,22 @@ const Article: FunctionComponent<ArticleProps> = ({
                   ) : null}
                 </div>
                 <p className='text-slate-500 text-sm md:text-base line-clamp-1'>
-                  thumbnail
+                  banner
                 </p>
               </Stack>
 
-              <div className='border-b border-slate-400 pb-12 md:pb-24 text-xl text-slate-600'>
+              <div className='border-b border-slate-400 pb-12 md:pb-24 text-xl text-slate-600 font-serif'>
                 <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>
               </div>
 
-              <Row className='space-x-4 items-center'>
-                <p className='text-slate-600'>tags:</p>
+              <Stack className='space-y-4'>
+                <p className='text-slate-600 font-medium'>TAGS:</p>
                 <Row className='gap-4 flex-wrap'>
                   {blogPost.tags?.map((tag, i) => (
                     <AppTag key={i} tag={tag} />
                   ))}
                 </Row>
-              </Row>
+              </Stack>
 
               <Link
                 className={classNames(preview ? 'pointer-events-none' : '')}

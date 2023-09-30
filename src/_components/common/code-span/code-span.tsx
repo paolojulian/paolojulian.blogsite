@@ -12,7 +12,7 @@ const CodeSpan: FunctionComponent<Props> = ({ children, language }) => {
     <code
       className={classNames(
         'px-2.5 py-1.5 text-base font-medium rounded text-accent-700 bg-slate-800/10',
-        'font-sans'
+        'font-serif'
       )}
       data-testid={DATA_TEST.container}
       data-language={language}

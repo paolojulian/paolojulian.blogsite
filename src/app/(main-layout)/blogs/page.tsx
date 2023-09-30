@@ -23,9 +23,9 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
 
   return (
     <>
-      <Container className='pt-12 pb-40 flex flex-col gap-8 xl:gap-20 z-10 relative'>
-        <Stack className='text-5xl md:text-8xl font-medium xl:max-w-[70%] pt-12'>
-          <h1 className=''>
+      <Container className='pt-12 pb-40 flex flex-col gap-8 xl:gap-8 z-10 relative'>
+        <Stack className='text-5xl md:text-7xl font-medium xl:max-w-[70%] pt-12'>
+          <h1 className='uppercase'>
             <span className='text-slate-400'>Explore my articles,</span>
             <span className='text-slate-800'>
               <br />
@@ -47,11 +47,11 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
           <h2>LATEST ARTICLES</h2>
           <p>01</p>
         </Row>
-        <Stack className='gap-12 py-12'>
+        <div className='gap-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
           {blogPosts.map((blogPost, i) => (
             <BlogItem blogPost={blogPost} key={i} />
           ))}
-        </Stack>
+        </div>
       </Container>
     </>
   );

@@ -43,7 +43,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
           )}
           data-testid={DATA_TEST.mainContainer}
         >
-          <div className='w-full font-sans'>
+          <div className='w-full'>
             {language !== 'no-copy' ? (
               <Row
                 className={classNames(
@@ -154,6 +154,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
             }}
             customStyle={{
               fontSize: '1rem',
+              fontFamily: 'arial'
             }}
           >
             {childrenText}

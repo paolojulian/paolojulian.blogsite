@@ -20,7 +20,7 @@ const ContactPage: FunctionComponent<Props> = (props) => {
             <div className='flex flex-col lg:flex-row py-32 bg-white gap-16 2xl:gap-32 justify-between lg:items-center w-full'>
               {/* Heading */}
               <Stack className='gap-16'>
-                <Stack className='text-8xl font-medium'>
+                <Stack className='text-7xl font-medium uppercase'>
                   <div className='text-slate-400'>Get in touch.</div>
                   <div className='text-slate-800'>
                     Let&lsquo;s work
