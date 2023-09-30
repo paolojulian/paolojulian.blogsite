@@ -14,7 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className='font-sans text-slate-700'>
+    <div
+      className={classNames(
+        'font-sans text-slate-700',
+        'border-l md:border-l-4 lg:border-l-8 border-primary-300'
+      )}
+    >
       <Navbar />
       <div className='flex flex-row w-full max-w-screen-2xl mx-auto'>
         <main
@@ -22,8 +27,7 @@ export default function RootLayout({
             'text-slate-700 bg-white',
             'flex flex-col relative',
             'w-full',
-            'px-0', // spacing
-            'border-l md:border-l-4 lg:border-l-8 border-primary-300'
+            'px-0' // spacing
           )}
         >
           <div className='2xl:max-w-screen-2xl w-full mx-auto'>{children}</div>

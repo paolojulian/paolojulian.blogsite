@@ -63,7 +63,6 @@ const Navbar: FunctionComponent<Props> = () => {
       <div
         className={classNames(
           'w-full z-40 lg:h-navbarLg py-6',
-          'border-l md:border-l-4 lg:border-l-8 border-primary-300',
           'bg-white/80 backdrop-blur-md',
           'font-medium',
           'sticky top-0 inset-x-0'
