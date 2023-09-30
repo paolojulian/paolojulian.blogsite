@@ -33,19 +33,26 @@ describe('TESTING GlobalSearchModalSearchBar component', () => {
     describe('WHEN the component is rendered', () => {
       it('THEN it should render the search bar', () => {
         const { getByTestId } = renderComponent();
-        const searchBar = getByTestId(DATA_TEST.container);
+        const searchBar = getByTestId(DATA_TEST.input);
         expect(searchBar).toBeInTheDocument();
+      });
+
+      it('THEN the input should be focused', () => {
+        const { getByTestId } = renderComponent();
+        const searchBar = getByTestId(DATA_TEST.input);
+
+        expect(searchBar).toBe(document.activeElement);
       });
 
       it('THEN it should initially display the provided keyword', () => {
         const { getByTestId } = renderComponent();
-        const searchBar = getByTestId(DATA_TEST.container);
+        const searchBar = getByTestId(DATA_TEST.input);
         expect(searchBar).toHaveValue(mockedKeyword);
       });
 
       it('THEN it should call setKeyword when input changes', () => {
         const { getByTestId } = renderComponent();
-        const searchBar = getByTestId(DATA_TEST.container);
+        const searchBar = getByTestId(DATA_TEST.input);
         fireEvent.change(searchBar, { target: { value: 'New Keyword' } });
         expect(mockedSetKeyword).toHaveBeenCalledWith('New Keyword');
       });
@@ -57,8 +64,8 @@ describe('TESTING GlobalSearchModalSearchBar component', () => {
         const { getByTestId } = render(
           <GlobalSearchModalSearchBar onEsc={handleEscape} />
         );
-        const searchBar = getByTestId(DATA_TEST.escapeBtn);
-        fireEvent.click(searchBar);
+        const escapeBtn = getByTestId(DATA_TEST.escapeBtn);
+        fireEvent.click(escapeBtn);
         expect(handleEscape).toBeCalledTimes(1);
       });
     });

@@ -1,5 +1,5 @@
 const DATA_TEST = {
-  container: 'global-search-modal-search-bar-container',
+  input: 'global-search-modal-search-bar-input',
   escapeBtn: 'global-search-modal-escape-btn',
 }
 

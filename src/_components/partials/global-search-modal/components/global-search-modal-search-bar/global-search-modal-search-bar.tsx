@@ -1,6 +1,6 @@
 import { useAlgoliaSearch } from '../../context/search-provider';
 import DATA_TEST from './global-search-modal-search-bar.constants';
-import React, { FunctionComponent, useEffect } from 'react';
+import React, { FunctionComponent, useEffect, useRef } from 'react';
 import Row from '@/_components/layouts/row';
 import classNames from 'classnames';
 import SearchIcon from '@/_components/icons/search-icon';
@@ -10,11 +10,18 @@ interface Props {
 }
 
 const GlobalSearchModalSearchBar: FunctionComponent<Props> = ({ onEsc }) => {
+  const inputRef = useRef<HTMLInputElement>(null);
   const { keyword, setKeyword } = useAlgoliaSearch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKeyword(e.target.value);
   };
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -39,6 +46,7 @@ const GlobalSearchModalSearchBar: FunctionComponent<Props> = ({ onEsc }) => {
         <SearchIcon />
       </div>
       <input
+        ref={inputRef}
         id='globalSearch'
         className={classNames(
           'pl-16 p-6 rounded-t-xl w-full',
@@ -47,7 +55,7 @@ const GlobalSearchModalSearchBar: FunctionComponent<Props> = ({ onEsc }) => {
         value={keyword}
         onChange={handleChange}
         placeholder='Search...'
-        data-testid={DATA_TEST.container}
+        data-testid={DATA_TEST.input}
       />
       <button
         className={classNames(

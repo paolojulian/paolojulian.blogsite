@@ -11,8 +11,8 @@ import Container from '@/_components/layouts/container';
 import WebLink from './navbar.weblink';
 import { navbarItems } from './navbar.constants';
 import GlobalSearchModal from '@/_components/partials/global-search-modal';
-import SearchIcon from '@/_components/icons/search-icon';
 import useModal from '@/_hooks/use-modal';
+import GlobalSearchBtn from '@/_components/common/global-search-btn';
 
 interface Props {
   // no props
@@ -94,17 +94,7 @@ const Navbar: FunctionComponent<Props> = () => {
                   key={i}
                 />
               ))}
-              <div
-                className='border border-gray-300 text-gray-400 flex flex-row gap-16 items-center px-6 py-5'
-                role='button'
-                onClick={handleClickGlobalSearchBtn}
-              >
-                <Row className='gap-4 items-center'>
-                  <SearchIcon />
-                  <span>Quick Search</span>
-                </Row>
-                <span>⌘K</span>
-              </div>
+              <GlobalSearchBtn onClick={handleClickGlobalSearchBtn} />
             </ul>
             <button className='block md:hidden' onClick={handleToggleMenu}>
               <HamburgerMenuIcon />
