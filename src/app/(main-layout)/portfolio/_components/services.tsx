@@ -34,26 +34,26 @@ const ServicesSection: FunctionComponent<Props> = (props) => {
       id={SECTIONS[2]}
       className='bg-white flex flex-row flex-1 w-full z-10'
     >
-      <Container className='flex flex-col pt-[100px] md:pt-[150px] w-full gap-2 md:gap-[50px]'>
+      <Container className='flex flex-col pt-[100px] md:pt-16 w-full'>
         <div className='text-left'>
           <SectionHeading number={2} section='services'></SectionHeading>
         </div>
-        <Stack className='py-[50px]'>
+        <Stack className=''>
           {SERVICES.map((service, i) => (
             <div
-              className='flex flex-col lg:flex-row gap-2 py-[20px] md:py-[50px] lg:items-center border-b first:border-y border-slate-300'
+              className='flex flex-col lg:flex-row gap-2 py-[20px] md:py-[50px] lg:items-center border-b border-slate-300'
               key={i}
             >
               <p className='text-left text-[16px] tracking-[4px]'>
-                {`02.${i + 1}`}
+                {`0${i + 1}`}
               </p>
               <Row className='w-full flex-1 lg:justify-center items-center lg:text-center'>
-                <p className='text-[24px] tracking-[6px] uppercase flex-1'>
+                <p className='text-2xl font-medium tracking-[6px] uppercase flex-1'>
                   {service.name}
                 </p>
               </Row>
               <Row className='flex-1 justify-center items-center'>
-                <p className='text-slate-500 text-[16px] md:text-[20px]'>
+                <p className='text-slate-500 text-base md:text-2xl'>
                   {service.description}
                 </p>
               </Row>

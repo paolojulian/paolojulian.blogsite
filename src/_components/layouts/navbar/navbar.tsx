@@ -10,6 +10,10 @@ import { usePathname } from 'next/navigation';
 import Container from '@/_components/layouts/container';
 import WebLink from './navbar.weblink';
 import { navbarItems } from './navbar.constants';
+import GlobalSearchModal from '@/_components/partials/global-search-modal';
+import useModal from '@/_hooks/use-modal';
+import GlobalSearchBtn from '@/_components/common/global-search-btn';
+import Logo from '@/_components/icons/logo';
 
 interface Props {
   // no props
@@ -34,10 +38,22 @@ const MobileLink: FunctionComponent<
 };
 
 const Navbar: FunctionComponent<Props> = () => {
+  const {
+    isOpen: isGlobalSearchModalOpen,
+    setIsOpen: setIsGlobalSearchModalOpen,
+  } = useModal();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  const handleClickGlobalSearchBtn = () => {
+    setIsGlobalSearchModalOpen((prev) => !prev);
+  };
+  const handleCloseGlobalSearch = () => {
+    setIsGlobalSearchModalOpen(false);
   };
 
   const pathname = usePathname();
@@ -46,31 +62,31 @@ const Navbar: FunctionComponent<Props> = () => {
     <>
       <div
         className={classNames(
-          'w-full z-40 h-navbar',
+          'w-full z-40 lg:h-navbarLg py-6',
           'border-l md:border-l-4 lg:border-l-8 border-primary-300',
-          'font-medium'
+          'bg-white/80 backdrop-blur-md',
+          'font-medium',
+          'sticky top-0 inset-x-0'
         )}
       >
         <Container
           className={classNames(
-            'justify-between items-center w-full mx-auto',
+            'justify-between items-center w-full max-w-screen-2xl mx-auto',
             'flex flex-row',
             'h-navbar',
             'relative',
-            'bg-white text-gray-700'
+            'text-gray-700'
           )}
         >
-          <div className='absolute pointer-events-none inset-0'>
-            <div className='max-w-7xl w-full h-full mx-auto'>&nbsp;</div>
-          </div>
-
-          <div className='select-none'>
-            <Link href='/'>
-              <span className='font-capital text-[24px]'>P</span>
+          <nav className='flex-1 flex flex-row gap-16 items-center'>
+            <Link
+              href='/'
+              className='bg-gray-800 relative aspect-square h-12 md:h-14 flex justify-center items-center'
+            >
+              <div className='aspect-square w-3 bg-white absolute bottom-0 right-0 z-20'></div>
+              <Logo className='aspect-square w-12 lg:w-16 z-10' />
             </Link>
-          </div>
-          <nav>
-            <ul className='flex-row space-x-8 hidden md:flex'>
+            <ul className='flex-row space-x-8 hidden md:flex items-center pt-1'>
               {navbarItems.map((item, i) => (
                 <WebLink
                   href={item.href}
@@ -80,10 +96,19 @@ const Navbar: FunctionComponent<Props> = () => {
                 />
               ))}
             </ul>
-            <button className='block md:hidden' onClick={handleToggleMenu}>
-              <HamburgerMenuIcon />
-            </button>
           </nav>
+          <div className=''>
+            <GlobalSearchBtn onClick={handleClickGlobalSearchBtn} />
+          </div>
+          <button
+            className={classNames(
+              'block md:hidden p-4 border border-gray-300 ml-2 aspect-square h-12 md:h-16',
+              'flex flex-col justify-center items-center'
+            )}
+            onClick={handleToggleMenu}
+          >
+            <HamburgerMenuIcon />
+          </button>
         </Container>
       </div>
 
@@ -137,6 +162,10 @@ const Navbar: FunctionComponent<Props> = () => {
           </nav>
         </Stack>
       </Stack>
+      <GlobalSearchModal
+        isOpen={isGlobalSearchModalOpen}
+        onClose={handleCloseGlobalSearch}
+      />
     </>
   );
 };

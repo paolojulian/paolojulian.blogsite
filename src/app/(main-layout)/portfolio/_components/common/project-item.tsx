@@ -43,7 +43,7 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
   return (
     <ProjectItemContext.Provider value={project}>
       <div
-        className='first:border-y border-b border-slate-300 group transition md:hover:bg-red-50/50'
+        className='border-b border-slate-300 group transition md:hover:bg-red-50/50'
         role='button'
         onClick={handleOpenDetails}
       >
@@ -56,12 +56,12 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
               fill
             />
           </div>
-          <Stack className='flex-1 space-y-[10px] items-start md:max-w-[500px]'>
-            <p className='text-[16px] tracking-[1.4px] text-slate-700'>{`03.${number}`}</p>
-            <p className='uppercase text-[24px] md:text-[32px] text-slate-700 tracking-[2.24px]'>
+          <Stack className='flex-1 space-y-[10px] items-start md:max-w-[500px] xl:max-w-[720px]'>
+            <p className='text-[16px] tracking-[1.4px] text-slate-700'>{`0${number}`}</p>
+            <p className='uppercase text-2xl md:text-3xl font-medium text-slate-700 tracking-[2.24px]'>
               {project.name}
             </p>
-            <p className='text-slate-500 text-[16px] line-clamp-4 xl:line-clamp-6'>
+            <p className='text-slate-500 text-base md:text-lg line-clamp-4 xl:line-clamp-6'>
               {project.description}
             </p>
             <button className='flex flex-row justify-center items-center space-x-[10px] text-primary-400'>

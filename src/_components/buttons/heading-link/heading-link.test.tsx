@@ -3,11 +3,10 @@ import HeadingLink from '@/_components/buttons/heading-link';
 import { DATA_TEST } from '@/_components/buttons/heading-link/heading-link.constants';
 import useCopy from '@/_hooks/use-copy';
 
-const mockedHandleClickCopy = jest.fn();
 jest.mock('@/_hooks/use-copy', () => {
   return jest.fn(() => ({
     isCopied: false,
-    handleClickCopy: mockedHandleClickCopy,
+    handleClickCopy: jest.fn(),
   }));
 });
 
@@ -21,10 +20,6 @@ describe('TESTING HeadingLink Component', () => {
     function renderHeadingLink() {
       render(<HeadingLink Heading={Header} tag={tag} />);
     }
-
-    afterEach(() => {
-      // mockedUseCopy.mockClear();
-    });
 
     describe('WHEN the HeadingLink is rendered', () => {
       it('THEN it should render the link', () => {
@@ -55,6 +50,11 @@ describe('TESTING HeadingLink Component', () => {
 
     describe('WHEN the popover link is clicked', () => {
       it('THEN it should call the handleClickCopy function', () => {
+        const mockedHandleClickCopy = jest.fn();
+        mockedUseCopy.mockReturnValueOnce({
+          isCopied: false,
+          handleClickCopy: mockedHandleClickCopy,
+        });
         renderHeadingLink();
 
         const popoverLink = screen.getByTestId(DATA_TEST.popover);
@@ -67,10 +67,10 @@ describe('TESTING HeadingLink Component', () => {
 
     describe('WHEN the popover link is copied', () => {
       it('THEN it should contain the text "Copied"', () => {
-        mockedUseCopy.mockImplementationOnce(() => ({
+        mockedUseCopy.mockReturnValueOnce({
           isCopied: true,
           handleClickCopy: jest.fn(),
-        }));
+        });
 
         renderHeadingLink();
 

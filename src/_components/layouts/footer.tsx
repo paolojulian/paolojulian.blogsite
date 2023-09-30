@@ -53,7 +53,7 @@ const FooterSection: FunctionComponent<Props> = (props) => {
         </Stack>
 
         <Stack className='px-8 md:px-12 md:p-12 gap-[8px] flex-1 justify-end relative'>
-          <div className='hidden lg:block font-capital text-[200px] leading-[200px] text-cyan-300/5 absolute left-1/2 -translate-x-1/2 top-[48px] whitespace-nowrap'>
+          <div className='hidden font-black lg:block text-[200px] leading-[200px] text-cyan-300/5 absolute left-1/2 -translate-x-1/2 top-[48px] whitespace-nowrap'>
             PAOLO JULIAN
           </div>
           <div className='flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-20 py-[40px] text-lg'>

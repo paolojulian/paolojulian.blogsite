@@ -3,14 +3,10 @@ import React, {
   FunctionComponent,
   useCallback,
   useEffect,
-  useLayoutEffect,
   useRef,
-  useState,
 } from 'react';
 import classNames from 'classnames';
-import CrossIcon from '@/app/custom-components/application-ui/layouts/brand-sidebar-with-header/_components/icons/cross-icon';
 import Row from '@/_components/layouts/row';
-import createWrapperAndAppendToBody from '@/_utils/create-wrapper-and-append-to-body';
 import usePortal from '@/_hooks/use-portal/use-portal';
 import LeftArrowIcon from '@/_components/icons/left-arrow-icon';
 

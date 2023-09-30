@@ -8,11 +8,13 @@ interface Props extends HtmlHTMLAttributes<HTMLHeadingElement> {
 
 const SectionHeading: FunctionComponent<Props> = ({ number, section }) => {
   return (
-    <h2 className='text-[20px] text-slate-400 tracking-[6px]'>
-      <span className='text-red-400'>{`0${number}`}</span>&nbsp;
-      <span>{`//`}</span>&nbsp;
-      <span className='uppercase'>{section}</span>
-    </h2>
+    <div className='border-b-2 border-slate-400 p-2'>
+      <h2 className='text-[20px] text-slate-400 tracking-widest'>
+        <span className='text-red-400'>{`0${number}`}</span>&nbsp;
+        <span>{`//`}</span>&nbsp;
+        <span className='uppercase'>{section}</span>
+      </h2>
+    </div>
   );
 };
 

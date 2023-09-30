@@ -8,13 +8,6 @@ import AboutSection from '@/app/(main-layout)/portfolio/_components/about';
 import ServicesSection from '@/app/(main-layout)/portfolio/_components/services';
 import ProjectsSection from '@/app/(main-layout)/portfolio/_components/projects';
 import ArticlesSection from '@/app/(main-layout)/portfolio/_components/articles';
-import SideNav from '@/app/(main-layout)/portfolio/_components/common/side-nav';
-import Stack from '@/_components/layouts/stack';
-import Link from 'next/link';
-import Fab from '@/_components/buttons/fab';
-import LinkedinIcon from '@/_components/icons/linkedin-icon';
-import MailIcon from '@/app/(main-layout)/portfolio/_components/icons/mail-icon';
-import PhoneIcon from '@/app/(main-layout)/portfolio/_components/icons/phone-icon';
 
 export default async function Home() {
   const [portfolioItems, portfolio, blogPosts] = await Promise.all([
@@ -27,9 +20,7 @@ export default async function Home() {
     <>
       <SectionsProvider>
         <div className='flex flex-row'>
-          <SideNav />
-
-          <div className='flex-1 w-full lg:px-[100px]'>
+          <div className='flex-1 w-full relative'>
             <HeroSection />
             <AboutSection
               resumeUrl={portfolio.resume.url}
@@ -40,7 +31,7 @@ export default async function Home() {
             <ArticlesSection items={blogPosts} />
           </div>
 
-          <Stack className='hidden fixed right-0 top-1/2 -translate-y-1/2 w-[100px] lg:flex pl-8'>
+          {/* <Stack className='hidden fixed right-0 top-1/2 -translate-y-1/2 w-[100px] lg:flex pl-8'>
             <Stack className='w-full pr-12 h-fit justify-center space-y-[15px] text-white'>
               <Link href='https://www.linkedin.com/in/pipz/'>
                 <Fab size='sm'>
@@ -58,7 +49,7 @@ export default async function Home() {
                 </Fab>
               </Link>
             </Stack>
-          </Stack>
+          </Stack> */}
         </div>
 
         {/* <Footer /> */}

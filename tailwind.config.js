@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        navbar: '4rem',
+        navbarLg: '6rem',
+        // navbar: '4rem',
       },
       width: {
         sidebar: '18rem',
@@ -40,6 +41,10 @@ module.exports = {
       },
       transitionTimingFunction: {
         fadeIn: 'cubic-bezier(.24,.6,.64,.65)',
+      },
+      boxShadow: {
+        mediumBlur: '0px 8px 28px 0px rgba(0,0,0,0.25)',
+        highBlur: '0px 4px 28px 0px rgba(0,0,0,0.25)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <div className='font-sans text-slate-700'>
       <Navbar />
-      <div className='flex flex-row w-full'>
+      <div className='flex flex-row w-full max-w-screen-2xl mx-auto'>
         <main
           className={classNames(
             'text-slate-700 bg-white',

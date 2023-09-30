@@ -19,11 +19,11 @@ const ProjectsSection: FunctionComponent<Props> = ({ items }) => {
       id={SECTIONS[3]}
       className='bg-white flex flex-row flex-1 w-full z-10'
     >
-      <Container className='flex flex-col pt-[100px] md:pt-[150px] w-full space-y-[25px]'>
+      <Container className='flex flex-col pt-[100px] md:pt-[150px] w-full'>
         <div className='text-left'>
           <SectionHeading number={3} section='latest projects'></SectionHeading>
         </div>
-        <Stack className='py-[50px]'>
+        <Stack className=''>
           {items.map((item, i) => (
             <MemoizedProjectItem
               number={i + 1}
