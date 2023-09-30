@@ -2,6 +2,7 @@ import React, { FunctionComponent, useEffect, useMemo } from 'react';
 import SearchIcon from '@/_components/icons/search-icon';
 import Row from '@/_components/layouts/row';
 import { isMacOS } from '@/_utils/navigator/navigator';
+import classNames from 'classnames';
 
 interface Props {
   onClick: () => void;
@@ -30,7 +31,11 @@ const GlobalSearchBtn: FunctionComponent<Props> = ({ onClick }) => {
 
   return (
     <div
-      className='transition border border-gray-300 hover:border-primary-400 text-gray-400 hover:text-gray-500 flex flex-row gap-4 lg:gap-16 items-center px-4 py-4 lg:px-6 lg:py-5 w-fit'
+      className={classNames(
+        'transition border border-gray-300 hover:border-primary-400 text-gray-400 hover:text-gray-500  px-4 lg:px-6',
+        'w-12 md:w-fit h-12 md:h-16',
+        'flex flex-col justify-center items-center gap-4 lg:gap-16'
+      )}
       role='button'
       onClick={onClick}
     >

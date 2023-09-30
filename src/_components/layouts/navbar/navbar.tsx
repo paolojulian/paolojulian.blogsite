@@ -69,7 +69,7 @@ const Navbar: FunctionComponent<Props> = () => {
       >
         <Container
           className={classNames(
-            'justify-between items-center w-full mx-auto',
+            'justify-between items-center w-full max-w-screen-2xl mx-auto',
             'flex flex-row',
             'h-navbar',
             'relative',
@@ -77,8 +77,12 @@ const Navbar: FunctionComponent<Props> = () => {
           )}
         >
           <nav className='flex-1 flex flex-row gap-16 items-center'>
-            <Link href='/'>
-              <Logo className='aspect-square w-14 lg:w-16' />
+            <Link
+              href='/'
+              className='bg-gray-800 relative aspect-square h-12 md:h-16 flex justify-center items-center'
+            >
+              <div className='aspect-square w-3 bg-white absolute bottom-0 right-0 z-20'></div>
+              <Logo className='aspect-square w-12 lg:w-16 z-10' />
             </Link>
             <ul className='flex-row space-x-8 hidden md:flex items-center pt-1'>
               {navbarItems.map((item, i) => (
@@ -95,7 +99,10 @@ const Navbar: FunctionComponent<Props> = () => {
             <GlobalSearchBtn onClick={handleClickGlobalSearchBtn} />
           </div>
           <button
-            className='block md:hidden p-4 border border-gray-300 ml-2'
+            className={classNames(
+              'block md:hidden p-4 border border-gray-300 ml-2 aspect-square h-12 md:h-16',
+              'flex flex-col justify-center items-center'
+            )}
             onClick={handleToggleMenu}
           >
             <HamburgerMenuIcon />

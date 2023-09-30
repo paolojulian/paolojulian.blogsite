@@ -20,38 +20,24 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl, about }) => {
   return (
     <section
       id={SECTIONS[1]}
-      className='bg-white flex flex-row flex-1 max-w-main mx-auto w-full z-10'
+      className='bg-white flex flex-row flex-1 w-full z-10'
     >
       <Container className='flex flex-col pt-[100px] md:pt-[150px] w-full gap-[50px]'>
         <div className='text-left'>
           <SectionHeading number={1} section='about'></SectionHeading>
         </div>
         <div className='flex flex-col md:flex-row gap-[50px] xl:gap-[100px]'>
-          <div className='relative aspect-[400/465] w-full md:w-[250px] lg:w-[300px] 2xl:w-[400px]'>
-            <div className='w-[15px] lg:w-[20px] 2xl:w-[30px] aspect-square bg-primary-400 absolute left-0 bottom-0 z-10'></div>
-            <Image
-              fill
-              className='object-cover'
-              src='/assets/portfolio/profile-image.png'
-              alt='profile-picture'
-            />
-          </div>
-          <Stack className='flex-1 text-left md:text-right md:justify-end md:items-end gap-[20px] md:gap-[50px]'>
-            <h3 className='text-[32px] md:text-[48px] tracking-[1.6px] md:tracking-[2.4px]'>
-              WHO AM I?
-            </h3>
-            <div
-              className={classNames(
-                'text-[16px] md:text-[20px] text-slate-500 font-normal'
-              )}
-            >
+          <Stack className='flex-1 text-left md:items-start gap-[20px] md:gap-[50px]'>
+            <div className={classNames('text-xl md:text-xl font-medium')}>
               <ReactMarkdown
                 components={{
                   p: ({ children }) => (
-                    <p className='tracking-wide text-slate-500'>{children}</p>
+                    <p className='tracking-wide leading-tight text-4xl text-gray-700'>
+                      {children}
+                    </p>
                   ),
                   strong: ({ children }) => (
-                    <strong className='text-red-500 font-normal'>
+                    <strong className='text-gray-400/70 font-medium'>
                       {children}
                     </strong>
                   ),
@@ -73,6 +59,15 @@ const AboutSection: FunctionComponent<Props> = ({ resumeUrl, about }) => {
               <div className='w-[15px] aspect-square bg-white absolute left-0 top-0'></div>
             </Link>
           </Stack>
+          <div className='relative aspect-[400/465] w-full md:w-[250px] lg:w-[300px] 2xl:w-[400px]'>
+            <div className='w-[15px] lg:w-[20px] 2xl:w-[30px] aspect-square bg-primary-400 absolute left-0 bottom-0 z-10'></div>
+            <Image
+              fill
+              className='object-cover'
+              src='/assets/portfolio/profile-image.png'
+              alt='profile-picture'
+            />
+          </div>
         </div>
       </Container>
     </section>

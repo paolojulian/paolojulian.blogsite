@@ -32,10 +32,10 @@ const ArticleItem = React.memo(
               <div className='group-hover:translate-x-0 -translate-x-full transition-transform absolute inset-0 bg-primary-400/20'></div>
             </div>
             <Stack>
-              <p className='text-slate-500 text-[14px]'>
+              <p className='italic text-slate-400 text-[14px]'>
                 <AppDate dateTime={article.sys.publishedAt} />
               </p>
-              <p className='uppercase text-[16px] text-slate-600 line-clamp-2'>
+              <p className='uppercase text-base font-medium text-slate-600 line-clamp-2'>
                 {article.title}
               </p>
             </Stack>

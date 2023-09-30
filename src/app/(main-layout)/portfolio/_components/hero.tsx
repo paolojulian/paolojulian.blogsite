@@ -6,6 +6,8 @@ import Container from '@/_components/layouts/container';
 import classNames from 'classnames';
 import { SECTIONS } from '@/app/(main-layout)/portfolio/_context/sections-context';
 import useScrolledDown from '@/_hooks/use-scrolled-down';
+import Row from '@/_components/layouts/row';
+import Link from 'next/link';
 
 interface Props {
   // No Props
@@ -32,32 +34,30 @@ const HeroSection: FunctionComponent<Props> = () => {
           />
         </div>
       </div>
+
       <section
         id={SECTIONS[0]}
-        className='flex flex-row min-h-[calc(100vh-7rem)] flex-1 w-full justify-center'
+        className='flex flex-row min-h-[calc(100vh-7rem)] flex-1 w-full max-w-screen-2xl relative justify-center'
       >
-        <Container className='flex-1 flex flex-col justify-center md:items-center text-left md:text-center gap-5 max-w-screen-xl w-full relative'>
+        <Container className='flex-1 flex flex-col justify-center md:items-center text-left md:text-center gap-5 max-w-screen-2xl w-full relative'>
           <h1
-            className='text-5xl font-medium tracking-wider lg:text-6xl xl:text-7xl md:tracking-widest md:leading-[4.5rem] uppercase'
-            style={{
-              willChange: 'transform',
-            }}
+            className={classNames(
+              'font-medium tracking-wider text-7xl lg:text-6xl xl:text-7xl md:tracking-widest md:leading-[4.5rem] uppercase',
+              'flex flex-col md:flex-row gap-2 md:gap-4'
+            )}
             ref={logoRef}
           >
             <span>
               <span className='text-slate-300'>K</span>
               EEP
             </span>
-            &nbsp;
             <span>
               <span className='text-slate-300'>I</span>T
             </span>
-            &nbsp;
             <span>
               <span className='text-slate-300'>S</span>
               IMPLE
             </span>
-            &nbsp;
             <span>
               <span className='text-slate-300'>S</span>
               TUPID
@@ -72,10 +72,25 @@ const HeroSection: FunctionComponent<Props> = () => {
             <p>SOFTWARE ENGINEER</p>
           </div>
 
+          <Container className='w-full absolute inset-x-0 bottom-0'>
+            <Row className='py-8 justify-between items-center'>
+              <Link
+                href='/contact'
+                className='h-16 w-fit px-8 border border-gray-300 hover:border-primary-300 hover:bg-primary-50 transition font-medium flex flex-col justify-center items-center'
+              >
+                Get in touch
+              </Link>
+              <Row className='hidden md:flex gap-8 text-primary-400 font-medium'>
+                <Link href=''>Linkedin</Link>
+                <Link href=''>Facebook</Link>
+                <Link href=''>Instagram</Link>
+              </Row>
+            </Row>
+          </Container>
           <Stack
             ref={readMoreRef}
             className={classNames(
-              'absolute left-1/2 -bottom-8 -translate-x-1/2 items-center z-30 transition-opacity duration-1000',
+              'hidden md:flex absolute left-1/2 -bottom-8 -translate-x-1/2 items-center z-30 transition-opacity duration-1000',
               isScrolledDown ? 'opacity-0' : 'opacity-100'
             )}
           >

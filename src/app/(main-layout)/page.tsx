@@ -27,7 +27,7 @@ export default async function Home() {
     <>
       <SectionsProvider>
         <div className='flex flex-row'>
-          <div className='flex-1 w-full lg:px-[100px]'>
+          <div className='flex-1 w-full'>
             <HeroSection />
             <AboutSection
               resumeUrl={portfolio.resume.url}
