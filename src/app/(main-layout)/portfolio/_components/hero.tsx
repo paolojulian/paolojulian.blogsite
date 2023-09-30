@@ -20,7 +20,7 @@ const HeroSection: FunctionComponent<Props> = () => {
 
   return (
     <>
-      <div className='fixed inset-0 pointer-events-none  '>
+      <div className='fixed inset-0 pointer-events-none '>
         <div className='h-full aspect-[880/1002] max-w-full absolute left-[100px] bottom-0 opacity-50 lg:pl-[100px]'>
           <Image
             className='object-cover object-right select-none'
@@ -34,23 +34,37 @@ const HeroSection: FunctionComponent<Props> = () => {
       </div>
       <section
         id={SECTIONS[0]}
-        className='flex flex-row min-h-[calc(100vh-4rem)] flex-1 w-full justify-center'
+        className='flex flex-row min-h-[calc(100vh-7rem)] flex-1 w-full justify-center'
       >
-        <div className='hidden md:block w-[100px]'></div>
-        <Container className='flex-1 flex flex-col justify-center md:items-center text-left md:text-center gap-[20px] max-w-screen-xl w-full relative'>
+        <Container className='flex-1 flex flex-col justify-center md:items-center text-left md:text-center gap-5 max-w-screen-xl w-full relative'>
           <h1
-            className='text-5xl tracking-wider md:text-5xl md:tracking-widest md:leading-[72px]'
+            className='text-5xl font-medium tracking-wider lg:text-6xl xl:text-7xl md:tracking-widest md:leading-[4.5rem] uppercase'
             style={{
               willChange: 'transform',
             }}
             ref={logoRef}
           >
-            <span>SIMPLIFY YOUR LIFE,</span>
-            <br />
-            <span>AMPLIFY YOUR HAPPINESS.</span>
+            <span>
+              <span className='text-slate-300'>K</span>
+              EEP
+            </span>
+            &nbsp;
+            <span>
+              <span className='text-slate-300'>I</span>T
+            </span>
+            &nbsp;
+            <span>
+              <span className='text-slate-300'>S</span>
+              IMPLE
+            </span>
+            &nbsp;
+            <span>
+              <span className='text-slate-300'>S</span>
+              TUPID
+            </span>
           </h1>
           <div
-            className='flex flex-col md:flex-row font-black text-[12px] tracking-[12.32px] uppercase md:items-center gap-2 md:gap-4 text-gray-400 font-sans'
+            className='flex flex-col md:flex-row font-black text-[12px] tracking-[12.32px] uppercase md:items-center gap-2 md:gap-4 text-gray-400 font-sans pb-[4rem]'
             ref={professionRef}
           >
             <p>PAOLO JULIAN</p>

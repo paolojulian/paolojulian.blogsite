@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        navbar: '4rem',
+        navbarLg: '7rem',
+        // navbar: '4rem',
       },
       width: {
         sidebar: '18rem',

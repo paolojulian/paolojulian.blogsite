@@ -38,7 +38,7 @@ export default async function Home() {
             <ArticlesSection items={blogPosts} />
           </div>
 
-          <Stack className='hidden fixed right-0 top-1/2 -translate-y-1/2 w-[100px] lg:flex pl-8'>
+          {/* <Stack className='hidden fixed right-0 top-1/2 -translate-y-1/2 w-[100px] lg:flex pl-8'>
             <Stack className='w-full pr-12 h-fit justify-center space-y-[15px] text-white'>
               <Link href='https://www.linkedin.com/in/pipz/'>
                 <Fab size='sm'>
@@ -56,7 +56,7 @@ export default async function Home() {
                 </Fab>
               </Link>
             </Stack>
-          </Stack>
+          </Stack> */}
         </div>
 
         {/* <Footer /> */}

@@ -50,7 +50,7 @@ const GlobalSearchModalSearchBar: FunctionComponent<Props> = ({ onEsc }) => {
         id='globalSearch'
         className={classNames(
           'pl-16 p-6 rounded-t-xl w-full',
-          'border-slate-400 focus:outline-none focus:ring focus:border-slate-800'
+          'border-slate-400 focus:outline-none focus:ring ring-primary-300 focus:border-slate-800'
         )}
         value={keyword}
         onChange={handleChange}

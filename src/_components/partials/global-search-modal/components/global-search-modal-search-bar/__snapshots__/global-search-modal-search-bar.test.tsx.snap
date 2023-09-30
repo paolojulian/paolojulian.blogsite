@@ -30,7 +30,7 @@ exports[`TESTING GlobalSearchModalSearchBar component GIVEN a keyword and onEsc 
       </svg>
     </div>
     <input
-      class="pl-16 p-6 rounded-t-xl w-full border-slate-400 focus:outline-none focus:ring focus:border-slate-800"
+      class="pl-16 p-6 rounded-t-xl w-full border-slate-400 focus:outline-none focus:ring ring-primary-300 focus:border-slate-800"
       data-testid="global-search-modal-search-bar-input"
       id="globalSearch"
       placeholder="Search..."
