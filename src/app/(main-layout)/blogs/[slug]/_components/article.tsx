@@ -43,26 +43,22 @@ const Article: FunctionComponent<ArticleProps> = ({
             </Link>
 
             {/* header */}
-            <Stack className='relative space-y-8 py-4 lg:py-4'>
-              <h1 className='text-6xl md:text-7xl xl:max-w-[70%] font-medium text-slate-800'>
+            <Stack className='relative gap-3 py-4 lg:py-4'>
+              <span className='text-gray-400'>
+                <AppDate dateTime={blogPost.sys.firstPublishedAt} />
+              </span>
+              <h1 className='text-5xl lg:max-w-[70%] font-semibold text-slate-800'>
                 {blogPost.title}
               </h1>
+              <span className='text-slate-700'>
+                by: {'Paolo Vincent Julian'}
+              </span>
             </Stack>
 
-            <Row className='border-b-2 border-gray-400 justify-between p-2'>
-              <span className='text-gray-400 md:text-lg italic inline'>
-                {blogPost.sys.publishedAt !== blogPost.sys.firstPublishedAt
-                  ? 'Updated '
-                  : ' '}
-                <AppDate dateTime={blogPost.sys.publishedAt} />
-              </span>
-              <address className='text-red-500 text-lg'>
-                Paolo Vincent Julian
-              </address>
-            </Row>
+            <Row className='border-b-2 border-gray-400 justify-between p-2'></Row>
 
             {/* content */}
-            <Stack className='space-y-12 pb-6 md:pb-12 w-full max-w-screen-md mx-auto overflow-x-hidden'>
+            <Stack className='space-y-12 py-6 md:py-12 w-full max-w-screen-md mx-auto overflow-x-hidden'>
               <Stack className='space-y-1 items-center'>
                 <div className='w-full relative'>
                   {blogPost.banner ? (
@@ -83,6 +79,15 @@ const Article: FunctionComponent<ArticleProps> = ({
                   banner
                 </p>
               </Stack>
+
+              <span className='text-gray-400'>
+                {blogPost.sys.publishedAt !== blogPost.sys.firstPublishedAt ? (
+                  <>
+                    <span>LAST UPDATED&nbsp;</span>
+                    <AppDate dateTime={blogPost.sys.publishedAt} />
+                  </>
+                ) : null}
+              </span>
 
               <div className='border-b border-slate-400 pb-12 md:pb-24 text-xl text-slate-600 font-serif'>
                 <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>

@@ -8,13 +8,17 @@ export type AppDateProps = {
 
 const AppDate: FunctionComponent<AppDateProps> = ({
   dateTime,
-  format = 'DD-MMM-YYYY',
+  format = 'MMM DD, YYYY',
 }) => {
   const formattedDate = useMemo(
     () => dayjs(dateTime).format(format),
     [dateTime, format]
   );
-  return <time dateTime={formattedDate}>{formattedDate}</time>;
+  return (
+    <time className='uppercase' dateTime={formattedDate}>
+      {formattedDate}
+    </time>
+  );
 };
 
 export default AppDate;
