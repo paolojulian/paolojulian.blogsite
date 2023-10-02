@@ -17,7 +17,7 @@ const MenuButton: FunctionComponent<Props> = () => {
     <button
       className={[
         'w-20 aspect-square rounded-full shadow-highBlur',
-        'transition',
+        'transition z-50',
         'active:scale-95',
         'fixed left-1/2 bottom-12 -translate-x-1/2',
         'group',

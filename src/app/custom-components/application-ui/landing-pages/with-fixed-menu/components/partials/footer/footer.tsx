@@ -15,7 +15,7 @@ const Footer: FunctionComponent<Props> = (props) => {
     <footer className='max-w-screen-2xl mx-auto w-full mb-20 border-t border-gray-200'>
       <Container className='py-12 text-gray-700'>
         <div className='text-center flex flex-col items-center'>
-          <Text className='text-5xl lg:text-7xl leading-normal'>Get in Touch</Text>
+          <Text className='text-5xl lg:text-7xl leading-normal lg:leading-normal'>Get in Touch</Text>
           <Link
             href='/contact'
             className='text-base font-sans text-primary-400 font-semibold group'

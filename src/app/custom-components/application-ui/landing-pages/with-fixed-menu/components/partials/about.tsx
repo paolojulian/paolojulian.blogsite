@@ -34,7 +34,7 @@ const About: FunctionComponent<Props> = async () => {
                 </Text>
               ),
               strong: ({ children }) => (
-                <Text as='strong' className='text-primary-400 font-medium'>
+                <Text as='strong' className='text-primary-400 font-medium leading-tight'>
                   {children}
                 </Text>
               ),

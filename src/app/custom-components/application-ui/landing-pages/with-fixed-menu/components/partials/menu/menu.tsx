@@ -15,8 +15,8 @@ const Menu: FunctionComponent<Props> = () => {
     <nav
       className={[
         'absolute bottom-0 left-0 bg-slate-950',
-        'py-12 h-1/2 w-full',
-        'duration-500 -z-10',
+        'py-12 h-1/2 w-full z-0',
+        'duration-500',
         // isOpen ? 'translate-y-0' : 'translate-y-full',
       ].join(' ')}
     >
@@ -34,7 +34,7 @@ const Menu: FunctionComponent<Props> = () => {
         />
         <MenuItem
           title='Articles'
-          description='Things I wrote throughout my experience.'
+          description='Things I wrote during my journey.'
         />
         <MenuItem
           title='Components'
@@ -42,7 +42,7 @@ const Menu: FunctionComponent<Props> = () => {
         />
         <MenuItem
           title='Contact'
-          description='Contact form, socials, emails and other stuff.'
+          description='Getting in touch, socials, emails and more.'
         />
       </Container>
     </nav>

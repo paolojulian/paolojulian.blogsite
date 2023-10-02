@@ -12,13 +12,18 @@ const MenuItem: FunctionComponent<Props> = ({ title, description }) => {
     <div
       className={[
         'flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2',
-        'cursor-pointer',
-        'hover:bg-slate-800',
+        'cursor-pointer relative group',
+        'hover:bg-slate-100/10',
       ].join(' ')}
       role='button'
     >
-      <Uppercase as='h3' className='text-base md:text-xl xl:text-2xl'>{title}</Uppercase>
-      <Text className='hidden md:block text-base xl:text-lg text-slate-400'>{description}</Text>
+      <div className='absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300'></div>
+      <Uppercase as='h3' className='text-base md:text-xl xl:text-2xl'>
+        {title}
+      </Uppercase>
+      <Text className='hidden md:block text-base xl:text-lg text-slate-400'>
+        {description}
+      </Text>
     </div>
   );
 };
