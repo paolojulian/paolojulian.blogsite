@@ -1,5 +1,6 @@
 import contentfulGQLClient from "@/_lib/contentful-graphql";
 import { NotFoundError } from "@/_utils/error-handler";
+import { IPortfolioItem } from "@/app/(main-layout)/portfolio/_contentful";
 import { redirect } from "next/navigation";
 
 export async function getPortfolioItems() {
@@ -28,7 +29,7 @@ export async function getPortfolioItems() {
       throw res
     }
     const { data } = await res.json();
-    return data.portfolioItemCollection.items;
+    return data.portfolioItemCollection.items as IPortfolioItem[];
   } catch (e) {
     console.error(e);
 

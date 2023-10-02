@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anton, Inter, Montserrat } from 'next/font/google';
+import { Anton, Inter, Lora, Montserrat } from 'next/font/google';
 import ProgressBar from '@/_components/common/progress-bar';
 
 const capital = Anton({
@@ -13,6 +13,11 @@ const serif = Inter({
   subsets: ['latin'],
   variable: '--font-serif',
   weight: ['400', '700'],
+});
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-lora',
+  weight: ['400', '500', '600', '700'],
 });
 const sans = Montserrat({
   subsets: ['latin'],
@@ -44,6 +49,7 @@ export default function RootLayout({
         className={classNames(
           `${capital.variable} font-capital`,
           `${serif.variable} font-serif`,
+          `${lora.variable} font-lora`,
           `${sans.variable} font-sans`,
           'font-sans',
           'overflow-x-hidden max-w-screen'
