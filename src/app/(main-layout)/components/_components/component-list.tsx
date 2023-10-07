@@ -2,8 +2,8 @@
 import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
 import React, { FunctionComponent, useState } from 'react';
-import CategoryTab from './category-tab';
 import { ComponentCategories } from '../types';
+import CategoryTab from './category-tab';
 import ComponentFactory from './component-factory';
 
 const MemoizedCategoryTab = React.memo(CategoryTab);
@@ -12,7 +12,7 @@ export type ComponentListProps = {
   // no props
 };
 
-const ComponentList: FunctionComponent<ComponentListProps> = (props) => {
+const ComponentList: FunctionComponent<ComponentListProps> = () => {
   const [activeCategory, setActiveCategory] =
     useState<ComponentCategories>('application-ui');
 

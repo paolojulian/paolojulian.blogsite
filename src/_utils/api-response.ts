@@ -1,5 +1,6 @@
-import { NextApiResponse } from 'next'
+import { NextApiResponse } from 'next';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface IAPIResponse<Data, Error = null | any> {
   ok: boolean;
   data: Data
@@ -13,7 +14,7 @@ function APIResponseOK<Data>(data: Data): IAPIResponse<Data, null> {
   }
 }
 
-function APIResponseError<Data, Error>(error: Error): IAPIResponse<null, Error> {
+function APIResponseError<Error>(error: Error): IAPIResponse<null, Error> {
   return {
     ok: false,
     data: null,

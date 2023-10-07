@@ -3,7 +3,7 @@
 exports[`TESTING SectionHeading component GIVEN an empty RightContent WHEN the SectionHeading component is rendered in snapshot testing THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="border-b-2 border-slate-400 text-gray-700 flex justify-between p-2"
+    class="border-b-2 border-slate-400 text-gray-700 flex justify-between items-end md:p-2"
   >
     <h2
       class="uppercase font-medium font-sans tracking-[0.375rem] "
@@ -18,7 +18,7 @@ exports[`TESTING SectionHeading component GIVEN an empty RightContent WHEN the S
 exports[`TESTING SectionHeading component GIVEN valid props WHEN the SectionHeading component is rendered in snapshot testing THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="border-b-2 border-slate-400 text-gray-700 flex justify-between p-2"
+    class="border-b-2 border-slate-400 text-gray-700 flex justify-between items-end md:p-2"
   >
     <h2
       class="uppercase font-medium font-sans tracking-[0.375rem] "

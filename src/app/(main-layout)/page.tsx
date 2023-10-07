@@ -1,12 +1,24 @@
-import LandingWorkArea from '@/app/(main-layout)/_components/landing-work-area';
-import React, { FunctionComponent } from 'react';
+import About from '@/app/(main-layout)/_components/about';
+import Articles from '@/app/(main-layout)/_components/articles';
+import Hero from '@/app/(main-layout)/_components/hero';
+import Tools from '@/app/(main-layout)/_components/tools';
+import Work from '@/app/(main-layout)/_components/work';
+import { FunctionComponent } from 'react';
 
 interface Props {
   // no props
 }
 
-const LandingPage: FunctionComponent<Props> = async (props) => {
-  return <LandingWorkArea />;
+const LandingPage: FunctionComponent<Props> = async () => {
+  return (
+    <>
+      <Hero />
+      <About />
+      <Work />
+      <Tools />
+      <Articles />
+    </>
+  );
 };
 
 export default LandingPage;

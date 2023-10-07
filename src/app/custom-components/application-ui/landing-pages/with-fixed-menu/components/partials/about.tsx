@@ -1,4 +1,4 @@
-import { getPortfolio } from '@/app/(main-layout)/portfolio/_api/portfolio';
+import { getPortfolio } from '@/app/(main-layout)/portfolio.backup/_api/portfolio';
 import Container from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/container';
 import SectionHeading from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/section-heading';
 import Text from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/typography/text';

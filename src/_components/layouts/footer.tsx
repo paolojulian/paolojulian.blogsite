@@ -1,10 +1,10 @@
 'use client';
-import React, { FunctionComponent } from 'react';
-import Stack from '@/_components/layouts/stack';
-import Link from 'next/link';
 import AppCopyright from '@/_components/common/app-copyright';
 import ContactForm from '@/_components/form/contact-form';
+import Stack from '@/_components/layouts/stack';
 import useContactForm from '@/_hooks/use-contact-form';
+import Link from 'next/link';
+import React, { FunctionComponent } from 'react';
 
 interface Props {
   // No Props
@@ -25,7 +25,7 @@ const ContactItem = ({
   );
 };
 
-const FooterSection: FunctionComponent<Props> = (props) => {
+const FooterSection: FunctionComponent<Props> = () => {
   const {
     isLoading: isSubmittingContactForm,
     handleSubmit,

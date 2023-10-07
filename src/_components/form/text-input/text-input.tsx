@@ -32,8 +32,8 @@ const TextInput: FunctionComponent<Props> = ({
   label,
   name,
   value,
-  onFocus = (e: React.FocusEvent<HTMLInputElement>) => {},
-  onBlur = (e: React.FocusEvent<HTMLInputElement>) => {},
+  onFocus = () => {},
+  onBlur = () => {},
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(!!value || props.autoFocus);
@@ -65,7 +65,7 @@ const TextInput: FunctionComponent<Props> = ({
       )}
       data-testid={DATA_TEST.container}
     >
-      {/* Top label (When textinput is in focused state) */}
+      {/* Top label (When text input is in focused state) */}
       <label
         className={classNames(
           'absolute left-3 top-0',

@@ -1,13 +1,13 @@
-import { getPortfolioItems } from './portfolio/_api/portfolio-item';
-import { getPortfolio } from './portfolio/_api/portfolio';
+import { getPortfolioItems } from './portfolio.backup/_api/portfolio-item';
+import { getPortfolio } from './portfolio.backup/_api/portfolio';
 import { getLatestBlogPosts } from './blogs/_api/blog-post';
 import React from 'react';
-import HeroSection from '@/app/(main-layout)/portfolio/_components/hero';
-import { SectionsProvider } from '@/app/(main-layout)/portfolio/_context/sections-context';
-import AboutSection from '@/app/(main-layout)/portfolio/_components/about';
-import ServicesSection from '@/app/(main-layout)/portfolio/_components/services';
-import ProjectsSection from '@/app/(main-layout)/portfolio/_components/projects';
-import ArticlesSection from '@/app/(main-layout)/portfolio/_components/articles';
+import HeroSection from '@/app/(main-layout)/portfolio.backup/_components/hero';
+import { SectionsProvider } from '@/app/(main-layout)/portfolio.backup/_context/sections-context';
+import AboutSection from '@/app/(main-layout)/portfolio.backup/_components/about';
+import ServicesSection from '@/app/(main-layout)/portfolio.backup/_components/services';
+import ProjectsSection from '@/app/(main-layout)/portfolio.backup/_components/projects';
+import ArticlesSection from '@/app/(main-layout)/portfolio.backup/_components/articles';
 
 export default async function Home() {
   const [portfolioItems, portfolio, blogPosts] = await Promise.all([

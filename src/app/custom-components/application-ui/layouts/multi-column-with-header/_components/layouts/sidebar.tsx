@@ -1,19 +1,20 @@
-import React, { FunctionComponent, useState } from 'react';
-import Stack from './stack';
 import classNames from 'classnames';
 import { Anton } from 'next/font/google';
 import Link from 'next/link';
-import HomeIcon from '../icons/home-icon';
-import Row from './row';
-import UsersIcon from '../icons/users-icon';
-import FolderIcon from '../icons/folder-icon';
+import React, { FunctionComponent, useState } from 'react';
 import CalendarIcon from '../icons/calendar-icon';
-import GearIcon from '../icons/gear-icon';
-import PlusIcon from '../icons/plus-icon';
 import CrossIcon from '../icons/cross-icon';
+import FolderIcon from '../icons/folder-icon';
+import GearIcon from '../icons/gear-icon';
+import HomeIcon from '../icons/home-icon';
+import PlusIcon from '../icons/plus-icon';
+import UsersIcon from '../icons/users-icon';
+import Row from './row';
+import Stack from './stack';
 
 const anton = Anton({ weight: '400', subsets: ['latin'] });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const withSidebarLinkIcon = (WrappedComponent: FunctionComponent<any>) => {
   const WithSidebarLinkIcon = () => {
     return <WrappedComponent className='w-8 h-8' />;
@@ -61,7 +62,7 @@ export type SidebarProps = {
   // no props
 };
 
-const Sidebar: FunctionComponent<SidebarProps> = (props) => {
+const Sidebar: FunctionComponent<SidebarProps> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -72,7 +73,6 @@ const Sidebar: FunctionComponent<SidebarProps> = (props) => {
     <>
       <aside className='hidden sm:block lg:w-72 sticky top-0 left-0 h-screen -mt-16 pt-16'>
         <Stack className='p-2 py-4 lg:py-8 lg:p-8 space-y-4 lg:space-y-12 h-full sm:items-center lg:items-start'>
-
           <Stack className='space-y-2 flex-1'>
             <SidebarLink href='#' Icon={<SidebarHomeIcon />} isActive>
               Home

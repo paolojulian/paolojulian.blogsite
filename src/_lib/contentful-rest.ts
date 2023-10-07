@@ -1,5 +1,3 @@
-import contentful from 'contentful'
-
 const SPACE = process.env.CONTENTFUL_SPACE_ID || '';
 const TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN || '';
 const URL = `https://cdn.contentful.com/spaces/${SPACE}/entries?access_token=${TOKEN}`;

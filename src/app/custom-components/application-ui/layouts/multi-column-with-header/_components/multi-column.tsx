@@ -1,16 +1,16 @@
 'use client';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
+import SearchIcon from './icons/search-icon';
+import Navbar from './layouts/navbar';
 import Row from './layouts/row';
 import Sidebar from './layouts/sidebar';
-import SearchIcon from './icons/search-icon';
 import Stack from './layouts/stack';
-import Navbar from './layouts/navbar';
 
 export type MultiColumnProps = {
   // no props
 };
 
-const MultiColumn: FunctionComponent<MultiColumnProps> = (props) => {
+const MultiColumn: FunctionComponent<MultiColumnProps> = () => {
   return (
     <div className='bg-white text-gray-800'>
       <Navbar />

@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
 interface Props {
   // no props
 }
 
-const AlgoliaIcon: FunctionComponent<Props> = (props) => {
+const AlgoliaIcon: FunctionComponent<Props> = () => {
   return (
     <svg
       width='130'

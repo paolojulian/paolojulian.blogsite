@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FunctionComponent, HtmlHTMLAttributes, useMemo } from 'react';
+import React, { FunctionComponent, HtmlHTMLAttributes } from 'react';
 
 export type StackProps = {
   children?: React.ReactNode;

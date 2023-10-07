@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed THEN it should match the snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="absolute bottom-0 left-0 bg-slate-950 py-12 h-1/2 w-full z-0 duration-500"
+    data-testid="menu-container"
+  >
+    <div
+      class="px-4 lg:px-12 max-w-screen-2xl mx-auto w-full grid grid-cols-2 lg:grid-cols-4 gap-4 text-white transition duration-500 ease-[cubic-bezier(0.45,0.02,0.09,0.98)] scale-75 translate-y-1/2"
+    >
+      <a
+        class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"
+        data-testid="menu-item-container"
+        href="/"
+        role="button"
+      >
+        <div
+          class="absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300"
+        />
+        <h3
+          class="uppercase font-medium font-sans tracking-wide text-base md:text-xl xl:text-2xl"
+        >
+          About
+        </h3>
+        <p
+          class="font-lora hidden md:block text-base xl:text-lg text-slate-400"
+        >
+          All about me, my work, and my tech stack.
+        </p>
+      </a>
+      <a
+        class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"
+        data-testid="menu-item-container"
+        href="/blogs"
+        role="button"
+      >
+        <div
+          class="absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300"
+        />
+        <h3
+          class="uppercase font-medium font-sans tracking-wide text-base md:text-xl xl:text-2xl"
+        >
+          Articles
+        </h3>
+        <p
+          class="font-lora hidden md:block text-base xl:text-lg text-slate-400"
+        >
+          Things I wrote during my journey.
+        </p>
+      </a>
+      <a
+        class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"
+        data-testid="menu-item-container"
+        href="/components"
+        role="button"
+      >
+        <div
+          class="absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300"
+        />
+        <h3
+          class="uppercase font-medium font-sans tracking-wide text-base md:text-xl xl:text-2xl"
+        >
+          Components
+        </h3>
+        <p
+          class="font-lora hidden md:block text-base xl:text-lg text-slate-400"
+        >
+          Custom components I personally designed.
+        </p>
+      </a>
+      <a
+        class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"
+        data-testid="menu-item-container"
+        href="/contact"
+        role="button"
+      >
+        <div
+          class="absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300"
+        />
+        <h3
+          class="uppercase font-medium font-sans tracking-wide text-base md:text-xl xl:text-2xl"
+        >
+          Contact
+        </h3>
+        <p
+          class="font-lora hidden md:block text-base xl:text-lg text-slate-400"
+        >
+          Getting in touch, socials, emails and more.
+        </p>
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened THEN it should match the snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="absolute bottom-0 left-0 bg-slate-950 py-12 h-1/2 w-full z-0 duration-500"
+    data-testid="menu-container"
+  >
+    <div
+      class="px-4 lg:px-12 max-w-screen-2xl mx-auto w-full grid grid-cols-2 lg:grid-cols-4 gap-4 text-white transition duration-500 ease-[cubic-bezier(0.45,0.02,0.09,0.98)] scale-100 translate-y-0"
+    >
+      <a
+        class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"
+        data-testid="menu-item-container"
+        href="/"
+        role="button"
+      >
+        <div
+          class="absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300"
+        />
+        <h3
+          class="uppercase font-medium font-sans tracking-wide text-base md:text-xl xl:text-2xl"
+        >
+          About
+        </h3>
+        <p
+          class="font-lora hidden md:block text-base xl:text-lg text-slate-400"
+        >
+          All about me, my work, and my tech stack.
+        </p>
+      </a>
+      <a
+        class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"
+        data-testid="menu-item-container"
+        href="/blogs"
+        role="button"
+      >
+        <div
+          class="absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300"
+        />
+        <h3
+          class="uppercase font-medium font-sans tracking-wide text-base md:text-xl xl:text-2xl"
+        >
+          Articles
+        </h3>
+        <p
+          class="font-lora hidden md:block text-base xl:text-lg text-slate-400"
+        >
+          Things I wrote during my journey.
+        </p>
+      </a>
+      <a
+        class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"
+        data-testid="menu-item-container"
+        href="/components"
+        role="button"
+      >
+        <div
+          class="absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300"
+        />
+        <h3
+          class="uppercase font-medium font-sans tracking-wide text-base md:text-xl xl:text-2xl"
+        >
+          Components
+        </h3>
+        <p
+          class="font-lora hidden md:block text-base xl:text-lg text-slate-400"
+        >
+          Custom components I personally designed.
+        </p>
+      </a>
+      <a
+        class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"
+        data-testid="menu-item-container"
+        href="/contact"
+        role="button"
+      >
+        <div
+          class="absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300"
+        />
+        <h3
+          class="uppercase font-medium font-sans tracking-wide text-base md:text-xl xl:text-2xl"
+        >
+          Contact
+        </h3>
+        <p
+          class="font-lora hidden md:block text-base xl:text-lg text-slate-400"
+        >
+          Getting in touch, socials, emails and more.
+        </p>
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

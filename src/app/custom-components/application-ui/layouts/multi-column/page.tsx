@@ -5,7 +5,7 @@ export type MultiColumnPageProps = {
   // no props
 };
 
-const MultiColumnPage: FunctionComponent<MultiColumnPageProps> = (props) => {
+const MultiColumnPage: FunctionComponent<MultiColumnPageProps> = () => {
   return <MultiColumn />;
 };
 

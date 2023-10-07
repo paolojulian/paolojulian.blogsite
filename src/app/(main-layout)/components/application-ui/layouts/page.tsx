@@ -11,7 +11,7 @@ const MemoizedComponentShowcase = React.memo(ComponentShowcase);
 
 const ApplicationUILayoutsPage: FunctionComponent<
   ApplicationUILayoutsPageProps
-> = (props) => {
+> = () => {
   return (
     <>
       <div>

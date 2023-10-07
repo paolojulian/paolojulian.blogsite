@@ -1,14 +1,15 @@
 'use client';
+import { DATA_TEST } from '@/_components/common/code-block/code-block.constants';
+import useCopy from '@/_hooks/use-copy';
 import classNames from 'classnames';
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark as style } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import Stack from '../../layouts/stack';
 import Row from '../../layouts/row';
-import useCopy from '@/_hooks/use-copy';
-import { DATA_TEST } from '@/_components/common/code-block/code-block.constants';
+import Stack from '../../layouts/stack';
 
 export type CodeBlockProps = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;
 };
 
@@ -154,7 +155,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
             }}
             customStyle={{
               fontSize: '1rem',
-              fontFamily: 'arial'
+              fontFamily: 'arial',
             }}
           >
             {childrenText}

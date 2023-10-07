@@ -1,17 +1,14 @@
-import React, { FunctionComponent } from 'react';
-import Row from './layouts/row';
-import Link from 'next/link';
 import classNames from 'classnames';
-import styles from './pattern.module.css';
-import BellIcon from './icons/bell-icon';
+import { FunctionComponent } from 'react';
 import Container from './layouts/container';
 import Navbar from './layouts/navbar';
+import styles from './pattern.module.css';
 
 export type StackedHeaderProps = {
   // no props
 };
 
-const StackedHeader: FunctionComponent<StackedHeaderProps> = (props) => {
+const StackedHeader: FunctionComponent<StackedHeaderProps> = () => {
   return (
     <div className='h-full w-full bg-neutral-50'>
       <Navbar />

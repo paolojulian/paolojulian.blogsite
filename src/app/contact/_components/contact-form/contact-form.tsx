@@ -6,7 +6,7 @@ import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
 import useContactForm from '@/_hooks/use-contact-form';
-import { contactFormSchema } from '@/app/(main-layout)/portfolio/_utils/schemas';
+import { contactFormSchema } from '@/app/(main-layout)/portfolio.backup/_utils/schemas';
 import { DATA_TEST } from '@/app/contact/_components/contact-form/contact-form.constants';
 import { Formik } from 'formik';
 import React, { FunctionComponent, useEffect, useState } from 'react';

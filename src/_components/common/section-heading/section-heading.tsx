@@ -1,9 +1,9 @@
-import Uppercase from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/typography/uppercase';
-import React, { FunctionComponent } from 'react';
+import Uppercase from '@/_components/common/typography/uppercase';
+import { FunctionComponent, ReactNode } from 'react';
 
 interface Props {
   title: string;
-  RightContent?: React.ReactNode;
+  RightContent?: ReactNode;
 }
 
 const SectionHeading: FunctionComponent<Props> = ({
@@ -11,7 +11,7 @@ const SectionHeading: FunctionComponent<Props> = ({
   title,
 }) => {
   return (
-    <div className='border-b-2 border-slate-400 text-gray-700 flex justify-between p-2'>
+    <div className='border-b-2 border-slate-400 text-gray-700 flex justify-between items-end md:p-2'>
       <Uppercase as='h2' type='wider'>
         {title}
       </Uppercase>

@@ -5,9 +5,7 @@ interface Props {
   // no props
 }
 
-const LandingPageWithFixedMenuPage: FunctionComponent<Props> = async (
-  props
-) => {
+const LandingPageWithFixedMenuPage: FunctionComponent<Props> = async () => {
   return <Workarea />;
 };
 

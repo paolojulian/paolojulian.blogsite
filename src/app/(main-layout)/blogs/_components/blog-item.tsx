@@ -1,12 +1,11 @@
 import AppDate from '@/_components/common/app-date';
+import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
-import classNames from 'classnames';
-import Link from 'next/link';
-import React, { FunctionComponent } from 'react';
-import { IBlogPost } from '../_contentful';
-import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Image from 'next/image';
+import Link from 'next/link';
+import { FunctionComponent } from 'react';
+import { IBlogPost } from '../_contentful';
 
 export type BlogItemProps = {
   blogPost: IBlogPost;
