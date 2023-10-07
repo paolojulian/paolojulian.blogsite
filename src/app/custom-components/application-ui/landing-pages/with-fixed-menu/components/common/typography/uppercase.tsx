@@ -1,10 +1,11 @@
 import React, { FunctionComponent } from 'react';
 
-type Types = 'default' | 'wide' | 'widest';
+type Types = 'default' | 'wide' | 'wider' | 'widest';
 
 const tracking: Record<Types, string> = {
   default: 'tracking-wide',
   wide: 'tracking-widest',
+  wider: 'tracking-[0.375rem]',
   widest: 'tracking-[0.575rem]'
 };
 
