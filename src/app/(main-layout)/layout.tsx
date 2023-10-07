@@ -20,7 +20,7 @@ export default function RootLayout({
         'border-l md:border-l-4 lg:border-l-8 border-primary-300'
       )}
     >
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='flex flex-row w-full max-w-screen-2xl mx-auto'>
         <main
           className={classNames(
@@ -33,7 +33,7 @@ export default function RootLayout({
           <div className='2xl:max-w-screen-2xl w-full mx-auto'>{children}</div>
         </main>
       </div>
-      <FooterSection />
+      {/* <FooterSection /> */}
     </div>
   );
 }
