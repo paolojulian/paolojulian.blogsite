@@ -1,22 +1,31 @@
-import React, { FunctionComponent, useEffect, useMemo } from 'react';
+'use client';
+import Uppercase from '@/_components/common/typography/uppercase';
 import SearchIcon from '@/_components/icons/search-icon';
 import Row from '@/_components/layouts/row';
+import { useGlobalSearchModal } from '@/_context/global-search-provider/global-search-provider';
 import { isMacOS } from '@/_utils/navigator/navigator';
 import classNames from 'classnames';
+import { FunctionComponent, useCallback, useEffect, useMemo } from 'react';
 
 interface Props {
-  onClick: () => void;
+  // no props
 }
 
-const GlobalSearchBtn: FunctionComponent<Props> = ({ onClick }) => {
+const GlobalSearchBtn: FunctionComponent<Props> = () => {
   const isMacPlatform = useMemo(() => isMacOS(), []);
+
+  const { setIsOpen: setIsGlobalSearchModalOpen } = useGlobalSearchModal();
+
+  const handleClickGlobalSearchBtn = useCallback(() => {
+    setIsGlobalSearchModalOpen(true);
+  }, [setIsGlobalSearchModalOpen]);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       const modifierState = isMacPlatform ? 'Meta' : 'Control';
       const modifierKey = e.getModifierState(modifierState);
       if ((modifierKey && e.key === 'k') || (modifierKey && e.key === 'k')) {
-        onClick();
+        handleClickGlobalSearchBtn();
       }
     };
 
@@ -25,27 +34,32 @@ const GlobalSearchBtn: FunctionComponent<Props> = ({ onClick }) => {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [onClick, isMacPlatform]);
-
-  const keyShortcut = isMacPlatform ? '⌘K' : '(Ctrl K)';
+  }, [handleClickGlobalSearchBtn, isMacPlatform]);
 
   return (
-    <div
-      className={classNames(
-        'transition border border-gray-300 hover:border-primary-400 text-gray-400 hover:text-gray-500 px-4 lg:pl-6 lg:pr-7',
-        'bg-white',
-        'w-12 md:w-16 lg:w-fit h-12 md:h-14',
-        'flex flex-col md:flex-row justify-center items-center gap-4 lg:gap-16'
-      )}
-      role='button'
-      onClick={onClick}
-    >
-      <Row className='gap-4 items-center'>
-        <SearchIcon />
-        <span className='hidden lg:block'>Quick Search</span>
-      </Row>
-      <span className='hidden lg:block'>{keyShortcut}</span>
-    </div>
+    <>
+      <div
+        className={classNames(
+          'transition border border-gray-300 hover:border-primary-400 text-gray-400 hover:text-gray-500 px-4 lg:pl-6 lg:pr-7',
+          'bg-white',
+          'w-12 md:w-16 lg:w-fit py-4',
+          'flex flex-col md:flex-row justify-center items-center gap-4 lg:gap-16'
+        )}
+        role='button'
+        onClick={handleClickGlobalSearchBtn}
+      >
+        <Row className='gap-4 items-center'>
+          <SearchIcon />
+          <Uppercase className='hidden lg:block'>Quick Search...</Uppercase>
+        </Row>
+        <span className={classNames(!isMacPlatform ? 'hidden' : 'lg:block')}>
+          ⌘K
+        </span>
+        <span className={classNames(isMacPlatform ? 'hidden' : 'lg:block')}>
+          Ctrl K
+        </span>
+      </div>
+    </>
   );
 };
 
