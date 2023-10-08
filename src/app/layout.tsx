@@ -52,6 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           `${lora.variable} font-lora`,
           `${sans.variable} font-sans`,
           'font-sans',
+          'overscroll-contain',
           'overflow-x-hidden max-w-screen'
         )}
       >

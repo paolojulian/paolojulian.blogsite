@@ -17,7 +17,6 @@ const Menu: FunctionComponent<Props> = () => {
         'absolute bottom-0 left-0 bg-slate-950',
         'py-12 h-1/2 w-full z-0',
         'duration-500',
-        // isOpen ? 'translate-y-0' : 'translate-y-full',
       ].join(' ')}
     >
       <Container
