@@ -26,7 +26,7 @@ const MenuButton: FunctionComponent<Props> = () => {
         'w-16 md:w-20 aspect-square rounded-full shadow-highBlur',
         'transition z-50',
         'active:scale-95',
-        'fixed left-1/2 bottom-12 -translate-x-1/2',
+        'fixed left-1/2 bottom-6 lg:bottom-12 -translate-x-1/2',
         'group',
         isOpen
           ? 'bg-white lg:hover:bg-primary-400 text-white'

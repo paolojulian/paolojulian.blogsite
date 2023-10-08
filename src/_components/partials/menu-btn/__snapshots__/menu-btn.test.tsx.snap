@@ -3,7 +3,7 @@
 exports[`TESTING MenuBtn component GIVEN default data WHEN the MenuBtn component is opened THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="w-16 md:w-20 aspect-square rounded-full shadow-highBlur transition z-50 active:scale-95 fixed left-1/2 bottom-12 -translate-x-1/2 group bg-white lg:hover:bg-primary-400 text-white"
+    class="w-16 md:w-20 aspect-square rounded-full shadow-highBlur transition z-50 active:scale-95 fixed left-1/2 bottom-6 lg:bottom-12 -translate-x-1/2 group bg-white lg:hover:bg-primary-400 text-white"
     data-testid="menu-btn__button"
   >
     <div
@@ -34,7 +34,7 @@ exports[`TESTING MenuBtn component GIVEN default data WHEN the MenuBtn component
 exports[`TESTING MenuBtn component GIVEN default data WHEN the MenuBtn component is rendered in snapshot testing THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="w-16 md:w-20 aspect-square rounded-full shadow-highBlur transition z-50 active:scale-95 fixed left-1/2 bottom-12 -translate-x-1/2 group bg-primary-400 lg:hover:bg-white text-primary-400"
+    class="w-16 md:w-20 aspect-square rounded-full shadow-highBlur transition z-50 active:scale-95 fixed left-1/2 bottom-6 lg:bottom-12 -translate-x-1/2 group bg-primary-400 lg:hover:bg-white text-primary-400"
     data-testid="menu-btn__button"
   >
     <div

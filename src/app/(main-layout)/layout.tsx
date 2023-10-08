@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import MenuProvider from '@/_context/menu-provider';
 import Main from '@/_components/partials/main';
 import Menu from '@/_components/partials/menu';
-import MenuButton from '@/_components/partials/menu-btn/menu-btn';
+import MenuButton from '@/_components/partials/menu-btn';
+import MenuProvider from '@/_context/menu-provider';
 import Footer from '@/app/(main-layout)/_components/footer';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Paolo Vincent Julian',

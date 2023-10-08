@@ -18,9 +18,11 @@ const Menu: FunctionComponent<Props> = () => {
   return (
     <nav
       className={[
-        'absolute bottom-0 left-0 bg-slate-950',
-        'py-12 h-1/2 w-full z-0',
+        'fixed bottom-0 left-0 bg-slate-950',
+        'py-12 h-[400px] lg:h-1/2 w-full z-30',
         'duration-500',
+        'ease-[cubic-bezier(0.45, 0.02, 0.09, 0.98)]',
+        isOpen ? 'translate-y-0' : 'translate-y-full',
       ].join(' ')}
       data-testid={dataTestId.container}
     >
@@ -29,7 +31,9 @@ const Menu: FunctionComponent<Props> = () => {
           'max-w-screen-2xl mx-auto w-full',
           'grid grid-cols-2 lg:grid-cols-4 gap-4 text-white transition duration-500',
           'ease-[cubic-bezier(0.45,0.02,0.09,0.98)]',
-          isOpen ? 'scale-100 translate-y-0' : 'scale-75 translate-y-1/2',
+          isOpen ? 'scale-100 translate-y-0' : 'scale-75 -translate-y-[120%]',
+          isOpen ? 'opacity-100' : 'opacity-0',
+          isOpen ? '' : 'pointer-events-none',
         ].join(' ')}
       >
         <MenuItem

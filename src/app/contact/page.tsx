@@ -4,7 +4,7 @@ import Container from '@/_components/layouts/container';
 import Stack from '@/_components/layouts/stack';
 import Main from '@/_components/partials/main';
 import Menu from '@/_components/partials/menu';
-import MenuButton from '@/_components/partials/menu-btn/menu-btn';
+import MenuButton from '@/_components/partials/menu-btn';
 import MenuProvider from '@/_context/menu-provider';
 import ContactForm from '@/app/contact/_components/contact-form';
 import Link from 'next/link';

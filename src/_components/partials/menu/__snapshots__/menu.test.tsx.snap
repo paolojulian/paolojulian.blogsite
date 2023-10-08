@@ -3,11 +3,11 @@
 exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <nav
-    class="absolute bottom-0 left-0 bg-slate-950 py-12 h-1/2 w-full z-0 duration-500"
+    class="fixed bottom-0 left-0 bg-slate-950 py-12 h-[400px] lg:h-1/2 w-full z-30 duration-500 ease-[cubic-bezier(0.45, 0.02, 0.09, 0.98)] translate-y-full"
     data-testid="menu-container"
   >
     <div
-      class="px-4 lg:px-12 max-w-screen-2xl mx-auto w-full grid grid-cols-2 lg:grid-cols-4 gap-4 text-white transition duration-500 ease-[cubic-bezier(0.45,0.02,0.09,0.98)] scale-75 translate-y-1/2"
+      class="px-4 lg:px-12 max-w-screen-2xl mx-auto w-full grid grid-cols-2 lg:grid-cols-4 gap-4 text-white transition duration-500 ease-[cubic-bezier(0.45,0.02,0.09,0.98)] scale-75 -translate-y-[120%] opacity-0 pointer-events-none"
     >
       <a
         class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"
@@ -97,11 +97,11 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
 exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <nav
-    class="absolute bottom-0 left-0 bg-slate-950 py-12 h-1/2 w-full z-0 duration-500"
+    class="fixed bottom-0 left-0 bg-slate-950 py-12 h-[400px] lg:h-1/2 w-full z-30 duration-500 ease-[cubic-bezier(0.45, 0.02, 0.09, 0.98)] translate-y-0"
     data-testid="menu-container"
   >
     <div
-      class="px-4 lg:px-12 max-w-screen-2xl mx-auto w-full grid grid-cols-2 lg:grid-cols-4 gap-4 text-white transition duration-500 ease-[cubic-bezier(0.45,0.02,0.09,0.98)] scale-100 translate-y-0"
+      class="px-4 lg:px-12 max-w-screen-2xl mx-auto w-full grid grid-cols-2 lg:grid-cols-4 gap-4 text-white transition duration-500 ease-[cubic-bezier(0.45,0.02,0.09,0.98)] scale-100 translate-y-0 opacity-100 "
     >
       <a
         class="flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2 cursor-pointer relative group hover:bg-slate-100/10"

@@ -1,13 +1,13 @@
 'use client';
 import GlobalSearchModal from '@/_components/partials/global-search-modal';
-import React, {
+import {
   Dispatch,
   FunctionComponent,
   ReactNode,
   SetStateAction,
   createContext,
   useContext,
-  useState,
+  useState
 } from 'react';
 
 interface IGlobalSearchContext {
