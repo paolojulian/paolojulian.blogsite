@@ -8,7 +8,7 @@ import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Container from '@/_components/layouts/container';
 import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
-import GlobalSearchProvider from '@/_context/global-search-provider/global-search-provider';
+import GlobalSearchProvider from '@/_context/global-search-provider';
 import { Metadata } from 'next';
 import { FunctionComponent } from 'react';
 import { getLatestBlogPosts } from './_api/blog-post';
