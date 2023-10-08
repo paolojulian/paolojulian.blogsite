@@ -1,3 +1,7 @@
+import EnterAnimation from '@/_components/animations/enter-animation';
+import EnterAnimationList, {
+  EnterAnimationListItem,
+} from '@/_components/animations/enter-animation-list';
 import SectionHeading from '@/_components/common/section-heading';
 import TextHighlight from '@/_components/common/text-highlight/text-hightlight';
 import TitleWithBullet from '@/_components/common/title-with-bullet';
@@ -15,12 +19,14 @@ const Tools: FunctionComponent<Props> = () => {
       <Container className='py-12 lg:py-24 h-full'>
         <SectionHeading RightContent='03' title='Tools'></SectionHeading>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 py-12 h-full relative'>
-          <Text className='text-4xl lg:text-6xl font-medium col-span-1 leading-tight'>
-            These are the <TextHighlight text='tools' /> I prefer to use as of
-            now.
-          </Text>
-          <div className='flex flex-col col-span-2'>
-            <div className='flex flex-row py-8 border-b first:border-t border-slate-200/70 items-start'>
+          <EnterAnimation>
+            <Text className='text-4xl lg:text-6xl font-medium col-span-1 leading-tight'>
+              These are the <TextHighlight text='tools' /> I prefer to use as of
+              now.
+            </Text>
+          </EnterAnimation>
+          <EnterAnimationList className='flex flex-col col-span-2'>
+            <EnterAnimationListItem className='flex flex-row py-8 border-b first:border-t border-slate-200/70 items-start'>
               <div className='flex-1'>
                 <TitleWithBullet title={'Front-end'} />
               </div>
@@ -31,8 +37,8 @@ const Tools: FunctionComponent<Props> = () => {
                 <Text>Typescript</Text>
                 <Text>GraphQL</Text>
               </div>
-            </div>
-            <div className='flex flex-row py-8 border-b first:border-t border-slate-200/70 items-start'>
+            </EnterAnimationListItem>
+            <EnterAnimationListItem className='flex flex-row py-8 border-b first:border-t border-slate-200/70 items-start'>
               <div className='flex-1'>
                 <TitleWithBullet title={'Back-end'} />
               </div>
@@ -43,16 +49,16 @@ const Tools: FunctionComponent<Props> = () => {
                 <Text>Websocket</Text>
                 <Text>GraphQL</Text>
               </div>
-            </div>
-            <div className='flex flex-row py-8 border-b first:border-t border-slate-200/70 items-start'>
+            </EnterAnimationListItem>
+            <EnterAnimationListItem className='flex flex-row py-8 border-b first:border-t border-slate-200/70 items-start'>
               <div className='flex-1'>
                 <TitleWithBullet title={'Design'} />
               </div>
               <div className='flex-1 text-lg'>
                 <Text>Figma</Text>
               </div>
-            </div>
-          </div>
+            </EnterAnimationListItem>
+          </EnterAnimationList>
         </div>
       </Container>
     </div>
