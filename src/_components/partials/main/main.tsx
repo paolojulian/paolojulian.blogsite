@@ -37,8 +37,8 @@ const Main: FunctionComponent<Props> = ({ children }) => {
         'border-l-4 md:border-l-8 border-primary-300 flex flex-col',
         'h-auto w-screen overflow-x-hidden min-h-screen',
         isOpen ? 'pointer-events-none' : '',
-        isOpen ? 'overflow-hidden' : 'overflow-y-auto',
-        isOpen ? '-translate-y-[400px] lg:-translate-y-1/2' : 'translate-y-0',
+        // isOpen ? 'overflow-hidden' : 'overflow-y-auto',
+        isOpen ? '-translate-y-[400px] md:-translate-y-[500px]' : 'translate-y-0',
       ].join(' ')}
     >
       {children}

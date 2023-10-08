@@ -40,17 +40,18 @@ const GlobalSearchBtn: FunctionComponent<Props> = () => {
     <>
       <div
         className={classNames(
-          'transition border border-gray-300 hover:border-primary-400 text-gray-400 hover:text-gray-500 px-4 lg:pl-6 lg:pr-7',
-          'bg-white',
-          'w-12 md:w-16 lg:w-fit py-4',
-          'flex flex-col md:flex-row justify-center items-center gap-4 lg:gap-16'
+          'transition text-gray-400 hover:text-gray-500 px-4 lg:pl-6 lg:pr-7',
+          'bg-white border border-gray-300 hover:border-primary-400',
+          'rounded-sm',
+          'w-full md:w-fit py-4',
+          'flex flex-row justify-center items-center gap-4 lg:gap-16'
         )}
         role='button'
         onClick={handleClickGlobalSearchBtn}
       >
         <Row className='gap-4 items-center'>
           <SearchIcon />
-          <Uppercase className='hidden lg:block'>Quick Search...</Uppercase>
+          <Uppercase>Quick Search...</Uppercase>
         </Row>
         <span className={classNames(!isMacPlatform ? 'hidden' : 'lg:block')}>
           ⌘K

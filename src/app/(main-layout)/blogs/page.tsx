@@ -33,7 +33,7 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async () => {
 
   return (
     <GlobalSearchProvider>
-      <Container className='pt-12 pb-40 flex flex-col gap-8 xl:gap-8 z-10 relative'>
+      <Container className='pt-6 md:pt-12 pb-40 flex flex-col gap-8 xl:gap-8 z-10 relative'>
         <SectionHeading
           title='Articles'
           RightContent={
@@ -42,9 +42,9 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async () => {
             </Row>
           }
         />
-        <Stack className='text-5xl md:text-7xl font-medium xl:max-w-[70%] pt-12'>
+        <Stack className='xl:max-w-[70%] pt-12'>
           <EnterAnimation>
-            <Uppercase>
+            <Uppercase className='text-4xl md:text-7xl font-medium'>
               <span className='text-slate-400'>Explore my articles,</span>
               <span className='text-slate-800'>
                 <br />
@@ -54,10 +54,10 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async () => {
           </EnterAnimation>
         </Stack>
 
-        <EnterAnimationList className='flex flex-row gap-4'>
+        <EnterAnimationList className='flex flex-col md:flex-row gap-4'>
           <EnterAnimationListItem>
             <ScrollToElementBtn targetId='latest-articles'>
-              <div className='py-4 pl-12 pr-10 bg-red-400 lg:hover:bg-red-500 lg:transition-colors text-gray-50 flex flex-row items-center gap-4 w-fit'>
+              <div className='py-4 pl-12 pr-10 bg-red-400 lg:hover:bg-red-500 lg:transition-colors text-gray-50 flex flex-row items-center justify-center gap-4 w-full md:w-fit rounded-sm'>
                 <Uppercase className='text-lg'>Browse Now</Uppercase>
                 <RightArrowIcon />
               </div>
