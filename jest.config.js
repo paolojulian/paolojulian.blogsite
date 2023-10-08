@@ -14,6 +14,7 @@ const customJestConfig = {
     '^@/_api/(.*)$': '<rootDir>/src/_api/$1',
     '^@/_lib/(.*)$': '<rootDir>/src/_lib/$1',
     '^@/_components/(.*)$': '<rootDir>/src/_components/$1',
+    '^@/_context/(.*)$': '<rootDir>/src/_context/$1',
   },
 };
 

@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react';
-import Row from './row';
-import Stack from './stack';
 import classNames from 'classnames';
 import { Anton } from 'next/font/google';
+import { FunctionComponent } from 'react';
+import Row from './row';
+import Stack from './stack';
 
 const anton = Anton({ weight: '400', subsets: ['latin'] });
 
@@ -10,7 +10,7 @@ export type NavbarProps = {
   // no props
 };
 
-const Navbar: FunctionComponent<NavbarProps> = (props) => {
+const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
     <nav className='hidden sm:block inset-x-0 top-0 h-16 border-b border-gray-300 bg-white z-50'>
       <Row className='sm:max-w-screen-sm lg:max-w-screen-xl mx-auto w-full h-full items-center justify-between lg:px-8'>

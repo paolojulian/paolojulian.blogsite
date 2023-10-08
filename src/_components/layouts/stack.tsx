@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { HtmlHTMLAttributes, useMemo } from 'react';
+import React, { HtmlHTMLAttributes } from 'react';
 
 interface Props extends HtmlHTMLAttributes<HTMLDivElement> {}
 

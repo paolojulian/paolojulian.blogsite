@@ -1,17 +1,17 @@
+import classNames from 'classnames';
+import { Anton } from 'next/font/google';
 import React, { FunctionComponent } from 'react';
-import Container from './container';
-import SidebarItem from './sidebar-item';
-import HomeIcon from '../icons/home-icon';
-import UsersIcon from '../icons/users-icon';
-import FolderIcon from '../icons/folder-icon';
+import { useSidebarControls } from '../../_context/SidebarControlsProvider';
 import CalendarIcon from '../icons/calendar-icon';
 import ChartPieIcon from '../icons/chart-pie-icon';
-import { Anton } from 'next/font/google';
-import classNames from 'classnames';
-import Stack from './stack';
-import GearIcon from '../icons/gear-icon';
-import { useSidebarControls } from '../../_context/SidebarControlsProvider';
 import CrossIcon from '../icons/cross-icon';
+import FolderIcon from '../icons/folder-icon';
+import GearIcon from '../icons/gear-icon';
+import HomeIcon from '../icons/home-icon';
+import UsersIcon from '../icons/users-icon';
+import Container from './container';
+import SidebarItem from './sidebar-item';
+import Stack from './stack';
 
 const anton = Anton({ weight: '400', subsets: ['latin'] });
 
@@ -87,7 +87,7 @@ const SidebarMenu = () => {
   );
 };
 
-const Sidebar: FunctionComponent<SidebarProps> = (props) => {
+const Sidebar: FunctionComponent<SidebarProps> = () => {
   const { isOpen, setIsOpen } = useSidebarControls();
 
   return (

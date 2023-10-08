@@ -1,21 +1,21 @@
 'use client';
-import React, { FunctionComponent, useState } from 'react';
-import SearchIcon from '../icons/search-icon';
-import Container from './container';
-import Row from './row';
+import Link from 'next/link';
+import { FunctionComponent } from 'react';
+import { useSidebarControls } from '../../_context/SidebarControlsProvider';
+import BarsIcon from '../icons/bars-icon';
 import BellIcon from '../icons/bell-icon';
 import CaretDownIcon from '../icons/caret-down';
-import Link from 'next/link';
+import SearchIcon from '../icons/search-icon';
 import PopoverMenu from '../popovers/popover-menu';
+import Container from './container';
+import Row from './row';
 import Stack from './stack';
-import BarsIcon from '../icons/bars-icon';
-import { useSidebarControls } from '../../_context/SidebarControlsProvider';
 
 export type NavbarProps = {
   // no props
 };
 
-const Navbar: FunctionComponent<NavbarProps> = (props) => {
+const Navbar: FunctionComponent<NavbarProps> = () => {
   const { setIsOpen } = useSidebarControls();
 
   return (

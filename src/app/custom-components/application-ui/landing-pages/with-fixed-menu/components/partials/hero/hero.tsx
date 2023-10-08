@@ -1,11 +1,11 @@
-import Container from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/container';
-import Image from 'next/image';
-import React, { FunctionComponent } from 'react';
-import Uppercase from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/typography/uppercase';
 import LinkedinIcon from '@/_components/icons/linkedin-icon';
-import PhoneIcon from '@/app/(main-layout)/portfolio/_components/icons/phone-icon';
-import MailIcon from '@/app/(main-layout)/portfolio/_components/icons/mail-icon';
+import MailIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/mail-icon';
+import PhoneIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/phone-icon';
+import Container from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/container';
+import Uppercase from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/typography/uppercase';
+import Image from 'next/image';
 import Link from 'next/link';
+import { FunctionComponent } from 'react';
 
 interface Props {
   // no props
@@ -77,7 +77,7 @@ const Hero: FunctionComponent<Props> = () => {
           <div className='absolute inset-0 flex flex-row justify-end -z-10'>
             <div className='aspect-[983/1119] h-full max-w-full relative'>
               <Image
-              className='object-cover'
+                className='object-cover'
                 src='/assets/background-blurred.png'
                 alt='Profile Image Blurred'
                 fill

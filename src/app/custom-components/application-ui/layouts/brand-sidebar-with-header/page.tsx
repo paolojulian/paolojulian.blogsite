@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import BrandSidebarWithHeader from './_components/brand-sidebar-with-header';
 
 export type BrandSidebarWithHeaderPageProps = {
@@ -7,7 +7,7 @@ export type BrandSidebarWithHeaderPageProps = {
 
 const BrandSidebarWithHeaderPage: FunctionComponent<
   BrandSidebarWithHeaderPageProps
-> = (props) => {
+> = () => {
   return <BrandSidebarWithHeader />;
 };
 

@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import React, { FunctionComponent, HtmlHTMLAttributes, useMemo } from 'react';
+import { FunctionComponent, HtmlHTMLAttributes, ReactNode } from 'react';
 
 export type StackProps = {
-  children?: React.ReactNode;
+  children?: ReactNode;
 } & HtmlHTMLAttributes<HTMLDivElement>;
 
 const Stack: FunctionComponent<StackProps> = ({

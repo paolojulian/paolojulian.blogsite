@@ -16,7 +16,7 @@ const CloseIcon: FunctionComponent<CloseIconProps> = (props) => {
     >
       <path
         d='M6 18L18 6M6 6L18 18'
-        stroke='#94A3B8'
+        stroke='currentColor'
         strokeWidth='2'
         strokeLinecap='round'
         strokeLinejoin='round'

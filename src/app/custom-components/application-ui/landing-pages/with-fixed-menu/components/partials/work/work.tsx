@@ -1,9 +1,8 @@
-import { getPortfolioItems } from '@/app/(main-layout)/portfolio/_api/portfolio-item';
-import { IPortfolioItem } from '@/app/(main-layout)/portfolio/_contentful';
+import { getPortfolioItems } from '@/app/(main-layout)/portfolio.backup/_api/portfolio-item';
 import Container from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/container';
 import SectionHeading from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/section-heading';
 import WorkItem from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/partials/work/work-item';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
 interface Props {
   // no props

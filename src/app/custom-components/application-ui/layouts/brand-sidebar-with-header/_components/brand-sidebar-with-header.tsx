@@ -1,12 +1,12 @@
 'use client';
-import React, { FunctionComponent } from 'react';
-import Sidebar from './layouts/sidebar';
-import { Montserrat } from 'next/font/google';
-import Container from './layouts/container';
-import styles from './pattern.module.css';
 import classNames from 'classnames';
-import Navbar from './layouts/navbar';
+import { Montserrat } from 'next/font/google';
+import { FunctionComponent } from 'react';
 import SidebarControlsProvider from '../_context/SidebarControlsProvider';
+import Container from './layouts/container';
+import Navbar from './layouts/navbar';
+import Sidebar from './layouts/sidebar';
+import styles from './pattern.module.css';
 
 const font = Montserrat({ subsets: ['latin'] });
 

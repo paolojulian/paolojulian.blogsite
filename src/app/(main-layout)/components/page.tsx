@@ -1,18 +1,20 @@
-import React, { FunctionComponent } from 'react';
-import Stack from '@/_components/layouts/stack';
-import ComponentList from './_components/component-list';
-import Container from '@/_components/layouts/container';
-import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import ScrollToElementBtn from '@/_components/common/scroll-to-element-btn';
+import SectionHeading from '@/_components/common/section-heading';
+import RightArrowIcon from '@/_components/icons/right-arrow-icon';
+import Container from '@/_components/layouts/container';
+import Stack from '@/_components/layouts/stack';
+import { FunctionComponent } from 'react';
+import ComponentList from './_components/component-list';
 
 export type BlogsPageProps = {
   // no props
 };
 
-const BlogsPage: FunctionComponent<BlogsPageProps> = async (props) => {
+const BlogsPage: FunctionComponent<BlogsPageProps> = async () => {
   return (
     <>
       <Container className='pt-12 pb-40 flex flex-col gap-8 xl:gap-20 z-10 relative'>
+        <SectionHeading title='Components' />
         <Stack className='text-3xl md:text-7xl font-medium pt-12'>
           <h1 className=''>
             {/* <span className='text-slate-400'>Explore my articles,</span> */}

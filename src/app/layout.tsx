@@ -1,8 +1,9 @@
+import ProgressBar from '@/_components/common/progress-bar';
 import classNames from 'classnames';
-import './globals.css';
 import type { Metadata } from 'next';
 import { Anton, Inter, Lora, Montserrat } from 'next/font/google';
-import ProgressBar from '@/_components/common/progress-bar';
+import { ReactNode } from 'react';
+import './globals.css';
 
 const capital = Anton({
   weight: '400',
@@ -30,15 +31,14 @@ export const metadata: Metadata = {
   description: 'Website created by Paolo Vincent Julian',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
       <head>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no'
+        />
         <meta name='theme-color' content='#fffffff' />
         <link rel='icon' href='/favicon.ico' sizes='any' />
         <link rel='icon' href='/favicon.svg' type='image/svg+xml' />

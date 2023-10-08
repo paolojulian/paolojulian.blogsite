@@ -15,7 +15,7 @@ const Main: FunctionComponent<Props> = ({ children }) => {
       className={[
         'flex-1 motion-reduce:transition-none pb-24',
         'ease-[cubic-bezier(0.45,0.02,0.09,0.98)]',
-        'duration-500 z-10',
+        'duration-500 relative z-10',
         'bg-white',
         'border-l-8 border-primary-300 min-h-screen flex flex-col',
         'h-screen w-screen overflow-x-hidden',

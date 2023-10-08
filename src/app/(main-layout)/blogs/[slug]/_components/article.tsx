@@ -13,6 +13,7 @@ import ToTopFab from '@/_components/common/to-top-fab';
 import ArrowScrollBar from '@/app/(main-layout)/blogs/_components/scrollbars/arrow-scrollbar';
 import ArticleItem from '@/app/(main-layout)/components/_components/articles/article-item';
 import Container from '@/_components/layouts/container';
+import SectionHeading from '@/_components/common/section-heading';
 
 export type ArticleProps = {
   blogPost: IBlogPost;
@@ -28,6 +29,9 @@ const Article: FunctionComponent<ArticleProps> = ({
   return (
     <>
       <Container className='pt-12'>
+        <div className='mb-12'>
+          <SectionHeading title='Article' />
+        </div>
         <div className='z-10'>
           <Stack className='space-y-12 mb-24'>
             <Link
@@ -116,7 +120,7 @@ const Article: FunctionComponent<ArticleProps> = ({
             </Stack>
 
             <div className='relative space-y-8'>
-              <h3 className='font-capital text-6xl'>LATEST ARTICLES</h3>
+              <SectionHeading title='Latest Articles' />
               <ArrowScrollBar className='py-[50px] gap-[20px]'>
                 {!preview
                   ? latestBlogPosts.map((item, i) =>

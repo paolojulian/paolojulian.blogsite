@@ -1,14 +1,14 @@
 'use client';
-import React, { FunctionComponent, useState } from 'react';
-import Container from './container';
-import Row from './row';
-import Link from 'next/link';
 import classNames from 'classnames';
-import BellIcon from '../icons/bell-icon';
+import Link from 'next/link';
+import React, { FunctionComponent, useState } from 'react';
 import BarsIcon from '../icons/bars-icon';
-import Stack from './stack';
+import BellIcon from '../icons/bell-icon';
 import CloseIcon from '../icons/close-icon';
 import PopoverMenu from '../popovers/popover-menu';
+import Container from './container';
+import Row from './row';
+import Stack from './stack';
 
 export type NavbarProps = {
   // no props
@@ -33,7 +33,7 @@ const HeaderLink = ({
 
 const MemoizedHeaderLink = React.memo(HeaderLink);
 
-const Navbar: FunctionComponent<NavbarProps> = (props) => {
+const Navbar: FunctionComponent<NavbarProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMobileMenuClick = () => {

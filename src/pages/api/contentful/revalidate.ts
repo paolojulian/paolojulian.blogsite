@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import Cors from 'cors';
+import { NextApiRequest, NextApiResponse } from "next";
 
 const cors = Cors({
   methods: ['POST']
@@ -11,10 +11,10 @@ const cors = Cors({
 function runMiddleware(
   req: NextApiRequest,
   res: NextApiResponse,
-  fn: Function
+  fn: (req: NextApiRequest, res: NextApiResponse, callback: (result: unknown) => void) => void
 ) {
   return new Promise((resolve, reject) => {
-    fn(req, res, (result: any) => {
+    fn(req, res, (result) => {
       if (result instanceof Error) {
         return reject(result)
       }

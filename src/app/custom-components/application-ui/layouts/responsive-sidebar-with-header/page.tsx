@@ -7,7 +7,7 @@ export type ResponsiveSidebarWithHeaderPageProps = {
 
 const ResponsiveSidebarWithHeaderPage: FunctionComponent<
   ResponsiveSidebarWithHeaderPageProps
-> = (props) => {
+> = () => {
   return <ResponsiveSidebarWithHeader />;
 };
 
