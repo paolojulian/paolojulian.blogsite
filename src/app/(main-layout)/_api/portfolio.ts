@@ -21,7 +21,7 @@ export async function getPortfolio() {
   `;
   try {
 
-    const res = await contentfulGQLClient.query({ query });
+    const res = await contentfulGQLClient.query({ query, tags: ['portfolio'] });
     if (!res.ok) {
       if (res.status === 404) {
         throw new NotFoundError();
