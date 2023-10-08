@@ -15,7 +15,7 @@ const GlobalSearchModalItems: FunctionComponent<Props> = () => {
   if (isLoading) {
     return (
       <div
-        className='flex flex-col gap-2 max-h-[500px] overflow-y-auto p-8'
+        className='flex flex-col max-h-[500px] overflow-y-auto p-8'
         data-testid={DATA_TEST.loadingContainer}
       >
         <GlobalSearchModalItemSkeleton />
@@ -61,7 +61,7 @@ const GlobalSearchModalItems: FunctionComponent<Props> = () => {
 
   return (
     <div
-      className='flex flex-col gap-2 max-h-[500px] overflow-y-auto p-8'
+      className='flex flex-col max-h-[500px] overflow-y-auto p-8'
       data-testid={DATA_TEST.container}
     >
       {data.map((item, i) => (
