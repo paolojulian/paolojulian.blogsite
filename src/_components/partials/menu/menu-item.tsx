@@ -1,22 +1,32 @@
 'use client';
+import Text from '@/_components/common/typography/text';
+import Uppercase from '@/_components/common/typography/uppercase';
+import Row from '@/_components/layouts/row';
+import Stack from '@/_components/layouts/stack';
 import useMenuContext from '@/_context/menu-provider/use-menu-context';
-import Text from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/typography/text';
-import Uppercase from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/typography/uppercase';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
 
 export const dataTestId = {
   container: 'menu-item-container',
 };
 
 interface Props {
-  title: string;
+  ImageComponent: ReactNode;
   description: string;
+  isActive: boolean;
   link: string;
+  title: string;
 }
 
-const MenuItem: FunctionComponent<Props> = ({ description, link, title }) => {
+const MenuItem: FunctionComponent<Props> = ({
+  ImageComponent,
+  description,
+  isActive,
+  link,
+  title,
+}) => {
   const { setIsOpen } = useMenuContext();
 
   const pathname = usePathname();
@@ -28,25 +38,34 @@ const MenuItem: FunctionComponent<Props> = ({ description, link, title }) => {
       setIsOpen(false);
     }
   }, [pathname, currentPathname, setIsOpen]);
+  // const handleClick = () => setIsOpen(false);
 
   return (
     <Link
       className={[
-        'flex flex-col border border-slate-400 p-2 md:p-6 xl:p-12 gap-2',
+        'flex flex-col gap-1 md:gap-2',
+        'w-[140px] md:w-[350px] lg:w-[500px]',
+        'overflow-hidden',
         'cursor-pointer relative group',
-        'hover:bg-slate-100/10',
       ].join(' ')}
       data-testid={dataTestId.container}
       href={link}
       role='button'
     >
-      <div className='absolute left-0 top-0 w-4 transition-opacity opacity-0 group-hover:opacity-100 aspect-square bg-primary-300'></div>
-      <Uppercase as='h3' className='text-base md:text-xl xl:text-2xl'>
-        {title}
-      </Uppercase>
-      <Text className='hidden md:block text-base xl:text-lg text-slate-400'>
-        {description}
-      </Text>
+      <Row className='flex flex-row items-center gap-1 md:gap-2 relative'>
+        {!!isActive && (
+          <div className='w-2 md:w-4 aspect-square bg-red-300'></div>
+        )}
+        <Uppercase as='h3' className='text-sm md:text-xl xl:text-2xl'>
+          {title}
+        </Uppercase>
+      </Row>
+      <Stack className='flex-1 items-center md:items-start bg-white p-2 md:p-4 justify-between rounded-sm'>
+        {ImageComponent}
+        <Text className='text-sm line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500'>
+          {description}
+        </Text>
+      </Stack>
     </Link>
   );
 };
