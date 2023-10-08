@@ -18,6 +18,7 @@ const Hero: FunctionComponent<Props> = () => {
     <div className='max-w-screen-2xl mx-auto min-h-screen w-full'>
       <Container className='py-4 lg:py-12 h-full relative'>
         <SectionHeading
+          title='PaoloJulian.dev'
           RightContent={
             <div className='flex-row gap-5 items-end text-primary-400 hidden lg:flex'>
               <Link href='https://www.linkedin.com/in/pipz/'>
@@ -31,7 +32,6 @@ const Hero: FunctionComponent<Props> = () => {
               </Link>
             </div>
           }
-          title='PaoloJulian.dev'
         />
 
         {/* Content */}

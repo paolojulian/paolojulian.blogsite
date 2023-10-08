@@ -13,6 +13,10 @@ import { Metadata } from 'next';
 import { FunctionComponent } from 'react';
 import { getLatestBlogPosts } from './_api/blog-post';
 import BlogItem from './_components/blog-item';
+import EnterAnimation from '@/_components/animations/enter-animation';
+import EnterAnimationList, {
+  EnterAnimationListItem,
+} from '@/_components/animations/enter-animation-list';
 
 export type BlogsPageProps = {
   // no props
@@ -39,32 +43,39 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async () => {
           }
         />
         <Stack className='text-5xl md:text-7xl font-medium xl:max-w-[70%] pt-12'>
-          <h1 className='uppercase'>
-            <span className='text-slate-400'>Explore my articles,</span>
-            <span className='text-slate-800'>
-              <br />
-              crafted through both challenges and triumphs.
-            </span>
-          </h1>
+          <EnterAnimation>
+            <Uppercase>
+              <span className='text-slate-400'>Explore my articles,</span>
+              <span className='text-slate-800'>
+                <br />
+                crafted through both challenges and triumphs.
+              </span>
+            </Uppercase>
+          </EnterAnimation>
         </Stack>
 
-        <Row className='gap-4'>
-          <ScrollToElementBtn targetId='latest-articles'>
-            <div className='py-4 pl-12 pr-10 bg-red-400 lg:hover:bg-red-500 lg:transition-colors text-gray-50 flex flex-row items-center gap-4 w-fit'>
-              <Uppercase className='text-lg'>Browse Now</Uppercase>
-              <RightArrowIcon />
-            </div>
-          </ScrollToElementBtn>
-          <GlobalSearchBtn />
-        </Row>
+        <EnterAnimationList className='flex flex-row gap-4'>
+          <EnterAnimationListItem>
+            <ScrollToElementBtn targetId='latest-articles'>
+              <div className='py-4 pl-12 pr-10 bg-red-400 lg:hover:bg-red-500 lg:transition-colors text-gray-50 flex flex-row items-center gap-4 w-fit'>
+                <Uppercase className='text-lg'>Browse Now</Uppercase>
+                <RightArrowIcon />
+              </div>
+            </ScrollToElementBtn>
+          </EnterAnimationListItem>
+          <EnterAnimationListItem>
+            <GlobalSearchBtn />
+          </EnterAnimationListItem>
+        </EnterAnimationList>
       </Container>
+
       <Container id='latest-articles' className='mb-8'>
         <SectionHeading title='Latest' RightContent='01' />
-        <div className='gap-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+        <EnterAnimationList className='gap-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
           {blogPosts.map((blogPost, i) => (
             <BlogItem blogPost={blogPost} key={i} />
           ))}
-        </div>
+        </EnterAnimationList>
       </Container>
     </GlobalSearchProvider>
   );

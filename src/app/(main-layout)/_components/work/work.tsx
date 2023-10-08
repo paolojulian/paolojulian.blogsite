@@ -1,3 +1,4 @@
+import EnterAnimationList from '@/_components/animations/enter-animation-list';
 import SectionHeading from '@/_components/common/section-heading';
 import Container from '@/_components/layouts/container';
 import { getPortfolioItems } from '@/app/(main-layout)/_api/portfolio-item';
@@ -15,7 +16,7 @@ const Work: FunctionComponent<Props> = async () => {
     <div className='max-w-screen-2xl mx-auto w-full'>
       <Container className='py-12 lg:py-24 h-full'>
         <SectionHeading RightContent='03' title='Work'></SectionHeading>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-12 h-full relative items-end'>
+        <EnterAnimationList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-12 h-full relative items-end'>
           {portfolioItems.map((portfolioItem, i) => (
             <WorkItem
               title={portfolioItem.name}
@@ -23,7 +24,7 @@ const Work: FunctionComponent<Props> = async () => {
               key={i}
             />
           ))}
-        </div>
+        </EnterAnimationList>
       </Container>
     </div>
   );
