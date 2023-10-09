@@ -4,7 +4,6 @@ import AppHeading from '../common/app-heading';
 import CodeBlock from '../common/code-block/code-block';
 import ZoomableImage from '@/_components/images/zoomable-image';
 import CodeSpan from '@/_components/common/code-span';
-import HeadingLink from '@/_components/buttons/heading-link';
 import Blockquote from '@/_components/common/blockquote';
 import styles from './app-react-markdown.module.css';
 
@@ -24,18 +23,12 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
       <ReactMarkdown
         components={{
           h2: ({ children }) => (
-            <HeadingLink
-              className='mt-16 mb-6'
-              Heading={
-                <AppHeading.H2
-                  id={toKebabCase(children.toString())}
-                  className='font-bold'
-                >
-                  {children}
-                </AppHeading.H2>
-              }
-              tag={toKebabCase(children.toString())}
-            ></HeadingLink>
+            <AppHeading.H2
+              id={toKebabCase(children.toString())}
+              className='font-bold'
+            >
+              {children}
+            </AppHeading.H2>
           ),
           h3: ({ children }) => (
             <AppHeading.H3
@@ -53,9 +46,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
               {children}
             </AppHeading.H4>
           ),
-          p: ({ children }) => (
-            <p className='leading-relaxed'>{children}</p>
-          ),
+          p: ({ children }) => <p className='leading-relaxed'>{children}</p>,
           ol: ({ children }) => (
             <ol
               className='whitespace-normal mt-6 mb-6'
@@ -80,7 +71,9 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             </ul>
           ),
           li: ({ children }) => (
-            <li className='text-slate-700 whitespace-normal leading-normal'>{children}</li>
+            <li className='text-slate-700 whitespace-normal leading-normal'>
+              {children}
+            </li>
           ),
           a: ({ href, children }) => (
             <a href={href} className='text-red-500 font-medium'>

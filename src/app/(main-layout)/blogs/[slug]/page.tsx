@@ -16,6 +16,12 @@ export async function generateMetadata({ params }: BlogDetailsProps) {
   };
 }
 
+export async function generateStaticParams() {
+  const blogPosts = await getLatestBlogPosts();
+
+  return blogPosts.map((blog) => ({ slug: blog.slug }));
+}
+
 const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
   const [blogPost, latestBlogPosts] = await Promise.all([
     getBlogPostBySlug(params.slug),
