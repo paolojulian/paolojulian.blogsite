@@ -81,7 +81,6 @@ const Article: FunctionComponent<ArticleProps> = ({
                 </div>
                 <p className='text-slate-500 text-sm md:text-base line-clamp-1 text-center'>
                   {blogPost.banner.title}
-                  banner
                 </p>
               </Stack>
 
