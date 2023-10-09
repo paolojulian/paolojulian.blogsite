@@ -1,4 +1,3 @@
-import ProgressBar from '@/_components/common/progress-bar';
 import classNames from 'classnames';
 import type { Metadata } from 'next';
 import { Anton, Inter, Lora, Montserrat } from 'next/font/google';
@@ -60,7 +59,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
         <div id='modal-root'></div>
         <div id='fixed'></div>
-        <ProgressBar />
+        {/* <ProgressBar /> */}
       </body>
     </html>
   );
