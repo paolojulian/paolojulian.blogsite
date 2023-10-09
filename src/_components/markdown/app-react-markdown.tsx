@@ -25,7 +25,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           h2: ({ children }) => (
             <AppHeading.H2
               id={toKebabCase(children.toString())}
-              className='font-bold'
+              className='font-bold mt-16 mb-6'
             >
               {children}
             </AppHeading.H2>
