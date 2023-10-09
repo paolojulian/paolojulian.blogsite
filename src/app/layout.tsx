@@ -39,11 +39,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           name='viewport'
           content='width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no'
         />
-        <meta name='theme-color' content='#fffffff' />
+        <meta name='theme-color' content='#ffffff' />
         <link rel='icon' href='/favicon.ico' sizes='any' />
         <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
         <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
         <link rel='manifest' href='/site.webmanifest' />
+        <link rel='manifest' href='/manifest.json' />
       </head>
       <body
         className={classNames(
