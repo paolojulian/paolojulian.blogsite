@@ -12,10 +12,12 @@ import React, {
 } from 'react';
 
 interface Props extends HtmlHTMLAttributes<HTMLDivElement> {
+  addOverlayOnBorders?: boolean;
   scrollAmount?: number;
 }
 
 const ArrowScrollBar: FunctionComponent<Props> = ({
+  addOverlayOnBorders = false,
   scrollAmount = 320,
   className,
   children,
@@ -51,8 +53,14 @@ const ArrowScrollBar: FunctionComponent<Props> = ({
 
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleScrollRight = () => handleScroll('left');
-  const handleScrollLeft = () => handleScroll('right');
+  const handleScrollRight = () => {
+    if (!scrollLeftVisible) return;
+    handleScroll('left');
+  };
+  const handleScrollLeft = () => {
+    if (!scrollRightVisible) return;
+    handleScroll('right');
+  };
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (!containerRef.current) return;
@@ -110,38 +118,56 @@ const ArrowScrollBar: FunctionComponent<Props> = ({
         </Fab>
       </div> */}
       {/* left arrow */}
-      {scrollLeftVisible ? (
-        <div
-          className='absolute left-0 inset-y-0 hidden md:flex flex-col group/scroll justify-center px-6 group/fab'
-          role='button'
-          onClick={handleScrollRight}
+      <div
+        className={classNames(
+          'absolute left-0 inset-y-0 hidden md:flex flex-col group/scroll justify-center px-6 group/fab',
+          addOverlayOnBorders
+            ? 'hover:bg-gradient-to-r from-black/50 to-transparent'
+            : ''
+        )}
+        role='button'
+        onClick={handleScrollRight}
+      >
+        <Fab
+          className={classNames(
+            'opacity-0 md:group-hover/arrows:opacity-100 transition scale-90',
+            scrollLeftVisible
+              ? ' group-hover/scroll:scale-100 group-active/scroll:scale-90'
+              : 'pointer-events-none'
+          )}
+          disabled={!scrollLeftVisible}
+          theme='primary'
+          type='button'
         >
+          <LeftArrowIcon className='text-white' />
+        </Fab>
+      </div>
+      {/* right */}
+      <div
+        className={classNames(
+          'absolute right-0 inset-y-0 hidden md:flex flex-col group/scroll justify-center px-6 group/fab',
+          addOverlayOnBorders
+            ? 'hover:bg-gradient-to-l from-black/50 to-transparent'
+            : ''
+        )}
+        role='button'
+        onClick={handleScrollLeft}
+      >
+        <div className='drop-shadow-xl'>
           <Fab
-            className='opacity-0 md:group-hover/arrows:opacity-100 transition-opacity scale-90 group-hover/scroll:scale-100'
+            className={classNames(
+              'opacity-0 md:group-hover/arrows:opacity-100 transition-opacity scale-90',
+              scrollRightVisible
+                ? ' group-hover/scroll:scale-100 group-active/scroll:scale-90'
+                : 'pointer-events-none'
+            )}
+            disabled={!scrollRightVisible}
             theme='primary'
-            type='button'
           >
-            <LeftArrowIcon className='text-white' />
+            <RightArrowIcon className='text-white' />
           </Fab>
         </div>
-      ) : null}
-      {/* right */}
-      {scrollRightVisible ? (
-        <div
-          className='absolute right-0 inset-y-0 hidden md:flex flex-col group/scroll justify-center px-6 group/fab'
-          role='button'
-          onClick={handleScrollLeft}
-        >
-          <div className='drop-shadow-xl'>
-            <Fab
-              className='opacity-0 md:group-hover/arrows:opacity-100 transition-opacity scale-90 group-hover/scroll:scale-100'
-              theme='primary'
-            >
-              <RightArrowIcon className='text-white' />
-            </Fab>
-          </div>
-        </div>
-      ) : null}
+      </div>
     </div>
   );
 };

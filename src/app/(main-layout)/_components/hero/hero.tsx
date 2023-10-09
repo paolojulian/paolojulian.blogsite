@@ -15,7 +15,7 @@ interface Props {
 
 const Hero: FunctionComponent<Props> = () => {
   return (
-    <div className='max-w-screen-2xl mx-auto min-h-screen w-full'>
+    <div className='max-w-screen-2xl mx-auto lg:min-h-screen w-full'>
       <Container className='py-4 lg:py-12 h-full relative'>
         <SectionHeading
           title='PaoloJulian.dev'

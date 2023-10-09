@@ -14,7 +14,7 @@ const ArticleIcon: FunctionComponent<Props> = (props) => {
       xmlns='http://www.w3.org/2000/svg'
       {...props}
     >
-      <g clip-path='url(#clip0_1712_16575)'>
+      <g clipPath='url(#clip0_1712_16575)'>
         <path
           d='M79.2388 64.5575L47.7537 50.1852L63.9658 14.6758L95.451 29.0481L79.2388 64.5575Z'
           fill='#F2F2F2'
