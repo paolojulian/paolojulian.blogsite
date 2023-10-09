@@ -100,6 +100,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             </CodeSpan>
           ),
           blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
+          hr: () => <hr className='my-8' />,
         }}
       >
         {children}

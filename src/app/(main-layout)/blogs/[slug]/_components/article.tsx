@@ -33,7 +33,7 @@ const Article: FunctionComponent<ArticleProps> = ({
           <SectionHeading title='Article' />
         </div>
         <div className='z-10'>
-          <Stack className='space-y-12 mb-24'>
+          <Stack className='gap-6 lg:gap-12 mb-24'>
             <Link
               className={classNames(preview ? 'pointer-events-none' : '')}
               href='/blogs'
@@ -59,10 +59,10 @@ const Article: FunctionComponent<ArticleProps> = ({
               </span>
             </Stack>
 
-            <Row className='border-b-2 border-gray-400 justify-between p-2'></Row>
+            <Row className='border-b border-gray-300 justify-between p-2'></Row>
 
             {/* content */}
-            <Stack className='space-y-12 py-6 md:py-12 w-full max-w-screen-md mx-auto overflow-x-hidden'>
+            <Stack className='gap-6 lg:gap-12 py-6 md:py-12 w-full max-w-screen-md mx-auto overflow-x-hidden'>
               <Stack className='space-y-1 items-center'>
                 <div className='w-full relative'>
                   {blogPost.banner ? (
@@ -79,7 +79,8 @@ const Article: FunctionComponent<ArticleProps> = ({
                     />
                   ) : null}
                 </div>
-                <p className='text-slate-500 text-sm md:text-base line-clamp-1'>
+                <p className='text-slate-500 text-sm md:text-base line-clamp-1 text-center'>
+                  {blogPost.banner.title}
                   banner
                 </p>
               </Stack>
@@ -93,7 +94,7 @@ const Article: FunctionComponent<ArticleProps> = ({
                 ) : null}
               </span>
 
-              <div className='border-b border-slate-400 pb-12 md:pb-24 text-xl text-slate-600 font-serif'>
+              <div className='border-b border-slate-400 pb-12 md:pb-24 text-base text-slate-600 font-serif'>
                 <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>
               </div>
 
