@@ -38,7 +38,6 @@ const MenuItem: FunctionComponent<Props> = ({
       setIsOpen(false);
     }
   }, [pathname, currentPathname, setIsOpen]);
-  // const handleClick = () => setIsOpen(false);
 
   return (
     <Link
@@ -62,7 +61,7 @@ const MenuItem: FunctionComponent<Props> = ({
       </Row>
       <Stack className='flex-1 items-center md:items-start bg-white p-2 md:p-4 justify-between rounded-sm'>
         {ImageComponent}
-        <Text className='text-sm line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500'>
+        <Text className='text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500'>
           {description}
         </Text>
       </Stack>
