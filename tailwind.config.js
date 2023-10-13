@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
@@ -28,8 +29,9 @@ module.exports = {
       },
       fontFamily: {
         capital: ['var(--font-capital)'],
-        sans: ['var(--font-sans)'],
+        comfortaa: ['var(--font-comfortaa)'],
         lora: ['var(--font-lora)'],
+        sans: ['var(--font-sans)'],
         serif: ['var(--font-serif)'],
       },
       colors: {
@@ -39,6 +41,12 @@ module.exports = {
         background: colors.white,
         gray: colors.slate,
         accent: colors.cyan,
+
+        new: {
+          black: '#171717',
+          white: '#fafafa',
+          highlight: '#a3a3a3',
+        },
       },
       transitionTimingFunction: {
         fadeIn: 'cubic-bezier(.24,.6,.64,.65)',

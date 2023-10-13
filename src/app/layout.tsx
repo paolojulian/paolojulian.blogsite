@@ -24,6 +24,11 @@ const sans = Montserrat({
   variable: '--font-sans',
   weight: ['400', '500', '600', '700', '800'],
 });
+const comfortaa = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-comfortaa',
+  weight: ['400', '500', '800'],
+});
 
 export const metadata: Metadata = {
   title: 'Paolo Vincent Julian',
@@ -51,6 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           `${serif.variable} font-serif`,
           `${lora.variable} font-lora`,
           `${sans.variable} font-sans`,
+          `${comfortaa.variable} font-comfortaa`,
           'font-sans',
           'overscroll-contain',
           'overflow-x-hidden max-w-screen'
