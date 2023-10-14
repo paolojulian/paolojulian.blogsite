@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { Metadata } from 'next';
-import { Anton, Inter, Lora, Montserrat } from 'next/font/google';
+import { Anton, Comfortaa, Inter, Lora, Montserrat } from 'next/font/google';
 import { ReactNode } from 'react';
 import './globals.css';
 
@@ -24,10 +24,10 @@ const sans = Montserrat({
   variable: '--font-sans',
   weight: ['400', '500', '600', '700', '800'],
 });
-const comfortaa = Montserrat({
+const comfortaa = Comfortaa({
   subsets: ['latin'],
   variable: '--font-comfortaa',
-  weight: ['400', '500', '800'],
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
