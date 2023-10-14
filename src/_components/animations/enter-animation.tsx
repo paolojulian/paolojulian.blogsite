@@ -1,35 +1,60 @@
 'use client';
-import { motion } from 'framer-motion';
+import classNames from 'classnames';
+import { type Variants, motion } from 'framer-motion';
 import { FunctionComponent, ReactNode } from 'react';
 
-const variants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
+type EnterAnimationTypes = 'default' | 'fade';
 
 interface Props {
   children: ReactNode;
+  className?: string;
+  delay?: number;
+  type?: EnterAnimationTypes;
 }
 
-const EnterAnimation: FunctionComponent<Props> = ({ children }) => {
+const EnterAnimation: FunctionComponent<Props> = ({
+  children,
+  className,
+  delay = 0,
+  type = 'default',
+}) => {
+  const variants: Record<EnterAnimationTypes, Variants> = {
+    default: {
+      open: {
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay,
+          y: { stiffness: 1000, velocity: -100 },
+        },
+      },
+      closed: {
+        y: 50,
+        opacity: 0,
+        transition: {
+          y: { stiffness: 1000, delay },
+        },
+      },
+    },
+    fade: {
+      open: {
+        opacity: 1,
+        transition: {
+          delay,
+        },
+      },
+      closed: {
+        opacity: 0,
+      },
+    },
+  };
+
   return (
     <motion.div
-      className='motion-reduce:transition-none'
+      className={classNames('motion-reduce:transition-none', className)}
       initial={'closed'}
       whileInView={'open'}
-      variants={variants}
+      variants={variants[type]}
       viewport={{ once: true, margin: '0px 0px -20% 0px' }}
     >
       {children}

@@ -2,7 +2,7 @@
 import useMenuContext from '@/_context/menu-provider/use-menu-context';
 import MenuCircularText from '@/app/(portfolio)/_components/partials/menu-btn/menu-circular-text';
 import classNames from 'classnames';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 
 export const dataTestId = {
   button: 'menu-btn__button',
@@ -15,9 +15,14 @@ interface Props {
 }
 
 const MenuButton: FunctionComponent<Props> = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const { isOpen, setIsOpen } = useMenuContext();
 
   const handleClick = () => setIsOpen((prev) => !prev);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <button
@@ -25,10 +30,10 @@ const MenuButton: FunctionComponent<Props> = () => {
       className={[
         'w-16 md:w-20 aspect-square rounded-full shadow-highBlur',
         'fixed left-1/2 bottom-6 lg:bottom-12 -translate-x-1/2',
-        'transition-transform duration-500 z-50',
+        'transition duration-500 z-50',
         'active:scale-90',
         'group',
-        // isOpen ? 'bg-new-black' : 'bg-new-white',
+        isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full',
       ].join(' ')}
       data-testid={dataTestId.button}
     >
@@ -42,6 +47,7 @@ const MenuButton: FunctionComponent<Props> = () => {
       >
         <MenuCircularText className='text-new-white' />
       </div>
+
       <div
         className={classNames(
           'w-16 md:w-20 aspect-square rounded-full absolute inset-0',
