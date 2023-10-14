@@ -19,10 +19,10 @@ export default async function Home() {
 
   return (
     <Row>
-      <nav className='fixed left-0 top-0 w-28 py-10 flex flex-col justify-between h-screen items-center'>
+      <nav className='static md:fixed left-0 top-0 p-4 lg:p-10 flex flex-col justify-between h-screen items-center'>
         <Logo className='bg-new-black text-new-white w-6 h-6' />
         <Stack className='gap-4 w-full items-center'>
-          <PhoneIcon className='w-6 h-6' />
+          <PhoneIcon className='w-[1.4rem] h-[1.4rem]' />
           <MailIcon className='w-6 h-6' />
           <LinkedinIcon className='h-5 w-5' />
         </Stack>
