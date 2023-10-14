@@ -28,7 +28,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
                 class="flex flex-row flex flex-row items-center gap-1 md:gap-2 relative"
               >
                 <h3
-                  class="uppercase font-medium font-sans tracking-wide text-sm md:text-xl xl:text-2xl"
+                  class="uppercase font-medium font-comfortaa tracking-wide text-sm md:text-xl xl:text-2xl"
                 >
                   About
                 </h3>
@@ -221,7 +221,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
                   </defs>
                 </svg>
                 <p
-                  class="font-sans text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
+                  class="font-comfortaa text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
                 >
                   Discover my journey, explore my portfolio, see the tools I use, and learn about my creative skills.
                 </p>
@@ -237,7 +237,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
                 class="flex flex-row flex flex-row items-center gap-1 md:gap-2 relative"
               >
                 <h3
-                  class="uppercase font-medium font-sans tracking-wide text-sm md:text-xl xl:text-2xl"
+                  class="uppercase font-medium font-comfortaa tracking-wide text-sm md:text-xl xl:text-2xl"
                 >
                   Articles
                 </h3>
@@ -495,7 +495,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
                   </defs>
                 </svg>
                 <p
-                  class="font-sans text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
+                  class="font-comfortaa text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
                 >
                   Dive into a world of insights and knowledge through my articles. Explore diverse topics and gain valuable insights.
                 </p>
@@ -511,7 +511,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
                 class="flex flex-row flex flex-row items-center gap-1 md:gap-2 relative"
               >
                 <h3
-                  class="uppercase font-medium font-sans tracking-wide text-sm md:text-xl xl:text-2xl"
+                  class="uppercase font-medium font-comfortaa tracking-wide text-sm md:text-xl xl:text-2xl"
                 >
                   Components
                 </h3>
@@ -645,7 +645,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
                   </defs>
                 </svg>
                 <p
-                  class="font-sans text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
+                  class="font-comfortaa text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
                 >
                   Unlock the power of custom components. Explore unique solutions tailored to your needs, enhancing your projects.
                 </p>
@@ -661,7 +661,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
                 class="flex flex-row flex flex-row items-center gap-1 md:gap-2 relative"
               >
                 <h3
-                  class="uppercase font-medium font-sans tracking-wide text-sm md:text-xl xl:text-2xl"
+                  class="uppercase font-medium font-comfortaa tracking-wide text-sm md:text-xl xl:text-2xl"
                 >
                   Contact
                 </h3>
@@ -795,7 +795,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
                   </defs>
                 </svg>
                 <p
-                  class="font-sans text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
+                  class="font-comfortaa text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
                 >
                   Connect with me on the Contact page. Reach out, ask questions, or discuss collaboration opportunities. Let's get in touch!
                 </p>
@@ -894,7 +894,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
                 class="flex flex-row flex flex-row items-center gap-1 md:gap-2 relative"
               >
                 <h3
-                  class="uppercase font-medium font-sans tracking-wide text-sm md:text-xl xl:text-2xl"
+                  class="uppercase font-medium font-comfortaa tracking-wide text-sm md:text-xl xl:text-2xl"
                 >
                   About
                 </h3>
@@ -1087,7 +1087,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
                   </defs>
                 </svg>
                 <p
-                  class="font-sans text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
+                  class="font-comfortaa text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
                 >
                   Discover my journey, explore my portfolio, see the tools I use, and learn about my creative skills.
                 </p>
@@ -1103,7 +1103,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
                 class="flex flex-row flex flex-row items-center gap-1 md:gap-2 relative"
               >
                 <h3
-                  class="uppercase font-medium font-sans tracking-wide text-sm md:text-xl xl:text-2xl"
+                  class="uppercase font-medium font-comfortaa tracking-wide text-sm md:text-xl xl:text-2xl"
                 >
                   Articles
                 </h3>
@@ -1361,7 +1361,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
                   </defs>
                 </svg>
                 <p
-                  class="font-sans text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
+                  class="font-comfortaa text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
                 >
                   Dive into a world of insights and knowledge through my articles. Explore diverse topics and gain valuable insights.
                 </p>
@@ -1377,7 +1377,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
                 class="flex flex-row flex flex-row items-center gap-1 md:gap-2 relative"
               >
                 <h3
-                  class="uppercase font-medium font-sans tracking-wide text-sm md:text-xl xl:text-2xl"
+                  class="uppercase font-medium font-comfortaa tracking-wide text-sm md:text-xl xl:text-2xl"
                 >
                   Components
                 </h3>
@@ -1511,7 +1511,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
                   </defs>
                 </svg>
                 <p
-                  class="font-sans text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
+                  class="font-comfortaa text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
                 >
                   Unlock the power of custom components. Explore unique solutions tailored to your needs, enhancing your projects.
                 </p>
@@ -1527,7 +1527,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
                 class="flex flex-row flex flex-row items-center gap-1 md:gap-2 relative"
               >
                 <h3
-                  class="uppercase font-medium font-sans tracking-wide text-sm md:text-xl xl:text-2xl"
+                  class="uppercase font-medium font-comfortaa tracking-wide text-sm md:text-xl xl:text-2xl"
                 >
                   Contact
                 </h3>
@@ -1661,7 +1661,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
                   </defs>
                 </svg>
                 <p
-                  class="font-sans text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
+                  class="font-comfortaa text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500"
                 >
                   Connect with me on the Contact page. Reach out, ask questions, or discuss collaboration opportunities. Let's get in touch!
                 </p>

@@ -50,10 +50,12 @@ module.exports = {
       },
       transitionTimingFunction: {
         fadeIn: 'cubic-bezier(.24,.6,.64,.65)',
+        menu: 'cubic-bezier(0.45,0.02,0.09,0.98)',
       },
       boxShadow: {
         mediumBlur: '0px 8px 28px 0px rgba(0,0,0,0.25)',
         highBlur: '0px 4px 28px 0px rgba(0,0,0,0.25)',
+        default: '0px 4px 28px -3px rgba(0,0,0,0.48)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

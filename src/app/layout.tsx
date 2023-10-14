@@ -52,6 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body
         className={classNames(
+          'bg-new-white dark:bg-new-black',
           `${capital.variable} font-capital`,
           `${serif.variable} font-serif`,
           `${lora.variable} font-lora`,

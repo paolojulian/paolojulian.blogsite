@@ -13,7 +13,7 @@ const Text: FunctionComponent<Props> = ({
 }) => {
   return (
     <Element
-      className={['font-sans', className].join(' ')}
+      className={['font-comfortaa', className].join(' ')}
     >
       {children}
     </Element>

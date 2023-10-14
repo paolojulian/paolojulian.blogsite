@@ -6,7 +6,7 @@ const tracking: Record<Types, string> = {
   default: 'tracking-wide',
   wide: 'tracking-widest',
   wider: 'tracking-[0.375rem]',
-  widest: 'tracking-[0.575rem]'
+  widest: 'tracking-[0.575rem]',
 };
 
 interface Props {
@@ -24,11 +24,7 @@ const Uppercase: FunctionComponent<Props> = ({
 }) => {
   return (
     <Element
-      className={[
-        'uppercase font-medium font-sans',
-        tracking[type],
-        className,
-      ].join(' ')}
+      className={['uppercase font-medium font-comfortaa', tracking[type], className].join(' ')}
     >
       {children}
     </Element>

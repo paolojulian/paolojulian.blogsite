@@ -8,7 +8,12 @@ describe('TESTING MenuItem component', () => {
   describe('GIVEN valid props', () => {
     const mockData: ComponentProps<typeof MenuItem> = {
       title: 'Sample Heading',
-      description: 'Menu description',
+      isActive: false,
+      imageUrls: {
+        desktop: '/assets/menu/home-page.desktop.png',
+        tablet: '/assets/menu/home-page.tablet.png',
+        phone: '/assets/menu/home-page.phone.png',
+      },
       link: '/',
     };
 
@@ -24,12 +29,6 @@ describe('TESTING MenuItem component', () => {
         const { getByText } = renderMenuItem(mockData);
         const title = getByText(mockData.title);
         expect(title).toBeInTheDocument();
-      });
-
-      it('THEN it should render the description correctly', () => {
-        const { getByText } = renderMenuItem(mockData);
-        const description = getByText(mockData.description);
-        expect(description).toBeInTheDocument();
       });
     });
 

@@ -1,28 +1,30 @@
 'use client';
 import Text from '@/_components/common/typography/text';
-import Uppercase from '@/_components/common/typography/uppercase';
 import Row from '@/_components/layouts/row';
-import Stack from '@/_components/layouts/stack';
 import useMenuContext from '@/_context/menu-provider/use-menu-context';
+import classNames from 'classnames';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 
 export const dataTestId = {
   container: 'menu-item-container',
 };
 
 interface Props {
-  ImageComponent: ReactNode;
-  description: string;
+  imageUrls: {
+    desktop: string;
+    tablet: string;
+    phone: string;
+  };
   isActive: boolean;
   link: string;
   title: string;
 }
 
 const MenuItem: FunctionComponent<Props> = ({
-  ImageComponent,
-  description,
+  imageUrls,
   isActive,
   link,
   title,
@@ -43,28 +45,65 @@ const MenuItem: FunctionComponent<Props> = ({
     <Link
       className={[
         'flex flex-col gap-1 md:gap-2',
-        'w-[140px] md:w-[350px] lg:w-[500px]',
-        'overflow-hidden',
         'cursor-pointer relative group',
+        isActive ? 'pointer-events-none' : '',
       ].join(' ')}
       data-testid={dataTestId.container}
       href={link}
       role='button'
     >
-      <Row className='flex flex-row items-center gap-1 md:gap-2 relative'>
-        {!!isActive && (
-          <div className='w-2 md:w-4 aspect-square bg-red-300'></div>
-        )}
-        <Uppercase as='h3' className='text-sm md:text-xl xl:text-2xl'>
+      <Row className='items-center gap-2'>
+        <span
+          className={classNames(
+            'aspect-square w-3 rounded-full',
+            'transition',
+            isActive
+              ? 'bg-new-black opacity-100'
+              : 'opacity-0 group-hover:opacity-100 bg-new-white'
+          )}
+        ></span>
+        <Text
+          as='h3'
+          className={classNames(
+            'text-sm md:text-lg text-new-black transition-transform',
+            isActive ? '' : '-translate-x-4 group-hover:translate-x-0'
+          )}
+        >
           {title}
-        </Uppercase>
-      </Row>
-      <Stack className='flex-1 items-center md:items-start bg-white p-2 md:p-4 justify-between rounded-sm'>
-        {ImageComponent}
-        <Text className='text-sm line-clamp-4 md:line-clamp-6 lg:line-clamp-none md:text-lg text-gray-500'>
-          {description}
         </Text>
-      </Stack>
+      </Row>
+      <div className='relative aspect-[428/926] md:aspect-[744/1133] lg:aspect-[499/322] h-[220px] md:h-[300px] lg:h-[220px] shadow-default overflow-hidden rounded w-fit'>
+        <div className='md:hidden'>
+          <Image
+            alt={title}
+            className='object-fill object-center lg:group-hover:scale-105 duration-500'
+            loading='lazy'
+            fill
+            sizes='33vw'
+            src={imageUrls.phone}
+          />
+        </div>
+        <div className='hidden md:block lg:hidden'>
+          <Image
+            alt={title}
+            className='object-fill object-center lg:group-hover:scale-105 duration-500'
+            loading='lazy'
+            fill
+            sizes='33vw'
+            src={imageUrls.tablet}
+          />
+        </div>
+        <div className='hidden lg:block'>
+          <Image
+            alt={title}
+            className='object-fill object-center lg:group-hover:scale-105 duration-500'
+            loading='lazy'
+            fill
+            sizes='33vw'
+            src={imageUrls.desktop}
+          />
+        </div>
+      </div>
     </Link>
   );
 };
