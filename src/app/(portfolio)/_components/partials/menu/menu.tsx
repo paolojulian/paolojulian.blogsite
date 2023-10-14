@@ -26,7 +26,7 @@ const Menu: FunctionComponent<Props> = () => {
     <nav
       className={[
         'fixed bottom-0 left-0 bg-new-highlight',
-        'py-4 md:py-6 lg:py-12 h-[400px] md:h-[500px] w-full z-30',
+        'py-4 md:py-6 lg:py-12 h-[400px] md:h-[500px] w-full',
         'duration-500',
         'ease-[cubic-bezier(0.45,0.02,0.09,0.98)]',
         isOpen ? 'translate-y-0' : 'translate-y-full',
@@ -37,9 +37,11 @@ const Menu: FunctionComponent<Props> = () => {
         className={[
           'max-w-screen-2xl mx-auto w-full',
           'h-[280px] md:h-[300px]',
-          'overflow-x-auto text-white',
+          'overflow-x-auto text-new-white',
           'transition-transform duration-500 ease-[cubic-bezier(0.45,0.02,0.09,0.98)]',
-          isOpen ? 'lg:scale-100 translate-y-0' : 'lg:scale-75',
+          isOpen
+            ? 'lg:scale-100 translate-y-0'
+            : 'lg:scale-75 lg:-translate-y-[120%]',
           isOpen ? '' : 'pointer-events-none',
         ].join(' ')}
       >
