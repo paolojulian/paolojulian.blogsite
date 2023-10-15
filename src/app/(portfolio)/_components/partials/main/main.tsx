@@ -16,11 +16,11 @@ const Main: FunctionComponent<Props> = ({ children }) => {
       className={[
         'flex-1 motion-reduce:transition-none',
         'ease-[cubic-bezier(0.45,0.02,0.09,0.98)]',
-        'duration-500 relative z-10',
+        'duration-500 relative',
         'bg-new-black',
         'flex flex-col',
         'h-auto w-screen overflow-x-hidden min-h-screen',
-        isOpen ? 'pointer-events-none' : '',
+        isOpen ? 'pointer-events-none overflow-hidden' : '',
         isOpen
           ? '-translate-y-[400px] md:-translate-y-[500px]'
           : 'translate-y-0',

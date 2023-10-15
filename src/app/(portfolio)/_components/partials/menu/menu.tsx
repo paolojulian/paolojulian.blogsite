@@ -21,8 +21,8 @@ const Menu: FunctionComponent<Props> = () => {
     <nav
       className={[
         'fixed bottom-0 left-0 bg-new-highlight',
-        'py-4 md:py-6 lg:py-12 h-[400px] md:h-[500px] w-full',
-        'duration-500',
+        'py-4 md:py-6 lg:py-12 h-[400px] md:h-[500px] w-full z-20',
+        'duration-500 overflow-hidden',
         'ease-menu',
         isOpen ? 'translate-y-0' : 'translate-y-full',
       ].join(' ')}

@@ -3,7 +3,7 @@
 exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <nav
-    class="fixed bottom-0 left-0 bg-new-highlight py-4 md:py-6 lg:py-12 h-[400px] md:h-[500px] w-full duration-500 ease-menu translate-y-full"
+    class="fixed bottom-0 left-0 bg-new-highlight py-4 md:py-6 lg:py-12 h-[400px] md:h-[500px] w-full z-20 duration-500 overflow-hidden ease-menu translate-y-full"
     data-testid="menu-container"
   >
     <div
@@ -293,7 +293,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
 exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <nav
-    class="fixed bottom-0 left-0 bg-new-highlight py-4 md:py-6 lg:py-12 h-[400px] md:h-[500px] w-full duration-500 ease-menu translate-y-0"
+    class="fixed bottom-0 left-0 bg-new-highlight py-4 md:py-6 lg:py-12 h-[400px] md:h-[500px] w-full z-20 duration-500 overflow-hidden ease-menu translate-y-0"
     data-testid="menu-container"
   >
     <div
