@@ -1,8 +1,6 @@
 'use client';
-import Text from '@/_components/common/typography/text';
-import Row from '@/_components/layouts/row';
 import useMenuContext from '@/_context/menu-provider/use-menu-context';
-import classNames from 'classnames';
+import HoverableTitle from '@/app/(portfolio)/_components/common/hoverable-title';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -52,26 +50,7 @@ const MenuItem: FunctionComponent<Props> = ({
       href={link}
       role='button'
     >
-      <Row className='items-center gap-2'>
-        <span
-          className={classNames(
-            'aspect-square w-3 rounded-full',
-            'transition',
-            isActive
-              ? 'bg-new-black opacity-100'
-              : 'opacity-0 group-hover:opacity-100 bg-new-white'
-          )}
-        ></span>
-        <Text
-          as='h3'
-          className={classNames(
-            'text-sm md:text-lg text-new-black transition-transform',
-            isActive ? '' : '-translate-x-4 group-hover:translate-x-0'
-          )}
-        >
-          {title}
-        </Text>
-      </Row>
+      <HoverableTitle isActive={isActive} title={title} />
       <div className='relative aspect-[428/926] md:aspect-[744/1133] lg:aspect-[499/322] h-[220px] md:h-[300px] lg:h-[220px] shadow-default overflow-hidden rounded w-fit'>
         <div className='md:hidden'>
           <Image

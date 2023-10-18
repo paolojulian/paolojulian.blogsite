@@ -25,7 +25,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
               class="aspect-square w-3 rounded-full transition opacity-0 group-hover:opacity-100 bg-new-white"
             />
             <h3
-              class="font-comfortaa text-sm md:text-lg text-new-black transition-transform -translate-x-4 group-hover:translate-x-0"
+              class="font-comfortaa text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
             >
               Home
             </h3>
@@ -93,7 +93,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
               class="aspect-square w-3 rounded-full transition opacity-0 group-hover:opacity-100 bg-new-white"
             />
             <h3
-              class="font-comfortaa text-sm md:text-lg text-new-black transition-transform -translate-x-4 group-hover:translate-x-0"
+              class="font-comfortaa text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
             >
               Articles
             </h3>
@@ -161,7 +161,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
               class="aspect-square w-3 rounded-full transition opacity-0 group-hover:opacity-100 bg-new-white"
             />
             <h3
-              class="font-comfortaa text-sm md:text-lg text-new-black transition-transform -translate-x-4 group-hover:translate-x-0"
+              class="font-comfortaa text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
             >
               Components
             </h3>
@@ -229,7 +229,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
               class="aspect-square w-3 rounded-full transition opacity-0 group-hover:opacity-100 bg-new-white"
             />
             <h3
-              class="font-comfortaa text-sm md:text-lg text-new-black transition-transform -translate-x-4 group-hover:translate-x-0"
+              class="font-comfortaa text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
             >
               Contact
             </h3>
@@ -315,7 +315,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
               class="aspect-square w-3 rounded-full transition opacity-0 group-hover:opacity-100 bg-new-white"
             />
             <h3
-              class="font-comfortaa text-sm md:text-lg text-new-black transition-transform -translate-x-4 group-hover:translate-x-0"
+              class="font-comfortaa text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
             >
               Home
             </h3>
@@ -383,7 +383,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
               class="aspect-square w-3 rounded-full transition opacity-0 group-hover:opacity-100 bg-new-white"
             />
             <h3
-              class="font-comfortaa text-sm md:text-lg text-new-black transition-transform -translate-x-4 group-hover:translate-x-0"
+              class="font-comfortaa text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
             >
               Articles
             </h3>
@@ -451,7 +451,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
               class="aspect-square w-3 rounded-full transition opacity-0 group-hover:opacity-100 bg-new-white"
             />
             <h3
-              class="font-comfortaa text-sm md:text-lg text-new-black transition-transform -translate-x-4 group-hover:translate-x-0"
+              class="font-comfortaa text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
             >
               Components
             </h3>
@@ -519,7 +519,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
               class="aspect-square w-3 rounded-full transition opacity-0 group-hover:opacity-100 bg-new-white"
             />
             <h3
-              class="font-comfortaa text-sm md:text-lg text-new-black transition-transform -translate-x-4 group-hover:translate-x-0"
+              class="font-comfortaa text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
             >
               Contact
             </h3>

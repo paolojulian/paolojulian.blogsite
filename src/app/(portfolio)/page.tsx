@@ -1,7 +1,3 @@
-// import { getPortfolioItems } from './portfolio.backup/_api/portfolio-item';
-// import { getPortfolio } from './portfolio.backup/_api/portfolio';
-// import { getLatestBlogPosts } from './blogs/_api/blog-post';
-
 import EnterAnimation from '@/_components/animations/enter-animation';
 import Text from '@/_components/common/typography/text';
 import Uppercase from '@/_components/common/typography/uppercase';
@@ -11,17 +7,22 @@ import PolygonBackground from '@/_components/images/polygon-background';
 import Container from '@/_components/layouts/container';
 import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
+import { getPortfolio } from '@/app/(main-layout)/_api/portfolio';
+import { getPortfolioItems } from '@/app/(main-layout)/_api/portfolio-item';
+import { getLatestBlogPosts } from '@/app/(main-layout)/blogs/_api/blog-post';
 import MailIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/mail-icon';
 import PhoneIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/phone-icon';
-import GetInTouchBtn from '@/app/(portfolio)/_components/get-in-touch-btn';
-import ScrollDownToSeeMore from '@/app/(portfolio)/_components/scroll-down-to-see-more';
+import HoverableTitle from '@/app/(portfolio)/_components/common/hoverable-title';
+import GetInTouchBtn from '@/app/(portfolio)/_components/partials/get-in-touch-btn';
+import ScrollDownToSeeMore from '@/app/(portfolio)/_components/partials/scroll-down-to-see-more';
+import Image from 'next/image';
 
 export default async function Home() {
-  // const [portfolioItems, portfolio, blogPosts] = await Promise.all([
-  //   getPortfolioItems(),
-  //   getPortfolio(),
-  //   getLatestBlogPosts(),
-  // ]);
+  const [portfolioItems] = await Promise.all([
+    getPortfolioItems(),
+    getPortfolio(),
+    getLatestBlogPosts(),
+  ]);
 
   return (
     <Row>
@@ -39,8 +40,8 @@ export default async function Home() {
         <PolygonBackground />
       </div>
 
-      <main className='max-w-screen-2xl w-full mx-auto relative ml-4 md:ml-12 lg:ml-auto min-h-screen'>
-        <Container className='pt-60 lg:pt-52 relative md:min-h-screen'>
+      <main className='max-w-screen-2xl w-full mx-auto relative md:ml-12 lg:ml-auto min-h-screen'>
+        <Container className='pt-60 lg:pt-52 relative min-h-screen'>
           <EnterAnimation delay={2} type='fade'>
             <ScrollDownToSeeMore />
           </EnterAnimation>
@@ -87,8 +88,56 @@ export default async function Home() {
             </EnterAnimation>
           </Stack>
         </Container>
-        <Container>
-          <div className='h-screen'></div>
+        <Container className='py-12 md:py-24'>
+          <Stack className='gap-8 md:gap-20'>
+            <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
+              <Text className='text-new-highlight text-xl'>Latest Work</Text>
+              <span></span>
+            </div>
+
+            <div className='w-full overflow-y-hidden overflow-x-auto pr-8 md:pr-0'>
+              <div className='flex flex-row md:grid grid-cols-3 gap-6 w-fit md:w-full'>
+                {portfolioItems.slice(0, 3).map((item) => (
+                  <div className='group md:h-fit' key={item.name}>
+                    <HoverableTitle textColor='white' title={item.name} />
+
+                    <div className='relative aspect-[411/250] w-[300px] md:w-auto md:h-full mt-2'>
+                      <div className='absolute bottom-0 left-0 w-full h-[90%] bg-new-highlight/60'></div>
+                      <div className='absolute bottom-0 left-0 w-[97.5%] h-[95%] bg-new-highlight'></div>
+                      <div className='h-full w-[95%]'>
+                        <div className='bg-new-white h-full relative overflow-hidden'>
+                          <Image
+                            alt={item.name}
+                            className='object-cover group-hover:scale-105 duration-200'
+                            src={item.image.url}
+                            fill
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Stack>
+        </Container>
+        <Container className='py-24'>
+          <Stack className='gap-20'>
+            <Text className='text-new-highlight text-xl'>
+              Here are my latest work.
+            </Text>
+            <div className='grid grid-cols-3 gap-6'>
+              <div className='aspect-[411/300] w-full'>
+                <div className='border border-new-highlight h-full'></div>
+              </div>
+              <div className='aspect-[411/300] w-full'>
+                <div className='border border-new-highlight h-full'></div>
+              </div>
+              <div className='aspect-[411/300] w-full'>
+                <div className='border border-new-highlight h-full'></div>
+              </div>
+            </div>
+          </Stack>
         </Container>
       </main>
     </Row>
