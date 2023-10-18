@@ -91,7 +91,7 @@ export default async function Home() {
         <Container className='py-12 md:py-24'>
           <Stack className='gap-8 md:gap-20'>
             <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
-              <Text className='text-new-highlight text-xl'>Latest Work</Text>
+              <Text className='text-new-highlight text-xl'>LATEST WORK</Text>
               <span></span>
             </div>
 
@@ -121,20 +121,70 @@ export default async function Home() {
             </div>
           </Stack>
         </Container>
-        <Container className='py-24'>
-          <Stack className='gap-20'>
-            <Text className='text-new-highlight text-xl'>
-              Here are my latest work.
-            </Text>
-            <div className='grid grid-cols-3 gap-6'>
-              <div className='aspect-[411/300] w-full'>
-                <div className='border border-new-highlight h-full'></div>
+        <Container className='py-12 md:py-24'>
+          <Stack className='gap-8 md:gap-20'>
+            <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
+              <Text className='text-new-highlight text-xl'>TECH STACK</Text>
+              <span></span>
+            </div>
+
+            <div className='flex flex-col gap-12 md:gap-0 md:flex-row w-full'>
+              <div className='flex-1'>
+                <Text className='text-new-highlight text-base md:text-xl max-w-[332px] xl:max-w-[555px]'>
+                  {`
+                  These are the tools I prefer to use as of now. However, my
+                  journey is ongoing, and I remain open to learning and
+                  exploring new tools in the future. It's important to remember
+                  that these are just temporary preferences, and each is just a
+                  tool in my creative arsenal.
+                  `}
+                </Text>
               </div>
-              <div className='aspect-[411/300] w-full'>
-                <div className='border border-new-highlight h-full'></div>
-              </div>
-              <div className='aspect-[411/300] w-full'>
-                <div className='border border-new-highlight h-full'></div>
+              <div className='flex-1'>
+                <Stack className='gap-12 lg:gap-20'>
+                  <Stack className='gap-2'>
+                    <Text
+                      as='h4'
+                      className='text-new-highlight text-sm font-bold'
+                    >
+                      FRONT-END
+                    </Text>
+                    <div className='text-new-white text-2xl leading-tight'>
+                      <Text>Next.js</Text>
+                      <Text>React.js</Text>
+                      <Text>TailwindCSS</Text>
+                      <Text>Typescript</Text>
+                      <Text>GraphQL</Text>
+                      <Text>Testing Library</Text>
+                    </div>
+                  </Stack>
+                  <Stack className='gap-2'>
+                    <Text
+                      as='h4'
+                      className='text-new-highlight text-sm font-bold'
+                    >
+                      BACK-END
+                    </Text>
+                    <div className='text-new-white text-2xl leading-tight'>
+                      <Text>Node.js</Text>
+                      <Text>AWS</Text>
+                      <Text>Contentful</Text>
+                      <Text>Websocket</Text>
+                      <Text>GraphQL</Text>
+                    </div>
+                  </Stack>
+                  <Stack className='gap-2'>
+                    <Text
+                      as='h4'
+                      className='text-new-highlight text-sm font-bold'
+                    >
+                      UI/UX
+                    </Text>
+                    <div className='text-new-white text-2xl leading-tight'>
+                      <Text>Figma</Text>
+                    </div>
+                  </Stack>
+                </Stack>
               </div>
             </div>
           </Stack>
