@@ -1,4 +1,5 @@
 import EnterAnimation from '@/_components/animations/enter-animation';
+import AppCopyright from '@/_components/common/app-copyright';
 import Text from '@/_components/common/typography/text';
 import Uppercase from '@/_components/common/typography/uppercase';
 import LinkedinIcon from '@/_components/icons/linkedin-icon';
@@ -207,6 +208,80 @@ export default async function Home() {
             <Articles />
           </Stack>
         </Container>
+        <footer className='border-t border-new-highlight mb-28'>
+          <Container className='py-12 md:py-24'>
+            <div className='flex flex-col lg:flex-row gap-12 lg:gap-0'>
+              <div className='flex-1 text-2xl xl:text-4xl'>
+                <div className='max-w-[300px] lg:max-w-[420px] xl:max-w-[500px]'>
+                  <Uppercase className='text-new-white'>
+                    HAVE QUESTIONS?
+                  </Uppercase>
+                  <Uppercase className='lg:ml-4 xl:ml-8 text-new-highlight'>
+                    SEND ME A MESSAGE!
+                  </Uppercase>
+                </div>
+              </div>
+              <div className='flex-1'>
+                <Stack className='gap-12 lg:gap-20'>
+                  <Stack className='gap-2'>
+                    <Text
+                      as='h4'
+                      className='text-new-highlight text-sm font-bold'
+                    >
+                      SOCIALS
+                    </Text>
+                    <div className='text-new-white text-2xl leading-tight'>
+                      <Text>LinkedIn</Text>
+                      <Text>Facebook</Text>
+                    </div>
+                  </Stack>
+                  <Stack className='gap-2'>
+                    <Text
+                      as='h4'
+                      className='text-new-highlight text-sm font-bold'
+                    >
+                      ADDRESS
+                    </Text>
+                    <div className='text-new-white text-2xl leading-tight'>
+                      <Text>Dagsian, Baguio City</Text>
+                      <Text>Philippines</Text>
+                      <Text>2600</Text>
+                    </div>
+                  </Stack>
+                  <Stack className='gap-2'>
+                    <Text
+                      as='h4'
+                      className='text-new-highlight text-sm font-bold'
+                    >
+                      CONTACT
+                    </Text>
+                    <div className='text-new-white text-2xl leading-tight'>
+                      <Text>paolojulian.dev@gmail.com</Text>
+                      <Text>(+63) 927 948 8654</Text>
+                    </div>
+                  </Stack>
+                  <Stack className='gap-2'>
+                    <Text
+                      as='h4'
+                      className='text-new-highlight text-sm font-bold'
+                    >
+                      SITEMAP
+                    </Text>
+                    <div className='text-new-white text-2xl leading-tight'>
+                      <Text>About</Text>
+                      <Text>Articles</Text>
+                      <Text>Components</Text>
+                      <Text>Contact</Text>
+                    </div>
+                  </Stack>
+                  <div className='text-new-highlight'>
+                    <AppCopyright />
+                  </div>
+                </Stack>
+              </div>
+            </div>
+          </Container>
+        </footer>
       </main>
     </Row>
   );
