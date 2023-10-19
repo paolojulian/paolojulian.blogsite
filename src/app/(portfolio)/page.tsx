@@ -13,6 +13,7 @@ import { getLatestBlogPosts } from '@/app/(main-layout)/blogs/_api/blog-post';
 import MailIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/mail-icon';
 import PhoneIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/phone-icon';
 import HoverableTitle from '@/app/(portfolio)/_components/common/hoverable-title';
+import Articles from '@/app/(portfolio)/_components/partials/articles';
 import GetInTouchBtn from '@/app/(portfolio)/_components/partials/get-in-touch-btn';
 import ScrollDownToSeeMore from '@/app/(portfolio)/_components/partials/scroll-down-to-see-more';
 import Image from 'next/image';
@@ -91,7 +92,9 @@ export default async function Home() {
         <Container className='py-12 md:py-24'>
           <Stack className='gap-8 md:gap-20'>
             <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
-              <Text className='text-new-highlight text-xl'>LATEST WORK</Text>
+              <Uppercase className='tracking-[0.2em] text-new-highlight text-xl'>
+                Latest Works
+              </Uppercase>
               <span></span>
             </div>
 
@@ -124,7 +127,9 @@ export default async function Home() {
         <Container className='py-12 md:py-24'>
           <Stack className='gap-8 md:gap-20'>
             <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
-              <Text className='text-new-highlight text-xl'>TECH STACK</Text>
+              <Uppercase className='tracking-[0.2em] text-new-highlight text-xl'>
+                Tech Stack
+              </Uppercase>
               <span></span>
             </div>
 
@@ -187,6 +192,19 @@ export default async function Home() {
                 </Stack>
               </div>
             </div>
+          </Stack>
+        </Container>
+
+        <Container className='py-12 md:py-24'>
+          <Stack className='gap-8 md:gap-20'>
+            <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
+              <Uppercase className='tracking-[0.2em] text-new-highlight text-xl'>
+                LATEST ARTICLES
+              </Uppercase>
+              <span></span>
+            </div>
+
+            <Articles />
           </Stack>
         </Container>
       </main>

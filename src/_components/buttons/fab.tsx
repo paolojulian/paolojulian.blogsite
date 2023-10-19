@@ -1,19 +1,20 @@
 import classNames from 'classnames';
 import React, { ButtonHTMLAttributes, FunctionComponent } from 'react';
 
-type Themes = 'primary' | 'primary-outlined' | 'gray';
+type Themes = 'primary' | 'primary-outlined' | 'gray' | 'white';
 type Sizes = 'sm' | 'base';
 
 const THEMES: Record<Themes, string> = {
-  primary: 'bg-primary-400 hover:bg-primary-500 group-hover/fab:bg-primary-500',
+  primary: 'bg-new-black',
   'primary-outlined': 'border border-primary-400 bg-primary-300/30',
   gray: 'bg-gray-400 hover:bg-gray-500',
+  white: 'bg-new-white text-new-black',
 };
 
 const SIZES: Record<Sizes, string> = {
   sm: 'w-[30px]',
   base: 'w-[50px]',
-}
+};
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: Themes;
@@ -35,7 +36,7 @@ const Fab: FunctionComponent<Props> = ({
         className,
         'aspect-square rounded-full flex items-center justify-center shadow-[0_4px_28px_rgb(0,0,0,0.1)]',
         'transition-colors active:scale-95',
-        disabled ? 'pointer-events-none bg-gray-300' : THEMES[theme],
+        disabled ? 'pointer-events-none bg-new-highlight' : THEMES[theme],
         SIZES[size]
       )}
     ></button>

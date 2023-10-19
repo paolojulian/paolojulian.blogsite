@@ -808,12 +808,11 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
           role="button"
         >
           <button
-            class="opacity-0 md:group-hover/arrows:opacity-100 transition scale-90 pointer-events-none aspect-square rounded-full flex items-center justify-center shadow-[0_4px_28px_rgb(0,0,0,0.1)] transition-colors active:scale-95 pointer-events-none bg-gray-300 w-[50px]"
+            class="opacity-0 md:group-hover/arrows:opacity-100 transition scale-90 pointer-events-none aspect-square rounded-full flex items-center justify-center shadow-[0_4px_28px_rgb(0,0,0,0.1)] transition-colors active:scale-95 pointer-events-none bg-new-highlight w-[50px]"
             disabled=""
             type="button"
           >
             <svg
-              class="text-white"
               fill="none"
               height="24"
               viewBox="0 0 24 24"
@@ -838,11 +837,10 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
             class="drop-shadow-xl"
           >
             <button
-              class="opacity-0 md:group-hover/arrows:opacity-100 transition-opacity scale-90 pointer-events-none aspect-square rounded-full flex items-center justify-center shadow-[0_4px_28px_rgb(0,0,0,0.1)] transition-colors active:scale-95 pointer-events-none bg-gray-300 w-[50px]"
+              class="opacity-0 md:group-hover/arrows:opacity-100 transition-opacity scale-90 pointer-events-none aspect-square rounded-full flex items-center justify-center shadow-[0_4px_28px_rgb(0,0,0,0.1)] transition-colors active:scale-95 pointer-events-none bg-new-highlight w-[50px]"
               disabled=""
             >
               <svg
-                class="text-white"
                 fill="none"
                 height="24"
                 viewBox="0 0 24 24"
@@ -1674,12 +1672,11 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
           role="button"
         >
           <button
-            class="opacity-0 md:group-hover/arrows:opacity-100 transition scale-90 pointer-events-none aspect-square rounded-full flex items-center justify-center shadow-[0_4px_28px_rgb(0,0,0,0.1)] transition-colors active:scale-95 pointer-events-none bg-gray-300 w-[50px]"
+            class="opacity-0 md:group-hover/arrows:opacity-100 transition scale-90 pointer-events-none aspect-square rounded-full flex items-center justify-center shadow-[0_4px_28px_rgb(0,0,0,0.1)] transition-colors active:scale-95 pointer-events-none bg-new-highlight w-[50px]"
             disabled=""
             type="button"
           >
             <svg
-              class="text-white"
               fill="none"
               height="24"
               viewBox="0 0 24 24"
@@ -1704,11 +1701,10 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
             class="drop-shadow-xl"
           >
             <button
-              class="opacity-0 md:group-hover/arrows:opacity-100 transition-opacity scale-90 pointer-events-none aspect-square rounded-full flex items-center justify-center shadow-[0_4px_28px_rgb(0,0,0,0.1)] transition-colors active:scale-95 pointer-events-none bg-gray-300 w-[50px]"
+              class="opacity-0 md:group-hover/arrows:opacity-100 transition-opacity scale-90 pointer-events-none aspect-square rounded-full flex items-center justify-center shadow-[0_4px_28px_rgb(0,0,0,0.1)] transition-colors active:scale-95 pointer-events-none bg-new-highlight w-[50px]"
               disabled=""
             >
               <svg
-                class="text-white"
                 fill="none"
                 height="24"
                 viewBox="0 0 24 24"

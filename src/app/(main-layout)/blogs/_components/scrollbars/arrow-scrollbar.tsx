@@ -90,12 +90,12 @@ const ArrowScrollBar: FunctionComponent<Props> = ({
     >
       {/* <div className='px-4'>
         <Fab
-          theme='primary'
+          theme='white'
           type='button'
           onClick={handleScrollRight}
           disabled={scrollLeftVisible}
         >
-          <LeftArrowIcon className='text-white' />
+          <LeftArrowIcon className='text-new-white' />
         </Fab>
       </div> */}
       <div
@@ -110,11 +110,11 @@ const ArrowScrollBar: FunctionComponent<Props> = ({
       </div>
       {/* <div className='px-4'>
         <Fab
-          theme='primary'
+          theme='white'
           onClick={handleScrollLeft}
           disabled={scrollRightVisible}
         >
-          <RightArrowIcon className='text-white' />
+          <RightArrowIcon className='text-new-white' />
         </Fab>
       </div> */}
       {/* left arrow */}
@@ -136,10 +136,10 @@ const ArrowScrollBar: FunctionComponent<Props> = ({
               : 'pointer-events-none'
           )}
           disabled={!scrollLeftVisible}
-          theme='primary'
+          theme='white'
           type='button'
         >
-          <LeftArrowIcon className='text-white' />
+          <LeftArrowIcon />
         </Fab>
       </div>
       {/* right */}
@@ -162,9 +162,9 @@ const ArrowScrollBar: FunctionComponent<Props> = ({
                 : 'pointer-events-none'
             )}
             disabled={!scrollRightVisible}
-            theme='primary'
+            theme='white'
           >
-            <RightArrowIcon className='text-white' />
+            <RightArrowIcon />
           </Fab>
         </div>
       </div>
