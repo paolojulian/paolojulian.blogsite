@@ -43,9 +43,10 @@ module.exports = {
         accent: colors.cyan,
 
         new: {
+          accent: '#B3D9D2',
           black: '#171717',
           white: '#fafafa',
-          highlight: '#a3a3a3',
+          highlight: '#737373',
         },
       },
       transitionTimingFunction: {

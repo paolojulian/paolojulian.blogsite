@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <MenuProvider>
-      <div className='bg-new-white dark:bg-new-black text-new-white font-comfortaa'>
+      <div className='bg-new-white dark:bg-new-black text-new-white font-sans'>
         <Main>{children}</Main>
         <Menu />
         <MenuButton />

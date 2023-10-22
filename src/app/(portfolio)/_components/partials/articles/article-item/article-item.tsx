@@ -40,7 +40,7 @@ const ArticleItem = React.memo(
                 {article.title}
               </Uppercase>
             </Stack>
-            <button className='flex flex-row text-new-highlight space-x-[10px]'>
+            <button className='flex flex-row text-new-accent space-x-[10px]'>
               <Uppercase className='text-[14px]'>SEE MORE</Uppercase>
               <RightArrowIcon className='w-[24px] h-[24px] transition-transform group-hover:translate-x-2' />
             </button>

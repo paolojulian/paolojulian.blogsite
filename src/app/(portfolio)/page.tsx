@@ -1,4 +1,5 @@
 import AppCopyright from '@/_components/common/app-copyright';
+import SectionHeading from '@/_components/common/section-heading';
 import Text from '@/_components/common/typography/text';
 import Uppercase from '@/_components/common/typography/uppercase';
 import LinkedinIcon from '@/_components/icons/linkedin-icon';
@@ -17,6 +18,7 @@ import Articles from '@/app/(portfolio)/_components/partials/articles';
 import GetInTouchBtn from '@/app/(portfolio)/_components/partials/get-in-touch-btn';
 import ScrollDownToSeeMore from '@/app/(portfolio)/_components/partials/scroll-down-to-see-more';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default async function Home() {
   const [portfolioItems] = await Promise.all([
@@ -83,12 +85,7 @@ export default async function Home() {
         </Container>
         <Container className='py-12 md:py-24'>
           <Stack className=''>
-            <div className='border-b border-new-white text-new-white flex justify-between items-end md:p-2 w-full'>
-              <Uppercase className='tracking-[0.2em] text-new-highlight text-xl'>
-                Latest Works
-              </Uppercase>
-              <span></span>
-            </div>
+            <SectionHeading title='Latest Works' />
 
             <div className='w-full overflow-y-hidden overflow-x-auto'>
               <div className='flex flex-col w-full'>
@@ -141,12 +138,7 @@ export default async function Home() {
         </Container>
         <Container className='py-12 lg:py-24'>
           <Stack className='gap-8 lg:gap-20'>
-            <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
-              <Uppercase className='tracking-[0.2em] text-new-highlight text-xl'>
-                Tech Stack
-              </Uppercase>
-              <span></span>
-            </div>
+            <SectionHeading title='Tech Stack' />
 
             <div className='flex flex-col gap-12 md:gap-0 md:flex-row w-full'>
               <div className='flex-1'>
@@ -212,12 +204,7 @@ export default async function Home() {
 
         <Container className='py-12 lg:py-24'>
           <Stack className='gap-8 lg:gap-20'>
-            <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
-              <Uppercase className='tracking-[0.2em] text-new-highlight text-xl'>
-                LATEST ARTICLES
-              </Uppercase>
-              <span></span>
-            </div>
+            <SectionHeading title='Latest Articles' />
 
             <Articles />
           </Stack>
@@ -230,9 +217,11 @@ export default async function Home() {
                   <Uppercase className='text-new-white'>
                     HAVE QUESTIONS?
                   </Uppercase>
-                  <Uppercase className='lg:ml-4 xl:ml-8 text-new-highlight'>
-                    SEND ME A MESSAGE!
-                  </Uppercase>
+                  <Link href='/contact'>
+                    <Uppercase className='lg:ml-4 xl:ml-8 transition-colors text-new-highlight lg:hover:text-new-accent underline underline-offset-8 decoration-dashed'>
+                      SEND ME A MESSAGE!
+                    </Uppercase>
+                  </Link>
                 </div>
               </div>
               <div className='flex-1'>

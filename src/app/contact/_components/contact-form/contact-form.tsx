@@ -107,20 +107,40 @@ const ContactForm: FunctionComponent<Props> = () => {
               </FormControl>
             </Stack>
 
-            <CTAButton
-              block={false}
-              type='submit'
-              size='lg'
-              isLoading={isLoading}
-              variant={isSuccess ? 'success' : 'default'}
-              loadingText='Sending...'
-              data-testid={DATA_TEST.submitBtn}
-            >
-              <Row className='items-center gap-3 pr-10 pl-14'>
-                <span>SEND</span>
-                <RightArrowIcon />
-              </Row>
-            </CTAButton>
+            <>
+              <div className='w-full md:hidden'>
+                <CTAButton
+                  block={true}
+                  type='submit'
+                  size='lg'
+                  isLoading={isLoading}
+                  variant={isSuccess ? 'success' : 'default'}
+                  loadingText='Sending...'
+                  data-testid={DATA_TEST.submitBtnMobile}
+                >
+                  <Row className='items-center gap-3 pr-10 pl-14'>
+                    <span>SEND</span>
+                    <RightArrowIcon />
+                  </Row>
+                </CTAButton>
+              </div>
+              <div className='hidden md:block'>
+                <CTAButton
+                  block={false}
+                  type='submit'
+                  size='lg'
+                  isLoading={isLoading}
+                  variant={isSuccess ? 'success' : 'default'}
+                  loadingText='Sending...'
+                  data-testid={DATA_TEST.submitBtn}
+                >
+                  <Row className='items-center gap-3 pr-10 pl-14'>
+                    <span>SEND</span>
+                    <RightArrowIcon />
+                  </Row>
+                </CTAButton>
+              </div>
+            </>
           </Stack>
         </form>
       )}

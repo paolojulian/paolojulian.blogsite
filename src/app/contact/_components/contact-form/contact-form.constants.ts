@@ -3,4 +3,5 @@ export const DATA_TEST = {
   email: 'contact-form-email',
   message: 'contact-form-message',
   submitBtn: 'contact-form-submit-btn',
+  submitBtnMobile: 'contact-form-submit-btn-mobile',
 }
