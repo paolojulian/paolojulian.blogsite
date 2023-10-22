@@ -19,7 +19,7 @@ const ScrollDownToSeeMore: FunctionComponent<Props> = () => {
         isScrolledDown ? 'opacity-0' : 'opacity-100'
       )}
     >
-      <Stack className='hidden md:flex absolute bottom-0 left-14 lg:left-56 h-48 gap-2'>
+      <Stack className='hidden md:flex absolute bottom-0 left-20 lg:left-56 h-48 gap-2'>
         <Text>Scroll down to see more.</Text>
         <div className='border-l border-new-highlight flex-1'></div>
       </Stack>

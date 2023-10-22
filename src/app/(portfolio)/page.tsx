@@ -1,10 +1,10 @@
-import EnterAnimation from '@/_components/animations/enter-animation';
 import AppCopyright from '@/_components/common/app-copyright';
 import Text from '@/_components/common/typography/text';
 import Uppercase from '@/_components/common/typography/uppercase';
 import LinkedinIcon from '@/_components/icons/linkedin-icon';
 import Logo from '@/_components/icons/logo';
 import PolygonBackground from '@/_components/images/polygon-background';
+import PolygonBackgroundReversed from '@/_components/images/polygon-background-reversed';
 import Container from '@/_components/layouts/container';
 import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
@@ -41,52 +41,44 @@ export default async function Home() {
         <PolygonBackground />
       </div>
 
-      <main className='max-w-screen-2xl w-full mx-auto relative md:ml-12 lg:ml-auto min-h-screen'>
-        <Container className='pt-60 lg:pt-52 relative min-h-screen'>
-          <EnterAnimation delay={2} type='fade'>
-            <ScrollDownToSeeMore />
-          </EnterAnimation>
+      <main className='max-w-screen-2xl w-full mx-auto relative min-h-screen'>
+        <Container className='pt-60 lg:pt-40 relative min-h-screen'>
+          <ScrollDownToSeeMore />
 
-          <EnterAnimation delay={1} type='fade'>
-            <div className='hidden md:block absolute bottom-0 right-0 p-4 lg:p-8'>
-              <GetInTouchBtn />
-            </div>
-          </EnterAnimation>
+          <div className='hidden md:block absolute bottom-0 right-0 p-4 lg:p-8'>
+            <GetInTouchBtn />
+          </div>
 
           <Stack className='gap-24 lg:gap-20'>
-            <EnterAnimation>
-              <Uppercase
-                as='h1'
-                className='text-2xl md:text-4xl lg:text-7xl lg:leading-[normal]'
-              >
-                HELLO, I AM <span className='text-new-highlight'>PAOLO.</span>
-                <br />
-                A SOFTWARE ENGINEER
-                <br />
-                <span className='ml-10 md:ml-20'>WITH A FOCUS ON</span>
-                <br />
-                <span className='text-new-highlight'>FRONT-END</span>
-                <br className='lg:hidden' />
-                <span className='ml-10 md:ml-20 lg:ml-0'> DEVELOPMENT</span>
-              </Uppercase>
-            </EnterAnimation>
+            <Uppercase
+              as='h1'
+              className='text-2xl md:text-4xl lg:text-7xl lg:leading-[normal]'
+            >
+              HELLO, I AM <span className='text-new-highlight'>PAOLO.</span>
+              <br />
+              A SOFTWARE ENGINEER
+              <br />
+              <span className='ml-10 md:ml-20'>WITH A FOCUS ON</span>
+              <br />
+              <span className='text-new-highlight'>FRONT-END</span>
+              <br className='lg:hidden' />
+              <span className='ml-10 md:ml-20 lg:ml-0'> DEVELOPMENT</span>
+            </Uppercase>
 
-            <EnterAnimation delay={0.5}>
-              <Row className='justify-end'>
-                <div className='md:w-1/2'>
-                  <Text className='text-new-highlight text-sm md:text-base lg:text-lg w-56 md:w-64 lg:w-[28rem]'>
-                    I built this website as my own{' '}
-                    <span className='text-new-white'>personal space</span>,
-                    where I express myself through various creations inspired by
-                    my experiences and challenges, fostering a learning journey
-                    we can embark on together.
-                  </Text>
-                  <div className='md:hidden'>
-                    <GetInTouchBtn />
-                  </div>
+            <Row className='justify-end'>
+              <div className='md:w-1/2'>
+                <Text className='text-new-highlight text-sm md:text-base lg:text-lg w-56 md:w-64 lg:w-[28rem]'>
+                  I built this website as my own{' '}
+                  <span className='text-new-white'>personal space</span>, where
+                  I express myself through various creations inspired by my
+                  experiences and challenges, fostering a learning journey we
+                  can embark on together.
+                </Text>
+                <div className='md:hidden'>
+                  <GetInTouchBtn />
                 </div>
-              </Row>
-            </EnterAnimation>
+              </div>
+            </Row>
           </Stack>
         </Container>
         <Container className='py-12 md:py-24'>
@@ -106,7 +98,9 @@ export default async function Home() {
                     key={item.name}
                   >
                     <div className='flex flex-col-reverse md:flex-row gap-4'>
-                      <span className='hidden md:block flex-1 max-w-[200px] xl:max-w-[300px]'>0{i + 1}</span>
+                      <span className='hidden md:block flex-1 max-w-[200px] xl:max-w-[300px]'>
+                        0{i + 1}
+                      </span>
                       <div className='flex flex-col gap-1 flex-1'>
                         <Uppercase
                           as='h4'
@@ -145,8 +139,8 @@ export default async function Home() {
             </div>
           </Stack>
         </Container>
-        <Container className='py-12 md:py-24'>
-          <Stack className='gap-8 md:gap-20'>
+        <Container className='py-12 lg:py-24'>
+          <Stack className='gap-8 lg:gap-20'>
             <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
               <Uppercase className='tracking-[0.2em] text-new-highlight text-xl'>
                 Tech Stack
@@ -216,8 +210,8 @@ export default async function Home() {
           </Stack>
         </Container>
 
-        <Container className='py-12 md:py-24'>
-          <Stack className='gap-8 md:gap-20'>
+        <Container className='py-12 lg:py-24'>
+          <Stack className='gap-8 lg:gap-20'>
             <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
               <Uppercase className='tracking-[0.2em] text-new-highlight text-xl'>
                 LATEST ARTICLES
@@ -228,7 +222,7 @@ export default async function Home() {
             <Articles />
           </Stack>
         </Container>
-        <footer className='border-t border-new-highlight mb-28'>
+        <footer className='border-t border-new-highlight pb-28 relative'>
           <Container className='py-12 md:py-24'>
             <div className='flex flex-col lg:flex-row gap-12 lg:gap-0'>
               <div className='flex-1 text-2xl xl:text-4xl'>
@@ -301,6 +295,10 @@ export default async function Home() {
               </div>
             </div>
           </Container>
+
+          <div className='absolute left-0 bottom-0 hidden lg:block'>
+            <PolygonBackgroundReversed />
+          </div>
         </footer>
       </main>
     </Row>
