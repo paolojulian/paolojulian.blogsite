@@ -13,7 +13,6 @@ import { getPortfolioItems } from '@/app/(main-layout)/_api/portfolio-item';
 import { getLatestBlogPosts } from '@/app/(main-layout)/blogs/_api/blog-post';
 import MailIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/mail-icon';
 import PhoneIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/phone-icon';
-import HoverableTitle from '@/app/(portfolio)/_components/common/hoverable-title';
 import Articles from '@/app/(portfolio)/_components/partials/articles';
 import GetInTouchBtn from '@/app/(portfolio)/_components/partials/get-in-touch-btn';
 import ScrollDownToSeeMore from '@/app/(portfolio)/_components/partials/scroll-down-to-see-more';
@@ -91,31 +90,52 @@ export default async function Home() {
           </Stack>
         </Container>
         <Container className='py-12 md:py-24'>
-          <Stack className='gap-8 md:gap-20'>
-            <div className='border-b border-new-highlight text-new-highlight flex justify-between items-end md:p-2 w-full'>
+          <Stack className=''>
+            <div className='border-b border-new-white text-new-white flex justify-between items-end md:p-2 w-full'>
               <Uppercase className='tracking-[0.2em] text-new-highlight text-xl'>
                 Latest Works
               </Uppercase>
               <span></span>
             </div>
 
-            <div className='w-full overflow-y-hidden overflow-x-auto pr-8 md:pr-0'>
-              <div className='flex flex-row md:grid grid-cols-3 gap-6 w-fit md:w-full'>
-                {portfolioItems.slice(0, 3).map((item) => (
-                  <div className='group md:h-fit' key={item.name}>
-                    <HoverableTitle textColor='white' title={item.name} />
+            <div className='w-full overflow-y-hidden overflow-x-auto'>
+              <div className='flex flex-col w-full'>
+                {portfolioItems.slice(0, 3).map((item, i) => (
+                  <div
+                    className='border-b border-new-highlight/25 py-10'
+                    key={item.name}
+                  >
+                    <div className='flex flex-col-reverse md:flex-row gap-4'>
+                      <span className='hidden md:block flex-1 max-w-[200px] xl:max-w-[300px]'>0{i + 1}</span>
+                      <div className='flex flex-col gap-1 flex-1'>
+                        <Uppercase
+                          as='h4'
+                          className='text-sm xl:text-base text-new-highlight'
+                        >
+                          {item.name}
+                        </Uppercase>
 
-                    <div className='relative aspect-[411/250] w-[300px] md:w-auto md:h-full mt-2'>
-                      <div className='absolute bottom-0 left-0 w-full h-[90%] bg-new-highlight/60'></div>
-                      <div className='absolute bottom-0 left-0 w-[97.5%] h-[95%] bg-new-highlight'></div>
-                      <div className='h-full w-[95%]'>
-                        <div className='bg-new-white h-full relative overflow-hidden'>
-                          <Image
-                            alt={item.name}
-                            className='object-cover group-hover:scale-105 duration-200'
-                            src={item.image.url}
-                            fill
-                          />
+                        <div className='text-new-white text-xl xl:text-2xl'>
+                          {item.tags.map((tag, i) => (
+                            <Text className='capitalize' key={`${i}-${tag}`}>
+                              {tag}
+                            </Text>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className='relative aspect-[411/250] w-full flex-1'>
+                        <div className='absolute bottom-0 left-0 w-full h-[90%] bg-new-highlight/60'></div>
+                        <div className='absolute bottom-0 left-0 w-[97.5%] h-[95%] bg-new-highlight'></div>
+                        <div className='h-full w-[95%]'>
+                          <div className='bg-new-white h-full relative overflow-hidden'>
+                            <Image
+                              alt={item.name}
+                              className='object-cover group-hover:scale-105 duration-200'
+                              src={item.image.url}
+                              fill
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
