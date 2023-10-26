@@ -24,7 +24,11 @@ const Uppercase: FunctionComponent<Props> = ({
 }) => {
   return (
     <Element
-      className={['uppercase font-medium font-comfortaa', tracking[type], className].join(' ')}
+      className={[
+        'uppercase font-medium font-comfortaa',
+        tracking[type],
+        className,
+      ].join(' ')}
     >
       {children}
     </Element>
