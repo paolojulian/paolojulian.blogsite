@@ -10,9 +10,9 @@ import React, {
 type Variants = 'default' | 'default-dark';
 
 const colorVariants: Record<Variants, string> = {
-  default: 'border-gray-800 text-slate-700',
+  default: 'border-new-highlight text-new-white placeholder-new-highlight',
   'default-dark':
-    'border-slate-600 focus:border-slate-50 text-slate-200 placeholder-slate-500',
+    'border-new-highlight focus:border-new-white text-new-white placeholder-new-highlight',
 };
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
@@ -70,7 +70,7 @@ const TextInput: FunctionComponent<Props> = ({
         className={classNames(
           'absolute left-3 top-0',
           'transition duration-200 pointer-events-none',
-          'font-medium text-sm text-gray-600',
+          'font-medium text-sm text-new-highlight',
           isFocusedComputed ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
         )}
         htmlFor={id}
@@ -84,7 +84,7 @@ const TextInput: FunctionComponent<Props> = ({
         className={classNames(
           'absolute bottom-2 left-2',
           'transition duration-200 pointer-events-none',
-          'text-lg text-gray-400',
+          'text-lg text-new-highlight',
           isFocusedComputed ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
         )}
       >
@@ -99,7 +99,7 @@ const TextInput: FunctionComponent<Props> = ({
         className={classNames(
           'w-full px-3 pt-6 pb-2',
           'bg-inherit',
-          'focus:outline-none transition-opacity',
+          'focus:outline-none transition-opacity text-new-white',
           isFocusedComputed ? 'opacity-100' : 'opacity-0'
         )}
         onFocus={handleFocus}

@@ -74,12 +74,12 @@ const Menu: FunctionComponent<Props> = () => {
           <MenuItem
             title='Contact'
             imageUrls={{
-              desktop: '/assets/menu/home-page.desktop.png',
+              desktop: '/assets/menu/contact-page.desktop.png',
               tablet: '/assets/menu/home-page.tablet.png',
               phone: '/assets/menu/home-page.phone.png',
             }}
             isActive={pathname === '/contact'}
-            link='/'
+            link='/contact'
           />
         </div>
       </Container>
