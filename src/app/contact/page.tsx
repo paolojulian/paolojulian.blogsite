@@ -23,7 +23,7 @@ const ContactPage: FunctionComponent<Props> = () => {
           <div className='font-sans'>
             <Stack className='min-h-screen'>
               <Container className='mx-auto w-full max-w-screen-2xl pt-6 lg:pt-12'>
-                <SectionHeading title='Contact' />
+                <SectionHeading title='PaoloJulian.dev - Contact' />
                 <div className='flex flex-col lg:flex-row py-16 md:py-32 gap-16 2xl:gap-32 justify-between lg:items-center w-full'>
                   {/* Heading */}
                   <Stack className='gap-6 md:gap-16'>

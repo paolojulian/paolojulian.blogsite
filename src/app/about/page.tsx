@@ -31,17 +31,16 @@ const AboutPage: FunctionComponent<Props> = () => {
 
             <div className='py-10 lg:py-20 flex flex-col gap-10'>
               <h1 className='text-7xl md:text-9xl lg:text-8xl text-new-white leading-tight md:leading-tight text-left lg:text-center'>
-                <Uppercase as='span'>
+                <Uppercase as='span' className='block md:inline'>
                   <span className='text-new-highlight'>K</span>EEP{' '}
                 </Uppercase>
-                <br className='block md:hidden' />
-                <Uppercase as='span'>
+                <Uppercase as='span' className='block md:inline'>
                   <span className='text-new-highlight'>I</span>T{' '}
                 </Uppercase>
-                <Uppercase as='span'>
+                <Uppercase as='span' className='block md:inline'>
                   <span className='text-new-highlight'>S</span>IMPLE{' '}
                 </Uppercase>
-                <Uppercase as='span'>
+                <Uppercase as='span' className='block md:inline'>
                   <span className='text-new-highlight'>S</span>TUPID{' '}
                 </Uppercase>
               </h1>
@@ -173,7 +172,6 @@ const AboutPage: FunctionComponent<Props> = () => {
                     fill
                   />
                 </div>
-                <Text className='text-new-highlight mt-4'>It&lsquo;s me!</Text>
               </div>
 
               <Stack className='gap-8 flex-1'>

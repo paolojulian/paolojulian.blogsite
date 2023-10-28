@@ -94,19 +94,19 @@ export default async function Home() {
                     className='border-b border-new-highlight/25 py-10'
                     key={item.name}
                   >
-                    <div className='flex flex-col-reverse md:flex-row gap-4'>
+                    <div className='flex flex-col-reverse md:flex-row gap-4 items-center'>
                       <span className='hidden md:block flex-1 max-w-[200px] xl:max-w-[300px]'>
                         0{i + 1}
                       </span>
                       <div className='flex flex-col gap-1 flex-1'>
-                        <Uppercase
+                        <Text
                           as='h4'
-                          className='text-sm xl:text-base text-new-highlight'
+                          className='text-xl xl:text-2xl text-new-white'
                         >
                           {item.name}
-                        </Uppercase>
+                        </Text>
 
-                        <div className='text-new-white text-xl xl:text-2xl'>
+                        <div className='text-new-highlight text-base xl:text-lg'>
                           {item.tags.map((tag, i) => (
                             <Text className='capitalize' key={`${i}-${tag}`}>
                               {tag}

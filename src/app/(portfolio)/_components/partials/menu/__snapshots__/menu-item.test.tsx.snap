@@ -15,7 +15,7 @@ exports[`TESTING MenuItem component GIVEN valid props WHEN the MenuItem componen
         class="aspect-square w-3 rounded-full transition opacity-0 group-hover:opacity-100 bg-new-white"
       />
       <h3
-        class="font-sans text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
+        class="font-comfortaa text-sm md:text-lg transition-transform line-clamp-1 text-new-black -translate-x-4 group-hover:translate-x-0"
       >
         Sample Heading
       </h3>
