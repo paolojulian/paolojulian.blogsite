@@ -47,6 +47,7 @@ module.exports = {
           black: '#171717',
           white: '#fafafa',
           highlight: '#737373',
+          highlightLighter: '#A3A3A3',
         },
       },
       transitionTimingFunction: {
