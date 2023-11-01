@@ -52,6 +52,16 @@ const Menu: FunctionComponent<Props> = () => {
             link='/'
           />
           <MenuItem
+            title='About'
+            imageUrls={{
+              desktop: '/assets/menu/about-page.desktop.png',
+              tablet: '/assets/menu/about-page.tablet.png',
+              phone: '/assets/menu/about-page.phone.png',
+            }}
+            isActive={pathname === '/about'}
+            link='/about'
+          />
+          <MenuItem
             title='Articles'
             imageUrls={{
               desktop: '/assets/menu/home-page.desktop.png',
@@ -75,8 +85,8 @@ const Menu: FunctionComponent<Props> = () => {
             title='Contact'
             imageUrls={{
               desktop: '/assets/menu/contact-page.desktop.png',
-              tablet: '/assets/menu/home-page.tablet.png',
-              phone: '/assets/menu/home-page.phone.png',
+              tablet: '/assets/menu/contact-page.tablet.png',
+              phone: '/assets/menu/contact-page.phone.png',
             }}
             isActive={pathname === '/contact'}
             link='/contact'
