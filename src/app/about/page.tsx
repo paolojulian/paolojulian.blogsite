@@ -74,6 +74,7 @@ const AboutPage: FunctionComponent<Props> = () => {
                     src='/assets/about/my-view.png'
                     className='object-cover object-[50%_55%] lg:object-center'
                     alt='My View'
+                    priority
                     fill
                   />
                 </div>
