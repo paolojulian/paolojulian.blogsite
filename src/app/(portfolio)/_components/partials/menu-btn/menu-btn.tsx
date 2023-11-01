@@ -2,7 +2,8 @@
 import useMenuContext from '@/_context/menu-provider/use-menu-context';
 import MenuCircularText from '@/app/(portfolio)/_components/partials/menu-btn/menu-circular-text';
 import classNames from 'classnames';
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import styles from './menu-btn.module.css';
 
 export const dataTestId = {
   button: 'menu-btn__button',
@@ -15,6 +16,7 @@ interface Props {
 }
 
 const MenuButton: FunctionComponent<Props> = () => {
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
   const [isMounted, setIsMounted] = useState(false);
   const { isOpen, setIsOpen } = useMenuContext();
 
@@ -24,8 +26,13 @@ const MenuButton: FunctionComponent<Props> = () => {
     setIsMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (!buttonRef.current) return;
+  }, []);
+
   return (
     <button
+      ref={buttonRef}
       onClick={handleClick}
       className={[
         'w-16 md:w-20 aspect-square rounded-full shadow-highBlur',
@@ -42,7 +49,8 @@ const MenuButton: FunctionComponent<Props> = () => {
           'absolute -left-5 -top-5',
           'transition-transform duration-500',
           'translate-y-6 translate-x-6 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0',
-          'scale-50 lg:group-hover:scale-100'
+          'scale-50 lg:group-hover:scale-100',
+          styles.automaticHover
         )}
       >
         <MenuCircularText className='text-new-white' />

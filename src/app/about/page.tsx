@@ -178,7 +178,7 @@ const AboutPage: FunctionComponent<Props> = () => {
                 <Text as='h2' className='text-new-white text-xl lg:text-4xl'>
                   {`
                   I'm like a Jack of all trades. I want to excel in every field.
-                  I don't think it's bad; it just shows how fast I am at
+                  I don't think it's bad; it just shows how passionate I am at
                   learning things.
                   `}
                 </Text>

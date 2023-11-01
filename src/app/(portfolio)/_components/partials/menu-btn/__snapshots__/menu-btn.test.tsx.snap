@@ -7,7 +7,7 @@ exports[`TESTING MenuBtn component GIVEN default data WHEN the MenuBtn component
     data-testid="menu-btn__button"
   >
     <div
-      class="absolute -left-5 -top-5 transition-transform duration-500 translate-y-6 translate-x-6 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0 scale-50 lg:group-hover:scale-100"
+      class="absolute -left-5 -top-5 transition-transform duration-500 translate-y-6 translate-x-6 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0 scale-50 lg:group-hover:scale-100 automaticHover"
     >
       <svg
         class="text-new-white"
@@ -49,7 +49,7 @@ exports[`TESTING MenuBtn component GIVEN default data WHEN the MenuBtn component
     data-testid="menu-btn__button"
   >
     <div
-      class="absolute -left-5 -top-5 transition-transform duration-500 translate-y-6 translate-x-6 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0 scale-50 lg:group-hover:scale-100"
+      class="absolute -left-5 -top-5 transition-transform duration-500 translate-y-6 translate-x-6 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0 scale-50 lg:group-hover:scale-100 automaticHover"
     >
       <svg
         class="text-new-white"
