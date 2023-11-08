@@ -1,5 +1,5 @@
-import { getLatestBlogPosts } from '@/app/(main-layout)/blogs/_api/blog-post';
-import ArrowScrollBar from '@/app/(main-layout)/blogs/_components/scrollbars/arrow-scrollbar';
+import { getLatestBlogPosts } from '@/app/(main-layout)/blogs.v2/_api/blog-post';
+import ArrowScrollBar from '@/app/(main-layout)/blogs.v2/_components/scrollbars/arrow-scrollbar';
 import { FunctionComponent } from 'react';
 import ArticleItem from './article-item';
 

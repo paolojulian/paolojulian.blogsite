@@ -69,7 +69,7 @@ const Menu: FunctionComponent<Props> = () => {
               phone: '/assets/menu/home-page.phone.png',
             }}
             isActive={pathname === '/blogs'}
-            link='/'
+            link='/blogs'
           />
           <MenuItem
             title='Components'

@@ -151,7 +151,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
         <a
           class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
           data-testid="menu-item-container"
-          href="/"
+          href="/blogs"
           role="button"
         >
           <div
@@ -509,7 +509,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
         <a
           class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
           data-testid="menu-item-container"
-          href="/"
+          href="/blogs"
           role="button"
         >
           <div

@@ -1,4 +1,4 @@
-import { getLatestBlogPosts } from '@/app/(main-layout)/blogs/_api/blog-post';
+import { getLatestBlogPosts } from '@/app/(main-layout)/blogs.v2/_api/blog-post';
 import ArticleItem from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/article-item';
 import Container from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/container';
 import ArrowScrollBar from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/scrollbars/arrow-scrollbar';
