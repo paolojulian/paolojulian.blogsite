@@ -17,7 +17,7 @@ const GlobalSearchButtonIcon: FunctionComponent<Props> = () => {
   return (
     <>
       <button
-        className='text-gray-700 lg:hover:text-red-400 lg:transition-colors'
+        className='text-new-accent lg:hover:text-new-white lg:transition-colors'
         onClick={handleClick}
       >
         <SearchIcon />

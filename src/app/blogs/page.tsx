@@ -18,6 +18,7 @@ import { FunctionComponent } from 'react';
 import { getLatestBlogPosts } from './_api/blog-post';
 import BlogItem from './_components/blog-item';
 import classNames from 'classnames';
+import AppCopyright from '@/_components/common/app-copyright';
 
 export type BlogsPageProps = {
   // no props
@@ -35,7 +36,7 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async () => {
   return (
     <GlobalSearchProvider>
       <Container
-        className={classNames('max-w-screen-2xl mx-auto relative w-full')}
+        className={classNames('max-w-screen-2xl mx-auto relative w-full pb-40')}
       >
         <section className='pt-6 md:pt-12 pb-40 flex flex-col gap-8 xl:gap-8 z-10 relative'>
           <SectionHeading
@@ -88,6 +89,10 @@ const BlogsPage: FunctionComponent<BlogsPageProps> = async () => {
             ))}
           </EnterAnimationList>
         </section>
+
+        <footer className='border-t border-new-white w-full py-8 text-new-highlight'>
+          <AppCopyright />
+        </footer>
       </Container>
     </GlobalSearchProvider>
   );

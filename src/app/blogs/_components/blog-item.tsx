@@ -17,9 +17,10 @@ const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
     <EnterAnimationListItem>
       <Link href={`/blogs/${blogPost.slug}`}>
         <div className='flex flex-col items-center group relative'>
-          <div className='relative w-full bg-gray-50 border-b border-l border-r border-gray-400 overflow-hidden'>
+          <div className='relative w-full bg-new-black overflow-hidden'>
             {/* image */}
             <Image
+              className='saturate-50 group-hover:saturate-100 scale-105 group-hover:scale-110 transition'
               src={blogPost.banner.url}
               alt={`${blogPost.title} banner`}
               style={{
@@ -29,25 +30,21 @@ const BlogItem: FunctionComponent<BlogItemProps> = ({ blogPost }) => {
               height={blogPost.banner.height}
               sizes='(max-width: 768px) 100vw, 420px'
             />
-            {/* overlay */}
-            <div className='absolute inset-0 bg-primary-400/30 transition-transform -translate-x-full group-hover:translate-x-0'></div>
-            {/* line */}
-            <div className='absolute border-t border-gray-400 top-0 -left-4 w-[200%]'></div>
           </div>
 
           <Stack className='flex-1 h-full py-2 relative lg:space-y-2'>
-            <p className='text-gray-400 italic'>
+            <p className='text-new-highlight italic'>
               {blogPost.sys.publishedAt !== blogPost.sys.firstPublishedAt
                 ? 'Updated '
                 : ' '}
               <AppDate dateTime={blogPost.sys.publishedAt} />
             </p>
-            <h4 className='uppercase text-lg md:text-xl 2xl:text-2xl text-gray-700 font-semibold'>
+            <h4 className='uppercase text-lg md:text-xl 2xl:text-2xl text-new-white font-semibold'>
               {blogPost.title}
             </h4>
 
             <Row className='justify-between items-end'>
-              <span className='mt-2 font-black tracking-widest text-sm text-red-400 flex flex-row space-x-2 items-center'>
+              <span className='mt-2 font-black tracking-widest text-sm text-new-accent flex flex-row space-x-2 items-center'>
                 SEE MORE
                 <span className='transition-transform translate-x-2 group-hover:translate-x-4'>
                   <RightArrowIcon />
