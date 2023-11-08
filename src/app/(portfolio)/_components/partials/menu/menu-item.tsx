@@ -42,7 +42,7 @@ const MenuItem: FunctionComponent<Props> = ({
   return (
     <Link
       className={[
-        'flex flex-col gap-1 md:gap-2',
+        'flex flex-col gap-1 md:gap-2 last:pr-4',
         'cursor-pointer relative group',
         isActive ? 'pointer-events-none' : '',
       ].join(' ')}

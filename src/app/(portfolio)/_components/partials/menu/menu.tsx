@@ -31,7 +31,7 @@ const Menu: FunctionComponent<Props> = () => {
       <Container
         className={[
           'flex flex-row justify-center',
-          'w-full pb-8',
+          'w-full pb-8 pr-8',
           'overflow-x-auto text-new-white',
           'transition-transform duration-500 ease-menu',
           isOpen
