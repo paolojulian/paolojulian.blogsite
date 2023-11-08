@@ -7,7 +7,7 @@ exports[`TESTING GlobalSearchModalItems WHEN the component is rendered for snaps
     data-testid="search-items-noRecent-container"
   >
     <span
-      class="text-gray-400 text-lg"
+      class="text-new-highlight text-lg"
     >
       No recent searches
     </span>

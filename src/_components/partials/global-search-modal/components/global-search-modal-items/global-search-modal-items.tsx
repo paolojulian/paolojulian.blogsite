@@ -30,7 +30,9 @@ const GlobalSearchModalItems: FunctionComponent<Props> = () => {
         className='flex flex-col gap-2 h-[500px] max-h-[500px] overflow-y-auto py-16 p-8 justify-center items-center'
         data-testid={DATA_TEST.noRecentContainer}
       >
-        <span className='text-gray-400 text-lg'>{'No recent searches'}</span>
+        <span className='text-new-highlight text-lg'>
+          {'No recent searches'}
+        </span>
       </div>
     );
   }
@@ -41,7 +43,7 @@ const GlobalSearchModalItems: FunctionComponent<Props> = () => {
         className='flex flex-col gap-2 h-[500px] max-h-[500px] overflow-y-auto py-16 p-8 justify-center items-center'
         data-testid={DATA_TEST.errorContainer}
       >
-        <span className='text-red-500 italic'>
+        <span className='text-new-accent italic'>
           {'Something went wrong. Please try again later.'}
         </span>
       </div>
@@ -54,7 +56,7 @@ const GlobalSearchModalItems: FunctionComponent<Props> = () => {
         className='flex flex-col gap-2 h-[500px] max-h-[500px] overflow-y-auto py-16 p-8 justify-center items-center'
         data-testid={DATA_TEST.noDataContainer}
       >
-        <span className='text-gray-400 text-lg'>{`No data for ${keyword}`}</span>
+        <span className='text-new-highlight text-lg'>{`No data for ${keyword}`}</span>
       </div>
     );
   }
