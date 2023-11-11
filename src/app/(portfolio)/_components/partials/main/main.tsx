@@ -1,5 +1,6 @@
 'use client';
 import useMenuContext from '@/_context/menu-provider/use-menu-context';
+import classNames from 'classnames';
 import React, { FunctionComponent, useRef } from 'react';
 
 interface Props {
@@ -8,7 +9,13 @@ interface Props {
 
 const Main: FunctionComponent<Props> = ({ children }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { isOpen } = useMenuContext();
+  const { isOpen, setIsOpen } = useMenuContext();
+
+  const handleClick = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  };
 
   return (
     <div
@@ -20,13 +27,14 @@ const Main: FunctionComponent<Props> = ({ children }) => {
         'bg-new-black',
         'flex flex-col',
         'h-auto w-screen overflow-x-hidden min-h-screen',
-        isOpen ? 'pointer-events-none overflow-hidden' : '',
+        isOpen ? 'cursor-pointer overflow-hidden' : '',
         isOpen
           ? '-translate-y-[400px] md:-translate-y-[500px]'
           : 'translate-y-0',
       ].join(' ')}
+      onClick={handleClick}
     >
-      {children}
+      <div className={classNames(isOpen ? 'pointer-events-none': '')}>{children}</div>
     </div>
   );
 };
