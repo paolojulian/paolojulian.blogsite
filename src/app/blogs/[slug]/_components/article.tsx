@@ -10,7 +10,7 @@ import AppReactMarkdown from '@/_components/markdown/app-react-markdown';
 import AppTag from '@/_components/common/app-tag';
 import classNames from 'classnames';
 import ToTopFab from '@/_components/common/to-top-fab';
-import ArrowScrollBar from '@/app/(main-layout)/blogs/_components/scrollbars/arrow-scrollbar';
+import ArrowScrollBar from '@/app/(main-layout)/blogs.v2/_components/scrollbars/arrow-scrollbar';
 import ArticleItem from '@/app/(main-layout)/components/_components/articles/article-item';
 import Container from '@/_components/layouts/container';
 import SectionHeading from '@/_components/common/section-heading';

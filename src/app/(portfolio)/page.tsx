@@ -11,7 +11,7 @@ import Row from '@/_components/layouts/row';
 import Stack from '@/_components/layouts/stack';
 import { getPortfolio } from '@/app/(main-layout)/_api/portfolio';
 import { getPortfolioItems } from '@/app/(main-layout)/_api/portfolio-item';
-import { getLatestBlogPosts } from '@/app/(main-layout)/blogs/_api/blog-post';
+import { getLatestBlogPosts } from '@/app/(main-layout)/blogs.v2/_api/blog-post';
 import MailIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/mail-icon';
 import PhoneIcon from '@/app/(main-layout)/portfolio.backup/_components/icons/phone-icon';
 import Articles from '@/app/(portfolio)/_components/partials/articles';

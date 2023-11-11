@@ -64,12 +64,12 @@ const Menu: FunctionComponent<Props> = () => {
           <MenuItem
             title='Articles'
             imageUrls={{
-              desktop: '/assets/menu/home-page.desktop.png',
-              tablet: '/assets/menu/home-page.tablet.png',
-              phone: '/assets/menu/home-page.phone.png',
+              desktop: '/assets/menu/article-page.desktop.png',
+              tablet: '/assets/menu/article-page.tablet.png',
+              phone: '/assets/menu/article-page.phone.png',
             }}
             isActive={pathname === '/blogs'}
-            link='/'
+            link='/blogs'
           />
           <MenuItem
             title='Components'

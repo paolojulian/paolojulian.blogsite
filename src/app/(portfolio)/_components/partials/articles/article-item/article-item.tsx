@@ -1,7 +1,7 @@
 import AppDate from '@/_components/common/app-date';
 import RightArrowIcon from '@/_components/icons/right-arrow-icon';
 import Stack from '@/_components/layouts/stack';
-import { IBlogPost } from '@/app/(main-layout)/blogs/_contentful';
+import { IBlogPost } from '@/app/(main-layout)/blogs.v2/_contentful';
 import Uppercase from '@/app/custom-components/application-ui/landing-pages/with-fixed-menu/components/common/typography/uppercase';
 import Image from 'next/image';
 import Link from 'next/link';

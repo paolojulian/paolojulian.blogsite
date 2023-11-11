@@ -5,7 +5,7 @@ import ComponentIcon from '@/_components/partials/menu/components/icons/componen
 import ContactIcon from '@/_components/partials/menu/components/icons/contact-icon';
 import PortfolioIcon from '@/_components/partials/menu/components/icons/portfolio-icon';
 import useMenuContext from '@/_context/menu-provider/use-menu-context';
-import ArrowScrollBar from '@/app/(main-layout)/blogs/_components/scrollbars/arrow-scrollbar';
+import ArrowScrollBar from '@/app/(main-layout)/blogs.v2/_components/scrollbars/arrow-scrollbar';
 import { usePathname } from 'next/navigation';
 import { FunctionComponent } from 'react';
 import MenuItem from './menu-item';

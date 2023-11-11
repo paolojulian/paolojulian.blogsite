@@ -1,7 +1,7 @@
 import SectionHeading from '@/_components/common/section-heading';
 import Container from '@/_components/layouts/container';
-import { getLatestBlogPosts } from '@/app/(main-layout)/blogs/_api/blog-post';
-import ArrowScrollBar from '@/app/(main-layout)/blogs/_components/scrollbars/arrow-scrollbar';
+import { getLatestBlogPosts } from '@/app/(main-layout)/blogs.v2/_api/blog-post';
+import ArrowScrollBar from '@/app/(main-layout)/blogs.v2/_components/scrollbars/arrow-scrollbar';
 import { FunctionComponent } from 'react';
 import ArticleItem from '@/_components/common/article-item/article-item';
 
