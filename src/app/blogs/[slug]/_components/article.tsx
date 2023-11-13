@@ -13,6 +13,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import { IBlogPost } from '../../_contentful';
+import AppCopyright from '@/_components/common/app-copyright';
 
 export type ArticleProps = {
   blogPost: IBlogPost;
@@ -126,6 +127,9 @@ const Article: FunctionComponent<ArticleProps> = ({
         </div>
         <ToTopFab />
       </Container>
+      <footer className='border-t border-new-highlight w-full py-8 mb-40 text-new-highlight text-center'>
+        <AppCopyright />
+      </footer>
     </>
   );
 };
