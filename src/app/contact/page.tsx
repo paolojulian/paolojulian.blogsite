@@ -67,12 +67,12 @@ const ContactPage: FunctionComponent<Props> = () => {
                     <ContactForm />
                   </Stack>
                 </div>
-                <div className='border-t border-new-white w-full py-8  mb-24 lg:mb-40 text-new-highlight'>
-                  <AppCopyright />
-                </div>
               </Container>
             </Stack>
           </div>
+          <footer className='border-t border-new-highlight w-full py-8 mb-40 text-new-highlight text-center'>
+            <AppCopyright />
+          </footer>
         </Main>
         <Menu />
         <MenuButton />
