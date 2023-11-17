@@ -7,7 +7,7 @@ interface Props {
 
 const GetInTouchBtn: FunctionComponent<Props> = () => {
   return (
-    <button className='text-new-white mt-4 font-medium text-lg'>
+    <button className='text-new-black dark:text-new-accent mt-4 font-medium text-xl'>
       <Text>Get in Touch</Text>
     </button>
   );
