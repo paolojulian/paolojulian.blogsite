@@ -3,7 +3,9 @@ import Container from '@/_components/layouts/container';
 import useMenuContext from '@/_context/menu-provider/use-menu-context';
 import { usePathname } from 'next/navigation';
 import { FunctionComponent } from 'react';
+import styles from './menu.module.css';
 import MenuItem from './menu-item';
+import classNames from 'classnames';
 
 export const dataTestId = {
   container: 'menu-container',
@@ -29,7 +31,8 @@ const Menu: FunctionComponent<Props> = () => {
       data-testid={dataTestId.container}
     >
       <Container
-        className={[
+        className={classNames(
+          styles.menu,
           'flex flex-row justify-center',
           'w-full pb-8 pr-8',
           'overflow-x-auto text-new-white',
@@ -37,8 +40,8 @@ const Menu: FunctionComponent<Props> = () => {
           isOpen
             ? 'lg:scale-100 translate-y-0'
             : 'lg:scale-75 lg:-translate-y-[120%]',
-          isOpen ? '' : 'pointer-events-none',
-        ].join(' ')}
+          isOpen ? '' : 'pointer-events-none'
+        )}
       >
         <div className='flex flex-row gap-4 h-full w-full'>
           <MenuItem
@@ -72,14 +75,14 @@ const Menu: FunctionComponent<Props> = () => {
             link='/blogs'
           />
           <MenuItem
-            title='Components'
+            title='Apps'
             imageUrls={{
-              desktop: '/assets/menu/home-page.desktop.png',
-              tablet: '/assets/menu/home-page.tablet.png',
-              phone: '/assets/menu/home-page.phone.png',
+              desktop: '/assets/menu/component-page.desktop.png',
+              tablet: '/assets/menu/component-page.tablet.png',
+              phone: '/assets/menu/component-page.phone.png',
             }}
-            isActive={pathname === '/components'}
-            link='/'
+            isActive={false}
+            link='#'
           />
           <MenuItem
             title='Contact'
