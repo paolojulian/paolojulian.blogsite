@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
@@ -28,8 +29,9 @@ module.exports = {
       },
       fontFamily: {
         capital: ['var(--font-capital)'],
-        sans: ['var(--font-sans)'],
+        comfortaa: ['var(--font-comfortaa)'],
         lora: ['var(--font-lora)'],
+        sans: ['var(--font-sans)'],
         serif: ['var(--font-serif)'],
       },
       colors: {
@@ -39,13 +41,23 @@ module.exports = {
         background: colors.white,
         gray: colors.slate,
         accent: colors.cyan,
+
+        new: {
+          accent: '#B3D9D2',
+          black: '#171717',
+          white: '#fafafa',
+          highlight: '#737373',
+          highlightLighter: '#A3A3A3',
+        },
       },
       transitionTimingFunction: {
         fadeIn: 'cubic-bezier(.24,.6,.64,.65)',
+        menu: 'cubic-bezier(0.45,0.02,0.09,0.98)',
       },
       boxShadow: {
         mediumBlur: '0px 8px 28px 0px rgba(0,0,0,0.25)',
         highBlur: '0px 4px 28px 0px rgba(0,0,0,0.25)',
+        default: '0px 4px 28px -3px rgba(0,0,0,0.48)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

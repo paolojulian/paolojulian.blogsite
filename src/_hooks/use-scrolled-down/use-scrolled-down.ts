@@ -1,7 +1,11 @@
 import { throttle } from "lodash";
 import { useEffect, useState } from "react";
 
-export default function useScrolledDown(threshold: number = 1) {
+interface UseScrolledDownOptions {
+  once?: boolean;
+}
+
+export default function useScrolledDown(threshold: number = 1, { once }: UseScrolledDownOptions = { once: false }) {
   const [isScrolledDown, setIsScrolledDown] = useState(false);
 
   useEffect(() => {
@@ -16,6 +20,9 @@ export default function useScrolledDown(threshold: number = 1) {
       // Reduce opacity as soon as the user scrolls down the given treshold
       if (scrollY >= threshold) {
         setIsScrolledDown(true);
+        if (once) {
+          window.removeEventListener('scroll', handleScrollThrottled);
+        }
       } else {
         setIsScrolledDown(false);
       }

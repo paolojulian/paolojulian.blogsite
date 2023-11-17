@@ -11,8 +11,11 @@ const SectionHeading: FunctionComponent<Props> = ({
   title,
 }) => {
   return (
-    <div className='border-b-2 border-slate-400 text-gray-700 flex justify-between items-end md:p-2'>
-      <Uppercase as='h2' type='wider'>
+    <div className='border-b-2 border-new-white text-new-white flex justify-between items-end md:p-2'>
+      <Uppercase
+        className='tracking-widest md:tracking-[0.375rem] text-base'
+        as='h2'
+      >
         {title}
       </Uppercase>
       <span>{RightContent}</span>

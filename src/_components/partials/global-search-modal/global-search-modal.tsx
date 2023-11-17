@@ -35,7 +35,7 @@ const GlobalSearchModal: FunctionComponent<Props> = ({ isOpen, onClose }) => {
       >
         {/* Overlay */}
         <div
-          className={classNames('fixed inset-0 bg-slate-800/20 -z-10')}
+          className={classNames('fixed inset-0 bg-new-black/50 -z-10')}
           role='button'
           onClick={onClose}
         ></div>

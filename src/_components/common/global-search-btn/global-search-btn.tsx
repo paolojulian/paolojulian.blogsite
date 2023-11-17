@@ -40,8 +40,8 @@ const GlobalSearchBtn: FunctionComponent<Props> = () => {
     <>
       <div
         className={classNames(
-          'transition text-gray-400 hover:text-gray-500 px-4 lg:pl-6 lg:pr-7',
-          'bg-white border border-gray-300 hover:border-primary-400',
+          'transition text-new-highlight hover:text-new-black px-4 lg:pl-6 lg:pr-7',
+          'bg-white border border-new-highlight hover:border-new-accent',
           'rounded-sm',
           'w-full md:w-fit py-4',
           'flex flex-row justify-center items-center gap-4 lg:gap-16'

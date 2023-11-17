@@ -1,6 +1,6 @@
 import { getPortfolioItems } from './portfolio.backup/_api/portfolio-item';
 import { getPortfolio } from './portfolio.backup/_api/portfolio';
-import { getLatestBlogPosts } from './blogs/_api/blog-post';
+import { getLatestBlogPosts } from './blogs.v2/_api/blog-post';
 import React from 'react';
 import HeroSection from '@/app/(main-layout)/portfolio.backup/_components/hero';
 import { SectionsProvider } from '@/app/(main-layout)/portfolio.backup/_context/sections-context';

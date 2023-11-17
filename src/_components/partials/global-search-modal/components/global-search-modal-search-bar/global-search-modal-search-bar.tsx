@@ -42,7 +42,7 @@ const GlobalSearchModalSearchBar: FunctionComponent<Props> = ({ onEsc }) => {
       <label className='hidden' htmlFor='globalSearch'>
         Search
       </label>
-      <div className='absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400'>
+      <div className='absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none text-new-highlight'>
         <SearchIcon />
       </div>
       <input
@@ -50,7 +50,7 @@ const GlobalSearchModalSearchBar: FunctionComponent<Props> = ({ onEsc }) => {
         id='globalSearch'
         className={classNames(
           'pl-16 p-6 rounded-t-xl w-full',
-          'border-slate-400 focus:outline-none focus:ring ring-primary-300 focus:border-slate-800'
+          'border-slate-400 focus:outline-none focus:ring ring-new-accent focus:border-new-black'
         )}
         value={keyword}
         onChange={handleChange}
@@ -61,7 +61,7 @@ const GlobalSearchModalSearchBar: FunctionComponent<Props> = ({ onEsc }) => {
         className={classNames(
           'absolute top-1/2 -translate-y-1/2 right-6',
           'rounded-lg',
-          'px-4 py-2 border border-slate-300 md:hover:bg-slate-50 text-slate-400 w-fit h-fit'
+          'px-4 py-2 border border-new-highlightLighter md:hover:bg-new-white text-new-highlight w-fit h-fit'
         )}
         onClick={onEsc}
         data-testid={DATA_TEST.escapeBtn}

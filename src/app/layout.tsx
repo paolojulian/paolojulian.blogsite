@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { Metadata } from 'next';
-import { Anton, Inter, Lora, Montserrat } from 'next/font/google';
+import { Anton, Comfortaa, Inter, Lora, Montserrat } from 'next/font/google';
 import { ReactNode } from 'react';
 import './globals.css';
 
@@ -23,6 +23,11 @@ const sans = Montserrat({
   subsets: ['latin'],
   variable: '--font-sans',
   weight: ['400', '500', '600', '700', '800'],
+});
+const comfortaa = Comfortaa({
+  subsets: ['latin'],
+  variable: '--font-comfortaa',
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -47,10 +52,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body
         className={classNames(
+          'bg-new-black',
           `${capital.variable} font-capital`,
           `${serif.variable} font-serif`,
           `${lora.variable} font-lora`,
           `${sans.variable} font-sans`,
+          `${comfortaa.variable} font-comfortaa`,
           'font-sans',
           'overscroll-contain',
           'overflow-x-hidden max-w-screen'

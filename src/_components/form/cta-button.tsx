@@ -20,8 +20,8 @@ export type CTAButtonProps = {
 
 const bgVariants: Record<Variants, string> = {
   default: classNames(
-    'bg-primary-400 md:hover:bg-primary-500 md:active:bg-primary-500 active:bg-primary-600 active:scale-[0.98]',
-    'text-slate-50'
+    'bg-new-accent md:hover:bg-new-accent/90 md:active:bg-new-accent active:scale-[0.98]',
+    'text-new-black'
   ),
   'default-dark': classNames(
     'bg-slate-200 md:hover:bg-primary-400 md:active:bg-primary-500 active:bg-primary-600 active:scale-[0.98]',
