@@ -30,13 +30,19 @@ export default async function Home() {
   return (
     <>
       <Row>
-        <nav className='absolute md:fixed left-0 top-0 p-4 lg:p-10 flex flex-col justify-between h-screen items-center'>
+        <nav className='absolute md:fixed left-0 top-0 p-4 lg:p-10 flex flex-col justify-between h-screen items-center z-20'>
           <Logo className='bg-new-black text-new-white w-6 h-6' />
 
           <Stack className='gap-6 lg:gap-4 w-full items-center'>
-            <PhoneIcon className='w-[1.4rem] h-[1.4rem] scale-75 md:scale-100' />
-            <MailIcon className='w-6 h-6 scale-75 md:scale-100' />
-            <LinkedinIcon className='h-5 w-5 scale-75 md:scale-100' />
+            <Link href={'tel:09279488654'}>
+              <PhoneIcon className='w-[1.4rem] h-[1.4rem] scale-75 md:scale-100' />
+            </Link>
+            <Link href={'mailto:paolojulian.dev@gmail.com'}>
+              <MailIcon className='w-6 h-6 scale-75 md:scale-100' />
+            </Link>
+            <Link href={'https://www.linkedin.com/in/pipz/'}>
+              <LinkedinIcon className='h-5 w-5 scale-75 md:scale-100' />
+            </Link>
           </Stack>
         </nav>
 
@@ -107,7 +113,7 @@ export default async function Home() {
                             {item.name}
                           </Text>
 
-                          <div className='text-new-highlight text-base xl:text-lg'>
+                          <div className='text-new-highlight text-xl xl:text-2xl'>
                             {item.tags.map((tag, i) => (
                               <Text className='capitalize' key={`${i}-${tag}`}>
                                 {tag}
@@ -143,14 +149,13 @@ export default async function Home() {
 
               <div className='flex flex-col gap-12 md:gap-0 md:flex-row w-full'>
                 <div className='flex-1'>
-                  <Text className='text-new-highlight text-base md:text-xl max-w-[332px] xl:max-w-[555px]'>
-                    {`
-                  These are the tools I prefer to use as of now. However, my
-                  journey is ongoing, and I remain open to learning and
-                  exploring new tools in the future. It's important to remember
-                  that these are just temporary preferences, and each is just a
-                  tool in my creative arsenal.
-                  `}
+                  <Text className='text-new-highlight text-2xl md:max-w-[332px] xl:max-w-[555px]'>
+                    These are the <span className='text-new-white'>tools</span>{' '}
+                    I prefer to use as of now. However, my journey is ongoing,
+                    and I remain open to learning and exploring new tools in the
+                    future. It&lsquo;s important to remember that these are just
+                    temporary preferences, and each is just a tool in my
+                    creative arsenal.
                   </Text>
                 </div>
                 <div className='flex-1'>
@@ -158,7 +163,7 @@ export default async function Home() {
                     <Stack className='gap-2'>
                       <Text
                         as='h4'
-                        className='text-new-highlight text-sm font-bold'
+                        className='text-new-highlight text-2xl font-bold'
                       >
                         FRONT-END
                       </Text>
@@ -174,7 +179,7 @@ export default async function Home() {
                     <Stack className='gap-2'>
                       <Text
                         as='h4'
-                        className='text-new-highlight text-sm font-bold'
+                        className='text-new-highlight text-2xl font-bold'
                       >
                         BACK-END
                       </Text>
@@ -189,7 +194,7 @@ export default async function Home() {
                     <Stack className='gap-2'>
                       <Text
                         as='h4'
-                        className='text-new-highlight text-sm font-bold'
+                        className='text-new-highlight text-2xl font-bold'
                       >
                         UI/UX
                       </Text>
@@ -231,7 +236,7 @@ export default async function Home() {
                     <Stack className='gap-2'>
                       <Text
                         as='h4'
-                        className='text-new-highlight text-sm font-bold'
+                        className='text-new-highlight text-2xl font-bold'
                       >
                         SOCIALS
                       </Text>
@@ -243,7 +248,7 @@ export default async function Home() {
                     <Stack className='gap-2'>
                       <Text
                         as='h4'
-                        className='text-new-highlight text-sm font-bold'
+                        className='text-new-highlight text-2xl font-bold'
                       >
                         ADDRESS
                       </Text>
@@ -256,7 +261,7 @@ export default async function Home() {
                     <Stack className='gap-2'>
                       <Text
                         as='h4'
-                        className='text-new-highlight text-sm font-bold'
+                        className='text-new-highlight text-2xl font-bold'
                       >
                         CONTACT
                       </Text>
@@ -268,7 +273,7 @@ export default async function Home() {
                     <Stack className='gap-2'>
                       <Text
                         as='h4'
-                        className='text-new-highlight text-sm font-bold'
+                        className='text-new-highlight text-2xl font-bold'
                       >
                         SITEMAP
                       </Text>

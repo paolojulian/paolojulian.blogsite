@@ -1,4 +1,5 @@
 import Text from '@/_components/common/typography/text';
+import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
 
 interface Props {
@@ -7,9 +8,9 @@ interface Props {
 
 const GetInTouchBtn: FunctionComponent<Props> = () => {
   return (
-    <button className='text-new-white mt-4 font-medium text-lg'>
+    <Link href='/contact' className='text-new-white mt-4 font-medium text-lg'>
       <Text>Get in Touch</Text>
-    </button>
+    </Link>
   );
 };
 

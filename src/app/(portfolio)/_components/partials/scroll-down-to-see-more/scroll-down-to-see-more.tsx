@@ -10,7 +10,7 @@ interface Props {
 }
 
 const ScrollDownToSeeMore: FunctionComponent<Props> = () => {
-  const isScrolledDown = useScrolledDown(1, { once: true });
+  const isScrolledDown = useScrolledDown(1);
 
   return (
     <div
