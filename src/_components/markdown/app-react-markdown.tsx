@@ -71,12 +71,12 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
             </ul>
           ),
           li: ({ children }) => (
-            <li className='text-new-white whitespace-normal leading-normal'>
+            <li className='text-slate-700 whitespace-normal leading-normal'>
               {children}
             </li>
           ),
           a: ({ href, children }) => (
-            <a href={href} className='text-new-accent font-medium'>
+            <a href={href} className='text-red-500 font-medium'>
               {children}
             </a>
           ),

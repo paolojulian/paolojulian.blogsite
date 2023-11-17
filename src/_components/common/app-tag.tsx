@@ -7,7 +7,7 @@ export type AppTagProps = {
 const AppTag: FunctionComponent<AppTagProps> = ({ tag, ...props }) => {
   return (
     <p
-      className='rounded-full py-[7px] px-[30px] bg-new-accent/10 border border-new-highlight text-new-white'
+      className='rounded-full py-[7px] px-[30px] bg-primary-300/30 border border-primary-300 text-slate-700'
       {...props}
     >
       {`#${tag}`}
