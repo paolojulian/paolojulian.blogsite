@@ -27,7 +27,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
       {language === 'text' ? (
         <div
           className={classNames(
-            'bg-slate-900 text-slate-50 font-normal px-2 py-2 mt-4 text-base'
+            'bg-new-black/90 text-new-white font-normal px-2 py-2 mt-4 text-base'
           )}
           data-testid={DATA_TEST.textContainer}
         >
@@ -48,20 +48,17 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
             {language !== 'no-copy' ? (
               <Row
                 className={classNames(
-                  'justify-between text-sm px-4 py-2 bg-slate-900 text-gray-50'
+                  'justify-between text-sm px-4 py-2 bg-black text-new-white'
                 )}
-                style={{
-                  backgroundColor: '#030712',
-                }}
                 data-testid={DATA_TEST.noCopyContainer}
               >
-                <span className='text-gray-300'>{language}</span>
+                <span className='text-new-highlight'>{language}</span>
                 <button
                   className={classNames(
                     'transition-none md:transition-colors',
                     isCopied
-                      ? 'text-green-400'
-                      : 'text-white md:text-white md:hover:text-primary-500 group'
+                      ? 'text-new-accent'
+                      : 'text-new-white md:text-new-white md:hover:text-new-highlight group'
                   )}
                   onClick={handleClickCopy}
                   data-testid={DATA_TEST.copyButton}
@@ -130,9 +127,9 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({ children }) => {
                     </svg>
 
                     {isCopied ? (
-                      <span className='text-green-400'>Copied!</span>
+                      <span className='text-new-accent'>Copied!</span>
                     ) : (
-                      <span>Copy</span>
+                      <span className='text-new-white'>Copy</span>
                     )}
                   </Row>
                 </button>

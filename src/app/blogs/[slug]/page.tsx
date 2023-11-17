@@ -23,14 +23,11 @@ export async function generateStaticParams() {
 }
 
 const BlogDetails: FunctionComponent<BlogDetailsProps> = async ({ params }) => {
-  const [blogPost, latestBlogPosts] = await Promise.all([
-    getBlogPostBySlug(params.slug),
-    getLatestBlogPosts(),
-  ]);
+  const [blogPost] = await Promise.all([getBlogPostBySlug(params.slug)]);
 
   return (
     <>
-      <Article blogPost={blogPost} latestBlogPosts={latestBlogPosts} />
+      <Article blogPost={blogPost} />
     </>
   );
 };
