@@ -3,7 +3,7 @@
 exports[`TESTING MenuItem component GIVEN valid props WHEN the MenuItem component is rendered in snapshot testing THEN it should match the snapshot 1`] = `
 <DocumentFragment>
   <a
-    class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+    class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
     data-testid="menu-item-container"
     href="/"
     role="button"
