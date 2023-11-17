@@ -33,7 +33,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           h3: ({ children }) => (
             <AppHeading.H3
               id={toKebabCase(children.toString())}
-              className='font-bold mt-12 mb-2'
+              className='font-bold mt-8 mb-2'
             >
               {children}
             </AppHeading.H3>
@@ -41,7 +41,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           h4: ({ children }) => (
             <AppHeading.H4
               id={toKebabCase(children.toString())}
-              className='font-bold mt-4'
+              className='font-bold mt-8'
             >
               {children}
             </AppHeading.H4>
@@ -49,7 +49,7 @@ const AppReactMarkdown: FunctionComponent<AppReactMarkdownProps> = ({
           p: ({ children }) => <p className='leading-relaxed'>{children}</p>,
           ol: ({ children }) => (
             <ol
-              className='whitespace-normal mt-6 mb-6'
+              className='whitespace-normal mt-4 mb-4'
               style={{
                 listStyleType: 'decimal',
                 listStylePosition: 'inside',

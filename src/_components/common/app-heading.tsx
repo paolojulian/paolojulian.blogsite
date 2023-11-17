@@ -31,7 +31,7 @@ const H3: FunctionComponent<React.HtmlHTMLAttributes<HTMLHeadingElement>> = ({
 }) => {
   return (
     <h3
-      className={classNames('text-new-white text-2xl md:text-2xl', className)}
+      className={classNames('text-new-white', className)}
       {...props}
     ></h3>
   );
@@ -43,7 +43,7 @@ const H4: FunctionComponent<React.HtmlHTMLAttributes<HTMLHeadingElement>> = ({
 }) => {
   return (
     <h4
-      className={classNames('text-new-white text-xl md:text-xl', className)}
+      className={classNames('text-new-white', className)}
       {...props}
     ></h4>
   );

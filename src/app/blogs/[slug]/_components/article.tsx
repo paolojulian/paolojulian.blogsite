@@ -92,7 +92,7 @@ const Article: FunctionComponent<ArticleProps> = ({
                 ) : null}
               </span>
 
-              <div className='border-b border-new-highlight pb-12 md:pb-24 text-base text-new-white'>
+              <div className='border-b border-new-highlight pb-12 md:pb-24 text-lg text-new-highlightLighter font-serif'>
                 <AppReactMarkdown>{blogPost.content}</AppReactMarkdown>
               </div>
 
