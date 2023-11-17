@@ -13,7 +13,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
         class="flex flex-row gap-4 h-full w-full"
       >
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="/"
           role="button"
@@ -81,7 +81,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
           </div>
         </a>
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="/about"
           role="button"
@@ -149,7 +149,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
           </div>
         </a>
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="/blogs"
           role="button"
@@ -217,7 +217,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
           </div>
         </a>
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="#"
           role="button"
@@ -285,7 +285,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is closed
           </div>
         </a>
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="/contact"
           role="button"
@@ -371,7 +371,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
         class="flex flex-row gap-4 h-full w-full"
       >
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="/"
           role="button"
@@ -439,7 +439,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
           </div>
         </a>
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="/about"
           role="button"
@@ -507,7 +507,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
           </div>
         </a>
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="/blogs"
           role="button"
@@ -575,7 +575,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
           </div>
         </a>
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="#"
           role="button"
@@ -643,7 +643,7 @@ exports[`TESTING Menu component GIVEN valid props WHEN the MenuContext is opened
           </div>
         </a>
         <a
-          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group "
+          class="flex flex-col gap-1 md:gap-2 last:pr-4 cursor-pointer relative group"
           data-testid="menu-item-container"
           href="/contact"
           role="button"

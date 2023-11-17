@@ -35,19 +35,25 @@ const MenuItem: FunctionComponent<Props> = ({
   useEffect(() => {
     if (currentPathname !== pathname) {
       setCurrentPathname(pathname);
+    }
+    setIsOpen(false);
+  }, [pathname, currentPathname, setIsOpen]);
+
+  const handleClick = () => {
+    if (isActive) {
       setIsOpen(false);
     }
-  }, [pathname, currentPathname, setIsOpen]);
+  }
 
   return (
     <Link
       className={[
         'flex flex-col gap-1 md:gap-2 last:pr-4',
         'cursor-pointer relative group',
-        isActive ? 'pointer-events-none' : '',
       ].join(' ')}
       data-testid={dataTestId.container}
       href={link}
+      onClick={handleClick}
       role='button'
     >
       <HoverableTitle isActive={isActive} title={title} />
