@@ -41,7 +41,6 @@ export default function PomodoroProvider({ children }: PomodoroProviderProps) {
   const [currentPhaseI, setCurrentPhaseI] = useState<number>(0);
   const [playbackStatus, setPlaybackStatus] =
     useState<PomodoroPlaybackStatus>('stop');
-  console.log('test', { currentPhaseI });
 
   function onPlay() {
     setPlaybackStatus('playing');
