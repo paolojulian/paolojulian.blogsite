@@ -12,12 +12,13 @@ interface Props {
 const Pomodoro: FunctionComponent<Props> = () => {
   return (
     <PomodoroProvider>
-      <div className='flex flex-col items-center gap-8 py-8'>
+      <div className='h-full flex flex-col items-center gap-8 py-8'>
         <SectionHeading title='paolojulian.dev - Pomodoro' />
         <div className='flex flex-col items-center gap-2 mt-10'>
           <PomodoroTimer />
           <PomodoroPhaseIndicator />
         </div>
+        <div className='flex-1'></div>
         <PomodoroButtons />
       </div>
     </PomodoroProvider>
