@@ -1,4 +1,5 @@
 'use client';
+import Text from '@/app/apps/pomodoro/_components/Text';
 import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
 import classNames from 'classnames';
 
@@ -18,12 +19,20 @@ export default function PomodoroButtons() {
   }
 
   return (
-    <div className='flex items-center gap-4'>
+    <div className='flex items-center justify-evenly pb-4 w-full'>
       <button
-        className='rounded-full h-16 aspect-square border border-new-highlight bg-new-highlightLighter'
+        className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
         onClick={handleBreak}
       >
-        <span className='text-new-black text-xl'>Menu</span>
+        <Text className='text-new-black'>
+          Next
+        </Text>
+      </button>
+      <button
+        className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
+        onClick={handleBreak}
+      >
+        <Text className='text-new-black'>Menu</Text>
       </button>
 
       <button
@@ -33,16 +42,22 @@ export default function PomodoroButtons() {
         )}
         onClick={handlePausePlay}
       >
-        <span className='text-new-black text-xl'>
+        <Text className='text-new-black' size='large'>
           {playbackStatus === 'playing' ? 'Pause' : 'Play'}
-        </span>
+        </Text>
       </button>
 
       <button
-        className='rounded-full h-16 aspect-square border border-new-highlight bg-new-highlightLighter'
+        className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
         onClick={handleBreak}
       >
-        <span className='text-new-black text-xl'>Next</span>
+        <Text className='text-new-black'>Next</Text>
+      </button>
+      <button
+        className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
+        onClick={handleBreak}
+      >
+        <Text className='text-new-black'>Reset</Text>
       </button>
     </div>
   );

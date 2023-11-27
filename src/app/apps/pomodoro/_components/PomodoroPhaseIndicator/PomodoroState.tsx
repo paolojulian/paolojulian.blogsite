@@ -1,5 +1,6 @@
 'use client';
 
+import Text from '@/app/apps/pomodoro/_components/Text';
 import {
   PomodoroPhase,
   usePomodoro,
@@ -34,7 +35,7 @@ function PomodoroPhase({ phase }: { phase: PomodoroPhase }) {
   };
 
   return (
-    <span
+    <Text
       className={classNames(
         currentPhase === phase ? 'text-new-white' : 'text-new-highlight'
       )}
@@ -42,6 +43,6 @@ function PomodoroPhase({ phase }: { phase: PomodoroPhase }) {
       onClick={handleClick}
     >
       {textMap[phase]}
-    </span>
+    </Text>
   );
 }

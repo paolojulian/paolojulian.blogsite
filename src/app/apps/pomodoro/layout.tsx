@@ -18,5 +18,5 @@ export default function PortfolioLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className={classNames(font.className, 'h-full')}>{children}</div>;
+  return <div className={classNames(font.className, 'h-full text-new-white')}>{children}</div>;
 }
