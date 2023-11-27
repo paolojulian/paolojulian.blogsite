@@ -12,7 +12,6 @@ interface PomodoroTaskItemProps {
 
 const PomodoroTaskItem = memo(
   ({ onSelect, isSelected, task, taskNumber }: PomodoroTaskItemProps) => {
-    console.log('test', `Re-render ${taskNumber}`);
     const timeElapsedText = getTimeElapsedText(task.timeElapsed);
 
     const handleSelect = () => {
