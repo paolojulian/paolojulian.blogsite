@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 let timerId: NodeJS.Timeout;
 
 export default function PomodoroTimer() {
-  const { status } = usePomodoro();
+  const { playbackStatus } = usePomodoro();
 
   const [time, setTime] = useState(3000);
 
@@ -21,12 +21,15 @@ export default function PomodoroTimer() {
   };
 
   useEffect(() => {
-    if (status === 'playing') {
+    if (playbackStatus === 'playing') {
       play();
+    } else if (playbackStatus === 'stop') {
+      pause();
+      setTime(3000);
     } else {
       pause();
     }
-  }, [status]);
+  }, [playbackStatus]);
 
   // Clean up the interval when the component unmounts
   useEffect(() => {

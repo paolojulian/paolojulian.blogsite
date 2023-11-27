@@ -2,10 +2,10 @@
 import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
 
 export default function PomodoroButtons() {
-  const { status, onPause, onPlay } = usePomodoro();
+  const { playbackStatus, onPause, onPlay } = usePomodoro();
 
   function handleClick() {
-    if (status === 'paused') {
+    if (playbackStatus === 'paused' || playbackStatus === 'stop') {
       onPlay();
     } else {
       onPause();
@@ -14,7 +14,7 @@ export default function PomodoroButtons() {
 
   return (
     <button className='text-new-white' onClick={handleClick}>
-      {status === 'playing' ? 'Pause' : 'Play'}
+      {playbackStatus === 'playing' ? 'Pause' : 'Play'}
     </button>
   );
 }

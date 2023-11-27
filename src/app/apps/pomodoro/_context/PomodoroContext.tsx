@@ -1,31 +1,38 @@
 'use client';
 
 import {
-  Dispatch,
   ReactNode,
-  SetStateAction,
   createContext,
   useContext,
-  useState,
+  useState
 } from 'react';
 
-type PomodoroStates = 'working' | 'short-break' | 'long-break';
-type PomodoroStatus = 'paused' | 'playing';
+export type PomodoroPhase = 'working' | 'short-break' | 'long-break';
+type PomodoroPlaybackStatus = 'paused' | 'playing' | 'stop';
+
+export const pomodoroPhaseQueue: PomodoroPhase[] = [
+  'working',
+  'short-break',
+  'working',
+  'short-break',
+  'working',
+  'long-break',
+];
 
 interface PomodoroContextValues {
-  state: PomodoroStates;
-  status: PomodoroStatus;
+  phase: PomodoroPhase;
+  playbackStatus: PomodoroPlaybackStatus;
   onPlay: () => void;
   onPause: () => void;
-  setState: Dispatch<SetStateAction<PomodoroStates>>;
+  setPhase: (phase: PomodoroPhase) => void;
 }
 
 const PomodoroContext = createContext<PomodoroContextValues>({
-  state: 'working',
-  status: 'paused',
+  phase: 'working',
+  playbackStatus: 'stop',
   onPause: () => {},
   onPlay: () => {},
-  setState: () => {},
+  setPhase: () => {},
 });
 
 interface PomodoroProviderProps {
@@ -33,20 +40,32 @@ interface PomodoroProviderProps {
 }
 
 export default function PomodoroProvider({ children }: PomodoroProviderProps) {
-  const [state, setState] = useState<PomodoroStates>('working');
-  const [status, setStatus] = useState<PomodoroStatus>('playing');
+  const [phase, setPhase] = useState<PomodoroPhase>('working');
+  const [playbackStatus, setPlaybackStatus] =
+    useState<PomodoroPlaybackStatus>('stop');
 
   function onPlay() {
-    setStatus('playing');
+    setPlaybackStatus('playing');
   }
 
   function onPause() {
-    setStatus('paused');
+    setPlaybackStatus('paused');
+  }
+
+  function onChangePhase(phase: PomodoroPhase) {
+    setPlaybackStatus('stop');
+    setPhase(phase);
   }
 
   return (
     <PomodoroContext.Provider
-      value={{ state, status, onPause, onPlay, setState }}
+      value={{
+        phase,
+        playbackStatus,
+        onPause,
+        onPlay,
+        setPhase: onChangePhase,
+      }}
     >
       {children}
     </PomodoroContext.Provider>
