@@ -19,15 +19,7 @@ export default function PomodoroButtons() {
   }
 
   return (
-    <div className='flex items-center justify-evenly pb-4 w-full'>
-      <button
-        className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
-        onClick={handleBreak}
-      >
-        <Text className='text-new-black'>
-          Next
-        </Text>
-      </button>
+    <div className='flex items-center justify-center gap-4 pb-4 w-full'>
       <button
         className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
         onClick={handleBreak}
@@ -52,12 +44,6 @@ export default function PomodoroButtons() {
         onClick={handleBreak}
       >
         <Text className='text-new-black'>Next</Text>
-      </button>
-      <button
-        className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
-        onClick={handleBreak}
-      >
-        <Text className='text-new-black'>Reset</Text>
       </button>
     </div>
   );
