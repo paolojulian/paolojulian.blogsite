@@ -4,17 +4,32 @@ import { useEffect, useState } from 'react';
 
 let timerId: NodeJS.Timeout;
 
-export default function PomodoroTimer() {
-  const { playbackStatus } = usePomodoro();
+const pomodoroTime = 5;
 
-  const [time, setTime] = useState(3000);
+export default function PomodoroTimer() {
+  const { playbackStatus, onNextPhase } = usePomodoro();
+
+  const [time, setTime] = useState(pomodoroTime);
 
   function play() {
     // Countdown time
     timerId = setInterval(() => {
-      setTime((prevTime) => prevTime - 1);
+      setTime((prevTime) => {
+        if (prevTime - 1 === -1) {
+          return prevTime;
+        }
+        return prevTime - 1;
+      });
     }, 1000);
   }
+
+  useEffect(() => {
+    if (time === 0 && playbackStatus !== 'stop') {
+      pause();
+      const autoPlay = false;
+      onNextPhase(autoPlay);
+    }
+  }, [time, playbackStatus, onNextPhase]);
 
   const pause = () => {
     clearInterval(timerId);
@@ -25,7 +40,7 @@ export default function PomodoroTimer() {
       play();
     } else if (playbackStatus === 'stop') {
       pause();
-      setTime(3000);
+      setTime(pomodoroTime);
     } else {
       pause();
     }

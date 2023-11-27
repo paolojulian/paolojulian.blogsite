@@ -1,11 +1,6 @@
 'use client';
 
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useState
-} from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
 
 export type PomodoroPhase = 'working' | 'short-break' | 'long-break';
 type PomodoroPlaybackStatus = 'paused' | 'playing' | 'stop';
@@ -25,6 +20,7 @@ interface PomodoroContextValues {
   onPlay: () => void;
   onPause: () => void;
   setPhase: (phase: PomodoroPhase) => void;
+  onNextPhase: (shouldAutoPlay?: boolean) => void;
 }
 
 const PomodoroContext = createContext<PomodoroContextValues>({
@@ -33,6 +29,7 @@ const PomodoroContext = createContext<PomodoroContextValues>({
   onPause: () => {},
   onPlay: () => {},
   setPhase: () => {},
+  onNextPhase: () => {},
 });
 
 interface PomodoroProviderProps {
@@ -41,8 +38,10 @@ interface PomodoroProviderProps {
 
 export default function PomodoroProvider({ children }: PomodoroProviderProps) {
   const [phase, setPhase] = useState<PomodoroPhase>('working');
+  const [currentPhaseI, setCurrentPhaseI] = useState<number>(0);
   const [playbackStatus, setPlaybackStatus] =
     useState<PomodoroPlaybackStatus>('stop');
+  console.log('test', { currentPhaseI });
 
   function onPlay() {
     setPlaybackStatus('playing');
@@ -52,9 +51,44 @@ export default function PomodoroProvider({ children }: PomodoroProviderProps) {
     setPlaybackStatus('paused');
   }
 
-  function onChangePhase(phase: PomodoroPhase) {
+  function onChangePhase(newPhase: PomodoroPhase) {
     setPlaybackStatus('stop');
-    setPhase(phase);
+    setPhase(newPhase);
+
+    // Find the index of the new phase in the queue
+    const newIndex = pomodoroPhaseQueue.indexOf(newPhase);
+
+    // Find the nearest occurrence of the phase in the queue
+    const nearestIndex = pomodoroPhaseQueue.reduce(
+      (closestIndex, _, currentIndex) => {
+        const currentDifference = Math.abs(currentIndex - newIndex);
+        const closestDifference = Math.abs(closestIndex - newIndex);
+
+        return currentDifference < closestDifference
+          ? currentIndex
+          : closestIndex;
+      },
+      0
+    );
+
+    setCurrentPhaseI(nearestIndex);
+  }
+
+  function onNextPhase(shouldAutoPlay: boolean = false) {
+    // Set the currentPhaseI to the next, if currentPhaseI is over the limit, reset to 0
+    const nextPhaseIndex = (currentPhaseI + 1) % pomodoroPhaseQueue.length;
+    const nextPhase = pomodoroPhaseQueue[nextPhaseIndex];
+
+    setCurrentPhaseI(nextPhaseIndex);
+    setPhase(nextPhase);
+    setPlaybackStatus('stop');
+
+    if (shouldAutoPlay) {
+      // This is to reset the timer
+      setTimeout(() => {
+        onPlay();
+      }, 0);
+    }
   }
 
   return (
@@ -65,6 +99,7 @@ export default function PomodoroProvider({ children }: PomodoroProviderProps) {
         onPause,
         onPlay,
         setPhase: onChangePhase,
+        onNextPhase,
       }}
     >
       {children}

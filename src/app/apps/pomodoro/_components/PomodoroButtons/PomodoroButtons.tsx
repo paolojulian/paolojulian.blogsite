@@ -2,9 +2,9 @@
 import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
 
 export default function PomodoroButtons() {
-  const { playbackStatus, onPause, onPlay } = usePomodoro();
+  const { playbackStatus, onPause, onPlay, onNextPhase } = usePomodoro();
 
-  function handleClick() {
+  function handlePausePlay() {
     if (playbackStatus === 'paused' || playbackStatus === 'stop') {
       onPlay();
     } else {
@@ -12,9 +12,18 @@ export default function PomodoroButtons() {
     }
   }
 
+  function handleBreak() {
+    onNextPhase(true);
+  }
+
   return (
-    <button className='text-new-white' onClick={handleClick}>
-      {playbackStatus === 'playing' ? 'Pause' : 'Play'}
-    </button>
+    <div className='flex gap-8'>
+      <button className='text-new-white' onClick={handlePausePlay}>
+        {playbackStatus === 'playing' ? 'Pause' : 'Play'}
+      </button>
+      <button className='text-new-white' onClick={handleBreak}>
+        Next
+      </button>
+    </div>
   );
 }
