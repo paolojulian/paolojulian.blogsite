@@ -69,11 +69,11 @@ const ZoomableImage: FunctionComponent<Props> = ({ ...props }) => {
           role='button'
           onClick={handleToggleZoom}
         >
-          <div className='absolute inset-0 transition group-hover:bg-gray-800/10'></div>
+          <div className='absolute inset-0 transition group-hover:bg-new-highlight/10'></div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img {...props} alt={props.alt || ''} />
         </div>
-        <div className='text-gray-400 text-sm'>{props.alt}</div>
+        <div className='text-new-highlight text-sm'>{props.alt}</div>
       </figure>
 
       {isZoomed && modalRoot

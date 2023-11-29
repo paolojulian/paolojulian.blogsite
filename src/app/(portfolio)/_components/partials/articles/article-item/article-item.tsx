@@ -23,7 +23,7 @@ const ArticleItem = React.memo(
           <Stack className='gap-[10px]'>
             <div className='w-full relative overflow-hidden'>
               <Image
-                className='object-cover object-center opacity-80 group-hover:opacity-100 scale-105 group-hover:scale-110 saturate-0 group-hover:saturate-100 transition-transform duration-500'
+                className='object-cover object-center opacity-80 group-hover:opacity-100 scale-105 group-hover:scale-110 saturate-50 group-hover:saturate-100 transition-transform duration-500'
                 src={article.banner.url}
                 alt={article.title}
                 width={article.banner.width}
