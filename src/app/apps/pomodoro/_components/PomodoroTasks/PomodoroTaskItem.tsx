@@ -7,11 +7,10 @@ interface PomodoroTaskItemProps {
   onSelect: (taskId: string) => void;
   isSelected: boolean;
   task: Task;
-  taskNumber: number;
 }
 
 const PomodoroTaskItem = memo(
-  ({ onSelect, isSelected, task, taskNumber }: PomodoroTaskItemProps) => {
+  ({ onSelect, isSelected, task }: PomodoroTaskItemProps) => {
     const timeElapsedText = getTimeElapsedText(task.timeElapsed);
 
     const handleSelect = () => {
@@ -28,7 +27,7 @@ const PomodoroTaskItem = memo(
         onClick={handleSelect}
       >
         <div>
-          <Text as='h3'>{`#${taskNumber} // ${task.title}`}</Text>
+          <Text as='h3'>{`${task.title}`}</Text>
           <Text as='p' className='text-new-highlight'>
             {timeElapsedText}
           </Text>

@@ -1,6 +1,10 @@
 'use client';
 import PomodoroTaskItem from '@/app/apps/pomodoro/_components/PomodoroTasks/PomodoroTaskItem';
 import {
+  getTasksFromLocalStorage,
+  setTasksToLocalStorage,
+} from '@/app/apps/pomodoro/_components/PomodoroTasks/PomodoroTasks.utils';
+import {
   PomodoroAddTask,
   TaskForm,
 } from '@/app/apps/pomodoro/_components/PomodoroTasks/components/PomodoroAddTask';
@@ -19,25 +23,15 @@ export interface Task {
 
 let timeoutId: NodeJS.Timeout;
 
-function getTasksFromLocalStorage() {
-  const tasks = localStorage.getItem('tasks');
-  if (!tasks) {
-    return [];
-  }
-
-  return JSON.parse(tasks);
-}
-
 export default function PomodoroTasks() {
   const { phase, playbackStatus } = usePomodoro();
   const [tasks, setTasks] = useState<Task[]>(getTasksFromLocalStorage());
 
   useEffect(() => {
     // Persist to localStorage
-    // const localStorageTasks = localStorage.getItem('tasks');
-    // const localStorageTasksAsObject = JSON.stringify(localStorageTasks);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    setTasksToLocalStorage(tasks);
   }, [tasks]);
+
   const [selectedTaskId, setSelectedTaskId] = useState<string>('');
 
   const handleAddTask = ({ title, description = '' }: TaskForm) => {
@@ -77,11 +71,9 @@ export default function PomodoroTasks() {
 
   const handleSelectTask = (taskId: string) => {
     // Remove if clicked on the same task
-    if (selectedTaskId === taskId) {
-      setSelectedTaskId('');
-      return;
+    if (selectedTaskId !== taskId) {
+      setSelectedTaskId(taskId);
     }
-    setSelectedTaskId(taskId);
   };
 
   return (
@@ -89,11 +81,10 @@ export default function PomodoroTasks() {
       <div className='flex-1 w-full flex flex-col mt-8 items-stretch gap-2'>
         <Text as='h2'>Tasks</Text>
         <div className='flex flex-col gap-2'>
-          {memoizedTasks.map((task, i) => (
+          {memoizedTasks.map((task) => (
             <PomodoroTaskItem
               key={task.id}
               isSelected={task.id === selectedTaskId}
-              taskNumber={i + 1}
               task={task}
               onSelect={handleSelectTask}
             />

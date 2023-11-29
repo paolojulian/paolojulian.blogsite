@@ -1,15 +1,26 @@
 'use client';
-import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
+import {
+  PomodoroPhase,
+  usePomodoro,
+} from '@/app/apps/pomodoro/_context/PomodoroContext';
 import { useEffect, useState } from 'react';
 
 let timerId: NodeJS.Timeout;
 
-const pomodoroTime = 5;
+const POMODORO_DEFAULT_TIME: Record<PomodoroPhase, number> = {
+  working: 3000,
+  'long-break': 1800,
+  'short-break': 600,
+};
 
 export default function PomodoroTimer() {
-  const { playbackStatus, onNextPhase } = usePomodoro();
+  const { phase, playbackStatus, onNextPhase } = usePomodoro();
 
-  const [time, setTime] = useState(pomodoroTime);
+  const [time, setTime] = useState(POMODORO_DEFAULT_TIME[phase]);
+
+  useEffect(() => {
+    setTime(POMODORO_DEFAULT_TIME[phase]);
+  }, [phase]);
 
   function play() {
     // Countdown time
@@ -36,13 +47,13 @@ export default function PomodoroTimer() {
   };
 
   useEffect(() => {
-    if (playbackStatus === 'playing') {
-      play();
-    } else if (playbackStatus === 'stop') {
-      pause();
-      setTime(pomodoroTime);
-    } else {
-      pause();
+    switch (playbackStatus) {
+      case 'playing':
+        play();
+        break;
+      case 'stop':
+      default:
+        pause();
     }
   }, [playbackStatus]);
 
