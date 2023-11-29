@@ -1,3 +1,4 @@
+'use client';
 import { Task } from "@/app/apps/pomodoro/_components/PomodoroTasks/PomodoroTasks";
 
 const LOCAL_STORAGE_TASK_KEY = 'tasks';
