@@ -92,7 +92,7 @@ export function PomodoroAddTask({ onAddTask }: PomodoroAddTaskProps) {
               <input
                 onBlur={handleBlur}
                 onChange={handleChange}
-                className='bg-transparent p-2 rounded border border-new-highlight placeholder-new-highlight text-new-white'
+                className='bg-transparent p-2 rounded border border-new-highlight placeholder-new-highlight text-new-white focus:outline-new-accent'
                 name='title'
                 type='text'
                 placeholder='Title'
@@ -102,7 +102,7 @@ export function PomodoroAddTask({ onAddTask }: PomodoroAddTaskProps) {
                 onBlur={handleBlur}
                 onChange={handleChange}
                 name='description'
-                className='bg-transparent p-2 rounded border border-new-highlight placeholder-new-highlight text-new-white'
+                className='bg-transparent p-2 rounded border border-new-highlight placeholder-new-highlight text-new-white focus:outline-new-accent'
                 rows={5}
                 placeholder='Description'
               ></textarea>

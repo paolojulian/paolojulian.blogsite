@@ -19,7 +19,7 @@ export default function PomodoroButtons() {
   }
 
   return (
-    <div className='flex items-center justify-center gap-4 pb-4 w-full'>
+    <div className='flex items-center justify-center gap-4 p-4 w-full bg-new-black/50 backdrop-blur-sm'>
       <button
         className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
         onClick={handleBreak}
