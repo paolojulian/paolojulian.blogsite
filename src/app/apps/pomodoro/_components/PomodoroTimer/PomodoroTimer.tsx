@@ -13,6 +13,24 @@ const POMODORO_DEFAULT_TIME: Record<PomodoroPhase, number> = {
   'short-break': 600,
 };
 
+let POMODORO_AUDIO: HTMLAudioElement;
+if (typeof window !== 'undefined') {
+  POMODORO_AUDIO = new Audio('/assets/audio/pomodoro-alert.wav');
+}
+function playRingingSound() {
+  if (POMODORO_AUDIO) {
+    POMODORO_AUDIO.currentTime = 0;
+    POMODORO_AUDIO.play();
+  }
+}
+
+function stopRingingSound() {
+  if (POMODORO_AUDIO) {
+    POMODORO_AUDIO.pause();
+    POMODORO_AUDIO.currentTime = 0;
+  }
+}
+
 export default function PomodoroTimer() {
   const { phase, playbackStatus, onNextPhase } = usePomodoro();
 
@@ -23,6 +41,7 @@ export default function PomodoroTimer() {
   }, [phase]);
 
   function play() {
+    stopRingingSound();
     // Countdown time
     timerId = setInterval(() => {
       setTime((prevTime) => {
@@ -36,6 +55,7 @@ export default function PomodoroTimer() {
 
   useEffect(() => {
     if (time === 0 && playbackStatus !== 'stop') {
+      playRingingSound();
       pause();
       const autoPlay = false;
       onNextPhase(autoPlay);
