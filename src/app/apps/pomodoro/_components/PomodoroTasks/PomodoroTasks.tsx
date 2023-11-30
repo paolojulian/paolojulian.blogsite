@@ -22,7 +22,9 @@ export interface Task {
   isFinished: boolean;
 }
 
-let timeoutId: NodeJS.Timeout;
+const frameDurationInMs = 1000;
+let lastFrameTime = 0;
+let animationFrameId: number | null = null;
 
 export default function PomodoroTasks() {
   const { phase, playbackStatus } = usePomodoro();
@@ -72,9 +74,11 @@ export default function PomodoroTasks() {
     const shouldStartCounting =
       phase === 'working' && playbackStatus === 'playing' && !!selectedTaskId;
 
-    if (shouldStartCounting) {
-      timeoutId = setInterval(() => {
-        // Start timeElapsed for the selected task
+    const handleAnimationFrame = (currentTime: number) => {
+      const elapsed = currentTime - lastFrameTime;
+      if (elapsed >= frameDurationInMs) {
+        lastFrameTime = currentTime;
+
         setTasks((prevTasks) =>
           prevTasks.map((task) =>
             task.id === selectedTaskId
@@ -82,10 +86,25 @@ export default function PomodoroTasks() {
               : task
           )
         );
-      }, 1000);
-    } else {
-      clearInterval(timeoutId);
+      }
+      if (shouldStartCounting) {
+        animationFrameId = requestAnimationFrame((nextTime) =>
+          handleAnimationFrame(nextTime)
+        );
+      }
+    };
+
+    if (shouldStartCounting) {
+      lastFrameTime = performance.now();
+      handleAnimationFrame(lastFrameTime);
     }
+
+    return () => {
+      // Cleanup
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, [playbackStatus, phase, selectedTaskId]);
 
   const handleSelectTask = (taskId: string) => {

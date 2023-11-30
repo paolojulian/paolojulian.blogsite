@@ -1,57 +1,13 @@
 'use client';
-import {
-  PomodoroPhase,
-  usePomodoro,
-} from '@/app/apps/pomodoro/_context/PomodoroContext';
-import { useEffect, useState } from 'react';
-
-let timerId: NodeJS.Timeout;
-
-const POMODORO_DEFAULT_TIME: Record<PomodoroPhase, number> = {
-  working: 3000,
-  'long-break': 1800,
-  'short-break': 600,
-};
-
-let POMODORO_AUDIO: HTMLAudioElement;
-if (typeof window !== 'undefined') {
-  POMODORO_AUDIO = new Audio('/assets/audio/pomodoro-alert.wav');
-}
-function playRingingSound() {
-  if (POMODORO_AUDIO) {
-    POMODORO_AUDIO.currentTime = 0;
-    POMODORO_AUDIO.play();
-  }
-}
-
-function stopRingingSound() {
-  if (POMODORO_AUDIO) {
-    POMODORO_AUDIO.pause();
-    POMODORO_AUDIO.currentTime = 0;
-  }
-}
+import { playRingingSound } from '@/app/apps/pomodoro/_components/PomodoroTimer/PomodoroTimer.utils';
+import { useTimer } from '@/app/apps/pomodoro/_components/PomodoroTimer/hooks/useTimer';
+import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
+import { useEffect } from 'react';
 
 export default function PomodoroTimer() {
   const { phase, playbackStatus, onNextPhase } = usePomodoro();
 
-  const [time, setTime] = useState(POMODORO_DEFAULT_TIME[phase]);
-
-  useEffect(() => {
-    setTime(POMODORO_DEFAULT_TIME[phase]);
-  }, [phase]);
-
-  function play() {
-    stopRingingSound();
-    // Countdown time
-    timerId = setInterval(() => {
-      setTime((prevTime) => {
-        if (prevTime - 1 === -1) {
-          return prevTime;
-        }
-        return prevTime - 1;
-      });
-    }, 1000);
-  }
+  const { time, play, pause } = useTimer(phase);
 
   useEffect(() => {
     if (time === 0 && playbackStatus !== 'stop') {
@@ -60,11 +16,7 @@ export default function PomodoroTimer() {
       const autoPlay = false;
       onNextPhase(autoPlay);
     }
-  }, [time, playbackStatus, onNextPhase]);
-
-  const pause = () => {
-    clearInterval(timerId);
-  };
+  }, [time, playbackStatus, pause, onNextPhase]);
 
   useEffect(() => {
     switch (playbackStatus) {
@@ -75,35 +27,7 @@ export default function PomodoroTimer() {
       default:
         pause();
     }
-  }, [playbackStatus]);
-
-  useEffect(() => {
-    // Handle visibility changes
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        // Page is visible, resume or restart your timers
-        if (playbackStatus === 'playing') {
-          play();
-        }
-      } else {
-        if (playbackStatus === 'playing') {
-          play();
-        }
-      }
-    };
-
-    // Add event listener for visibility changes
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    // Cleanup: Remove event listener when component unmounts
-    return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, [playbackStatus]);
-
-  useEffect(() => {
-    return () => clearInterval(timerId);
-  }, []);
+  }, [playbackStatus, pause, play]);
 
   // Format the time into minutes and seconds
   const minutes = Math.floor(time / 60);
