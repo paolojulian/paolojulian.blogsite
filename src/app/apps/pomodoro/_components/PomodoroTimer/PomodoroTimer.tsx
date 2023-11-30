@@ -77,11 +77,6 @@ export default function PomodoroTimer() {
     }
   }, [playbackStatus]);
 
-  // Clean up the interval when the component unmounts
-  useEffect(() => {
-    return () => clearInterval(timerId);
-  }, []);
-
   // Format the time into minutes and seconds
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;

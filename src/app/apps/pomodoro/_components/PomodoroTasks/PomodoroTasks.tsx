@@ -64,9 +64,9 @@ export default function PomodoroTasks() {
           )
         );
       }, 1000);
+    } else {
+      clearInterval(timeoutId);
     }
-
-    return () => clearInterval(timeoutId);
   }, [playbackStatus, phase, selectedTaskId]);
 
   const handleSelectTask = (taskId: string) => {
