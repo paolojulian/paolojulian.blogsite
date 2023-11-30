@@ -20,6 +20,7 @@ const Pomodoro: FunctionComponent<Props> = () => {
           <span></span>
         </div>
       </div>
+
       <PomodoroProvider>
         <div
           className={classNames(
@@ -34,6 +35,7 @@ const Pomodoro: FunctionComponent<Props> = () => {
 
           <PomodoroTasks />
         </div>
+
         <div className='fixed inset-x-0 bottom-0'>
           <PomodoroButtons />
         </div>
