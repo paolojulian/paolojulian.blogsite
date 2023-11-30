@@ -10,7 +10,7 @@ import {
 } from '@/app/apps/pomodoro/_components/PomodoroTasks/components/PomodoroAddTask';
 import Text from '@/app/apps/pomodoro/_components/Text';
 import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
 export interface Task {
@@ -18,6 +18,7 @@ export interface Task {
   title: string;
   description: string;
   timeElapsed: number;
+  isArchived: boolean;
   isFinished: boolean;
 }
 
@@ -26,6 +27,8 @@ let timeoutId: NodeJS.Timeout;
 export default function PomodoroTasks() {
   const { phase, playbackStatus } = usePomodoro();
   const [tasks, setTasks] = useState<Task[]>(getTasksFromLocalStorage());
+
+  const activeTasks = tasks.filter((task) => !task.isArchived);
 
   useEffect(() => {
     // Persist to localStorage
@@ -42,12 +45,28 @@ export default function PomodoroTasks() {
         title,
         description,
         timeElapsed: 0,
+        isArchived: false,
         isFinished: false,
       },
     ]);
   };
 
-  const memoizedTasks = useMemo(() => tasks, [tasks]);
+  const handleArchiveTask = (taskId: string) => {
+    setTasks((prev) => {
+      const taskToArchive = tasks.find(({ id }) => id === taskId);
+      if (!taskToArchive) {
+        return prev;
+      }
+
+      return tasks.map((task) => {
+        if (task.id === taskId) {
+          task.isFinished = true;
+          task.isArchived = true;
+        }
+        return task;
+      });
+    });
+  };
 
   useEffect(() => {
     const shouldStartCounting =
@@ -81,12 +100,13 @@ export default function PomodoroTasks() {
       <div className='flex-1 w-full flex flex-col mt-8 items-stretch gap-2'>
         <Text as='h2'>Tasks</Text>
         <div className='flex flex-col gap-2'>
-          {memoizedTasks.map((task) => (
+          {activeTasks.map((task) => (
             <PomodoroTaskItem
+              onArchive={handleArchiveTask}
+              onSelect={handleSelectTask}
               key={task.id}
               isSelected={task.id === selectedTaskId}
               task={task}
-              onSelect={handleSelectTask}
             />
           ))}
         </div>

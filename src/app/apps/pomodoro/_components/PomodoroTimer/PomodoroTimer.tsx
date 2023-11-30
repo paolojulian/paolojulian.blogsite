@@ -77,6 +77,34 @@ export default function PomodoroTimer() {
     }
   }, [playbackStatus]);
 
+  useEffect(() => {
+    // Handle visibility changes
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        // Page is visible, resume or restart your timers
+        if (playbackStatus === 'playing') {
+          play();
+        }
+      } else {
+        if (playbackStatus === 'playing') {
+          play();
+        }
+      }
+    };
+
+    // Add event listener for visibility changes
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Cleanup: Remove event listener when component unmounts
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [playbackStatus]);
+
+  useEffect(() => {
+    return () => clearInterval(timerId);
+  }, []);
+
   // Format the time into minutes and seconds
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;

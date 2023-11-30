@@ -4,7 +4,7 @@ import { Task } from "@/app/apps/pomodoro/_components/PomodoroTasks/PomodoroTask
 const LOCAL_STORAGE_TASK_KEY = 'tasks';
 
 export function getTasksFromLocalStorage() {
-  if (typeof window === 'undefined') {
+  if (typeof localStorage === 'undefined') {
     return [];
   }
 
@@ -17,7 +17,7 @@ export function getTasksFromLocalStorage() {
 }
 
 export function setTasksToLocalStorage(tasks: Task[]) {
-  if (typeof window === 'undefined') {
+  if (typeof localStorage === 'undefined') {
     return;
   }
 
