@@ -1,31 +1,29 @@
 'use client';
-import PomodoroTaskItem from '@/app/apps/pomodoro/_components/PomodoroTasks/PomodoroTaskItem';
 import {
   getTasksFromLocalStorage,
   setTasksToLocalStorage,
 } from '@/app/apps/pomodoro/_components/PomodoroTasks/PomodoroTasks.utils';
-import {
-  PomodoroAddTask,
+import PomodoroAddTask, {
   TaskForm,
 } from '@/app/apps/pomodoro/_components/PomodoroTasks/components/PomodoroAddTask';
 import Text from '@/app/apps/pomodoro/_components/Text';
-import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
+import PomodoroTaskItem from './components/PomodoroTaskItem';
 
 export interface Task {
   id: string;
   title: string;
   description: string;
   timeElapsed: number;
+  isArchived: boolean;
   isFinished: boolean;
 }
 
-let timeoutId: NodeJS.Timeout;
-
 export default function PomodoroTasks() {
-  const { phase, playbackStatus } = usePomodoro();
   const [tasks, setTasks] = useState<Task[]>(getTasksFromLocalStorage());
+
+  const activeTasks = tasks.filter((task) => !task.isArchived);
 
   useEffect(() => {
     // Persist to localStorage
@@ -42,32 +40,28 @@ export default function PomodoroTasks() {
         title,
         description,
         timeElapsed: 0,
+        isArchived: false,
         isFinished: false,
       },
     ]);
   };
 
-  const memoizedTasks = useMemo(() => tasks, [tasks]);
+  const handleArchiveTask = (taskId: string) => {
+    setTasks((prev) => {
+      const taskToArchive = tasks.find(({ id }) => id === taskId);
+      if (!taskToArchive) {
+        return prev;
+      }
 
-  useEffect(() => {
-    const shouldStartCounting =
-      phase === 'working' && playbackStatus === 'playing' && !!selectedTaskId;
-
-    if (shouldStartCounting) {
-      timeoutId = setInterval(() => {
-        // Start timeElapsed for the selected task
-        setTasks((prevTasks) =>
-          prevTasks.map((task) =>
-            task.id === selectedTaskId
-              ? { ...task, timeElapsed: task.timeElapsed + 1 }
-              : task
-          )
-        );
-      }, 1000);
-    }
-
-    return () => clearInterval(timeoutId);
-  }, [playbackStatus, phase, selectedTaskId]);
+      return tasks.map((task) => {
+        if (task.id === taskId) {
+          task.isFinished = true;
+          task.isArchived = true;
+        }
+        return task;
+      });
+    });
+  };
 
   const handleSelectTask = (taskId: string) => {
     // Remove if clicked on the same task
@@ -76,17 +70,29 @@ export default function PomodoroTasks() {
     }
   };
 
+  const handleCountUp = (taskId: string) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId
+          ? { ...task, timeElapsed: task.timeElapsed + 1 }
+          : task
+      )
+    );
+  };
+
   return (
     <>
       <div className='flex-1 w-full flex flex-col mt-8 items-stretch gap-2'>
         <Text as='h2'>Tasks</Text>
         <div className='flex flex-col gap-2'>
-          {memoizedTasks.map((task) => (
+          {activeTasks.map((task) => (
             <PomodoroTaskItem
+              onArchive={handleArchiveTask}
+              onSelect={handleSelectTask}
+              onCountUp={handleCountUp}
               key={task.id}
               isSelected={task.id === selectedTaskId}
               task={task}
-              onSelect={handleSelectTask}
             />
           ))}
         </div>
