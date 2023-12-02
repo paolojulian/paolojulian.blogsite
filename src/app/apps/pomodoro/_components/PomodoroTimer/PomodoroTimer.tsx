@@ -1,15 +1,42 @@
 'use client';
 import { playRingingSound } from '@/app/apps/pomodoro/_components/PomodoroTimer/PomodoroTimer.utils';
-import { useTimer } from '@/app/apps/pomodoro/_components/PomodoroTimer/hooks/useTimer';
-import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
-import { useEffect } from 'react';
+import {
+  PomodoroPhase,
+  usePomodoro,
+} from '@/app/apps/pomodoro/_context/PomodoroContext';
+import { useTimer } from '@/app/apps/pomodoro/_hooks/useTimer';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+
+const POMODORO_DEFAULT_TIME: Record<PomodoroPhase, number> = {
+  working: 3000,
+  'long-break': 1800,
+  'short-break': 600,
+};
 
 export default function PomodoroTimer() {
   const { phase, playbackStatus, onNextPhase } = usePomodoro();
+  const [time, setTime] = useState(POMODORO_DEFAULT_TIME[phase]);
 
-  const { time, play, pause } = useTimer(phase);
-
+  // On change phase, update the default time.
   useEffect(() => {
+    setTime(POMODORO_DEFAULT_TIME[phase]);
+  }, [phase]);
+
+  const handleCountDown = () => {
+    setTime((prevTime) => {
+      if (prevTime > 0) {
+        return prevTime - 1;
+      }
+      // Next Phase
+      return prevTime;
+    });
+  };
+
+  const { play, pause } = useTimer({
+    onTick: handleCountDown,
+  });
+
+  const handleTimerFinished = useCallback(() => {
     if (time === 0 && playbackStatus !== 'stop') {
       playRingingSound();
       pause();
@@ -17,6 +44,10 @@ export default function PomodoroTimer() {
       onNextPhase(autoPlay);
     }
   }, [time, playbackStatus, pause, onNextPhase]);
+
+  useEffect(() => {
+    handleTimerFinished();
+  }, [handleTimerFinished]);
 
   useEffect(() => {
     switch (playbackStatus) {
@@ -30,9 +61,11 @@ export default function PomodoroTimer() {
   }, [playbackStatus, pause, play]);
 
   // Format the time into minutes and seconds
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
-  const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  const formattedTime = useMemo(() => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }, [time]);
 
   return <span className='text-6xl text-new-white'>{formattedTime}</span>;
 }

@@ -8,13 +8,14 @@ const validationSchema = Yup.object({
   title: Yup.string().required().max(50),
   description: Yup.string().max(500),
 });
+
 export type TaskForm = Yup.InferType<typeof validationSchema>;
 
 interface PomodoroAddTaskProps {
   onAddTask: (form: TaskForm) => void;
 }
 
-export function PomodoroAddTask({ onAddTask }: PomodoroAddTaskProps) {
+export default function PomodoroAddTask({ onAddTask }: PomodoroAddTaskProps) {
   const [isAdding, setIsAdding] = useState(false);
   const inputTitleRef = useRef<HTMLInputElement>(null);
 

@@ -1,6 +1,6 @@
-import { POMODORO_TASK_ITEM_ELEMENTS } from '@/app/apps/pomodoro/_components/PomodoroTasks/PomodoroTaskItem';
+import { POMODORO_TASK_ITEM_ELEMENTS } from '@/app/apps/pomodoro/_components/PomodoroTasks/components/PomodoroTaskItem';
 import { useCallback, useEffect, useRef } from 'react';
-import styles from '../PomodoroTaskItem.module.css';
+import styles from '../components/PomodoroTaskItem/PomodoroTaskItem.module.css';
 
 export function useArchiveAnimation() {
   const elementToArchive = useRef<Element | null>(null);

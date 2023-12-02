@@ -1,10 +1,12 @@
 'use client';
 import { Task } from '@/app/apps/pomodoro/_components/PomodoroTasks/PomodoroTasks';
-import Text from '@/app/apps/pomodoro/_components/Text';
-import classNames from 'classnames';
-import styles from './PomodoroTaskItem.module.css';
-import { MouseEvent, memo, useCallback, useEffect, useState } from 'react';
 import { useArchiveAnimation } from '@/app/apps/pomodoro/_components/PomodoroTasks/hooks/useArchiveAnimation';
+import Text from '@/app/apps/pomodoro/_components/Text';
+import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
+import { useTimer } from '@/app/apps/pomodoro/_hooks/useTimer';
+import classNames from 'classnames';
+import { MouseEvent, memo, useCallback, useEffect, useState } from 'react';
+import styles from './PomodoroTaskItem.module.css';
 
 export const POMODORO_TASK_ITEM_ELEMENTS = {
   container: (id: string) => `PomodoroTaskItem__${id}`,
@@ -13,6 +15,7 @@ export const POMODORO_TASK_ITEM_ELEMENTS = {
 interface PomodoroTaskItemProps {
   onArchive: (taskId: string) => void;
   onSelect: (taskId: string) => void;
+  onCountUp: (taskId: string) => void;
   isSelected: boolean;
   task: Task;
 }
@@ -20,9 +23,37 @@ interface PomodoroTaskItemProps {
 let archiveTimeoutId: NodeJS.Timeout;
 
 const PomodoroTaskItem = memo(
-  ({ onArchive, onSelect, isSelected, task }: PomodoroTaskItemProps) => {
+  ({
+    onArchive,
+    onCountUp,
+    onSelect,
+    isSelected,
+    task,
+  }: PomodoroTaskItemProps) => {
     const [isArchiving, setIsArchiving] = useState(false);
     const timeElapsedText = getTimeElapsedText(task.timeElapsed);
+
+    const { phase, playbackStatus } = usePomodoro();
+
+    const handleTick = () => {
+      onCountUp(task.id);
+    };
+
+    const { play, pause } = useTimer({
+      onTick: handleTick,
+    });
+
+    useEffect(() => {
+      const shouldStartCounting =
+        phase === 'working' && playbackStatus === 'playing' && !!isSelected;
+
+      if (shouldStartCounting) {
+        play();
+      } else {
+        pause();
+      }
+    }, [isSelected, pause, phase, play, playbackStatus]);
+
     const { animate: archiveAnimate, animationEndHandler } =
       useArchiveAnimation();
 
