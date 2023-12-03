@@ -1,7 +1,7 @@
 
 let POMODORO_AUDIO: HTMLAudioElement;
 if (typeof window !== 'undefined') {
-  POMODORO_AUDIO = new Audio('/assets/audio/pomodoro-alert.wav');
+  POMODORO_AUDIO = new Audio('/assets/audio/pomodoro-alert.mp3');
 }
 export function playRingingSound() {
   if (POMODORO_AUDIO) {
