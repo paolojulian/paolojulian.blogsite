@@ -1,4 +1,5 @@
 import PomodoroButtons from '@/app/apps/pomodoro/_components/PomodoroButtons';
+import PomodoroElapsedTime from '@/app/apps/pomodoro/_components/PomodoroElapsedTime';
 import PomodoroPhaseIndicator from '@/app/apps/pomodoro/_components/PomodoroPhaseIndicator';
 import PomodoroTasks from '@/app/apps/pomodoro/_components/PomodoroTasks';
 import PomodoroTimer from '@/app/apps/pomodoro/_components/PomodoroTimer';
@@ -29,6 +30,7 @@ const Pomodoro: FunctionComponent<Props> = () => {
           <div className=''>
             <div className='w-full flex flex-col items-center border border-new-highlightLighter rounded-3xl bg-new-white/10 pt-24 pb-20 px-10'>
               <PomodoroTimer />
+              <PomodoroElapsedTime />
 
               <div className='mt-16'>
                 <PomodoroButtons />
