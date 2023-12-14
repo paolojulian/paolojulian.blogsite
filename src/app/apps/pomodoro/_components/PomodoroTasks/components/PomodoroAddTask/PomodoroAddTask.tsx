@@ -50,11 +50,11 @@ export default function PomodoroAddTask({ onAddTask }: PomodoroAddTaskProps) {
     return (
       <button
         className={classNames(
-          'flex justify-center items-center p-6 border border-new-highlight rounded-2xl'
+          'flex justify-center items-center p-6 border border-new-highlight rounded-2xl hover:bg-new-white/10'
         )}
         onClick={handleClickAddTask}
       >
-        <Text>+ Add</Text>
+        <Text size='large'>+ ADD</Text>
       </button>
     );
   }
@@ -62,7 +62,8 @@ export default function PomodoroAddTask({ onAddTask }: PomodoroAddTaskProps) {
   return (
     <div
       className={classNames(
-        'flex flex-col justify-center items-stretch p-4 border border-new-highlight rounded gap-4'
+        'flex flex-col justify-center items-stretch p-4 border border-new-highlight rounded gap-4',
+        'font-sans'
       )}
     >
       <div className='flex justify-between items-center'>

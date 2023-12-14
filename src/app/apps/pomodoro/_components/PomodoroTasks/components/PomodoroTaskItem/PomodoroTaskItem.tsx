@@ -15,8 +15,9 @@ export const POMODORO_TASK_ITEM_ELEMENTS = {
 
 interface PomodoroTaskItemProps {
   onArchive: (taskId: string) => void;
-  onSelect: (taskId: string) => void;
   onCountUp: (taskId: string) => void;
+  onResetTimeElapsed: (taskId: string) => void;
+  onSelect: (taskId: string) => void;
   isSelected: boolean;
   task: Task;
 }
@@ -27,6 +28,7 @@ const PomodoroTaskItem = memo(
   ({
     onArchive,
     onCountUp,
+    onResetTimeElapsed,
     onSelect,
     isSelected,
     task,
@@ -65,6 +67,7 @@ const PomodoroTaskItem = memo(
 
     const handleReset = (e: MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
+      onResetTimeElapsed(task.id);
     };
 
     useEffect(() => {

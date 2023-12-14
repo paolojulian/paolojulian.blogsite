@@ -69,6 +69,14 @@ export default function PomodoroTasks() {
     setSelectedTaskId(taskId);
   };
 
+  const handleResetTimeElapsed = (taskId: string) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, timeElapsed: 0 } : task
+      )
+    );
+  };
+
   const handleCountUp = (taskId: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -88,8 +96,9 @@ export default function PomodoroTasks() {
           {activeTasks.map((task) => (
             <PomodoroTaskItem
               onArchive={handleArchiveTask}
-              onSelect={handleSelectTask}
               onCountUp={handleCountUp}
+              onResetTimeElapsed={handleResetTimeElapsed}
+              onSelect={handleSelectTask}
               key={task.id}
               isSelected={task.id === selectedTaskId}
               task={task}
