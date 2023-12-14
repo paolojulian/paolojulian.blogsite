@@ -1,11 +1,10 @@
 import classNames from 'classnames';
 import type { Metadata } from 'next';
-import { Architects_Daughter } from 'next/font/google';
+import { Barlow_Condensed } from 'next/font/google';
 
-const font = Architects_Daughter({
+const font = Barlow_Condensed({
   subsets: ['latin'],
-  variable: '--font-comfortaa',
-  weight: '400',
+  weight: ['400', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {

@@ -50,7 +50,7 @@ export default function PomodoroAddTask({ onAddTask }: PomodoroAddTaskProps) {
     return (
       <button
         className={classNames(
-          'flex justify-center items-center p-4 border border-new-highlight rounded'
+          'flex justify-center items-center p-6 border border-new-highlight rounded-2xl'
         )}
         onClick={handleClickAddTask}
       >

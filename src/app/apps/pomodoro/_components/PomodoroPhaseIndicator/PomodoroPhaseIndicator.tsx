@@ -1,6 +1,5 @@
 'use client';
 
-import Text from '@/app/apps/pomodoro/_components/Text';
 import {
   PomodoroPhase,
   usePomodoro,
@@ -9,11 +8,9 @@ import classNames from 'classnames';
 
 export default function PomodoroPhaseIndicator() {
   return (
-    <div className='flex gap-2 text-new-highlight'>
+    <div className='w-full rounded-full border border-new-highlightLighter grid grid-cols-3 text-center overflow-hidden'>
       <PomodoroPhase phase='long-break' />
-      <span>{'|'}</span>
       <PomodoroPhase phase='working' />
-      <span>{'|'}</span>
       <PomodoroPhase phase='short-break' />
     </div>
   );
@@ -22,7 +19,7 @@ export default function PomodoroPhaseIndicator() {
 const textMap: Record<PomodoroPhase, string> = {
   'long-break': 'Long Break',
   'short-break': 'Short Break',
-  working: 'Working',
+  working: 'Focus',
 };
 
 function PomodoroPhase({ phase }: { phase: PomodoroPhase }) {
@@ -35,14 +32,20 @@ function PomodoroPhase({ phase }: { phase: PomodoroPhase }) {
   };
 
   return (
-    <Text
+    <div
       className={classNames(
-        currentPhase === phase ? 'text-new-white' : 'text-new-highlight'
+        'cursor-pointer py-4 text-4xl border-r last:border-none border-new-highlightLighter hover:bg-new-white/10',
+        'uppercase',
+        {
+          'text-new-white': currentPhase === phase,
+          'bg-new-white/10': currentPhase === phase,
+          'text-new-highlight hover:text-new-white': currentPhase !== phase,
+        }
       )}
       role='button'
       onClick={handleClick}
     >
       {textMap[phase]}
-    </Text>
+    </div>
   );
 }

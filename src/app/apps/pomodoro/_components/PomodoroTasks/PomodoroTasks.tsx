@@ -6,7 +6,6 @@ import {
 import PomodoroAddTask, {
   TaskForm,
 } from '@/app/apps/pomodoro/_components/PomodoroTasks/components/PomodoroAddTask';
-import Text from '@/app/apps/pomodoro/_components/Text';
 import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import PomodoroTaskItem from './components/PomodoroTaskItem';
@@ -47,27 +46,27 @@ export default function PomodoroTasks() {
   };
 
   const handleArchiveTask = (taskId: string) => {
-    setTasks((prev) => {
-      const taskToArchive = tasks.find(({ id }) => id === taskId);
-      if (!taskToArchive) {
-        return prev;
-      }
+    const taskToArchive = tasks.find(({ id }) => id === taskId);
+    if (!taskToArchive) {
+      return;
+    }
 
-      return tasks.map((task) => {
-        if (task.id === taskId) {
-          task.isFinished = true;
-          task.isArchived = true;
-        }
-        return task;
-      });
-    });
+    setTasks((prev) => [
+      ...prev.filter(({ id }) => id !== taskId),
+      {
+        ...taskToArchive,
+        isArchived: true,
+        isFinished: true,
+      },
+    ]);
   };
 
   const handleSelectTask = (taskId: string) => {
     // Remove if clicked on the same task
-    if (selectedTaskId !== taskId) {
-      setSelectedTaskId(taskId);
+    if (selectedTaskId === taskId) {
+      return setSelectedTaskId('');
     }
+    setSelectedTaskId(taskId);
   };
 
   const handleCountUp = (taskId: string) => {
@@ -82,8 +81,9 @@ export default function PomodoroTasks() {
 
   return (
     <>
-      <div className='flex-1 w-full flex flex-col mt-8 items-stretch gap-2'>
-        <Text as='h2'>Tasks</Text>
+      <div className='flex-1 w-full flex flex-col rounded-3xl bg-new-white/10 items-stretch gap-10 border border-new-highlightLighter p-10 h-full'>
+        <h2 className='text-2xl font-bold'>TASKS</h2>
+
         <div className='flex flex-col gap-2'>
           {activeTasks.map((task) => (
             <PomodoroTaskItem
@@ -95,9 +95,8 @@ export default function PomodoroTasks() {
               task={task}
             />
           ))}
+          <PomodoroAddTask onAddTask={handleAddTask} />
         </div>
-
-        <PomodoroAddTask onAddTask={handleAddTask} />
       </div>
     </>
   );

@@ -1,5 +1,4 @@
 'use client';
-import Text from '@/app/apps/pomodoro/_components/Text';
 import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
 import classNames from 'classnames';
 
@@ -19,31 +18,31 @@ export default function PomodoroButtons() {
   }
 
   return (
-    <div className='flex items-center justify-center gap-4 p-4 w-full bg-new-black/50 backdrop-blur-sm'>
+    <div className='flex items-center justify-center gap-4 p-4 w-full'>
       <button
-        className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
+        className='rounded-full h-20 aspect-square bg-new-highlight/50 hover:bg-new-highlight/70 hover:scale-110 duration-500'
         onClick={handleBreak}
       >
-        <Text className='text-new-black'>Menu</Text>
+        <p className='text-new-white text-2xl'>STOP</p>
       </button>
 
       <button
         className={classNames(
-          'rounded-full h-20 aspect-square border border-new-highlight',
-          playbackStatus === 'playing' ? 'bg-new-accent' : 'bg-new-white'
+          'rounded-full h-32 aspect-square duration-500 hover:scale-[1.05]',
+          playbackStatus === 'playing' ? 'bg-[#F87171]' : 'bg-new-white'
         )}
         onClick={handlePausePlay}
       >
-        <Text className='text-new-black' size='large'>
-          {playbackStatus === 'playing' ? 'Pause' : 'Play'}
-        </Text>
+        <p className='text-4xl text-new-black'>
+          {playbackStatus === 'playing' ? 'PAUSE' : 'PLAY'}
+        </p>
       </button>
 
       <button
-        className='rounded-full h-14 aspect-square border border-new-highlight bg-new-highlightLighter'
+        className='rounded-full h-20 aspect-square bg-new-highlight/50 hover:bg-new-highlight/70 hover:scale-110 duration-500'
         onClick={handleBreak}
       >
-        <Text className='text-new-black'>Next</Text>
+        <p className='text-new-white text-2xl'>NEXT</p>
       </button>
     </div>
   );
