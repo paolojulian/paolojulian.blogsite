@@ -1,1 +1,1 @@
-export { default } from './PomodoroState';
+export { default } from './PomodoroPhaseIndicator';

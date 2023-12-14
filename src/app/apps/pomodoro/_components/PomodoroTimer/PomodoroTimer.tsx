@@ -8,9 +8,9 @@ import { useTimer } from '@/app/apps/pomodoro/_hooks/useTimer';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 const POMODORO_DEFAULT_TIME: Record<PomodoroPhase, number> = {
-  working: 3000,
-  'long-break': 1800,
-  'short-break': 600,
+  working: 1500,
+  'long-break': 900,
+  'short-break': 300,
 };
 
 export default function PomodoroTimer() {
@@ -67,5 +67,11 @@ export default function PomodoroTimer() {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   }, [time]);
 
-  return <span className='text-6xl text-new-white'>{formattedTime}</span>;
+  return (
+    <>
+      <span className='text-9xl font-bold text-new-white leading-tight'>
+        {formattedTime}
+      </span>
+    </>
+  );
 }

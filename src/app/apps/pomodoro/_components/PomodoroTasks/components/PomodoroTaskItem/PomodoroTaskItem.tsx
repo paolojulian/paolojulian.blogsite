@@ -1,11 +1,12 @@
 'use client';
 import { Task } from '@/app/apps/pomodoro/_components/PomodoroTasks/PomodoroTasks';
-import { useArchiveAnimation } from '@/app/apps/pomodoro/_components/PomodoroTasks/hooks/useArchiveAnimation';
 import Text from '@/app/apps/pomodoro/_components/Text';
+import ResetIcon from '@/app/apps/pomodoro/_components/icons/reset-icon';
+import TrashIcon from '@/app/apps/pomodoro/_components/icons/trash-icon';
 import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
 import { useTimer } from '@/app/apps/pomodoro/_hooks/useTimer';
 import classNames from 'classnames';
-import { MouseEvent, memo, useCallback, useEffect, useState } from 'react';
+import { MouseEvent, memo, useEffect } from 'react';
 import styles from './PomodoroTaskItem.module.css';
 
 export const POMODORO_TASK_ITEM_ELEMENTS = {
@@ -14,8 +15,9 @@ export const POMODORO_TASK_ITEM_ELEMENTS = {
 
 interface PomodoroTaskItemProps {
   onArchive: (taskId: string) => void;
-  onSelect: (taskId: string) => void;
   onCountUp: (taskId: string) => void;
+  onResetTimeElapsed: (taskId: string) => void;
+  onSelect: (taskId: string) => void;
   isSelected: boolean;
   task: Task;
 }
@@ -26,11 +28,11 @@ const PomodoroTaskItem = memo(
   ({
     onArchive,
     onCountUp,
+    onResetTimeElapsed,
     onSelect,
     isSelected,
     task,
   }: PomodoroTaskItemProps) => {
-    const [isArchiving, setIsArchiving] = useState(false);
     const timeElapsedText = getTimeElapsedText(task.timeElapsed);
 
     const { phase, playbackStatus } = usePomodoro();
@@ -54,60 +56,32 @@ const PomodoroTaskItem = memo(
       }
     }, [isSelected, pause, phase, play, playbackStatus]);
 
-    const { animate: archiveAnimate, animationEndHandler } =
-      useArchiveAnimation();
-
     const handleSelect = () => {
       onSelect(task.id);
     };
 
     const handleArchive = (e: MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
-
-      if (isArchiving) {
-        stopArchive();
-        return;
-      }
-
-      archiveAnimate(task.id);
-      setIsArchiving(true);
-
-      // User has 5 seconds to undo this before it is totally archived
-      archiveTimeoutId = setTimeout(() => {
-        onArchive(task.id);
-        setIsArchiving(false);
-      }, 3000);
+      onArchive(task.id);
     };
 
-    const stopArchive = useCallback(() => {
-      setIsArchiving(false);
-      clearTimeout(archiveTimeoutId);
-      animationEndHandler();
-    }, [animationEndHandler]);
+    const handleReset = (e: MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+      onResetTimeElapsed(task.id);
+    };
 
     useEffect(() => {
       return () => clearTimeout(archiveTimeoutId);
     }, []);
 
-    useEffect(() => {
-      const handleKeyPress = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-          stopArchive();
-        }
-      };
-
-      document.addEventListener('keydown', handleKeyPress);
-
-      return () => {
-        document.removeEventListener('keydown', handleKeyPress);
-      };
-    }, [stopArchive]);
-
     return (
       <div
         className={classNames(
-          'relative flex justify-between items-center p-2 px-4 border border-new-highlight rounded',
-          isSelected ? 'bg-new-highlight/30' : '',
+          'relative flex justify-between items-center px-6 py-4 border border-new-highlight rounded-2xl',
+          'group font-sans',
+          isSelected
+            ? 'bg-new-white text-new-black'
+            : 'hover:bg-new-highlight/10',
           styles.container
         )}
         role='button'
@@ -120,10 +94,14 @@ const PomodoroTaskItem = memo(
             {timeElapsedText}
           </Text>
         </div>
-        <button
-          onClick={handleArchive}
-          className='rounded-full w-8 aspect-square bg-new-white'
-        ></button>
+        <div className='flex flex-row gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
+          <button onClick={handleReset}>
+            <ResetIcon />
+          </button>
+          <button onClick={handleArchive}>
+            <TrashIcon />
+          </button>
+        </div>
       </div>
     );
   },
