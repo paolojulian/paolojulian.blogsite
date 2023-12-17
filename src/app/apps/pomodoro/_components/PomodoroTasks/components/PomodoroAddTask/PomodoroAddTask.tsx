@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from 'react';
 import * as Yup from 'yup';
 
 const validationSchema = Yup.object({
-  title: Yup.string().required().max(50),
-  description: Yup.string().max(500),
+  title: Yup.string().required().max(50, 'Should be less than 50 characters.').label('Title'),
+  description: Yup.string().max(500).label('Description'),
 });
 
 export type TaskForm = Yup.InferType<typeof validationSchema>;
@@ -82,7 +82,7 @@ export default function PomodoroAddTask({ onAddTask }: PomodoroAddTaskProps) {
           resetForm();
         }}
       >
-        {({ handleSubmit, handleChange, handleBlur }) => (
+        {({ handleSubmit, handleChange, handleBlur, errors, touched }) => (
           <form
             className='flex flex-col items-stretch gap-2'
             onSubmit={function submitForm(e) {
@@ -94,20 +94,40 @@ export default function PomodoroAddTask({ onAddTask }: PomodoroAddTaskProps) {
               <input
                 onBlur={handleBlur}
                 onChange={handleChange}
-                className='bg-transparent p-2 rounded border border-new-highlight placeholder-new-highlight text-new-white focus:outline-new-accent'
+                className={classNames(
+                  'bg-transparent p-2 rounded border placeholder-new-highlight text-new-white focus:outline-new-accent',
+                  touched.title && !!errors.title
+                    ? 'border-red-400'
+                    : 'border-new-highlight'
+                )}
                 name='title'
                 type='text'
                 placeholder='Title'
                 ref={inputTitleRef}
               ></input>
+              {touched.title && !!errors.title && (
+                <span className={'-mt-1 text-red-400 text-sm'}>
+                  {errors.title}
+                </span>
+              )}
               <textarea
                 onBlur={handleBlur}
                 onChange={handleChange}
                 name='description'
-                className='bg-transparent p-2 rounded border border-new-highlight placeholder-new-highlight text-new-white focus:outline-new-accent'
+                className={classNames(
+                  'bg-transparent p-2 rounded border placeholder-new-highlight text-new-white focus:outline-new-accent',
+                  touched.description && !!errors.description
+                    ? 'border-red-400'
+                    : 'border-new-highlight'
+                )}
                 rows={5}
                 placeholder='Description'
               ></textarea>
+              {touched.title && !!errors.title && (
+                <span className={'-mt-1 text-red-400 text-sm'}>
+                  {errors.description}
+                </span>
+              )}
             </div>
             <button className='w-fit self-center' type='submit'>
               <Text>+ Add</Text>

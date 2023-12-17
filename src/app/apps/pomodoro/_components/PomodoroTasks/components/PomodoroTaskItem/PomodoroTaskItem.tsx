@@ -89,7 +89,7 @@ const PomodoroTaskItem = memo(
         data-id={POMODORO_TASK_ITEM_ELEMENTS.container(task.id)}
       >
         <div>
-          <Text as='h3'>{`${task.title}`}</Text>
+          <Text as='h3' className='line-clamp-2'>{`${task.title}`}</Text>
           <Text as='p' className='text-new-highlight'>
             {timeElapsedText}
           </Text>
