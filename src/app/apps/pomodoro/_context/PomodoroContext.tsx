@@ -1,6 +1,12 @@
 'use client';
 
-import { ReactNode, createContext, useContext, useState } from 'react';
+import {
+  ReactNode,
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+} from 'react';
 
 export type PomodoroPhase = 'working' | 'short-break' | 'long-break';
 type PomodoroPlaybackStatus = 'paused' | 'playing' | 'stop';
@@ -42,13 +48,13 @@ export default function PomodoroProvider({ children }: PomodoroProviderProps) {
   const [playbackStatus, setPlaybackStatus] =
     useState<PomodoroPlaybackStatus>('stop');
 
-  function onPlay() {
+  const onPlay = useCallback(() => {
     setPlaybackStatus('playing');
-  }
+  }, []);
 
-  function onPause() {
+  const onPause = useCallback(() => {
     setPlaybackStatus('paused');
-  }
+  }, []);
 
   function onChangePhase(newPhase: PomodoroPhase) {
     setPlaybackStatus('stop');
