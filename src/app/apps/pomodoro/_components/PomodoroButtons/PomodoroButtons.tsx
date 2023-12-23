@@ -1,21 +1,36 @@
 'use client';
 import { usePomodoro } from '@/app/apps/pomodoro/_context/PomodoroContext';
 import classNames from 'classnames';
+import { useCallback, useEffect } from 'react';
 
 export default function PomodoroButtons() {
   const { playbackStatus, onPause, onPlay, onNextPhase } = usePomodoro();
 
-  function handlePausePlay() {
+  const handlePausePlay = useCallback(() => {
     if (playbackStatus === 'paused' || playbackStatus === 'stop') {
       onPlay();
     } else {
       onPause();
     }
-  }
+  }, [playbackStatus, onPlay, onPause]);
 
   function handleBreak() {
     onNextPhase(true);
   }
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.code === 'Space') {
+        handlePausePlay();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handlePausePlay]);
 
   return (
     <div className='flex items-center justify-center gap-4 p-4 w-full'>
@@ -36,6 +51,7 @@ export default function PomodoroButtons() {
         <p className='text-4xl text-new-black'>
           {playbackStatus === 'playing' ? 'PAUSE' : 'PLAY'}
         </p>
+        <p className='text-new-black'>{`(space)`}</p>
       </button>
 
       <button
