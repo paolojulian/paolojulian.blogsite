@@ -1,5 +1,8 @@
 'use client';
-import { playRingingSound } from '@/app/apps/pomodoro/_components/PomodoroTimer/PomodoroTimer.utils';
+import {
+  playRingingSound,
+  showNotification,
+} from '@/app/apps/pomodoro/_components/PomodoroTimer/PomodoroTimer.utils';
 import {
   PomodoroPhase,
   usePomodoro,
@@ -22,6 +25,18 @@ export default function PomodoroTimer() {
     setTime(POMODORO_DEFAULT_TIME[phase]);
   }, [phase]);
 
+  // Ask for notification permission
+  useEffect(() => {
+    if (!('Notification' in window)) {
+      // Not supported in a window
+      console.error('test', 'Notifications are not supported');
+      return;
+    }
+    if (Notification.permission !== 'denied') {
+      Notification.requestPermission();
+    }
+  }, []);
+
   const handleCountDown = () => {
     setTime((prevTime) => {
       if (prevTime > 0) {
@@ -39,6 +54,7 @@ export default function PomodoroTimer() {
   const handleTimerFinished = useCallback(() => {
     if (time === 0 && playbackStatus !== 'stop') {
       playRingingSound();
+      showNotification();
       pause();
       const autoPlay = false;
       onNextPhase(autoPlay);
