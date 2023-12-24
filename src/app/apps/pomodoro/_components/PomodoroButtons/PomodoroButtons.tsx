@@ -20,7 +20,10 @@ export default function PomodoroButtons() {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.code === 'Space') {
+      // Check if the event target is an input element
+      const isInputElement = event.target instanceof HTMLInputElement;
+
+      if (event.code === 'Space' && !isInputElement) {
         handlePausePlay();
       }
     };
