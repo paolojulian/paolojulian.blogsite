@@ -7,6 +7,16 @@ const withPWA = require('next-pwa')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination:
+          process.env.NEXT_PUBLIC_NEW_BASE_URL ?? 'http://localhost:3000',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
