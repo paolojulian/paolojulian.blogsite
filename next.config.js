@@ -12,7 +12,7 @@ const nextConfig = {
       {
         source: '/',
         destination:
-          process.env.NEXT_PUBLIC_NEW_BASE_URL ?? 'http://localhost:3000',
+          process.env.NEXT_PUBLIC_NEW_BASE_URL ?? 'https://paolojulian.dev',
         permanent: true,
       },
     ];
